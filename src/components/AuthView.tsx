@@ -13,9 +13,11 @@ import {
   AlertCircle,
   Eye,
   EyeOff,
-  KeyRound
+  KeyRound,
+  ArrowLeft,
+  Send
 } from 'lucide-react';
-import { loginUser, signupUser, AuthUser } from '../services/auth';
+import { loginUser, signupUser, resetPassword, findUserByEmail, AuthUser } from '../services/auth';
 
 interface AuthViewProps {
   onAuthSuccess: (user: AuthUser) => void;
@@ -28,7 +30,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
   onContinueAsGuest,
   initialMode = 'login',
 }) => {
-  const [mode, setMode] = useState<'login' | 'signup'>(initialMode);
+  const [mode, setMode] = useState<'login' | 'signup' | 'reset'>(initialMode);
 
   // Form fields
   const [name, setName] = useState('');
@@ -39,10 +41,34 @@ export const AuthView: React.FC<AuthViewProps> = ({
   const [confirmPassword, setConfirmPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+  // Password reset specific fields
+  const [otpCode, setOtpCode] = useState('');
+  const [sentOtp, setSentOtp] = useState<string | null>(null);
+  const [otpFeedback, setOtpFeedback] = useState<string | null>(null);
+
   // Status
   const [isLoading, setIsLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [successMsg, setSuccessMsg] = useState<string | null>(null);
+
+  const handleSendOtp = () => {
+    if (!email.trim() || !email.includes('@')) {
+      setErrorMsg('Please enter your registered email address first.');
+      return;
+    }
+    const user = findUserByEmail(email);
+    if (!user) {
+      setErrorMsg('No registered account was found with this email. Please check spelling or create an account.');
+      return;
+    }
+
+    // Generate simulated 6-digit student OTP
+    const mockCode = Math.floor(100000 + Math.random() * 900000).toString();
+    setSentOtp(mockCode);
+    setOtpCode(mockCode); // Auto-fill for convenience
+    setErrorMsg(null);
+    setOtpFeedback(`6-digit verification code sent to ${email} (Demo Code: ${mockCode})`);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -69,6 +95,37 @@ export const AuthView: React.FC<AuthViewProps> = ({
         setTimeout(() => {
           onAuthSuccess(res.user!);
         }, 1000);
+      } else if (mode === 'reset') {
+        // Password reset flow
+        if (sentOtp && otpCode.trim() !== sentOtp) {
+          setErrorMsg('Invalid verification OTP code. Please enter the code sent to your email.');
+          setIsLoading(false);
+          return;
+        }
+
+        if (password !== confirmPassword) {
+          setErrorMsg('New passwords do not match. Please re-enter.');
+          setIsLoading(false);
+          return;
+        }
+
+        const res = await resetPassword(email, password);
+        if (!res.success) {
+          setErrorMsg(res.message);
+          setIsLoading(false);
+          return;
+        }
+
+        setSuccessMsg('Password has been successfully updated with SHA-256 encryption! You can now log in.');
+        setTimeout(() => {
+          setMode('login');
+          setPassword('');
+          setConfirmPassword('');
+          setOtpCode('');
+          setSentOtp(null);
+          setOtpFeedback(null);
+          setSuccessMsg('Password reset complete. Please log in with your new password.');
+        }, 1500);
       } else {
         const res = await loginUser(email, password);
         if (!res.success || !res.user) {
@@ -108,47 +165,70 @@ export const AuthView: React.FC<AuthViewProps> = ({
           </div>
 
           <h2 className="text-xl sm:text-2xl font-black text-slate-100 tracking-tight">
-            {mode === 'login' ? 'Welcome Back, Engineer' : 'Create Student Account'}
+            {mode === 'login' 
+              ? 'Welcome Back, Engineer' 
+              : mode === 'signup' 
+              ? 'Create Student Account'
+              : 'Reset Your Password'}
           </h2>
           <p className="text-xs text-slate-400 mt-1 max-w-xs mx-auto">
             {mode === 'login'
               ? 'Log in to track your 534+ company SQL OA solutions, streaks & test history.'
-              : 'Join fellow Indian engineering students preparing for top campus placements.'}
+              : mode === 'signup'
+              ? 'Join fellow Indian engineering students preparing for top campus placements.'
+              : 'Enter your registered email and choose a new password. It will be re-hashed with SHA-256.'}
           </p>
 
-          {/* Mode Switcher Tabs */}
-          <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800 mt-5 text-xs font-semibold">
-            <button
-              type="button"
-              onClick={() => {
-                setMode('login');
-                setErrorMsg(null);
-                setSuccessMsg(null);
-              }}
-              className={`flex-1 py-1.5 rounded-lg transition ${
-                mode === 'login'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md font-bold'
-                  : 'text-slate-400 hover:text-slate-200'
-              }`}
-            >
-              Log In
-            </button>
-            <button
-              type="button"
-              onClick={() => {
-                setMode('signup');
-                setErrorMsg(null);
-                setSuccessMsg(null);
-              }}
-              className={`flex-1 py-1.5 rounded-lg transition ${
-                mode === 'signup'
-                  ? 'bg-emerald-500 text-slate-950 shadow-md font-bold'
-                  : 'text-slate-400 hover:text-slate-200'
-              }`}
-            >
-              Create Account
-            </button>
-          </div>
+          {/* Mode Switcher Tabs (Only shown when not in reset mode) */}
+          {mode !== 'reset' ? (
+            <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800 mt-5 text-xs font-semibold">
+              <button
+                type="button"
+                onClick={() => {
+                  setMode('login');
+                  setErrorMsg(null);
+                  setSuccessMsg(null);
+                }}
+                className={`flex-1 py-1.5 rounded-lg transition ${
+                  mode === 'login'
+                    ? 'bg-emerald-500 text-slate-950 shadow-md font-bold'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                Log In
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setMode('signup');
+                  setErrorMsg(null);
+                  setSuccessMsg(null);
+                }}
+                className={`flex-1 py-1.5 rounded-lg transition ${
+                  mode === 'signup'
+                    ? 'bg-emerald-500 text-slate-950 shadow-md font-bold'
+                    : 'text-slate-400 hover:text-slate-200'
+                }`}
+              >
+                Create Account
+              </button>
+            </div>
+          ) : (
+            <div className="mt-4 flex items-center justify-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setMode('login');
+                  setErrorMsg(null);
+                  setSuccessMsg(null);
+                }}
+                className="text-xs text-emerald-400 hover:underline flex items-center gap-1.5 font-medium"
+              >
+                <ArrowLeft className="w-3.5 h-3.5" />
+                <span>Return to Login</span>
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Form Body */}
@@ -216,7 +296,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
             {/* Email Address */}
             <div>
               <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1">
-                Email Address
+                {mode === 'reset' ? 'Registered Email Address' : 'Email Address'}
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -231,11 +311,64 @@ export const AuthView: React.FC<AuthViewProps> = ({
               </div>
             </div>
 
+            {/* Reset Mode: OTP Verification Step */}
+            {mode === 'reset' && (
+              <div>
+                <div className="flex items-center justify-between mb-1">
+                  <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider">
+                    6-Digit Verification Code
+                  </label>
+                  <button
+                    type="button"
+                    onClick={handleSendOtp}
+                    className="text-[11px] text-emerald-400 hover:text-emerald-300 font-semibold flex items-center gap-1"
+                  >
+                    <Send className="w-3 h-3" />
+                    <span>{sentOtp ? 'Resend OTP' : 'Send OTP'}</span>
+                  </button>
+                </div>
+                <div className="relative">
+                  <KeyRound className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+                  <input
+                    type="text"
+                    required
+                    maxLength={6}
+                    value={otpCode}
+                    onChange={(e) => setOtpCode(e.target.value)}
+                    placeholder="Enter 6-digit OTP code"
+                    className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-3 py-2 text-xs font-mono text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500 tracking-wider"
+                  />
+                </div>
+                {otpFeedback && (
+                  <p className="text-[11px] text-emerald-400 mt-1.5 flex items-center gap-1 font-mono">
+                    <CheckCircle2 className="w-3.5 h-3.5 shrink-0" />
+                    <span>{otpFeedback}</span>
+                  </p>
+                )}
+              </div>
+            )}
+
             {/* Password */}
             <div>
-              <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1">
-                Password
-              </label>
+              <div className="flex items-center justify-between mb-1">
+                <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider">
+                  {mode === 'reset' ? 'New Password' : 'Password'}
+                </label>
+                {mode === 'login' && (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMode('reset');
+                      setErrorMsg(null);
+                      setSuccessMsg(null);
+                      setOtpFeedback(null);
+                    }}
+                    className="text-[11px] text-emerald-400 hover:text-emerald-300 hover:underline"
+                  >
+                    Forgot password?
+                  </button>
+                )}
+              </div>
               <div className="relative">
                 <Lock className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
@@ -243,7 +376,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Minimum 6 characters"
+                  placeholder={mode === 'reset' ? 'Enter new password (min. 6 chars)' : 'Minimum 6 characters'}
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-10 py-2 text-xs text-slate-100 placeholder-slate-600 focus:outline-none focus:border-emerald-500"
                 />
                 <button
@@ -256,10 +389,10 @@ export const AuthView: React.FC<AuthViewProps> = ({
               </div>
             </div>
 
-            {mode === 'signup' && (
+            {(mode === 'signup' || mode === 'reset') && (
               <div>
                 <label className="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1">
-                  Confirm Password
+                  {mode === 'reset' ? 'Confirm New Password' : 'Confirm Password'}
                 </label>
                 <div className="relative">
                   <KeyRound className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -305,26 +438,47 @@ export const AuthView: React.FC<AuthViewProps> = ({
               disabled={isLoading}
               className="w-full py-2.5 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs shadow-lg shadow-emerald-500/20 transition flex items-center justify-center gap-2 disabled:opacity-50"
             >
-              <span>{isLoading ? 'Processing...' : mode === 'login' ? 'Log In to SQLEdge' : 'Create Free Account'}</span>
+              <span>
+                {isLoading 
+                  ? 'Processing...' 
+                  : mode === 'login' 
+                  ? 'Log In to SQLEdge' 
+                  : mode === 'signup' 
+                  ? 'Create Free Account' 
+                  : 'Update Password (SHA-256)'}
+              </span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
 
           {/* Quick Demo Fill & Guest Options */}
           <div className="mt-5 pt-4 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400">
-            <button
-              type="button"
-              onClick={handleDemoFill}
-              className="text-emerald-400 hover:underline flex items-center gap-1 font-medium text-[11px]"
-            >
-              <Sparkles className="w-3 h-3" />
-              <span>Fill Sample Credentials</span>
-            </button>
+            {mode === 'login' && (
+              <button
+                type="button"
+                onClick={handleDemoFill}
+                className="text-emerald-400 hover:underline flex items-center gap-1 font-medium text-[11px]"
+              >
+                <Sparkles className="w-3 h-3" />
+                <span>Fill Sample Credentials</span>
+              </button>
+            )}
+
+            {mode === 'reset' && (
+              <button
+                type="button"
+                onClick={() => setMode('login')}
+                className="text-slate-400 hover:text-slate-200 hover:underline text-[11px] flex items-center gap-1"
+              >
+                <ArrowLeft className="w-3 h-3" />
+                <span>Back to Login</span>
+              </button>
+            )}
 
             <button
               type="button"
               onClick={onContinueAsGuest}
-              className="text-slate-400 hover:text-slate-200 hover:underline text-[11px]"
+              className="text-slate-400 hover:text-slate-200 hover:underline text-[11px] ml-auto"
             >
               Continue as Guest →
             </button>

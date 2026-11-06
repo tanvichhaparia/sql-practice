@@ -131,3 +131,41 @@ export async function loginUser(
 export function logoutUser(): void {
   setCurrentUser(null);
 }
+
+export function findUserByEmail(email: string): AuthUser | undefined {
+  const users = loadUsers();
+  return users.find((u) => u.email.toLowerCase() === email.trim().toLowerCase());
+}
+
+export async function resetPassword(
+  email: string,
+  newPassword: string
+): Promise<{ success: boolean; message: string }> {
+  const cleanEmail = email.trim().toLowerCase();
+  if (!cleanEmail) {
+    return { success: false, message: 'Please enter your registered email address.' };
+  }
+  if (!newPassword || newPassword.length < 6) {
+    return { success: false, message: 'New password must be at least 6 characters long.' };
+  }
+
+  const users = loadUsers();
+  const userIndex = users.findIndex((u) => u.email.toLowerCase() === cleanEmail);
+
+  if (userIndex === -1) {
+    return { success: false, message: 'No registered account found with this email address.' };
+  }
+
+  const newHash = await hashPassword(newPassword);
+  users[userIndex].passwordHash = newHash;
+  saveUsers(users);
+
+  // If this user was currently logged in, update active session
+  const current = getCurrentUser();
+  if (current && current.email.toLowerCase() === cleanEmail) {
+    current.passwordHash = newHash;
+    setCurrentUser(current);
+  }
+
+  return { success: true, message: 'Password successfully reset! You can now log in with your new password.' };
+}
