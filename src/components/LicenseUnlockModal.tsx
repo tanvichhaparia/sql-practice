@@ -67,22 +67,26 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
           <div className="flex items-center gap-2 mb-2">
             <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-400 text-xs font-bold flex items-center gap-1">
               <Sparkles className="w-3 h-3" />
-              Pro License
+              Student College Pass
             </span>
-            <span className="text-slate-400 text-xs">Self-Serve Instant Unlock</span>
+            <span className="text-slate-400 text-xs">Nominal One-Time Fee</span>
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-100">
-            Unlock 90-Day Full OA Pass
+            All-Company Pro Placement Pass
           </h2>
           <p className="text-xs text-slate-400 mt-1">
-            Complete access to all 12 multi-stage company problems and all 3 timed 45-minute company assessments.
+            Complete access to all 534 company interview questions (Amazon, Google, Microsoft, Flipkart, Swiggy, Goldman Sachs), 12 multi-stage OA edge cases, and 3 timed mocks.
           </p>
 
           <div className="mt-4 flex items-baseline gap-2">
-            <span className="text-3xl font-black text-slate-100">₹399</span>
-            <span className="text-slate-400 text-xs font-medium">/ $12 USD (One-Time)</span>
-            <span className="text-[11px] text-emerald-400 font-semibold ml-2">No recurring subscription</span>
+            <span className="text-3xl font-black text-emerald-400">₹199</span>
+            <span className="text-slate-400 text-xs font-medium">/ $4.99 USD (Lifetime Student Pass)</span>
+            <span className="text-[11px] text-emerald-400 font-semibold ml-2">Zero subscriptions</span>
           </div>
+          <p className="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1.5">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span><strong>236 questions</strong> (Core Pack + TCS, Infosys, Wipro, CTS, HCL, Accenture) are <strong>100% Free</strong>.</span>
+          </p>
         </div>
 
         {/* Modal Body */}
@@ -91,31 +95,31 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
           <div className="space-y-2 text-xs">
             <div className="flex items-center gap-2 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Full 12 Advanced Problems across Fintech, Quick Commerce, AdTech & Fraud</span>
+              <span><strong>534 Total Questions</strong>: 412 Queries, 54 MCQs, 68 Interview Concepts across 26 company tracks</span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>3 Realistic 45-Minute Timed Mock OAs (Flipkart, Razorpay, Swiggy)</span>
+              <span><strong>Unlocks High-Paying Tracks</strong>: Amazon, Google, Microsoft, Swiggy, Zomato, Razorpay, Goldman Sachs</span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>4-Stage Hidden Edge-Case Grader with Actionable Failure Diagnostics</span>
+              <span><strong>3 Timed 45-Min Mock OAs</strong> + 12 Hidden Edge-Case OA simulations</span>
             </div>
             <div className="flex items-center gap-2 text-slate-300">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>100% In-Browser & Offline Capable — Zero lag, Zero backend downtime</span>
+              <span><strong>100% Offline & In-Browser</strong>: Zero backend lag, runs directly on your machine via WASM</span>
             </div>
           </div>
 
           {/* Checkout Links */}
           <div className="grid grid-cols-2 gap-3 pt-2">
             <a
-              href="https://rzp.io/l/sqledge-oa-pass"
+              href="https://rzp.io/l/sqledge-student-pass"
               target="_blank"
               rel="noreferrer"
               className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition"
             >
-              <span>Razorpay (₹399 INR)</span>
+              <span>Razorpay (₹199 INR)</span>
               <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
             </a>
 
@@ -125,7 +129,7 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
               rel="noreferrer"
               className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition"
             >
-              <span>LemonSqueezy ($12 USD)</span>
+              <span>LemonSqueezy ($4.99 USD)</span>
               <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
             </a>
           </div>
@@ -134,7 +138,7 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
           <form onSubmit={handleVerify} className="space-y-3 pt-2 border-t border-slate-800">
             <div>
               <label className="block text-xs font-bold text-slate-300 uppercase tracking-wider mb-1.5">
-                Have a Passcode / License Key?
+                Have a Student Passcode or College Coupon?
               </label>
               <div className="relative">
                 <Key className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -142,16 +146,19 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
                   type="text"
                   value={passcode}
                   onChange={(e) => setPasscode(e.target.value)}
-                  placeholder="Enter passcode (e.g. SQLPRO-2026-ABCD or DEMO-PRO)"
+                  placeholder="Enter STUDENT199, COLLEGE99, or DEMO-PRO"
                   className="w-full bg-slate-950 border border-slate-800 rounded-xl pl-9 pr-24 py-2 text-xs font-mono text-slate-100 placeholder-slate-500 focus:outline-none focus:border-emerald-500 uppercase"
                 />
                 <button
                   type="submit"
                   className="absolute right-1.5 top-1/2 -translate-y-1/2 px-3 py-1 bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold rounded-lg transition"
                 >
-                  Verify Key
+                  Apply Pass
                 </button>
               </div>
+              <p className="text-[10px] text-slate-500 mt-1">
+                Tip: College coupon code <code className="text-emerald-400 font-mono">STUDENT199</code> or <code className="text-emerald-400 font-mono">DEMO-PRO</code> works instantly.
+              </p>
             </div>
 
             {feedback && (

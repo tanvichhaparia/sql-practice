@@ -14,8 +14,8 @@ import {
 import { UserProgress } from '../types';
 
 interface NavbarProps {
-  activeMode: 'practice' | 'mock-oa' | 'cheat-sheets';
-  setActiveMode: (mode: 'practice' | 'mock-oa' | 'cheat-sheets') => void;
+  activeMode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets';
+  setActiveMode: (mode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets') => void;
   progress: UserProgress;
   totalProblems: number;
   solvedAllCount: number;
@@ -65,6 +65,21 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mode Switcher Tabs */}
         <nav className="hidden md:flex items-center gap-1 bg-slate-950/70 p-1 rounded-lg border border-slate-800">
           <button
+            onClick={() => setActiveMode('company-bank')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition ${
+              activeMode === 'company-bank'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+            }`}
+          >
+            <Database className="w-3.5 h-3.5" />
+            <span>500+ Company Bank</span>
+            <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 ml-0.5">
+              534 Qs
+            </span>
+          </button>
+
+          <button
             onClick={() => setActiveMode('practice')}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition ${
               activeMode === 'practice'
@@ -73,7 +88,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            Practice Bank
+            OA Simulator
           </button>
 
           <button
@@ -97,7 +112,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             <BookOpen className="w-3.5 h-3.5" />
-            Pattern Cheat Sheets
+            Cheat Sheets
           </button>
         </nav>
       </div>
@@ -154,7 +169,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition shadow-sm shadow-emerald-500/30 hover:shadow-emerald-500/50"
             >
               <Unlock className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Unlock 90-Day Pass</span>
+              <span className="hidden sm:inline">Student Pass (₹199)</span>
               <span className="sm:hidden">Pro</span>
             </button>
           )}

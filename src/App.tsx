@@ -4,6 +4,7 @@ import { PracticeBankView } from './components/PracticeBankView';
 import { ProblemWorkspace } from './components/ProblemWorkspace';
 import { TimedMockOaView } from './components/TimedMockOaView';
 import { PatternCheatSheetsView } from './components/PatternCheatSheetsView';
+import { CompanyQuestionBankView } from './components/CompanyQuestionBankView';
 import { LicenseUnlockModal } from './components/LicenseUnlockModal';
 import { BackupRestoreModal } from './components/BackupRestoreModal';
 import { 
@@ -18,7 +19,7 @@ import { allProblems, getProblemById } from './data/problems';
 import { UserProgress } from './types';
 
 export const App: React.FC = () => {
-  const [activeMode, setActiveMode] = useState<'practice' | 'mock-oa' | 'cheat-sheets'>('practice');
+  const [activeMode, setActiveMode] = useState<'company-bank' | 'practice' | 'mock-oa' | 'cheat-sheets'>('company-bank');
   const [activeProblemId, setActiveProblemId] = useState<string | null>(null);
   const [progress, setProgress] = useState<UserProgress>(loadUserProgress());
 
@@ -93,6 +94,14 @@ export const App: React.FC = () => {
       />
 
       <main className="flex-1 min-h-0">
+        {activeMode === 'company-bank' && (
+          <CompanyQuestionBankView
+            progress={progress}
+            onProgressUpdate={reloadProgress}
+            onOpenUnlockModal={() => setIsUnlockModalOpen(true)}
+          />
+        )}
+
         {activeMode === 'practice' && (
           <>
             {currentProblem ? (

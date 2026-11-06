@@ -1,0 +1,33626 @@
+// Auto-generated from question_bank.json with student-friendly freemium tiering
+export type QuestionType = 'query' | 'mcq' | 'concept';
+export type QuestionDifficulty = 'easy' | 'medium' | 'hard';
+export type QuestionTier = 'IT Services' | 'Consulting & Big 4' | 'Product / Startup' | 'Finance (BFSI)' | 'Fundamentals';
+
+export interface CompanyQuestion {
+  id: string;
+  company: string;
+  company_name: string;
+  tier: QuestionTier;
+  type: QuestionType;
+  difficulty: QuestionDifficulty;
+  topic: string;
+  topic_group: string;
+  also_tagged?: string[];
+  question: string;
+  options?: Record<string, string>;
+  answer?: string;
+  explanation?: string;
+  model_answer?: string;
+  schemas?: string[];
+  solution_sql?: string;
+  columns?: string[];
+  row_count?: number;
+  expected_rows?: any[][];
+  executed_ok?: boolean;
+  isPro: boolean;
+  [key: string]: any;
+}
+
+export const allCompanyQuestions: CompanyQuestion[] = [
+  {
+    "id": "TCS-01",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Basics",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Which SQL clause is used to filter the groups produced by GROUP BY?",
+    "options": {
+      "A": "WHERE",
+      "B": "HAVING",
+      "C": "ORDER BY",
+      "D": "LIMIT"
+    },
+    "answer": "B",
+    "explanation": "HAVING is evaluated after aggregation; WHERE filters rows before grouping.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-02",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "DDL vs DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Which of the following is a DDL command?",
+    "options": {
+      "A": "INSERT",
+      "B": "UPDATE",
+      "C": "ALTER",
+      "D": "SELECT"
+    },
+    "answer": "C",
+    "explanation": "ALTER changes the structure of an object. INSERT and UPDATE are DML and SELECT is DQL.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-03",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Keys",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "Which statement about a PRIMARY KEY is correct?",
+    "options": {
+      "A": "It may contain NULL values",
+      "B": "A table can have several primary keys",
+      "C": "It uniquely identifies each row and cannot be NULL",
+      "D": "It must always be a single column"
+    },
+    "answer": "C",
+    "explanation": "A table has exactly one primary key (possibly composite) and its columns are implicitly NOT NULL.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-04",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Which statement about COUNT(*) and COUNT(column) is true?",
+    "options": {
+      "A": "Both ignore NULLs",
+      "B": "COUNT(*) counts all rows, COUNT(column) skips NULLs",
+      "C": "COUNT(column) counts all rows",
+      "D": "Both count only distinct values"
+    },
+    "answer": "B",
+    "explanation": "COUNT(*) counts rows; COUNT(column) counts non-NULL values of that column.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-05",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Which join returns every row of the left table plus matching rows of the right table?",
+    "options": {
+      "A": "INNER JOIN",
+      "B": "LEFT OUTER JOIN",
+      "C": "CROSS JOIN",
+      "D": "NATURAL JOIN only"
+    },
+    "answer": "B",
+    "explanation": "Unmatched left rows appear with NULLs for right-side columns.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-06",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "What is the difference between UNION and UNION ALL?",
+    "options": {
+      "A": "UNION is faster",
+      "B": "UNION ALL removes duplicates",
+      "C": "UNION removes duplicates, UNION ALL keeps them",
+      "D": "There is no difference"
+    },
+    "answer": "C",
+    "explanation": "UNION performs a distinct operation, so it is usually slower than UNION ALL.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-07",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "DDL vs DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Differentiate between DELETE, TRUNCATE and DROP.",
+    "model_answer": "DELETE (DML) removes chosen rows using WHERE and can be rolled back. TRUNCATE removes all rows quickly, resets identity counters and cannot take a WHERE clause. DROP removes the entire table definition together with its data and indexes.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-08",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Keys",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "What is the difference between a primary key, a unique key and a foreign key?",
+    "model_answer": "Primary key: unique and NOT NULL, one per table. Unique key: unique values, may allow NULL, many per table. Foreign key: column(s) that reference a key of another table to enforce referential integrity.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-09",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Normalization",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "Explain 1NF, 2NF and 3NF in one line each.",
+    "model_answer": "1NF: atomic values, no repeating groups. 2NF: 1NF plus no partial dependency of non-key columns on part of a composite key. 3NF: 2NF plus no transitive dependency (non-key column depending on another non-key column).",
+    "isPro": false
+  },
+  {
+    "id": "TCS-10",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "What is a self join? Give a practical use case.",
+    "model_answer": "A self join joins a table to itself using aliases. Typical use: employee-manager hierarchy, where employees.manager_id references employees.emp_id.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-11",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Constraints",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "List the common SQL constraints.",
+    "model_answer": "NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK and DEFAULT.",
+    "isPro": false
+  },
+  {
+    "id": "TCS-12",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "SELECT Basics",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Display the name and salary of every employee.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        "Anita Desai",
+        220000
+      ],
+      [
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        "Priya Nair",
+        150000
+      ],
+      [
+        "Rohan Gupta",
+        95000
+      ],
+      [
+        "Neha Kulkarni",
+        95000
+      ],
+      [
+        "Arjun Reddy",
+        60000
+      ],
+      [
+        "Kavita Joshi",
+        140000
+      ],
+      [
+        "Sandeep Singh",
+        70000
+      ],
+      [
+        "Meera Pillai",
+        70000
+      ],
+      [
+        "Imran Khan",
+        65000
+      ],
+      [
+        "Divya Bansal",
+        130000
+      ],
+      [
+        "Harish Rao",
+        70000
+      ],
+      [
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        "Karthik Subramanian",
+        80000
+      ],
+      [
+        "Lakshmi Menon",
+        80000
+      ],
+      [
+        "Faisal Ahmed",
+        160000
+      ],
+      [
+        "Tanvi Shah",
+        75000
+      ],
+      [
+        "Gaurav Malhotra",
+        120000
+      ],
+      [
+        "Sneha Chatterjee",
+        95000
+      ],
+      [
+        "Ritesh Kumar",
+        72000
+      ],
+      [
+        "Aisha Siddiqui",
+        78000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-13",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Show all employees working in Bengaluru who earn more than 100000.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT * FROM employees WHERE city = 'Bengaluru' AND salary > 100000",
+    "executed_ok": true,
+    "columns": [
+      "emp_id",
+      "emp_name",
+      "email",
+      "dept_id",
+      "manager_id",
+      "job_title",
+      "salary",
+      "commission",
+      "hire_date",
+      "city"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        1,
+        "Vikram Mehta",
+        "vikram.mehta@acme.in",
+        1,
+        null,
+        "CTO",
+        250000,
+        null,
+        "2015-04-01",
+        "Bengaluru"
+      ],
+      [
+        3,
+        "Suresh Iyer",
+        "suresh.iyer@acme.in",
+        1,
+        1,
+        "Engineering Manager",
+        180000,
+        null,
+        "2017-01-10",
+        "Bengaluru"
+      ],
+      [
+        4,
+        "Priya Nair",
+        "priya.nair@acme.in",
+        1,
+        3,
+        "Senior Engineer",
+        150000,
+        null,
+        "2018-03-20",
+        "Bengaluru"
+      ],
+      [
+        19,
+        "Gaurav Malhotra",
+        "gaurav.malhotra@acme.in",
+        null,
+        1,
+        "Consultant",
+        120000,
+        null,
+        "2023-05-22",
+        "Bengaluru"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-14",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Sorting & LIMIT",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List the five highest-paid employees (name and salary), highest first.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM employees ORDER BY salary DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        "Anita Desai",
+        220000
+      ],
+      [
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        "Faisal Ahmed",
+        160000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-15",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the number of employees in each dept_id (employees without a department form one group), largest group first.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT dept_id, COUNT(*) AS emp_count FROM employees GROUP BY dept_id ORDER BY emp_count DESC",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "emp_count"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        4,
+        3
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        null,
+        1
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-16",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List each employee's name together with their department name (only employees that belong to a department).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, d.dept_name FROM employees e INNER JOIN departments d ON e.dept_id = d.dept_id",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_name"
+    ],
+    "row_count": 21,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        "Engineering"
+      ],
+      [
+        "Anita Desai",
+        "Sales"
+      ],
+      [
+        "Suresh Iyer",
+        "Engineering"
+      ],
+      [
+        "Priya Nair",
+        "Engineering"
+      ],
+      [
+        "Rohan Gupta",
+        "Engineering"
+      ],
+      [
+        "Neha Kulkarni",
+        "Engineering"
+      ],
+      [
+        "Arjun Reddy",
+        "Engineering"
+      ],
+      [
+        "Kavita Joshi",
+        "Sales"
+      ],
+      [
+        "Sandeep Singh",
+        "Sales"
+      ],
+      [
+        "Meera Pillai",
+        "Sales"
+      ],
+      [
+        "Imran Khan",
+        "Sales"
+      ],
+      [
+        "Divya Bansal",
+        "HR"
+      ],
+      [
+        "Harish Rao",
+        "HR"
+      ],
+      [
+        "Pooja Agarwal",
+        "Finance"
+      ],
+      [
+        "Karthik Subramanian",
+        "Finance"
+      ],
+      [
+        "Lakshmi Menon",
+        "Finance"
+      ],
+      [
+        "Faisal Ahmed",
+        "Marketing"
+      ],
+      [
+        "Tanvi Shah",
+        "Marketing"
+      ],
+      [
+        "Sneha Chatterjee",
+        "Engineering"
+      ],
+      [
+        "Ritesh Kumar",
+        "Sales"
+      ],
+      [
+        "Aisha Siddiqui",
+        "Marketing"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-17",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find the departments that currently have no employees.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name FROM departments d LEFT JOIN employees e ON d.dept_id = e.dept_id WHERE e.emp_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "dept_name"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Support"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-18",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Pattern Matching",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Find employees whose name starts with the letter 'S'.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name FROM employees WHERE emp_name LIKE 'S%'",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Suresh Iyer"
+      ],
+      [
+        "Sandeep Singh"
+      ],
+      [
+        "Sneha Chatterjee"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-19",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "List the employees who do not earn any commission.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name FROM employees WHERE commission IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 17,
+    "expected_rows": [
+      [
+        "Vikram Mehta"
+      ],
+      [
+        "Suresh Iyer"
+      ],
+      [
+        "Priya Nair"
+      ],
+      [
+        "Rohan Gupta"
+      ],
+      [
+        "Neha Kulkarni"
+      ],
+      [
+        "Arjun Reddy"
+      ],
+      [
+        "Imran Khan"
+      ],
+      [
+        "Divya Bansal"
+      ],
+      [
+        "Harish Rao"
+      ],
+      [
+        "Pooja Agarwal"
+      ],
+      [
+        "Karthik Subramanian"
+      ],
+      [
+        "Lakshmi Menon"
+      ],
+      [
+        "Faisal Ahmed"
+      ],
+      [
+        "Tanvi Shah"
+      ],
+      [
+        "Gaurav Malhotra"
+      ],
+      [
+        "Sneha Chatterjee"
+      ],
+      [
+        "Aisha Siddiqui"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-20",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the departments (dept_id) whose average salary exceeds 100000, with that average.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT dept_id, AVG(salary) AS avg_salary FROM employees GROUP BY dept_id HAVING AVG(salary) > 100000",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "avg_salary"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        null,
+        120000
+      ],
+      [
+        1,
+        132142.85714285713
+      ],
+      [
+        2,
+        106166.66666666667
+      ],
+      [
+        4,
+        120000
+      ],
+      [
+        5,
+        104333.33333333333
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-21",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [
+      "BIG4",
+      "DEL"
+    ],
+    "question": "Find the second highest distinct salary.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT MAX(salary) AS second_highest FROM employees WHERE salary < (SELECT MAX(salary) FROM employees)",
+    "executed_ok": true,
+    "columns": [
+      "second_highest"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        220000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-22",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Date Functions",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Find the employees hired in the year 2022.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, hire_date FROM employees WHERE YEAR(hire_date) = 2022",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "hire_date"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Neha Kulkarni",
+        "2022-02-14"
+      ],
+      [
+        "Imran Khan",
+        "2022-10-03"
+      ],
+      [
+        "Harish Rao",
+        "2022-04-11"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-23",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List the students who are not enrolled in any course.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT s.student_name FROM students s LEFT JOIN enrollments e ON s.student_id = e.student_id WHERE e.enroll_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "student_name"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Nisha Gupta"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-24",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "For every course that has enrollments, show the course name and the average marks.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT c.course_name, AVG(e.marks) AS avg_marks FROM courses c JOIN enrollments e ON c.course_id = e.course_id GROUP BY c.course_id, c.course_name",
+    "executed_ok": true,
+    "columns": [
+      "course_name",
+      "avg_marks"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Database Systems",
+        64.66666666666667
+      ],
+      [
+        "Operating Systems",
+        65.5
+      ],
+      [
+        "Digital Electronics",
+        70.28571428571429
+      ],
+      [
+        "Data Structures",
+        56.77777777777778
+      ],
+      [
+        "Computer Networks",
+        63.77777777777778
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-25",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the names of students who scored above the overall average marks in at least one enrollment.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT DISTINCT s.student_name FROM students s JOIN enrollments e ON s.student_id = e.student_id WHERE e.marks > (SELECT AVG(marks) FROM enrollments)",
+    "executed_ok": true,
+    "columns": [
+      "student_name"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Rahul Verma"
+      ],
+      [
+        "Sneha Reddy"
+      ],
+      [
+        "Amit Patel"
+      ],
+      [
+        "Divya Nair"
+      ],
+      [
+        "Karan Singh"
+      ],
+      [
+        "Pooja Das"
+      ],
+      [
+        "Ravi Kumar"
+      ],
+      [
+        "Anjali Mishra"
+      ],
+      [
+        "Mohit Sharma"
+      ],
+      [
+        "Tejas Kulkarni"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-26",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Produce a single list of distinct cities appearing in either the employees table or the students table.",
+    "schemas": [
+      "HR",
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT city FROM employees UNION SELECT city FROM students",
+    "executed_ok": true,
+    "columns": [
+      "city"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Ahmedabad"
+      ],
+      [
+        "Bengaluru"
+      ],
+      [
+        "Chennai"
+      ],
+      [
+        "Delhi"
+      ],
+      [
+        "Hyderabad"
+      ],
+      [
+        "Jaipur"
+      ],
+      [
+        "Kochi"
+      ],
+      [
+        "Kolkata"
+      ],
+      [
+        "Lucknow"
+      ],
+      [
+        "Mumbai"
+      ],
+      [
+        "Pune"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-27",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List employees who earn more than their own manager (employee name and salary, manager name and salary).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, e.salary, m.emp_name AS manager_name, m.salary AS manager_salary FROM employees e JOIN employees m ON e.manager_id = m.emp_id WHERE e.salary > m.salary",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary",
+      "manager_name",
+      "manager_salary"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Ritesh Kumar",
+        72000,
+        "Imran Khan",
+        65000
+      ],
+      [
+        "Aisha Siddiqui",
+        78000,
+        "Tanvi Shah",
+        75000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-28",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find salary values that are paid to more than one employee, with the number of employees on each.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT salary, COUNT(*) AS cnt FROM employees GROUP BY salary HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "salary",
+      "cnt"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        70000,
+        3
+      ],
+      [
+        80000,
+        2
+      ],
+      [
+        95000,
+        3
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-29",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "For each department show the employee(s) with the highest salary (dept_id, name, salary).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.dept_id, e.emp_name, e.salary FROM employees e WHERE e.dept_id IS NOT NULL AND e.salary = (SELECT MAX(salary) FROM employees WHERE dept_id = e.dept_id)",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        1,
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        2,
+        "Anita Desai",
+        220000
+      ],
+      [
+        3,
+        "Divya Bansal",
+        130000
+      ],
+      [
+        4,
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        5,
+        "Faisal Ahmed",
+        160000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "TCS-30",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DDL",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Create a table library_books with book_id (primary key), title (not null), author, price (must be positive) and added_on (date defaulting to today).",
+    "schemas": [],
+    "solution_sql": "CREATE TABLE library_books (book_id INT PRIMARY KEY, title VARCHAR(100) NOT NULL, author VARCHAR(80), price DECIMAL(8,2) CHECK (price > 0), added_on DATE DEFAULT CURRENT_DATE)",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "TCS-31",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Give a 10 percent raise to every employee of the Engineering department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "UPDATE employees SET salary = salary * 1.10 WHERE dept_id = (SELECT dept_id FROM departments WHERE dept_name = 'Engineering')",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "TCS-32",
+    "company": "TCS",
+    "company_name": "Tata Consultancy Services",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Delete the employees who are not assigned to any department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "DELETE FROM employees WHERE dept_id IS NULL",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "INF-01",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "What does the expression NULL = NULL evaluate to in SQL?",
+    "options": {
+      "A": "TRUE",
+      "B": "FALSE",
+      "C": "NULL (unknown)",
+      "D": "Error"
+    },
+    "answer": "C",
+    "explanation": "Comparisons with NULL yield UNKNOWN; use IS NULL instead.",
+    "isPro": false
+  },
+  {
+    "id": "INF-02",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Functions",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "Which function returns the first non-NULL value from its argument list?",
+    "options": {
+      "A": "ISNULL",
+      "B": "NVL2",
+      "C": "COALESCE",
+      "D": "NULLIF"
+    },
+    "answer": "C",
+    "explanation": "COALESCE is ANSI standard and accepts many arguments.",
+    "isPro": false
+  },
+  {
+    "id": "INF-03",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "How many rows does a CROSS JOIN between a 5-row table and a 4-row table return?",
+    "options": {
+      "A": "9",
+      "B": "20",
+      "C": "5",
+      "D": "4"
+    },
+    "answer": "B",
+    "explanation": "A Cartesian product returns 5 x 4 rows.",
+    "isPro": false
+  },
+  {
+    "id": "INF-04",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Clauses",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Explain the difference between WHERE and HAVING with an example.",
+    "model_answer": "WHERE filters individual rows before grouping and cannot use aggregates. HAVING filters groups after aggregation. Example: WHERE salary > 50000 removes rows first; HAVING COUNT(*) > 3 keeps only groups with more than three rows.",
+    "isPro": false
+  },
+  {
+    "id": "INF-05",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Keys",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "Differentiate super key, candidate key and composite key.",
+    "model_answer": "Super key: any set of columns that uniquely identifies a row. Candidate key: a minimal super key. Composite key: a key made of two or more columns. One candidate key is chosen as the primary key.",
+    "isPro": false
+  },
+  {
+    "id": "INF-06",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Indexes",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "What is an index? Explain clustered vs non-clustered.",
+    "model_answer": "An index is a separate structure (usually a B-tree) that speeds up lookups at the cost of extra storage and slower writes. A clustered index defines the physical order of rows (one per table); a non-clustered index stores key values with pointers to the rows (many per table).",
+    "isPro": false
+  },
+  {
+    "id": "INF-07",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Views",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "What is a view and can you update data through it?",
+    "model_answer": "A view is a stored SELECT that behaves like a virtual table. Simple views over a single table without aggregates, DISTINCT or joins are usually updatable; complex views generally are not.",
+    "isPro": false
+  },
+  {
+    "id": "INF-08",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Normalization",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "When would you intentionally denormalize a database?",
+    "model_answer": "For read-heavy reporting or analytics workloads where joins are expensive: storing precomputed or duplicated columns trades storage and update complexity for faster reads.",
+    "isPro": false
+  },
+  {
+    "id": "INF-09",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Find employees who have no manager.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, job_title FROM employees WHERE manager_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "job_title"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        "CTO"
+      ],
+      [
+        "Anita Desai",
+        "VP Sales"
+      ],
+      [
+        "Divya Bansal",
+        "HR Head"
+      ],
+      [
+        "Pooja Agarwal",
+        "Finance Controller"
+      ],
+      [
+        "Faisal Ahmed",
+        "Marketing Head"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-10",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "List the cities that have at least 2 employees, with the headcount.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT city, COUNT(*) AS headcount FROM employees GROUP BY city HAVING COUNT(*) >= 2",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "headcount"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        4
+      ],
+      [
+        "Chennai",
+        3
+      ],
+      [
+        "Delhi",
+        4
+      ],
+      [
+        "Hyderabad",
+        2
+      ],
+      [
+        "Lucknow",
+        2
+      ],
+      [
+        "Mumbai",
+        3
+      ],
+      [
+        "Pune",
+        3
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-11",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Top-N",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Find the third highest distinct salary using LIMIT and OFFSET.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT DISTINCT salary FROM employees ORDER BY salary DESC LIMIT 1 OFFSET 2",
+    "executed_ok": true,
+    "columns": [
+      "salary"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        200000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-12",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List every employee with the name of their manager; employees without a manager should still appear.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, m.emp_name AS manager_name FROM employees e LEFT JOIN employees m ON e.manager_id = m.emp_id",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "manager_name"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        null
+      ],
+      [
+        "Anita Desai",
+        null
+      ],
+      [
+        "Suresh Iyer",
+        "Vikram Mehta"
+      ],
+      [
+        "Priya Nair",
+        "Suresh Iyer"
+      ],
+      [
+        "Rohan Gupta",
+        "Suresh Iyer"
+      ],
+      [
+        "Neha Kulkarni",
+        "Suresh Iyer"
+      ],
+      [
+        "Arjun Reddy",
+        "Priya Nair"
+      ],
+      [
+        "Kavita Joshi",
+        "Anita Desai"
+      ],
+      [
+        "Sandeep Singh",
+        "Kavita Joshi"
+      ],
+      [
+        "Meera Pillai",
+        "Kavita Joshi"
+      ],
+      [
+        "Imran Khan",
+        "Kavita Joshi"
+      ],
+      [
+        "Divya Bansal",
+        null
+      ],
+      [
+        "Harish Rao",
+        "Divya Bansal"
+      ],
+      [
+        "Pooja Agarwal",
+        null
+      ],
+      [
+        "Karthik Subramanian",
+        "Pooja Agarwal"
+      ],
+      [
+        "Lakshmi Menon",
+        "Pooja Agarwal"
+      ],
+      [
+        "Faisal Ahmed",
+        null
+      ],
+      [
+        "Tanvi Shah",
+        "Faisal Ahmed"
+      ],
+      [
+        "Gaurav Malhotra",
+        "Vikram Mehta"
+      ],
+      [
+        "Sneha Chatterjee",
+        "Suresh Iyer"
+      ],
+      [
+        "Ritesh Kumar",
+        "Imran Khan"
+      ],
+      [
+        "Aisha Siddiqui",
+        "Tanvi Shah"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-13",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show the total salary expense per department name, including departments with no employees (show 0).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name, COALESCE(SUM(e.salary), 0) AS total_salary FROM departments d LEFT JOIN employees e ON d.dept_id = e.dept_id GROUP BY d.dept_id, d.dept_name",
+    "executed_ok": true,
+    "columns": [
+      "dept_name",
+      "total_salary"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Engineering",
+        925000
+      ],
+      [
+        "Sales",
+        637000
+      ],
+      [
+        "HR",
+        200000
+      ],
+      [
+        "Finance",
+        360000
+      ],
+      [
+        "Marketing",
+        313000
+      ],
+      [
+        "Support",
+        0
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-14",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "List the department names that have more than 5 employees.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name, COUNT(*) AS emp_count FROM departments d JOIN employees e ON d.dept_id = e.dept_id GROUP BY d.dept_id, d.dept_name HAVING COUNT(*) > 5",
+    "executed_ok": true,
+    "columns": [
+      "dept_name",
+      "emp_count"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Engineering",
+        7
+      ],
+      [
+        "Sales",
+        6
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-15",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Many-to-Many",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the employees (emp_id) who work on more than one project.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_id, COUNT(*) AS project_count FROM emp_projects GROUP BY emp_id HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "emp_id",
+      "project_count"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-16",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Many-to-Many",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show each project name with its total logged hours, only for projects with more than 500 total hours.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT p.project_name, SUM(ep.hours) AS total_hours FROM projects p JOIN emp_projects ep ON p.project_id = ep.project_id GROUP BY p.project_id, p.project_name HAVING SUM(ep.hours) > 500",
+    "executed_ok": true,
+    "columns": [
+      "project_name",
+      "total_hours"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Phoenix CRM",
+        850
+      ],
+      [
+        "Orion App",
+        970
+      ],
+      [
+        "Sales Portal",
+        650
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-17",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find employees who are not assigned to any project.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name FROM employees e WHERE NOT EXISTS (SELECT 1 FROM emp_projects ep WHERE ep.emp_id = e.emp_id)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Vikram Mehta"
+      ],
+      [
+        "Anita Desai"
+      ],
+      [
+        "Ritesh Kumar"
+      ],
+      [
+        "Aisha Siddiqui"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-18",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List employees earning between 70000 and 100000 (inclusive), ordered by salary.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM employees WHERE salary BETWEEN 70000 AND 100000 ORDER BY salary",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Sandeep Singh",
+        70000
+      ],
+      [
+        "Meera Pillai",
+        70000
+      ],
+      [
+        "Harish Rao",
+        70000
+      ],
+      [
+        "Ritesh Kumar",
+        72000
+      ],
+      [
+        "Tanvi Shah",
+        75000
+      ],
+      [
+        "Aisha Siddiqui",
+        78000
+      ],
+      [
+        "Karthik Subramanian",
+        80000
+      ],
+      [
+        "Lakshmi Menon",
+        80000
+      ],
+      [
+        "Rohan Gupta",
+        95000
+      ],
+      [
+        "Neha Kulkarni",
+        95000
+      ],
+      [
+        "Sneha Chatterjee",
+        95000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-19",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "String Functions",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Display each employee name in upper case along with its length.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT UPPER(emp_name) AS name_upper, LENGTH(emp_name) AS name_length FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "name_upper",
+      "name_length"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "VIKRAM MEHTA",
+        12
+      ],
+      [
+        "ANITA DESAI",
+        11
+      ],
+      [
+        "SURESH IYER",
+        11
+      ],
+      [
+        "PRIYA NAIR",
+        10
+      ],
+      [
+        "ROHAN GUPTA",
+        11
+      ],
+      [
+        "NEHA KULKARNI",
+        13
+      ],
+      [
+        "ARJUN REDDY",
+        11
+      ],
+      [
+        "KAVITA JOSHI",
+        12
+      ],
+      [
+        "SANDEEP SINGH",
+        13
+      ],
+      [
+        "MEERA PILLAI",
+        12
+      ],
+      [
+        "IMRAN KHAN",
+        10
+      ],
+      [
+        "DIVYA BANSAL",
+        12
+      ],
+      [
+        "HARISH RAO",
+        10
+      ],
+      [
+        "POOJA AGARWAL",
+        13
+      ],
+      [
+        "KARTHIK SUBRAMANIAN",
+        19
+      ],
+      [
+        "LAKSHMI MENON",
+        13
+      ],
+      [
+        "FAISAL AHMED",
+        12
+      ],
+      [
+        "TANVI SHAH",
+        10
+      ],
+      [
+        "GAURAV MALHOTRA",
+        15
+      ],
+      [
+        "SNEHA CHATTERJEE",
+        16
+      ],
+      [
+        "RITESH KUMAR",
+        12
+      ],
+      [
+        "AISHA SIDDIQUI",
+        14
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-20",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CASE",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Label each employee's salary as 'High' (150000 or more), 'Medium' (80000 to 149999) or 'Low' (below 80000).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary, CASE WHEN salary >= 150000 THEN 'High' WHEN salary >= 80000 THEN 'Medium' ELSE 'Low' END AS salary_band FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary",
+      "salary_band"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000,
+        "High"
+      ],
+      [
+        "Anita Desai",
+        220000,
+        "High"
+      ],
+      [
+        "Suresh Iyer",
+        180000,
+        "High"
+      ],
+      [
+        "Priya Nair",
+        150000,
+        "High"
+      ],
+      [
+        "Rohan Gupta",
+        95000,
+        "Medium"
+      ],
+      [
+        "Neha Kulkarni",
+        95000,
+        "Medium"
+      ],
+      [
+        "Arjun Reddy",
+        60000,
+        "Low"
+      ],
+      [
+        "Kavita Joshi",
+        140000,
+        "Medium"
+      ],
+      [
+        "Sandeep Singh",
+        70000,
+        "Low"
+      ],
+      [
+        "Meera Pillai",
+        70000,
+        "Low"
+      ],
+      [
+        "Imran Khan",
+        65000,
+        "Low"
+      ],
+      [
+        "Divya Bansal",
+        130000,
+        "Medium"
+      ],
+      [
+        "Harish Rao",
+        70000,
+        "Low"
+      ],
+      [
+        "Pooja Agarwal",
+        200000,
+        "High"
+      ],
+      [
+        "Karthik Subramanian",
+        80000,
+        "Medium"
+      ],
+      [
+        "Lakshmi Menon",
+        80000,
+        "Medium"
+      ],
+      [
+        "Faisal Ahmed",
+        160000,
+        "High"
+      ],
+      [
+        "Tanvi Shah",
+        75000,
+        "Low"
+      ],
+      [
+        "Gaurav Malhotra",
+        120000,
+        "Medium"
+      ],
+      [
+        "Sneha Chatterjee",
+        95000,
+        "Medium"
+      ],
+      [
+        "Ritesh Kumar",
+        72000,
+        "Low"
+      ],
+      [
+        "Aisha Siddiqui",
+        78000,
+        "Low"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-21",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Functions",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "List employees with more than 5 years of service as of 2024-06-30.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, hire_date FROM employees WHERE DATEDIFF('2024-06-30', hire_date) / 365 > 5",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "hire_date"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        "2015-04-01"
+      ],
+      [
+        "Anita Desai",
+        "2016-06-15"
+      ],
+      [
+        "Suresh Iyer",
+        "2017-01-10"
+      ],
+      [
+        "Priya Nair",
+        "2018-03-20"
+      ],
+      [
+        "Divya Bansal",
+        "2016-02-08"
+      ],
+      [
+        "Pooja Agarwal",
+        "2015-11-30"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-22",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the departments where the highest salary is at least twice the lowest salary.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name, MAX(e.salary) AS max_sal, MIN(e.salary) AS min_sal FROM departments d JOIN employees e ON d.dept_id = e.dept_id GROUP BY d.dept_id, d.dept_name HAVING MAX(e.salary) >= 2 * MIN(e.salary)",
+    "executed_ok": true,
+    "columns": [
+      "dept_name",
+      "max_sal",
+      "min_sal"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Engineering",
+        250000,
+        60000
+      ],
+      [
+        "Sales",
+        220000,
+        65000
+      ],
+      [
+        "Finance",
+        200000,
+        80000
+      ],
+      [
+        "Marketing",
+        160000,
+        75000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-23",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List employees who earn more than the average salary of their own department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, e.dept_id, e.salary FROM employees e WHERE e.salary > (SELECT AVG(salary) FROM employees WHERE dept_id = e.dept_id)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_id",
+      "salary"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        1,
+        250000
+      ],
+      [
+        "Anita Desai",
+        2,
+        220000
+      ],
+      [
+        "Suresh Iyer",
+        1,
+        180000
+      ],
+      [
+        "Priya Nair",
+        1,
+        150000
+      ],
+      [
+        "Kavita Joshi",
+        2,
+        140000
+      ],
+      [
+        "Divya Bansal",
+        3,
+        130000
+      ],
+      [
+        "Pooja Agarwal",
+        4,
+        200000
+      ],
+      [
+        "Faisal Ahmed",
+        5,
+        160000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-24",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Derived Table",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Show each department name with the name and salary of its highest paid employee using a join to a derived table.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name, e.emp_name, e.salary FROM employees e JOIN departments d ON e.dept_id = d.dept_id JOIN (SELECT dept_id, MAX(salary) AS max_sal FROM employees GROUP BY dept_id) m ON e.dept_id = m.dept_id AND e.salary = m.max_sal",
+    "executed_ok": true,
+    "columns": [
+      "dept_name",
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Engineering",
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        "Sales",
+        "Anita Desai",
+        220000
+      ],
+      [
+        "HR",
+        "Divya Bansal",
+        130000
+      ],
+      [
+        "Finance",
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        "Marketing",
+        "Faisal Ahmed",
+        160000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-25",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Duplicates",
+    "topic_group": "Duplicates & Data Cleaning",
+    "also_tagged": [],
+    "question": "Find email addresses that appear more than once in contacts, with the number of occurrences.",
+    "schemas": [
+      "MISC"
+    ],
+    "solution_sql": "SELECT email, COUNT(*) AS occurrences FROM contacts GROUP BY email HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "email",
+      "occurrences"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "aarav@mail.in",
+        3
+      ],
+      [
+        "kabir@mail.in",
+        2
+      ],
+      [
+        "meera@mail.in",
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-26",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Duplicates",
+    "topic_group": "Duplicates & Data Cleaning",
+    "also_tagged": [],
+    "question": "Delete duplicate contacts (same full_name, email and phone), keeping the row with the lowest contact_id.",
+    "schemas": [
+      "MISC"
+    ],
+    "solution_sql": "DELETE FROM contacts WHERE contact_id NOT IN (SELECT keep_id FROM (SELECT MIN(contact_id) AS keep_id FROM contacts GROUP BY full_name, email, phone) t)",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "INF-27",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find employees who live in the same city as their manager.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, e.city FROM employees e JOIN employees m ON e.manager_id = m.emp_id WHERE e.city = m.city",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "city"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Suresh Iyer",
+        "Bengaluru"
+      ],
+      [
+        "Priya Nair",
+        "Bengaluru"
+      ],
+      [
+        "Kavita Joshi",
+        "Mumbai"
+      ],
+      [
+        "Meera Pillai",
+        "Mumbai"
+      ],
+      [
+        "Harish Rao",
+        "Pune"
+      ],
+      [
+        "Karthik Subramanian",
+        "Chennai"
+      ],
+      [
+        "Lakshmi Menon",
+        "Chennai"
+      ],
+      [
+        "Tanvi Shah",
+        "Delhi"
+      ],
+      [
+        "Gaurav Malhotra",
+        "Bengaluru"
+      ],
+      [
+        "Ritesh Kumar",
+        "Lucknow"
+      ],
+      [
+        "Aisha Siddiqui",
+        "Delhi"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "INF-28",
+    "company": "INF",
+    "company_name": "Infosys",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "String Functions",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Display each employee as 'Name (Job Title)', for example 'Vikram Mehta (CTO)'.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT CONCAT(emp_name, ' (', job_title, ')') AS employee_label FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "employee_label"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta (CTO)"
+      ],
+      [
+        "Anita Desai (VP Sales)"
+      ],
+      [
+        "Suresh Iyer (Engineering Manager)"
+      ],
+      [
+        "Priya Nair (Senior Engineer)"
+      ],
+      [
+        "Rohan Gupta (Engineer)"
+      ],
+      [
+        "Neha Kulkarni (Engineer)"
+      ],
+      [
+        "Arjun Reddy (Junior Engineer)"
+      ],
+      [
+        "Kavita Joshi (Sales Manager)"
+      ],
+      [
+        "Sandeep Singh (Sales Executive)"
+      ],
+      [
+        "Meera Pillai (Sales Executive)"
+      ],
+      [
+        "Imran Khan (Sales Executive)"
+      ],
+      [
+        "Divya Bansal (HR Head)"
+      ],
+      [
+        "Harish Rao (HR Executive)"
+      ],
+      [
+        "Pooja Agarwal (Finance Controller)"
+      ],
+      [
+        "Karthik Subramanian (Accountant)"
+      ],
+      [
+        "Lakshmi Menon (Accountant)"
+      ],
+      [
+        "Faisal Ahmed (Marketing Head)"
+      ],
+      [
+        "Tanvi Shah (Content Strategist)"
+      ],
+      [
+        "Gaurav Malhotra (Consultant)"
+      ],
+      [
+        "Sneha Chatterjee (Engineer)"
+      ],
+      [
+        "Ritesh Kumar (Senior Sales Executive)"
+      ],
+      [
+        "Aisha Siddiqui (Brand Designer)"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-01",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT dept_id, COUNT(*) FROM employees ______ dept_id;",
+    "options": {
+      "A": "ORDER BY",
+      "B": "GROUP BY",
+      "C": "HAVING",
+      "D": "WHERE"
+    },
+    "answer": "B",
+    "explanation": "Grouping rows to aggregate per department needs GROUP BY.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-02",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT * FROM employees WHERE emp_name ______ 'A%';",
+    "options": {
+      "A": "IN",
+      "B": "BETWEEN",
+      "C": "LIKE",
+      "D": "HAS"
+    },
+    "answer": "C",
+    "explanation": "LIKE with % wildcard performs pattern matching.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-03",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT ______ city FROM employees;  (to remove repeated city names)",
+    "options": {
+      "A": "UNIQUE",
+      "B": "DISTINCT",
+      "C": "DIFFERENT",
+      "D": "ONLY"
+    },
+    "answer": "B",
+    "explanation": "DISTINCT removes duplicate rows from the result set.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-04",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT emp_name FROM employees ORDER BY salary ______;  (highest salary first)",
+    "options": {
+      "A": "DESC",
+      "B": "ASC",
+      "C": "TOP",
+      "D": "MAX"
+    },
+    "answer": "A",
+    "explanation": "DESC sorts in descending order; ASC is the default.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-05",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "ALTER TABLE employees ______ COLUMN grade VARCHAR(5);",
+    "options": {
+      "A": "INSERT",
+      "B": "ADD",
+      "C": "CREATE",
+      "D": "APPEND"
+    },
+    "answer": "B",
+    "explanation": "ALTER TABLE ... ADD COLUMN adds a new column.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-06",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT * FROM employees WHERE commission IS ______;",
+    "options": {
+      "A": "EMPTY",
+      "B": "ZERO",
+      "C": "NULL",
+      "D": "BLANK"
+    },
+    "answer": "C",
+    "explanation": "Use IS NULL / IS NOT NULL for NULL checks.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-07",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT MAX(salary) FROM employees WHERE salary ______ (SELECT MAX(salary) FROM employees); (second highest)",
+    "options": {
+      "A": ">",
+      "B": "<",
+      "C": "=",
+      "D": ">="
+    },
+    "answer": "B",
+    "explanation": "The second highest salary is the maximum among values strictly less than the maximum.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-08",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Constraints",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Which constraint ensures a column cannot hold duplicate values but may hold one NULL (in most databases)?",
+    "options": {
+      "A": "PRIMARY KEY",
+      "B": "UNIQUE",
+      "C": "CHECK",
+      "D": "DEFAULT"
+    },
+    "answer": "B",
+    "explanation": "UNIQUE enforces distinct values; PRIMARY KEY additionally forbids NULL.",
+    "isPro": false
+  },
+  {
+    "id": "WIP-09",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the total and the average salary for every job_title.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT job_title, SUM(salary) AS total_salary, AVG(salary) AS avg_salary FROM employees GROUP BY job_title",
+    "executed_ok": true,
+    "columns": [
+      "job_title",
+      "total_salary",
+      "avg_salary"
+    ],
+    "row_count": 17,
+    "expected_rows": [
+      [
+        "Accountant",
+        160000,
+        80000
+      ],
+      [
+        "Brand Designer",
+        78000,
+        78000
+      ],
+      [
+        "CTO",
+        250000,
+        250000
+      ],
+      [
+        "Consultant",
+        120000,
+        120000
+      ],
+      [
+        "Content Strategist",
+        75000,
+        75000
+      ],
+      [
+        "Engineer",
+        285000,
+        95000
+      ],
+      [
+        "Engineering Manager",
+        180000,
+        180000
+      ],
+      [
+        "Finance Controller",
+        200000,
+        200000
+      ],
+      [
+        "HR Executive",
+        70000,
+        70000
+      ],
+      [
+        "HR Head",
+        130000,
+        130000
+      ],
+      [
+        "Junior Engineer",
+        60000,
+        60000
+      ],
+      [
+        "Marketing Head",
+        160000,
+        160000
+      ],
+      [
+        "Sales Executive",
+        205000,
+        68333.33333333333
+      ],
+      [
+        "Sales Manager",
+        140000,
+        140000
+      ],
+      [
+        "Senior Engineer",
+        150000,
+        150000
+      ],
+      [
+        "Senior Sales Executive",
+        72000,
+        72000
+      ],
+      [
+        "VP Sales",
+        220000,
+        220000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-10",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List employees hired after 1 January 2022, newest first.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, hire_date FROM employees WHERE hire_date > '2022-01-01' ORDER BY hire_date DESC",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "hire_date"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "Ritesh Kumar",
+        "2024-02-12"
+      ],
+      [
+        "Aisha Siddiqui",
+        "2024-01-08"
+      ],
+      [
+        "Arjun Reddy",
+        "2023-08-01"
+      ],
+      [
+        "Gaurav Malhotra",
+        "2023-05-22"
+      ],
+      [
+        "Sneha Chatterjee",
+        "2023-03-13"
+      ],
+      [
+        "Tanvi Shah",
+        "2023-01-16"
+      ],
+      [
+        "Imran Khan",
+        "2022-10-03"
+      ],
+      [
+        "Harish Rao",
+        "2022-04-11"
+      ],
+      [
+        "Neha Kulkarni",
+        "2022-02-14"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-11",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the highest, lowest and average salary in the company.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT MAX(salary) AS max_salary, MIN(salary) AS min_salary, AVG(salary) AS avg_salary FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "max_salary",
+      "min_salary",
+      "avg_salary"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        250000,
+        60000,
+        116136.36363636363
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-12",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Count the number of distinct cities in which employees live.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT COUNT(DISTINCT city) AS city_count FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "city_count"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        8
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-13",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Pattern Matching",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Find employees whose name contains the letters 'an' anywhere.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name FROM employees WHERE emp_name LIKE '%an%'",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        "Anita Desai"
+      ],
+      [
+        "Rohan Gupta"
+      ],
+      [
+        "Sandeep Singh"
+      ],
+      [
+        "Imran Khan"
+      ],
+      [
+        "Divya Bansal"
+      ],
+      [
+        "Karthik Subramanian"
+      ],
+      [
+        "Tanvi Shah"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-14",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List employees whose salary is not equal to 60000, 70000 or 95000.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM employees WHERE salary NOT IN (60000, 70000, 95000)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 15,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        "Anita Desai",
+        220000
+      ],
+      [
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        "Priya Nair",
+        150000
+      ],
+      [
+        "Kavita Joshi",
+        140000
+      ],
+      [
+        "Imran Khan",
+        65000
+      ],
+      [
+        "Divya Bansal",
+        130000
+      ],
+      [
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        "Karthik Subramanian",
+        80000
+      ],
+      [
+        "Lakshmi Menon",
+        80000
+      ],
+      [
+        "Faisal Ahmed",
+        160000
+      ],
+      [
+        "Tanvi Shah",
+        75000
+      ],
+      [
+        "Gaurav Malhotra",
+        120000
+      ],
+      [
+        "Ritesh Kumar",
+        72000
+      ],
+      [
+        "Aisha Siddiqui",
+        78000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-15",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DDL",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Add a column grade VARCHAR(5) to the employees table.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "ALTER TABLE employees ADD COLUMN grade VARCHAR(5)",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "WIP-16",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Insert a new employee (emp_id 23, 'Rahul Dev', dept 1, manager 3, 'Engineer', salary 90000, hired 2024-07-01, city 'Pune') leaving email and commission NULL.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "INSERT INTO employees (emp_id, emp_name, dept_id, manager_id, job_title, salary, hire_date, city) VALUES (23, 'Rahul Dev', 1, 3, 'Engineer', 90000, '2024-07-01', 'Pune')",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "WIP-17",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Indexes",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "Create an index on employees(dept_id) to speed up department look-ups.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "CREATE INDEX idx_emp_dept ON employees (dept_id)",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "WIP-18",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Views",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "Create a view eng_employees showing emp_id, emp_name and salary of Engineering employees.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "CREATE VIEW eng_employees AS SELECT e.emp_id, e.emp_name, e.salary FROM employees e JOIN departments d ON e.dept_id = d.dept_id WHERE d.dept_name = 'Engineering'",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "WIP-19",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List students with marks between 60 and 80 in any enrollment (student_id and marks).",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT student_id, marks FROM enrollments WHERE marks BETWEEN 60 AND 80",
+    "executed_ok": true,
+    "columns": [
+      "student_id",
+      "marks"
+    ],
+    "row_count": 14,
+    "expected_rows": [
+      [
+        1,
+        70
+      ],
+      [
+        2,
+        64
+      ],
+      [
+        2,
+        60
+      ],
+      [
+        3,
+        62
+      ],
+      [
+        4,
+        68
+      ],
+      [
+        5,
+        64
+      ],
+      [
+        5,
+        64
+      ],
+      [
+        6,
+        61
+      ],
+      [
+        7,
+        63
+      ],
+      [
+        7,
+        64
+      ],
+      [
+        8,
+        62
+      ],
+      [
+        8,
+        75
+      ],
+      [
+        9,
+        68
+      ],
+      [
+        11,
+        69
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-20",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the number of enrolled students per course_id.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT course_id, COUNT(DISTINCT student_id) AS students FROM enrollments GROUP BY course_id",
+    "executed_ok": true,
+    "columns": [
+      "course_id",
+      "students"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        101,
+        6
+      ],
+      [
+        102,
+        2
+      ],
+      [
+        103,
+        7
+      ],
+      [
+        104,
+        9
+      ],
+      [
+        106,
+        9
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-21",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "For each course_id find the student_id(s) with the highest marks.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT e.course_id, e.student_id, e.marks FROM enrollments e WHERE e.marks = (SELECT MAX(marks) FROM enrollments WHERE course_id = e.course_id)",
+    "executed_ok": true,
+    "columns": [
+      "course_id",
+      "student_id",
+      "marks"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        104,
+        2,
+        88
+      ],
+      [
+        103,
+        3,
+        89
+      ],
+      [
+        106,
+        7,
+        94
+      ],
+      [
+        101,
+        8,
+        85
+      ],
+      [
+        102,
+        9,
+        68
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "WIP-22",
+    "company": "WIP",
+    "company_name": "Wipro",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show each student's name with the total credits of the courses they are enrolled in.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT s.student_name, SUM(c.credits) AS total_credits FROM students s JOIN enrollments e ON s.student_id = e.student_id JOIN courses c ON e.course_id = c.course_id GROUP BY s.student_id, s.student_name",
+    "executed_ok": true,
+    "columns": [
+      "student_name",
+      "total_credits"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Rahul Verma",
+        10
+      ],
+      [
+        "Sneha Reddy",
+        11
+      ],
+      [
+        "Amit Patel",
+        11
+      ],
+      [
+        "Divya Nair",
+        10
+      ],
+      [
+        "Karan Singh",
+        10
+      ],
+      [
+        "Pooja Das",
+        10
+      ],
+      [
+        "Ravi Kumar",
+        11
+      ],
+      [
+        "Anjali Mishra",
+        11
+      ],
+      [
+        "Mohit Sharma",
+        11
+      ],
+      [
+        "Fatima Sheikh",
+        11
+      ],
+      [
+        "Tejas Kulkarni",
+        10
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-01",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Which join would you use to list customers who have NO orders?",
+    "options": {
+      "A": "INNER JOIN",
+      "B": "LEFT JOIN with a NULL check on the orders key",
+      "C": "CROSS JOIN",
+      "D": "UNION"
+    },
+    "answer": "B",
+    "explanation": "LEFT JOIN customers to orders and filter orders.order_id IS NULL (anti-join).",
+    "isPro": false
+  },
+  {
+    "id": "CTS-02",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Subqueries",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "A subquery that references a column of the outer query is called a...",
+    "options": {
+      "A": "Scalar subquery",
+      "B": "Derived table",
+      "C": "Correlated subquery",
+      "D": "Recursive CTE"
+    },
+    "answer": "C",
+    "explanation": "It is re-evaluated for each outer row.",
+    "isPro": false
+  },
+  {
+    "id": "CTS-03",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Transactions",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Which command makes the changes of a transaction permanent?",
+    "options": {
+      "A": "SAVEPOINT",
+      "B": "ROLLBACK",
+      "C": "COMMIT",
+      "D": "LOCK"
+    },
+    "answer": "C",
+    "explanation": "COMMIT persists the transaction; ROLLBACK undoes it.",
+    "isPro": false
+  },
+  {
+    "id": "CTS-04",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Subqueries",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Compare a subquery with a join. When would you prefer each?",
+    "model_answer": "Joins are generally clearer and let the optimiser choose strategies, and are needed when columns from both tables are returned. Subqueries (EXISTS/IN/scalar) express filtering or per-row comparisons naturally. Modern optimisers often rewrite one into the other, so check the execution plan.",
+    "isPro": false
+  },
+  {
+    "id": "CTS-05",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Views",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "Why are views used in real projects?",
+    "model_answer": "Security (expose only selected columns), simplification (hide complex joins), consistency (one definition of business logic) and backward compatibility when the table structure changes.",
+    "isPro": false
+  },
+  {
+    "id": "CTS-06",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Procedures",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "Stored procedure vs function: what is the difference?",
+    "model_answer": "A function returns a value and can be used inside queries; a procedure is invoked with CALL/EXEC, can return multiple result sets or OUT parameters and usually performs actions such as DML and transaction control.",
+    "isPro": false
+  },
+  {
+    "id": "CTS-07",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Triggers",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "What is a trigger and give one use case.",
+    "model_answer": "A trigger is code that fires automatically BEFORE/AFTER INSERT, UPDATE or DELETE on a table. Example: write an audit row into an audit_log table whenever a salary changes.",
+    "isPro": false
+  },
+  {
+    "id": "CTS-08",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find customers who have never placed an order.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT c.customer_id, c.customer_name FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id WHERE o.order_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "customer_name"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        11,
+        "Reyansh Sharma"
+      ],
+      [
+        28,
+        "Varun Mishra"
+      ],
+      [
+        29,
+        "Zoya Gupta"
+      ],
+      [
+        30,
+        "Harsh Menon"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-09",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Count the customers in each state, largest first.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT state, COUNT(*) AS customers FROM customers GROUP BY state ORDER BY customers DESC",
+    "executed_ok": true,
+    "columns": [
+      "state",
+      "customers"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "Maharashtra",
+        6
+      ],
+      [
+        "West Bengal",
+        3
+      ],
+      [
+        "Uttar Pradesh",
+        3
+      ],
+      [
+        "Telangana",
+        3
+      ],
+      [
+        "Tamil Nadu",
+        3
+      ],
+      [
+        "Rajasthan",
+        3
+      ],
+      [
+        "Karnataka",
+        3
+      ],
+      [
+        "Gujarat",
+        3
+      ],
+      [
+        "Delhi",
+        3
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-10",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List returned Cash-on-Delivery (COD) orders.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT order_id, customer_id, order_date FROM orders WHERE status = 'Returned' AND payment_mode = 'COD'",
+    "executed_ok": true,
+    "columns": [
+      "order_id",
+      "customer_id",
+      "order_date"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        52,
+        14,
+        "2023-12-15"
+      ],
+      [
+        100,
+        23,
+        "2024-02-24"
+      ],
+      [
+        125,
+        21,
+        "2024-04-24"
+      ],
+      [
+        130,
+        14,
+        "2024-04-29"
+      ],
+      [
+        138,
+        12,
+        "2024-05-08"
+      ],
+      [
+        159,
+        7,
+        "2024-06-27"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-11",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show total revenue (quantity x unit_price) per product category from delivered orders only.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, SUM(oi.quantity * oi.unit_price) AS revenue FROM order_items oi JOIN orders o ON oi.order_id = o.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY p.category ORDER BY revenue DESC",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "revenue"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Electronics",
+        4240886.2
+      ],
+      [
+        "Home",
+        292398.4
+      ],
+      [
+        "Fashion",
+        217539.6
+      ],
+      [
+        "Books",
+        92390.8
+      ],
+      [
+        "Grocery",
+        73484.6
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-12",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Top-N",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Find the top 3 products by total quantity sold (product name and quantity).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, SUM(oi.quantity) AS total_qty FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.product_id, p.product_name ORDER BY total_qty DESC LIMIT 3",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "total_qty"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "HomeNest Cookware Set",
+        61
+      ],
+      [
+        "Nova Buds Pro",
+        59
+      ],
+      [
+        "Stride Running Shoes",
+        58
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-13",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Functions",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Count the orders placed in each month (year and month) across the data.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT YEAR(order_date) AS yr, MONTH(order_date) AS mth, COUNT(*) AS orders FROM orders GROUP BY YEAR(order_date), MONTH(order_date) ORDER BY yr, mth",
+    "executed_ok": true,
+    "columns": [
+      "yr",
+      "mth",
+      "orders"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        2023,
+        10,
+        20
+      ],
+      [
+        2023,
+        11,
+        24
+      ],
+      [
+        2023,
+        12,
+        20
+      ],
+      [
+        2024,
+        1,
+        17
+      ],
+      [
+        2024,
+        2,
+        20
+      ],
+      [
+        2024,
+        3,
+        14
+      ],
+      [
+        2024,
+        4,
+        15
+      ],
+      [
+        2024,
+        5,
+        18
+      ],
+      [
+        2024,
+        6,
+        12
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-14",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List products whose price is above the average price of their own category.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, p.category, p.price FROM products p WHERE p.price > (SELECT AVG(price) FROM products WHERE category = p.category)",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "category",
+      "price"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "Zenith 55in Smart TV",
+        "Electronics",
+        38999
+      ],
+      [
+        "Pixel Laptop 14",
+        "Electronics",
+        54999
+      ],
+      [
+        "Urban Denim Jeans",
+        "Fashion",
+        1799
+      ],
+      [
+        "Stride Running Shoes",
+        "Fashion",
+        3499
+      ],
+      [
+        "HomeNest Cookware Set",
+        "Home",
+        2999
+      ],
+      [
+        "HomeNest Mixer Grinder",
+        "Home",
+        3499
+      ],
+      [
+        "Indian Classics Box Set",
+        "Books",
+        1499
+      ],
+      [
+        "Organic Basmati 5kg",
+        "Grocery",
+        699
+      ],
+      [
+        "Cold Pressed Olive Oil 1L",
+        "Grocery",
+        899
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-15",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find products that have no reviews.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_id, p.product_name FROM products p LEFT JOIN reviews r ON p.product_id = r.product_id WHERE r.review_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "product_id",
+      "product_name"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        19,
+        "Smart Fitness Band"
+      ],
+      [
+        20,
+        "Vintage Leather Wallet"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-16",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show products with at least 3 reviews and their average rating, best rated first.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, COUNT(*) AS review_count, AVG(r.rating) AS avg_rating FROM products p JOIN reviews r ON p.product_id = r.product_id GROUP BY p.product_id, p.product_name HAVING COUNT(*) >= 3 ORDER BY avg_rating DESC",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "review_count",
+      "avg_rating"
+    ],
+    "row_count": 16,
+    "expected_rows": [
+      [
+        "Urban Denim Jeans",
+        4,
+        4.75
+      ],
+      [
+        "HomeNest Mixer Grinder",
+        5,
+        4.6
+      ],
+      [
+        "Stride Running Shoes",
+        6,
+        4.5
+      ],
+      [
+        "Zenith 55in Smart TV",
+        7,
+        4.428571428571429
+      ],
+      [
+        "SQL Mastery Handbook",
+        7,
+        4.428571428571429
+      ],
+      [
+        "Nova X1 Smartphone",
+        3,
+        4.333333333333333
+      ],
+      [
+        "Cold Pressed Olive Oil 1L",
+        3,
+        4.333333333333333
+      ],
+      [
+        "Stride Sports Tee",
+        7,
+        4.142857142857143
+      ],
+      [
+        "CozyCo Bedsheet",
+        3,
+        4
+      ],
+      [
+        "Organic Basmati 5kg",
+        4,
+        4
+      ],
+      [
+        "Masala Tea 500g",
+        7,
+        4
+      ],
+      [
+        "Indian Classics Box Set",
+        4,
+        3.75
+      ],
+      [
+        "Nova Buds Pro",
+        4,
+        3.5
+      ],
+      [
+        "Pixel Laptop 14",
+        4,
+        3.5
+      ],
+      [
+        "HomeNest Cookware Set",
+        4,
+        3.5
+      ],
+      [
+        "Data Structures in Depth",
+        4,
+        3.5
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-17",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Set Logic",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Find customers who bought products from both the 'Electronics' and the 'Books' categories.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT o.customer_id FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE p.category IN ('Electronics', 'Books') GROUP BY o.customer_id HAVING COUNT(DISTINCT p.category) = 2",
+    "executed_ok": true,
+    "columns": [
+      "customer_id"
+    ],
+    "row_count": 24,
+    "expected_rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ],
+      [
+        21
+      ],
+      [
+        23
+      ],
+      [
+        24
+      ],
+      [
+        25
+      ],
+      [
+        26
+      ],
+      [
+        27
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-18",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show the number of Prime and non-Prime customers in a single row (two columns).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT SUM(CASE WHEN is_prime = 1 THEN 1 ELSE 0 END) AS prime_customers, SUM(CASE WHEN is_prime = 0 THEN 1 ELSE 0 END) AS non_prime_customers FROM customers",
+    "executed_ok": true,
+    "columns": [
+      "prime_customers",
+      "non_prime_customers"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        9,
+        21
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CTS-19",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Stored Procedures",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "Write a MySQL stored procedure get_customer_orders(IN cid INT) that returns all orders of a customer, newest first.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "DELIMITER // CREATE PROCEDURE get_customer_orders(IN cid INT) BEGIN SELECT order_id, order_date, status FROM orders WHERE customer_id = cid ORDER BY order_date DESC; END // DELIMITER ;",
+    "executed_ok": false,
+    "isPro": false
+  },
+  {
+    "id": "CTS-20",
+    "company": "CTS",
+    "company_name": "Cognizant",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Triggers",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "Write a MySQL trigger that prevents inserting a product with a negative price.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "CREATE TRIGGER trg_products_price_check BEFORE INSERT ON products FOR EACH ROW BEGIN IF NEW.price < 0 THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Price cannot be negative'; END IF; END",
+    "executed_ok": false,
+    "isPro": false
+  },
+  {
+    "id": "HCL-01",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Clause Order",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Which is the correct order of clauses in a SELECT statement?",
+    "options": {
+      "A": "SELECT, FROM, WHERE, HAVING, GROUP BY, ORDER BY",
+      "B": "SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY",
+      "C": "FROM, SELECT, WHERE, GROUP BY, ORDER BY, HAVING",
+      "D": "SELECT, WHERE, FROM, GROUP BY, HAVING, ORDER BY"
+    },
+    "answer": "B",
+    "explanation": "Written order: SELECT, FROM, WHERE, GROUP BY, HAVING, ORDER BY (logical execution starts with FROM).",
+    "isPro": false
+  },
+  {
+    "id": "HCL-02",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Fill in the Blank",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "SELECT * FROM students WHERE age ______ (18, 19, 20);",
+    "options": {
+      "A": "BETWEEN",
+      "B": "IN",
+      "C": "LIKE",
+      "D": "EXISTS"
+    },
+    "answer": "B",
+    "explanation": "IN tests membership in a list of values.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-03",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Which command modifies existing rows in a table?",
+    "options": {
+      "A": "ALTER",
+      "B": "MODIFY TABLE",
+      "C": "UPDATE",
+      "D": "CHANGE"
+    },
+    "answer": "C",
+    "explanation": "UPDATE ... SET changes row data; ALTER changes table structure.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-04",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Which of these is NOT an aggregate function?",
+    "options": {
+      "A": "SUM",
+      "B": "AVG",
+      "C": "LENGTH",
+      "D": "COUNT"
+    },
+    "answer": "C",
+    "explanation": "LENGTH is a scalar string function; the others aggregate many rows into one value.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-05",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Constraints",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Which constraint is used to ensure marks are between 0 and 100?",
+    "options": {
+      "A": "DEFAULT",
+      "B": "CHECK",
+      "C": "UNIQUE",
+      "D": "FOREIGN KEY"
+    },
+    "answer": "B",
+    "explanation": "CHECK (marks BETWEEN 0 AND 100) validates values on write.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-06",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Data Types",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "What is the difference between CHAR and VARCHAR?",
+    "model_answer": "CHAR is fixed length and pads with spaces; VARCHAR is variable length and stores only the characters used (plus a small length prefix). Use CHAR for fixed-size codes and VARCHAR for names, emails etc.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-07",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Referential Integrity",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "What does ON DELETE CASCADE do on a foreign key?",
+    "model_answer": "When a parent row is deleted, all child rows that reference it are deleted automatically. Alternatives are SET NULL, RESTRICT and NO ACTION.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-08",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Aliases",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "What is an alias and where is it used?",
+    "model_answer": "An alias gives a temporary name to a column or table using AS, making output readable and enabling self joins. Column aliases can be used in ORDER BY but usually not in WHERE.",
+    "isPro": false
+  },
+  {
+    "id": "HCL-09",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List all CSE students ordered by name.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT student_name, city FROM students WHERE dept = 'CSE' ORDER BY student_name",
+    "executed_ok": true,
+    "columns": [
+      "student_name",
+      "city"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Mohit Sharma",
+        "Delhi"
+      ],
+      [
+        "Nisha Gupta",
+        "Bengaluru"
+      ],
+      [
+        "Pooja Das",
+        "Kolkata"
+      ],
+      [
+        "Rahul Verma",
+        "Delhi"
+      ],
+      [
+        "Sneha Reddy",
+        "Hyderabad"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-10",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the number of students in each department.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT dept, COUNT(*) AS student_count FROM students GROUP BY dept",
+    "executed_ok": true,
+    "columns": [
+      "dept",
+      "student_count"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "CSE",
+        5
+      ],
+      [
+        "ECE",
+        2
+      ],
+      [
+        "IT",
+        3
+      ],
+      [
+        "MECH",
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-11",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the age of the youngest and the oldest student.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT MIN(age) AS youngest, MAX(age) AS oldest FROM students",
+    "executed_ok": true,
+    "columns": [
+      "youngest",
+      "oldest"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        18,
+        23
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-12",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Pattern Matching",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Find students whose name ends with the letter 'a'.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT student_name FROM students WHERE student_name LIKE '%a'",
+    "executed_ok": true,
+    "columns": [
+      "student_name"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Rahul Verma"
+      ],
+      [
+        "Anjali Mishra"
+      ],
+      [
+        "Mohit Sharma"
+      ],
+      [
+        "Nisha Gupta"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-13",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List CSE courses that carry more than 3 credits.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT course_name, credits FROM courses WHERE dept = 'CSE' AND credits > 3",
+    "executed_ok": true,
+    "columns": [
+      "course_name",
+      "credits"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Database Systems",
+        4
+      ],
+      [
+        "Operating Systems",
+        4
+      ],
+      [
+        "Data Structures",
+        4
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-14",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List student name, course name and marks for every enrollment.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT s.student_name, c.course_name, e.marks FROM enrollments e JOIN students s ON e.student_id = s.student_id JOIN courses c ON e.course_id = c.course_id",
+    "executed_ok": true,
+    "columns": [
+      "student_name",
+      "course_name",
+      "marks"
+    ],
+    "row_count": 33,
+    "expected_rows": [
+      [
+        "Rahul Verma",
+        "Database Systems",
+        70
+      ],
+      [
+        "Rahul Verma",
+        "Computer Networks",
+        48
+      ],
+      [
+        "Rahul Verma",
+        "Digital Electronics",
+        46
+      ],
+      [
+        "Sneha Reddy",
+        "Database Systems",
+        64
+      ],
+      [
+        "Sneha Reddy",
+        "Computer Networks",
+        60
+      ],
+      [
+        "Sneha Reddy",
+        "Data Structures",
+        88
+      ],
+      [
+        "Amit Patel",
+        "Digital Electronics",
+        89
+      ],
+      [
+        "Amit Patel",
+        "Database Systems",
+        62
+      ],
+      [
+        "Amit Patel",
+        "Data Structures",
+        48
+      ],
+      [
+        "Divya Nair",
+        "Digital Electronics",
+        68
+      ],
+      [
+        "Divya Nair",
+        "Computer Networks",
+        93
+      ],
+      [
+        "Divya Nair",
+        "Data Structures",
+        45
+      ],
+      [
+        "Karan Singh",
+        "Computer Networks",
+        59
+      ],
+      [
+        "Karan Singh",
+        "Digital Electronics",
+        64
+      ],
+      [
+        "Karan Singh",
+        "Data Structures",
+        64
+      ],
+      [
+        "Pooja Das",
+        "Digital Electronics",
+        81
+      ],
+      [
+        "Pooja Das",
+        "Data Structures",
+        61
+      ],
+      [
+        "Pooja Das",
+        "Computer Networks",
+        44
+      ],
+      [
+        "Ravi Kumar",
+        "Computer Networks",
+        94
+      ],
+      [
+        "Ravi Kumar",
+        "Operating Systems",
+        63
+      ],
+      [
+        "Ravi Kumar",
+        "Database Systems",
+        64
+      ],
+      [
+        "Anjali Mishra",
+        "Data Structures",
+        62
+      ],
+      [
+        "Anjali Mishra",
+        "Digital Electronics",
+        75
+      ],
+      [
+        "Anjali Mishra",
+        "Database Systems",
+        85
+      ],
+      [
+        "Mohit Sharma",
+        "Data Structures",
+        52
+      ],
+      [
+        "Mohit Sharma",
+        "Operating Systems",
+        68
+      ],
+      [
+        "Mohit Sharma",
+        "Computer Networks",
+        86
+      ],
+      [
+        "Fatima Sheikh",
+        "Computer Networks",
+        41
+      ],
+      [
+        "Fatima Sheikh",
+        "Data Structures",
+        55
+      ],
+      [
+        "Fatima Sheikh",
+        "Database Systems",
+        43
+      ],
+      [
+        "Tejas Kulkarni",
+        "Data Structures",
+        36
+      ],
+      [
+        "Tejas Kulkarni",
+        "Digital Electronics",
+        69
+      ],
+      [
+        "Tejas Kulkarni",
+        "Computer Networks",
+        49
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-15",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find the student who scored the highest marks in 'Database Systems'.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT s.student_name, e.marks FROM enrollments e JOIN students s ON e.student_id = s.student_id JOIN courses c ON e.course_id = c.course_id WHERE c.course_name = 'Database Systems' AND e.marks = (SELECT MAX(e2.marks) FROM enrollments e2 WHERE e2.course_id = c.course_id)",
+    "executed_ok": true,
+    "columns": [
+      "student_name",
+      "marks"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Anjali Mishra",
+        85
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-16",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List the students who scored below 40 in any course.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT DISTINCT s.student_name FROM students s JOIN enrollments e ON s.student_id = e.student_id WHERE e.marks < 40",
+    "executed_ok": true,
+    "columns": [
+      "student_name"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Tejas Kulkarni"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-17",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CASE",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "For each student show the average marks and a result class: 'Distinction' (75+), 'First Class' (60-74), 'Pass' (40-59), otherwise 'Fail'.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT s.student_name, AVG(e.marks) AS avg_marks, CASE WHEN AVG(e.marks) >= 75 THEN 'Distinction' WHEN AVG(e.marks) >= 60 THEN 'First Class' WHEN AVG(e.marks) >= 40 THEN 'Pass' ELSE 'Fail' END AS result_class FROM students s JOIN enrollments e ON s.student_id = e.student_id GROUP BY s.student_id, s.student_name",
+    "executed_ok": true,
+    "columns": [
+      "student_name",
+      "avg_marks",
+      "result_class"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Rahul Verma",
+        54.666666666666664,
+        "Pass"
+      ],
+      [
+        "Sneha Reddy",
+        70.66666666666667,
+        "First Class"
+      ],
+      [
+        "Amit Patel",
+        66.33333333333333,
+        "First Class"
+      ],
+      [
+        "Divya Nair",
+        68.66666666666667,
+        "First Class"
+      ],
+      [
+        "Karan Singh",
+        62.333333333333336,
+        "First Class"
+      ],
+      [
+        "Pooja Das",
+        62,
+        "First Class"
+      ],
+      [
+        "Ravi Kumar",
+        73.66666666666667,
+        "First Class"
+      ],
+      [
+        "Anjali Mishra",
+        74,
+        "First Class"
+      ],
+      [
+        "Mohit Sharma",
+        68.66666666666667,
+        "First Class"
+      ],
+      [
+        "Fatima Sheikh",
+        46.333333333333336,
+        "Pass"
+      ],
+      [
+        "Tejas Kulkarni",
+        51.333333333333336,
+        "Pass"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-18",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Outer Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show every student with the number of courses they are enrolled in, including students with zero.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT s.student_name, COUNT(e.enroll_id) AS courses_enrolled FROM students s LEFT JOIN enrollments e ON s.student_id = e.student_id GROUP BY s.student_id, s.student_name",
+    "executed_ok": true,
+    "columns": [
+      "student_name",
+      "courses_enrolled"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        "Rahul Verma",
+        3
+      ],
+      [
+        "Sneha Reddy",
+        3
+      ],
+      [
+        "Amit Patel",
+        3
+      ],
+      [
+        "Divya Nair",
+        3
+      ],
+      [
+        "Karan Singh",
+        3
+      ],
+      [
+        "Pooja Das",
+        3
+      ],
+      [
+        "Ravi Kumar",
+        3
+      ],
+      [
+        "Anjali Mishra",
+        3
+      ],
+      [
+        "Mohit Sharma",
+        3
+      ],
+      [
+        "Fatima Sheikh",
+        3
+      ],
+      [
+        "Tejas Kulkarni",
+        3
+      ],
+      [
+        "Nisha Gupta",
+        0
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "HCL-19",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Give a grace of marks: set marks to 40 for every enrollment currently scoring 35 to 39.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "UPDATE enrollments SET marks = 40 WHERE marks BETWEEN 35 AND 39",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "HCL-20",
+    "company": "HCL",
+    "company_name": "HCLTech",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show admission years that have more than one student, with the count.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT admission_year, COUNT(*) AS students FROM students GROUP BY admission_year HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "admission_year",
+      "students"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        2020,
+        2
+      ],
+      [
+        2021,
+        5
+      ],
+      [
+        2022,
+        3
+      ],
+      [
+        2023,
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-01",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Scenario Design",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "How would you find and remove duplicate rows from a table that has no unique key?",
+    "model_answer": "First identify duplicates with GROUP BY on the business columns and HAVING COUNT(*) > 1. To delete, keep one row per group using ROW_NUMBER() over the business columns (delete rn > 1) or, if a surrogate id exists, delete ids not in (SELECT MIN(id) ... GROUP BY business columns). Finally add a UNIQUE constraint to prevent recurrence.",
+    "isPro": false
+  },
+  {
+    "id": "ACN-02",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Scenario Design",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "Design the tables needed for a library management system (members, books, loans).",
+    "model_answer": "members(member_id PK, name, email UNIQUE), books(book_id PK, title, author, isbn UNIQUE, copies), loans(loan_id PK, member_id FK, book_id FK, issued_on, due_on, returned_on NULL). The many-to-many between members and books is resolved by the loans table.",
+    "isPro": false
+  },
+  {
+    "id": "ACN-03",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Scenario Design",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "A report query is slow. List the first five things you would check.",
+    "model_answer": "1) Execution plan (full scans, bad join order). 2) Missing or unusable indexes (functions on indexed columns, leading wildcards). 3) Selecting unnecessary columns or rows. 4) Row-by-row subqueries that can become joins. 5) Stale statistics, data volume and locking or blocking.",
+    "isPro": false
+  },
+  {
+    "id": "ACN-04",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Customer Value",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Find the top 5 customers by total spend on delivered orders (customer name and total spend).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT c.customer_name, SUM(oi.quantity * oi.unit_price) AS total_spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY c.customer_id, c.customer_name ORDER BY total_spend DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "customer_name",
+      "total_spend"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Shreya Reddy",
+        592766.3
+      ],
+      [
+        "Manish Patel",
+        521934.1
+      ],
+      [
+        "Kiara Singh",
+        476711.8
+      ],
+      [
+        "Rudra Bose",
+        361892.7
+      ],
+      [
+        "Tara Mukherjee",
+        354299.2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-05",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Percentage Share",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "For each payment mode show the number of orders and its percentage share of all orders (rounded to 2 decimals).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT payment_mode, COUNT(*) AS orders, ROUND(COUNT(*) * 100.0 / (SELECT COUNT(*) FROM orders), 2) AS pct_share FROM orders GROUP BY payment_mode",
+    "executed_ok": true,
+    "columns": [
+      "payment_mode",
+      "orders",
+      "pct_share"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "COD",
+        41,
+        25.63
+      ],
+      [
+        "Card",
+        38,
+        23.75
+      ],
+      [
+        "NetBanking",
+        16,
+        10
+      ],
+      [
+        "UPI",
+        65,
+        40.63
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-06",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Average Order Value",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Compute the average order value (total item revenue divided by number of orders) for delivered orders.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT SUM(oi.quantity * oi.unit_price) / COUNT(DISTINCT o.order_id) AS avg_order_value FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered'",
+    "executed_ok": true,
+    "columns": [
+      "avg_order_value"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        42753.909565217386
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-07",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Repeat Customers",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "List customers who placed more than 3 orders, with the order count.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, COUNT(*) AS order_count FROM orders GROUP BY customer_id HAVING COUNT(*) > 3 ORDER BY order_count DESC",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "order_count"
+    ],
+    "row_count": 17,
+    "expected_rows": [
+      [
+        23,
+        15
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        6,
+        12
+      ],
+      [
+        26,
+        11
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        17,
+        9
+      ],
+      [
+        15,
+        9
+      ],
+      [
+        21,
+        8
+      ],
+      [
+        2,
+        8
+      ],
+      [
+        24,
+        7
+      ],
+      [
+        19,
+        6
+      ],
+      [
+        18,
+        6
+      ],
+      [
+        16,
+        5
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        20,
+        4
+      ],
+      [
+        3,
+        4
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-08",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Latest Record",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "For every customer show the date of their most recent order.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, MAX(order_date) AS last_order_date FROM orders GROUP BY customer_id",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "last_order_date"
+    ],
+    "row_count": 26,
+    "expected_rows": [
+      [
+        1,
+        "2024-06-05"
+      ],
+      [
+        2,
+        "2024-06-16"
+      ],
+      [
+        3,
+        "2024-06-06"
+      ],
+      [
+        4,
+        "2024-01-30"
+      ],
+      [
+        5,
+        "2024-02-12"
+      ],
+      [
+        6,
+        "2024-06-01"
+      ],
+      [
+        7,
+        "2024-06-27"
+      ],
+      [
+        8,
+        "2024-03-02"
+      ],
+      [
+        9,
+        "2024-05-22"
+      ],
+      [
+        10,
+        "2024-05-04"
+      ],
+      [
+        12,
+        "2024-06-17"
+      ],
+      [
+        13,
+        "2024-04-26"
+      ],
+      [
+        14,
+        "2024-04-29"
+      ],
+      [
+        15,
+        "2024-05-27"
+      ],
+      [
+        16,
+        "2024-02-17"
+      ],
+      [
+        17,
+        "2024-02-29"
+      ],
+      [
+        18,
+        "2024-05-04"
+      ],
+      [
+        19,
+        "2024-03-24"
+      ],
+      [
+        20,
+        "2024-05-14"
+      ],
+      [
+        21,
+        "2024-05-20"
+      ],
+      [
+        22,
+        "2024-03-30"
+      ],
+      [
+        23,
+        "2024-06-28"
+      ],
+      [
+        24,
+        "2024-06-03"
+      ],
+      [
+        25,
+        "2024-02-13"
+      ],
+      [
+        26,
+        "2024-05-12"
+      ],
+      [
+        27,
+        "2024-05-08"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-09",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "For every category compute the return rate: returned order items divided by all order items, as a percentage.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, ROUND(SUM(CASE WHEN o.status = 'Returned' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS return_rate_pct FROM order_items oi JOIN orders o ON oi.order_id = o.order_id JOIN products p ON oi.product_id = p.product_id GROUP BY p.category",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "return_rate_pct"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        6.25
+      ],
+      [
+        "Electronics",
+        9.68
+      ],
+      [
+        "Fashion",
+        13.1
+      ],
+      [
+        "Grocery",
+        13.51
+      ],
+      [
+        "Home",
+        10.13
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-10",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Inventory",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "List products with stock below 100 units, lowest stock first.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT product_name, stock FROM products WHERE stock < 100 ORDER BY stock",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "stock"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Smart Fitness Band",
+        0
+      ],
+      [
+        "Pixel Laptop 14",
+        35
+      ],
+      [
+        "Zenith 55in Smart TV",
+        40
+      ],
+      [
+        "Vintage Leather Wallet",
+        60
+      ],
+      [
+        "Zenith Soundbar",
+        75
+      ],
+      [
+        "HomeNest Cookware Set",
+        90
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-11",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "String Functions",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Extract the email domain of each customer (the part after '@') and count customers per domain.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT SUBSTR(email, INSTR(email, '@') + 1) AS domain, COUNT(*) AS customers FROM customers GROUP BY SUBSTR(email, INSTR(email, '@') + 1)",
+    "executed_ok": true,
+    "columns": [
+      "domain",
+      "customers"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "mail.in",
+        30
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-12",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Pivot",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show, in one row, the number of orders with status Delivered, Cancelled, Returned and Shipped as four columns.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT SUM(CASE WHEN status = 'Delivered' THEN 1 ELSE 0 END) AS delivered, SUM(CASE WHEN status = 'Cancelled' THEN 1 ELSE 0 END) AS cancelled, SUM(CASE WHEN status = 'Returned' THEN 1 ELSE 0 END) AS returned, SUM(CASE WHEN status = 'Shipped' THEN 1 ELSE 0 END) AS shipped FROM orders",
+    "executed_ok": true,
+    "columns": [
+      "delivered",
+      "cancelled",
+      "returned",
+      "shipped"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        115,
+        10,
+        17,
+        18
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-13",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "For every account show total successful credits and total successful debits as two columns.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT account_id, SUM(CASE WHEN txn_type = 'CREDIT' THEN amount ELSE 0 END) AS total_credit, SUM(CASE WHEN txn_type = 'DEBIT' THEN amount ELSE 0 END) AS total_debit FROM transactions WHERE status = 'SUCCESS' GROUP BY account_id",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "total_credit",
+      "total_debit"
+    ],
+    "row_count": 35,
+    "expected_rows": [
+      [
+        1,
+        252389.15,
+        192296.51
+      ],
+      [
+        2,
+        112295.48,
+        235176.08000000002
+      ],
+      [
+        3,
+        197972.06,
+        212528.45
+      ],
+      [
+        4,
+        138127.93,
+        193724.66999999998
+      ],
+      [
+        5,
+        294059.24,
+        364145.64
+      ],
+      [
+        6,
+        282141.44,
+        85941.69
+      ],
+      [
+        7,
+        244332.42,
+        213780.16
+      ],
+      [
+        8,
+        252122.39,
+        133986.62
+      ],
+      [
+        9,
+        141035.34,
+        355445.93
+      ],
+      [
+        10,
+        299761.29,
+        78210.97
+      ],
+      [
+        11,
+        94870.98,
+        264130.96
+      ],
+      [
+        12,
+        41290.74,
+        153376.56
+      ],
+      [
+        13,
+        252703.04,
+        90828.73
+      ],
+      [
+        14,
+        159195.84,
+        82310.12
+      ],
+      [
+        15,
+        110793.16,
+        69097.23
+      ],
+      [
+        16,
+        167452.13999999998,
+        192867.91
+      ],
+      [
+        17,
+        199583.87,
+        230193.15
+      ],
+      [
+        18,
+        81930.33,
+        90807.88
+      ],
+      [
+        19,
+        216240.43,
+        71727.86
+      ],
+      [
+        20,
+        212477.54,
+        179226.55000000002
+      ],
+      [
+        21,
+        183074.74,
+        152758.18
+      ],
+      [
+        22,
+        247371.84,
+        208323.02
+      ],
+      [
+        23,
+        134894.09,
+        182136.74
+      ],
+      [
+        24,
+        125688.87,
+        48425.479999999996
+      ],
+      [
+        25,
+        153058.32,
+        254468.22
+      ],
+      [
+        26,
+        154314.06,
+        115546.93000000001
+      ],
+      [
+        27,
+        191178.76,
+        190399.72
+      ],
+      [
+        28,
+        317052.54,
+        364952.77
+      ],
+      [
+        29,
+        135177.06,
+        78144.44
+      ],
+      [
+        30,
+        214424.09,
+        134620.37
+      ],
+      [
+        31,
+        198892.5,
+        152096.32
+      ],
+      [
+        32,
+        180316.43,
+        201298.35
+      ],
+      [
+        33,
+        181912.38,
+        111277.54
+      ],
+      [
+        34,
+        123047.54000000001,
+        290027.7
+      ],
+      [
+        35,
+        78621.09,
+        298307.57
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-14",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List customers who hold more than one account, with the number of accounts.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT c.cust_name, COUNT(*) AS accounts FROM bank_customers c JOIN accounts a ON c.cust_id = a.cust_id GROUP BY c.cust_id, c.cust_name HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "cust_name",
+      "accounts"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Kiara Singh",
+        2
+      ],
+      [
+        "Atharv Banerjee",
+        3
+      ],
+      [
+        "Aditi Khan",
+        2
+      ],
+      [
+        "Shreya Reddy",
+        2
+      ],
+      [
+        "Siddharth Joshi",
+        2
+      ],
+      [
+        "Pallavi Pandey",
+        3
+      ],
+      [
+        "Manish Patel",
+        3
+      ],
+      [
+        "Ritu Kulkarni",
+        2
+      ],
+      [
+        "Zoya Gupta",
+        2
+      ],
+      [
+        "Komal Banerjee",
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-15",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find customers who currently have no loan.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT c.cust_name FROM bank_customers c WHERE NOT EXISTS (SELECT 1 FROM loans l WHERE l.cust_id = c.cust_id)",
+    "executed_ok": true,
+    "columns": [
+      "cust_name"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Pranav Nair"
+      ],
+      [
+        "Nikhil Rao"
+      ],
+      [
+        "Pallavi Pandey"
+      ],
+      [
+        "Manish Patel"
+      ],
+      [
+        "Ritu Kulkarni"
+      ],
+      [
+        "Varun Mishra"
+      ],
+      [
+        "Harsh Menon"
+      ],
+      [
+        "Jatin Singh"
+      ],
+      [
+        "Komal Banerjee"
+      ],
+      [
+        "Naveen Chopra"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-16",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List accounts whose balance is below the average balance of their own account type.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT a.account_id, a.account_type, a.balance FROM accounts a WHERE a.balance < (SELECT AVG(balance) FROM accounts WHERE account_type = a.account_type)",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "account_type",
+      "balance"
+    ],
+    "row_count": 16,
+    "expected_rows": [
+      [
+        5,
+        "Current",
+        458169.39
+      ],
+      [
+        6,
+        "Current",
+        410669.27
+      ],
+      [
+        8,
+        "Salary",
+        184067.41
+      ],
+      [
+        9,
+        "Savings",
+        104191.24
+      ],
+      [
+        11,
+        "Salary",
+        433137.1
+      ],
+      [
+        13,
+        "Savings",
+        80537.06
+      ],
+      [
+        16,
+        "Salary",
+        182448.25
+      ],
+      [
+        19,
+        "Savings",
+        17632.84
+      ],
+      [
+        24,
+        "Savings",
+        379406.24
+      ],
+      [
+        26,
+        "Savings",
+        335825.78
+      ],
+      [
+        27,
+        "Savings",
+        14236.62
+      ],
+      [
+        28,
+        "Salary",
+        194934.81
+      ],
+      [
+        30,
+        "Savings",
+        51640.79
+      ],
+      [
+        32,
+        "Savings",
+        232022.91
+      ],
+      [
+        33,
+        "Current",
+        605779.51
+      ],
+      [
+        34,
+        "Salary",
+        165538.14
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-17",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the total principal amount of loans for each loan status.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT status, SUM(principal) AS total_principal, COUNT(*) AS loans FROM loans GROUP BY status",
+    "executed_ok": true,
+    "columns": [
+      "status",
+      "total_principal",
+      "loans"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Active",
+        11250000,
+        15
+      ],
+      [
+        "Closed",
+        12500000,
+        3
+      ],
+      [
+        "Defaulted",
+        350000,
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "ACN-18",
+    "company": "ACN",
+    "company_name": "Accenture",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Data Quality",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Find customers whose KYC is still Pending but who already have an account with a balance above 100000.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT DISTINCT c.cust_name FROM bank_customers c JOIN accounts a ON c.cust_id = a.cust_id WHERE c.kyc_status = 'Pending' AND a.balance > 100000",
+    "executed_ok": true,
+    "columns": [
+      "cust_name"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Atharv Banerjee"
+      ],
+      [
+        "Navya Verma"
+      ],
+      [
+        "Tara Mukherjee"
+      ],
+      [
+        "Nikhil Rao"
+      ],
+      [
+        "Jatin Singh"
+      ],
+      [
+        "Komal Banerjee"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-01",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "ACID",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "In ACID, what does the letter 'D' stand for?",
+    "options": {
+      "A": "Dependency",
+      "B": "Durability",
+      "C": "Distribution",
+      "D": "Deadlock"
+    },
+    "answer": "B",
+    "explanation": "Durability: once committed, data survives crashes.",
+    "isPro": false
+  },
+  {
+    "id": "CAP-02",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Isolation",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Reading uncommitted data of another transaction that is later rolled back is called a...",
+    "options": {
+      "A": "Phantom read",
+      "B": "Dirty read",
+      "C": "Lost update",
+      "D": "Non-repeatable read"
+    },
+    "answer": "B",
+    "explanation": "READ UNCOMMITTED permits dirty reads; higher isolation levels prevent them.",
+    "isPro": false
+  },
+  {
+    "id": "CAP-03",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "A NATURAL JOIN joins tables on...",
+    "options": {
+      "A": "A column named in the ON clause",
+      "B": "All columns with the same name in both tables",
+      "C": "The primary keys only",
+      "D": "Row position"
+    },
+    "answer": "B",
+    "explanation": "It is risky in practice because adding a same-named column silently changes the join.",
+    "isPro": false
+  },
+  {
+    "id": "CAP-04",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Which operator returns rows present in both queries?",
+    "options": {
+      "A": "UNION",
+      "B": "MINUS/EXCEPT",
+      "C": "INTERSECT",
+      "D": "JOIN"
+    },
+    "answer": "C",
+    "explanation": "INTERSECT returns common rows; EXCEPT/MINUS returns rows of the first query not in the second.",
+    "isPro": false
+  },
+  {
+    "id": "CAP-05",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Isolation",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Name the four standard isolation levels and what each prevents.",
+    "model_answer": "READ UNCOMMITTED (prevents nothing), READ COMMITTED (prevents dirty reads), REPEATABLE READ (also non-repeatable reads), SERIALIZABLE (also phantom reads).",
+    "isPro": false
+  },
+  {
+    "id": "CAP-06",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Operators",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "What is the difference between IN and EXISTS?",
+    "model_answer": "IN compares a value against a list or subquery result set; EXISTS checks whether a correlated subquery returns any row and stops at the first match. EXISTS handles NULLs more safely than NOT IN.",
+    "isPro": false
+  },
+  {
+    "id": "CAP-07",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Operators",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Why can NOT IN return no rows when the subquery contains a NULL?",
+    "model_answer": "x NOT IN (a, NULL) evaluates to UNKNOWN for every x that is not equal to a, so no row qualifies. Use NOT EXISTS or filter NULLs out of the subquery.",
+    "isPro": false
+  },
+  {
+    "id": "CAP-08",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show each department name with its employee count, including departments with no employees.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name, COUNT(e.emp_id) AS emp_count FROM departments d LEFT JOIN employees e ON d.dept_id = e.dept_id GROUP BY d.dept_id, d.dept_name",
+    "executed_ok": true,
+    "columns": [
+      "dept_name",
+      "emp_count"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Engineering",
+        7
+      ],
+      [
+        "Sales",
+        6
+      ],
+      [
+        "HR",
+        2
+      ],
+      [
+        "Finance",
+        3
+      ],
+      [
+        "Marketing",
+        3
+      ],
+      [
+        "Support",
+        0
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-09",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the employee with the highest salary.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM employees WHERE salary = (SELECT MAX(salary) FROM employees)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-10",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "NULL-safe Comparison",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "List employees whose department differs from their manager's department. Treat a missing department as different from a real one.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, e.dept_id, m.emp_name AS manager_name, m.dept_id AS manager_dept FROM employees e JOIN employees m ON e.manager_id = m.emp_id WHERE e.dept_id <> m.dept_id OR (e.dept_id IS NULL AND m.dept_id IS NOT NULL) OR (e.dept_id IS NOT NULL AND m.dept_id IS NULL)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_id",
+      "manager_name",
+      "manager_dept"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Gaurav Malhotra",
+        null,
+        "Vikram Mehta",
+        1
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-11",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Display each employee's name and commission, showing 0 where commission is NULL.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, COALESCE(commission, 0) AS commission FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "commission"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        0
+      ],
+      [
+        "Anita Desai",
+        20000
+      ],
+      [
+        "Suresh Iyer",
+        0
+      ],
+      [
+        "Priya Nair",
+        0
+      ],
+      [
+        "Rohan Gupta",
+        0
+      ],
+      [
+        "Neha Kulkarni",
+        0
+      ],
+      [
+        "Arjun Reddy",
+        0
+      ],
+      [
+        "Kavita Joshi",
+        15000
+      ],
+      [
+        "Sandeep Singh",
+        8000
+      ],
+      [
+        "Meera Pillai",
+        5000
+      ],
+      [
+        "Imran Khan",
+        0
+      ],
+      [
+        "Divya Bansal",
+        0
+      ],
+      [
+        "Harish Rao",
+        0
+      ],
+      [
+        "Pooja Agarwal",
+        0
+      ],
+      [
+        "Karthik Subramanian",
+        0
+      ],
+      [
+        "Lakshmi Menon",
+        0
+      ],
+      [
+        "Faisal Ahmed",
+        0
+      ],
+      [
+        "Tanvi Shah",
+        0
+      ],
+      [
+        "Gaurav Malhotra",
+        0
+      ],
+      [
+        "Sneha Chatterjee",
+        0
+      ],
+      [
+        "Ritesh Kumar",
+        3000
+      ],
+      [
+        "Aisha Siddiqui",
+        0
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-12",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show, for each department, the names of its employees as one comma-separated string (MySQL GROUP_CONCAT; use STRING_AGG in PostgreSQL).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT dept_id, GROUP_CONCAT(emp_name) AS employees FROM employees WHERE dept_id IS NOT NULL GROUP BY dept_id",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "employees"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        1,
+        "Vikram Mehta,Suresh Iyer,Priya Nair,Rohan Gupta,Neha Kulkarni,Arjun Reddy,Sneha Chatterjee"
+      ],
+      [
+        2,
+        "Anita Desai,Kavita Joshi,Sandeep Singh,Meera Pillai,Imran Khan,Ritesh Kumar"
+      ],
+      [
+        3,
+        "Divya Bansal,Harish Rao"
+      ],
+      [
+        4,
+        "Pooja Agarwal,Karthik Subramanian,Lakshmi Menon"
+      ],
+      [
+        5,
+        "Faisal Ahmed,Tanvi Shah,Aisha Siddiqui"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-13",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Functions",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Show how many employees were hired in each year, oldest year first.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT YEAR(hire_date) AS hire_year, COUNT(*) AS hires FROM employees GROUP BY YEAR(hire_date) ORDER BY hire_year",
+    "executed_ok": true,
+    "columns": [
+      "hire_year",
+      "hires"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        2015,
+        2
+      ],
+      [
+        2016,
+        2
+      ],
+      [
+        2017,
+        1
+      ],
+      [
+        2018,
+        2
+      ],
+      [
+        2019,
+        1
+      ],
+      [
+        2020,
+        2
+      ],
+      [
+        2021,
+        3
+      ],
+      [
+        2022,
+        3
+      ],
+      [
+        2023,
+        4
+      ],
+      [
+        2024,
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-14",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Pivot",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show, in a single row, the number of employees in dept 1, dept 2 and dept 3 as three columns.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT SUM(CASE WHEN dept_id = 1 THEN 1 ELSE 0 END) AS dept1, SUM(CASE WHEN dept_id = 2 THEN 1 ELSE 0 END) AS dept2, SUM(CASE WHEN dept_id = 3 THEN 1 ELSE 0 END) AS dept3 FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "dept1",
+      "dept2",
+      "dept3"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        7,
+        6,
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-15",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show the top two highest paid employees in every department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT dept_id, emp_name, salary FROM (SELECT dept_id, emp_name, salary, ROW_NUMBER() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS rn FROM employees WHERE dept_id IS NOT NULL) t WHERE rn <= 2",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        1,
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        1,
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        2,
+        "Anita Desai",
+        220000
+      ],
+      [
+        2,
+        "Kavita Joshi",
+        140000
+      ],
+      [
+        3,
+        "Divya Bansal",
+        130000
+      ],
+      [
+        3,
+        "Harish Rao",
+        70000
+      ],
+      [
+        4,
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        4,
+        "Karthik Subramanian",
+        80000
+      ],
+      [
+        5,
+        "Faisal Ahmed",
+        160000
+      ],
+      [
+        5,
+        "Aisha Siddiqui",
+        78000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-16",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find employees whose salary is higher than the salary of every employee in the Marketing department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM employees WHERE salary > (SELECT MAX(e.salary) FROM employees e JOIN departments d ON e.dept_id = d.dept_id WHERE d.dept_name = 'Marketing')",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        "Anita Desai",
+        220000
+      ],
+      [
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        "Pooja Agarwal",
+        200000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-17",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find employees who are not managers of anyone.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name FROM employees WHERE emp_id NOT IN (SELECT manager_id FROM employees WHERE manager_id IS NOT NULL)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        "Rohan Gupta"
+      ],
+      [
+        "Neha Kulkarni"
+      ],
+      [
+        "Arjun Reddy"
+      ],
+      [
+        "Sandeep Singh"
+      ],
+      [
+        "Meera Pillai"
+      ],
+      [
+        "Harish Rao"
+      ],
+      [
+        "Karthik Subramanian"
+      ],
+      [
+        "Lakshmi Menon"
+      ],
+      [
+        "Gaurav Malhotra"
+      ],
+      [
+        "Sneha Chatterjee"
+      ],
+      [
+        "Ritesh Kumar"
+      ],
+      [
+        "Aisha Siddiqui"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-18",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Find course_ids that have enrollments in both semester 3 and semester 4.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT course_id FROM enrollments WHERE semester = 3 INTERSECT SELECT course_id FROM enrollments WHERE semester = 4",
+    "executed_ok": true,
+    "columns": [
+      "course_id"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        101
+      ],
+      [
+        102
+      ],
+      [
+        103
+      ],
+      [
+        104
+      ],
+      [
+        106
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CAP-19",
+    "company": "CAP",
+    "company_name": "Capgemini",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Find students (student_id) enrolled in semester 3 but not in semester 5.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT student_id FROM enrollments WHERE semester = 3 EXCEPT SELECT student_id FROM enrollments WHERE semester = 5",
+    "executed_ok": true,
+    "columns": [
+      "student_id"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        3
+      ],
+      [
+        5
+      ],
+      [
+        11
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-01",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Dialects",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "Which Oracle function is the equivalent of MySQL IFNULL?",
+    "options": {
+      "A": "NVL",
+      "B": "NULLIF",
+      "C": "DECODE",
+      "D": "TRIM"
+    },
+    "answer": "A",
+    "explanation": "NVL(a, b) returns b when a is NULL; COALESCE is the portable choice.",
+    "isPro": false
+  },
+  {
+    "id": "OIT-02",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Dialects",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How do you fetch only the first 5 rows in SQL Server?",
+    "options": {
+      "A": "LIMIT 5",
+      "B": "ROWNUM <= 5",
+      "C": "SELECT TOP 5 ...",
+      "D": "FETCH 5"
+    },
+    "answer": "C",
+    "explanation": "SQL Server uses TOP (or OFFSET-FETCH); MySQL/PostgreSQL use LIMIT; Oracle uses ROWNUM or FETCH FIRST.",
+    "isPro": false
+  },
+  {
+    "id": "OIT-03",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Which statement copies rows from one table into an existing table?",
+    "options": {
+      "A": "SELECT INTO",
+      "B": "INSERT INTO ... SELECT",
+      "C": "COPY TABLE",
+      "D": "UPDATE ... FROM"
+    },
+    "answer": "B",
+    "explanation": "INSERT INTO target SELECT ... FROM source.",
+    "isPro": false
+  },
+  {
+    "id": "OIT-04",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Dialects",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How do you get the current date in MySQL, Oracle and SQL Server?",
+    "model_answer": "MySQL: CURDATE() or CURRENT_DATE. Oracle: SYSDATE (or CURRENT_DATE). SQL Server: GETDATE() or CAST(GETDATE() AS DATE). CURRENT_DATE is ANSI.",
+    "isPro": false
+  },
+  {
+    "id": "OIT-05",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "MERGE",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "What does the MERGE statement do?",
+    "model_answer": "MERGE (upsert) compares a source and a target and performs INSERT, UPDATE or DELETE in one statement depending on whether rows match. MySQL uses INSERT ... ON DUPLICATE KEY UPDATE for a similar effect.",
+    "isPro": false
+  },
+  {
+    "id": "OIT-06",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "CTAS",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Create a new table high_paid containing employees earning at least 150000.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "CREATE TABLE high_paid AS SELECT * FROM employees WHERE salary >= 150000",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "OIT-07",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "INSERT SELECT",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Copy the names and salaries of Sales employees into an existing table sales_backup(emp_name, salary).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "INSERT INTO sales_backup (emp_name, salary) SELECT e.emp_name, e.salary FROM employees e JOIN departments d ON e.dept_id = d.dept_id WHERE d.dept_name = 'Sales'",
+    "executed_ok": false,
+    "isPro": false
+  },
+  {
+    "id": "OIT-08",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show project name and department name for every project.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT p.project_name, d.dept_name FROM projects p JOIN departments d ON p.dept_id = d.dept_id",
+    "executed_ok": true,
+    "columns": [
+      "project_name",
+      "dept_name"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Phoenix CRM",
+        "Engineering"
+      ],
+      [
+        "Atlas Billing",
+        "Finance"
+      ],
+      [
+        "Orion App",
+        "Engineering"
+      ],
+      [
+        "Growth Campaign",
+        "Marketing"
+      ],
+      [
+        "Payroll Revamp",
+        "HR"
+      ],
+      [
+        "Sales Portal",
+        "Sales"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-09",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Find projects that are still running (no end date).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT project_name, start_date FROM projects WHERE end_date IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "project_name",
+      "start_date"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Orion App",
+        "2024-01-15"
+      ],
+      [
+        "Payroll Revamp",
+        "2024-04-01"
+      ],
+      [
+        "Sales Portal",
+        "2024-03-10"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-10",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List the employee names working on the 'Orion App' project with their hours.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, ep.hours FROM emp_projects ep JOIN employees e ON ep.emp_id = e.emp_id JOIN projects p ON ep.project_id = p.project_id WHERE p.project_name = 'Orion App' ORDER BY ep.hours DESC",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "hours"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Arjun Reddy",
+        310
+      ],
+      [
+        "Rohan Gupta",
+        260
+      ],
+      [
+        "Priya Nair",
+        200
+      ],
+      [
+        "Gaurav Malhotra",
+        110
+      ],
+      [
+        "Sneha Chatterjee",
+        90
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-11",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the employee who has logged the most total hours across all projects.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, SUM(ep.hours) AS total_hours FROM emp_projects ep JOIN employees e ON ep.emp_id = e.emp_id GROUP BY e.emp_id, e.emp_name ORDER BY total_hours DESC LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "total_hours"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Rohan Gupta",
+        540
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-12",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Sorting",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List employees sorted by department id ascending and then salary descending.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, dept_id, salary FROM employees ORDER BY dept_id ASC, salary DESC",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_id",
+      "salary"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Gaurav Malhotra",
+        null,
+        120000
+      ],
+      [
+        "Vikram Mehta",
+        1,
+        250000
+      ],
+      [
+        "Suresh Iyer",
+        1,
+        180000
+      ],
+      [
+        "Priya Nair",
+        1,
+        150000
+      ],
+      [
+        "Rohan Gupta",
+        1,
+        95000
+      ],
+      [
+        "Neha Kulkarni",
+        1,
+        95000
+      ],
+      [
+        "Sneha Chatterjee",
+        1,
+        95000
+      ],
+      [
+        "Arjun Reddy",
+        1,
+        60000
+      ],
+      [
+        "Anita Desai",
+        2,
+        220000
+      ],
+      [
+        "Kavita Joshi",
+        2,
+        140000
+      ],
+      [
+        "Ritesh Kumar",
+        2,
+        72000
+      ],
+      [
+        "Sandeep Singh",
+        2,
+        70000
+      ],
+      [
+        "Meera Pillai",
+        2,
+        70000
+      ],
+      [
+        "Imran Khan",
+        2,
+        65000
+      ],
+      [
+        "Divya Bansal",
+        3,
+        130000
+      ],
+      [
+        "Harish Rao",
+        3,
+        70000
+      ],
+      [
+        "Pooja Agarwal",
+        4,
+        200000
+      ],
+      [
+        "Karthik Subramanian",
+        4,
+        80000
+      ],
+      [
+        "Lakshmi Menon",
+        4,
+        80000
+      ],
+      [
+        "Faisal Ahmed",
+        5,
+        160000
+      ],
+      [
+        "Aisha Siddiqui",
+        5,
+        78000
+      ],
+      [
+        "Tanvi Shah",
+        5,
+        75000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-13",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the average salary per city, only for cities where the average is above 80000.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT city, AVG(salary) AS avg_salary FROM employees GROUP BY city HAVING AVG(salary) > 80000",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "avg_salary"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        175000
+      ],
+      [
+        "Chennai",
+        120000
+      ],
+      [
+        "Delhi",
+        95750
+      ],
+      [
+        "Kolkata",
+        95000
+      ],
+      [
+        "Mumbai",
+        143333.33333333334
+      ],
+      [
+        "Pune",
+        98333.33333333333
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-14",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the departments whose average salary is higher than the company-wide average salary.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name, AVG(e.salary) AS avg_salary FROM departments d JOIN employees e ON d.dept_id = e.dept_id GROUP BY d.dept_id, d.dept_name HAVING AVG(e.salary) > (SELECT AVG(salary) FROM employees)",
+    "executed_ok": true,
+    "columns": [
+      "dept_name",
+      "avg_salary"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Engineering",
+        132142.85714285713
+      ],
+      [
+        "Finance",
+        120000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-15",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "String Functions",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Show the first three characters of each employee's name and the position of the space in the name.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT SUBSTR(emp_name, 1, 3) AS first3, INSTR(emp_name, ' ') AS space_pos FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "first3",
+      "space_pos"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vik",
+        7
+      ],
+      [
+        "Ani",
+        6
+      ],
+      [
+        "Sur",
+        7
+      ],
+      [
+        "Pri",
+        6
+      ],
+      [
+        "Roh",
+        6
+      ],
+      [
+        "Neh",
+        5
+      ],
+      [
+        "Arj",
+        6
+      ],
+      [
+        "Kav",
+        7
+      ],
+      [
+        "San",
+        8
+      ],
+      [
+        "Mee",
+        6
+      ],
+      [
+        "Imr",
+        6
+      ],
+      [
+        "Div",
+        6
+      ],
+      [
+        "Har",
+        7
+      ],
+      [
+        "Poo",
+        6
+      ],
+      [
+        "Kar",
+        8
+      ],
+      [
+        "Lak",
+        8
+      ],
+      [
+        "Fai",
+        7
+      ],
+      [
+        "Tan",
+        6
+      ],
+      [
+        "Gau",
+        7
+      ],
+      [
+        "Sne",
+        6
+      ],
+      [
+        "Rit",
+        7
+      ],
+      [
+        "Ais",
+        6
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-16",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Rank all employees by salary (highest first) using RANK and DENSE_RANK side by side.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary, RANK() OVER (ORDER BY salary DESC) AS rnk, DENSE_RANK() OVER (ORDER BY salary DESC) AS dense_rnk FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary",
+      "rnk",
+      "dense_rnk"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000,
+        1,
+        1
+      ],
+      [
+        "Anita Desai",
+        220000,
+        2,
+        2
+      ],
+      [
+        "Pooja Agarwal",
+        200000,
+        3,
+        3
+      ],
+      [
+        "Suresh Iyer",
+        180000,
+        4,
+        4
+      ],
+      [
+        "Faisal Ahmed",
+        160000,
+        5,
+        5
+      ],
+      [
+        "Priya Nair",
+        150000,
+        6,
+        6
+      ],
+      [
+        "Kavita Joshi",
+        140000,
+        7,
+        7
+      ],
+      [
+        "Divya Bansal",
+        130000,
+        8,
+        8
+      ],
+      [
+        "Gaurav Malhotra",
+        120000,
+        9,
+        9
+      ],
+      [
+        "Rohan Gupta",
+        95000,
+        10,
+        10
+      ],
+      [
+        "Neha Kulkarni",
+        95000,
+        10,
+        10
+      ],
+      [
+        "Sneha Chatterjee",
+        95000,
+        10,
+        10
+      ],
+      [
+        "Karthik Subramanian",
+        80000,
+        13,
+        11
+      ],
+      [
+        "Lakshmi Menon",
+        80000,
+        13,
+        11
+      ],
+      [
+        "Aisha Siddiqui",
+        78000,
+        15,
+        12
+      ],
+      [
+        "Tanvi Shah",
+        75000,
+        16,
+        13
+      ],
+      [
+        "Ritesh Kumar",
+        72000,
+        17,
+        14
+      ],
+      [
+        "Sandeep Singh",
+        70000,
+        18,
+        15
+      ],
+      [
+        "Meera Pillai",
+        70000,
+        18,
+        15
+      ],
+      [
+        "Harish Rao",
+        70000,
+        18,
+        15
+      ],
+      [
+        "Imran Khan",
+        65000,
+        21,
+        16
+      ],
+      [
+        "Arjun Reddy",
+        60000,
+        22,
+        17
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "OIT-17",
+    "company": "OIT",
+    "company_name": "Tech Mahindra, LTIMindtree, Mphasis, Hexaware",
+    "tier": "IT Services",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the 5th highest distinct salary without using window functions.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT DISTINCT e1.salary FROM employees e1 WHERE 4 = (SELECT COUNT(DISTINCT e2.salary) FROM employees e2 WHERE e2.salary > e1.salary)",
+    "executed_ok": true,
+    "columns": [
+      "salary"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        160000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "DEL-01",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Indexing",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "Explain how an index improves query performance and when it can hurt.",
+    "model_answer": "An index (typically a B-tree) lets the engine seek to matching rows instead of scanning the table. It hurts when the table is write-heavy (every INSERT/UPDATE/DELETE must also maintain the index), when the column has very low selectivity, or when the query wraps the indexed column in a function, which prevents index use.",
+    "isPro": true
+  },
+  {
+    "id": "DEL-02",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Normalization",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "What is the difference between 3NF and BCNF?",
+    "model_answer": "3NF allows a non-key attribute to determine a prime attribute; BCNF is stricter and requires that for every non-trivial functional dependency X -> Y, X must be a super key. Every BCNF relation is in 3NF but not vice versa.",
+    "isPro": true
+  },
+  {
+    "id": "DEL-03",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Data Warehousing",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "OLTP vs OLAP: what is the difference?",
+    "model_answer": "OLTP handles many short read/write transactions on normalised data (orders, payments). OLAP handles large read-heavy analytical queries over denormalised, historical data (star or snowflake schemas) with aggregations.",
+    "isPro": true
+  },
+  {
+    "id": "DEL-04",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Query Design",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "CTE vs subquery vs temporary table: when do you use which?",
+    "model_answer": "A CTE names a subquery for readability and enables recursion; a subquery is fine for one-off filters; a temporary table is materialised and indexed, so it suits reuse across many statements or very large intermediate results.",
+    "isPro": true
+  },
+  {
+    "id": "DEL-05",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Pivot",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show delivered revenue per category for January, February and March 2024 as three columns (jan, feb, mar).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, SUM(CASE WHEN MONTH(o.order_date) = 1 THEN oi.quantity * oi.unit_price ELSE 0 END) AS jan, SUM(CASE WHEN MONTH(o.order_date) = 2 THEN oi.quantity * oi.unit_price ELSE 0 END) AS feb, SUM(CASE WHEN MONTH(o.order_date) = 3 THEN oi.quantity * oi.unit_price ELSE 0 END) AS mar FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' AND YEAR(o.order_date) = 2024 GROUP BY p.category",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "jan",
+      "feb",
+      "mar"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        14847.2,
+        11392.4,
+        7242.1
+      ],
+      [
+        "Electronics",
+        308135.4,
+        535479.1,
+        454982.5
+      ],
+      [
+        "Fashion",
+        19136.1,
+        10494,
+        33987
+      ],
+      [
+        "Grocery",
+        13363.3,
+        11882.4,
+        4253.2
+      ],
+      [
+        "Home",
+        42785.1,
+        36527.3,
+        28655.399999999998
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-06",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show monthly delivered revenue together with the running (cumulative) total across months.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH m AS (SELECT YEAR(o.order_date) * 100 + MONTH(o.order_date) AS ym, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY YEAR(o.order_date) * 100 + MONTH(o.order_date)) SELECT ym, revenue, SUM(revenue) OVER (ORDER BY ym) AS running_total FROM m ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "revenue",
+      "running_total"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        202310,
+        859576.2,
+        859576.2
+      ],
+      [
+        202311,
+        1058159.9,
+        1917736.0999999999
+      ],
+      [
+        202312,
+        389098,
+        2306834.0999999996
+      ],
+      [
+        202401,
+        398267.1,
+        2705101.1999999997
+      ],
+      [
+        202402,
+        605775.2,
+        3310876.4
+      ],
+      [
+        202403,
+        529120.2,
+        3839996.5999999996
+      ],
+      [
+        202404,
+        314193.6,
+        4154190.1999999997
+      ],
+      [
+        202405,
+        144415.3,
+        4298605.5
+      ],
+      [
+        202406,
+        618094.1,
+        4916699.6
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-07",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [
+      "AMZ",
+      "FKT"
+    ],
+    "question": "Show monthly delivered revenue, the previous month's revenue and the month-over-month growth percentage.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH m AS (SELECT YEAR(o.order_date) * 100 + MONTH(o.order_date) AS ym, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY YEAR(o.order_date) * 100 + MONTH(o.order_date)) SELECT ym, revenue, LAG(revenue) OVER (ORDER BY ym) AS prev_revenue, ROUND((revenue - LAG(revenue) OVER (ORDER BY ym)) * 100.0 / LAG(revenue) OVER (ORDER BY ym), 2) AS mom_growth_pct FROM m ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "revenue",
+      "prev_revenue",
+      "mom_growth_pct"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        202310,
+        859576.2,
+        null,
+        null
+      ],
+      [
+        202311,
+        1058159.9,
+        859576.2,
+        23.1
+      ],
+      [
+        202312,
+        389098,
+        1058159.9,
+        -63.23
+      ],
+      [
+        202401,
+        398267.1,
+        389098,
+        2.36
+      ],
+      [
+        202402,
+        605775.2,
+        398267.1,
+        52.1
+      ],
+      [
+        202403,
+        529120.2,
+        605775.2,
+        -12.65
+      ],
+      [
+        202404,
+        314193.6,
+        529120.2,
+        -40.62
+      ],
+      [
+        202405,
+        144415.3,
+        314193.6,
+        -54.04
+      ],
+      [
+        202406,
+        618094.1,
+        144415.3,
+        328
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-08",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Percent of Total",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show each category's share of total delivered revenue as a percentage, using a window function.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH c AS (SELECT p.category, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY p.category) SELECT category, revenue, ROUND(revenue * 100.0 / SUM(revenue) OVER (), 2) AS pct_of_total FROM c ORDER BY revenue DESC",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "revenue",
+      "pct_of_total"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Electronics",
+        4240886.2,
+        86.25
+      ],
+      [
+        "Home",
+        292398.4,
+        5.95
+      ],
+      [
+        "Fashion",
+        217539.6,
+        4.42
+      ],
+      [
+        "Books",
+        92390.8,
+        1.88
+      ],
+      [
+        "Grocery",
+        73484.6,
+        1.49
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-09",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Segmentation",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Split customers who have delivered orders into four spend quartiles (1 = highest spenders) and show the customer, total spend and quartile.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH s AS (SELECT o.customer_id, SUM(oi.quantity * oi.unit_price) AS spend FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY o.customer_id) SELECT customer_id, spend, NTILE(4) OVER (ORDER BY spend DESC) AS quartile FROM s",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "spend",
+      "quartile"
+    ],
+    "row_count": 23,
+    "expected_rows": [
+      [
+        23,
+        592766.3,
+        1
+      ],
+      [
+        26,
+        521934.1,
+        1
+      ],
+      [
+        12,
+        476711.8,
+        1
+      ],
+      [
+        19,
+        361892.7,
+        1
+      ],
+      [
+        18,
+        354299.2,
+        1
+      ],
+      [
+        17,
+        345884.7,
+        1
+      ],
+      [
+        15,
+        335758,
+        2
+      ],
+      [
+        6,
+        270158.4,
+        2
+      ],
+      [
+        2,
+        265283.2,
+        2
+      ],
+      [
+        7,
+        209354.6,
+        2
+      ],
+      [
+        5,
+        181833.3,
+        2
+      ],
+      [
+        1,
+        176890,
+        2
+      ],
+      [
+        21,
+        166786.69999999998,
+        3
+      ],
+      [
+        24,
+        156464.9,
+        3
+      ],
+      [
+        27,
+        111144.2,
+        3
+      ],
+      [
+        3,
+        100983.1,
+        3
+      ],
+      [
+        9,
+        70587.5,
+        3
+      ],
+      [
+        8,
+        65194,
+        3
+      ],
+      [
+        13,
+        54163.5,
+        4
+      ],
+      [
+        16,
+        47381.1,
+        4
+      ],
+      [
+        22,
+        21994.1,
+        4
+      ],
+      [
+        20,
+        15043.1,
+        4
+      ],
+      [
+        4,
+        14191.1,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-10",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Pareto Analysis",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "List products in descending revenue order with their cumulative share of total revenue, and flag the products that together make up the first 80 percent.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH r AS (SELECT p.product_name, SUM(oi.quantity * oi.unit_price) AS revenue FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.product_id, p.product_name), c AS (SELECT product_name, revenue, SUM(revenue) OVER (ORDER BY revenue DESC) * 1.0 / SUM(revenue) OVER () AS cum_share FROM r) SELECT product_name, revenue, ROUND(cum_share, 3) AS cum_share, CASE WHEN cum_share - revenue * 1.0 / (SELECT SUM(revenue) FROM r) < 0.8 THEN 'Top 80%' ELSE 'Tail' END AS bucket FROM c ORDER BY revenue DESC",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "revenue",
+      "cum_share",
+      "bucket"
+    ],
+    "row_count": 18,
+    "expected_rows": [
+      [
+        "Pixel Laptop 14",
+        2859948,
+        0.397,
+        "Top 80%"
+      ],
+      [
+        "Zenith 55in Smart TV",
+        2129345.4,
+        0.693,
+        "Top 80%"
+      ],
+      [
+        "Nova X1 Smartphone",
+        704862.9,
+        0.791,
+        "Top 80%"
+      ],
+      [
+        "Zenith Soundbar",
+        387951.5,
+        0.845,
+        "Top 80%"
+      ],
+      [
+        "Stride Running Shoes",
+        198393.3,
+        0.872,
+        "Tail"
+      ],
+      [
+        "HomeNest Cookware Set",
+        179640.1,
+        0.897,
+        "Tail"
+      ],
+      [
+        "HomeNest Mixer Grinder",
+        167952,
+        0.921,
+        "Tail"
+      ],
+      [
+        "Nova Buds Pro",
+        145191.9,
+        0.941,
+        "Tail"
+      ],
+      [
+        "Urban Denim Jeans",
+        80055.5,
+        0.952,
+        "Tail"
+      ],
+      [
+        "Indian Classics Box Set",
+        75849.4,
+        0.963,
+        "Tail"
+      ],
+      [
+        "CozyCo Bedsheet",
+        62222.1,
+        0.971,
+        "Tail"
+      ],
+      [
+        "Cold Pressed Olive Oil 1L",
+        43961.1,
+        0.977,
+        "Tail"
+      ],
+      [
+        "Organic Basmati 5kg",
+        39423.6,
+        0.983,
+        "Tail"
+      ],
+      [
+        "Stride Sports Tee",
+        35955,
+        0.988,
+        "Tail"
+      ],
+      [
+        "Data Structures in Depth",
+        32579.8,
+        0.992,
+        "Tail"
+      ],
+      [
+        "Urban Cotton Kurta",
+        24575.4,
+        0.996,
+        "Tail"
+      ],
+      [
+        "SQL Mastery Handbook",
+        16217.5,
+        0.998,
+        "Tail"
+      ],
+      [
+        "Masala Tea 500g",
+        14972.1,
+        1,
+        "Tail"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-11",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Relational Division",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find categories in which every product has been ordered at least once.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category FROM products p WHERE p.product_id IN (SELECT product_id FROM order_items) GROUP BY p.category HAVING COUNT(*) = (SELECT COUNT(*) FROM products p2 WHERE p2.category = p.category)",
+    "executed_ok": true,
+    "columns": [
+      "category"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Books"
+      ],
+      [
+        "Grocery"
+      ],
+      [
+        "Home"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-12",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Cohorts",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Count customers by signup month (format YYYY-MM) and show how many of them have placed at least one order.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(c.signup_date, '%Y-%m') AS signup_month, COUNT(*) AS customers, SUM(CASE WHEN EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.customer_id) THEN 1 ELSE 0 END) AS ordered_at_least_once FROM customers c GROUP BY DATE_FORMAT(c.signup_date, '%Y-%m') ORDER BY signup_month",
+    "executed_ok": true,
+    "columns": [
+      "signup_month",
+      "customers",
+      "ordered_at_least_once"
+    ],
+    "row_count": 19,
+    "expected_rows": [
+      [
+        "2022-01",
+        2,
+        1
+      ],
+      [
+        "2022-03",
+        1,
+        1
+      ],
+      [
+        "2022-04",
+        1,
+        1
+      ],
+      [
+        "2022-05",
+        1,
+        1
+      ],
+      [
+        "2022-06",
+        2,
+        2
+      ],
+      [
+        "2022-07",
+        1,
+        1
+      ],
+      [
+        "2022-08",
+        1,
+        0
+      ],
+      [
+        "2022-09",
+        2,
+        2
+      ],
+      [
+        "2022-11",
+        3,
+        3
+      ],
+      [
+        "2023-01",
+        1,
+        1
+      ],
+      [
+        "2023-03",
+        2,
+        2
+      ],
+      [
+        "2023-04",
+        2,
+        1
+      ],
+      [
+        "2023-05",
+        1,
+        1
+      ],
+      [
+        "2023-06",
+        4,
+        4
+      ],
+      [
+        "2023-07",
+        2,
+        2
+      ],
+      [
+        "2023-09",
+        1,
+        0
+      ],
+      [
+        "2023-11",
+        1,
+        1
+      ],
+      [
+        "2023-12",
+        1,
+        1
+      ],
+      [
+        "2024-01",
+        1,
+        1
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-13",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show every customer's second order (order_id and date); skip customers with only one order.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, order_id, order_date FROM (SELECT customer_id, order_id, order_date, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date, order_id) AS rn FROM orders) t WHERE rn = 2",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "order_id",
+      "order_date"
+    ],
+    "row_count": 25,
+    "expected_rows": [
+      [
+        1,
+        151,
+        "2024-06-05"
+      ],
+      [
+        2,
+        18,
+        "2023-10-30"
+      ],
+      [
+        3,
+        68,
+        "2024-01-06"
+      ],
+      [
+        5,
+        48,
+        "2023-12-07"
+      ],
+      [
+        6,
+        10,
+        "2023-10-21"
+      ],
+      [
+        7,
+        47,
+        "2023-12-06"
+      ],
+      [
+        8,
+        30,
+        "2023-11-11"
+      ],
+      [
+        9,
+        104,
+        "2024-03-03"
+      ],
+      [
+        10,
+        135,
+        "2024-05-04"
+      ],
+      [
+        12,
+        8,
+        "2023-10-19"
+      ],
+      [
+        13,
+        54,
+        "2023-12-19"
+      ],
+      [
+        14,
+        52,
+        "2023-12-15"
+      ],
+      [
+        15,
+        20,
+        "2023-10-31"
+      ],
+      [
+        16,
+        72,
+        "2024-01-13"
+      ],
+      [
+        17,
+        22,
+        "2023-11-01"
+      ],
+      [
+        18,
+        15,
+        "2023-10-27"
+      ],
+      [
+        19,
+        33,
+        "2023-11-17"
+      ],
+      [
+        20,
+        129,
+        "2024-04-28"
+      ],
+      [
+        21,
+        40,
+        "2023-11-23"
+      ],
+      [
+        22,
+        94,
+        "2024-02-13"
+      ],
+      [
+        23,
+        24,
+        "2023-11-05"
+      ],
+      [
+        24,
+        36,
+        "2023-11-20"
+      ],
+      [
+        25,
+        91,
+        "2024-02-13"
+      ],
+      [
+        26,
+        5,
+        "2023-10-05"
+      ],
+      [
+        27,
+        45,
+        "2023-12-01"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-14",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Date Gaps",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "For each customer with at least two orders, compute the average number of days between consecutive orders.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, ROUND(AVG(gap_days), 1) AS avg_gap_days FROM (SELECT customer_id, DATEDIFF(order_date, LAG(order_date) OVER (PARTITION BY customer_id ORDER BY order_date, order_id)) AS gap_days FROM orders) t WHERE gap_days IS NOT NULL GROUP BY customer_id",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "avg_gap_days"
+    ],
+    "row_count": 25,
+    "expected_rows": [
+      [
+        1,
+        189
+      ],
+      [
+        2,
+        36.4
+      ],
+      [
+        3,
+        55.3
+      ],
+      [
+        5,
+        56
+      ],
+      [
+        6,
+        21.5
+      ],
+      [
+        7,
+        23.9
+      ],
+      [
+        8,
+        63
+      ],
+      [
+        9,
+        93
+      ],
+      [
+        10,
+        125
+      ],
+      [
+        12,
+        18.3
+      ],
+      [
+        13,
+        42.5
+      ],
+      [
+        14,
+        85
+      ],
+      [
+        15,
+        29.8
+      ],
+      [
+        16,
+        27.5
+      ],
+      [
+        17,
+        15.3
+      ],
+      [
+        18,
+        38.2
+      ],
+      [
+        19,
+        25.6
+      ],
+      [
+        20,
+        30.3
+      ],
+      [
+        21,
+        25.9
+      ],
+      [
+        22,
+        48.7
+      ],
+      [
+        23,
+        17.1
+      ],
+      [
+        24,
+        36.8
+      ],
+      [
+        25,
+        9
+      ],
+      [
+        26,
+        22.3
+      ],
+      [
+        27,
+        100
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-15",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Retention",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Find customers who placed an order in January 2024 and also in February 2024.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DISTINCT o1.customer_id FROM orders o1 WHERE o1.order_date BETWEEN '2024-01-01' AND '2024-01-31' AND EXISTS (SELECT 1 FROM orders o2 WHERE o2.customer_id = o1.customer_id AND o2.order_date BETWEEN '2024-02-01' AND '2024-02-29')",
+    "executed_ok": true,
+    "columns": [
+      "customer_id"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        7
+      ],
+      [
+        23
+      ],
+      [
+        17
+      ],
+      [
+        16
+      ],
+      [
+        19
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-16",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every employee show the difference between their salary and the average salary of their department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, dept_id, salary, salary - AVG(salary) OVER (PARTITION BY dept_id) AS diff_from_dept_avg FROM employees WHERE dept_id IS NOT NULL",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_id",
+      "salary",
+      "diff_from_dept_avg"
+    ],
+    "row_count": 21,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        1,
+        250000,
+        117857.14285714287
+      ],
+      [
+        "Suresh Iyer",
+        1,
+        180000,
+        47857.14285714287
+      ],
+      [
+        "Priya Nair",
+        1,
+        150000,
+        17857.14285714287
+      ],
+      [
+        "Rohan Gupta",
+        1,
+        95000,
+        -37142.85714285713
+      ],
+      [
+        "Neha Kulkarni",
+        1,
+        95000,
+        -37142.85714285713
+      ],
+      [
+        "Arjun Reddy",
+        1,
+        60000,
+        -72142.85714285713
+      ],
+      [
+        "Sneha Chatterjee",
+        1,
+        95000,
+        -37142.85714285713
+      ],
+      [
+        "Anita Desai",
+        2,
+        220000,
+        113833.33333333333
+      ],
+      [
+        "Kavita Joshi",
+        2,
+        140000,
+        33833.33333333333
+      ],
+      [
+        "Sandeep Singh",
+        2,
+        70000,
+        -36166.66666666667
+      ],
+      [
+        "Meera Pillai",
+        2,
+        70000,
+        -36166.66666666667
+      ],
+      [
+        "Imran Khan",
+        2,
+        65000,
+        -41166.66666666667
+      ],
+      [
+        "Ritesh Kumar",
+        2,
+        72000,
+        -34166.66666666667
+      ],
+      [
+        "Divya Bansal",
+        3,
+        130000,
+        30000
+      ],
+      [
+        "Harish Rao",
+        3,
+        70000,
+        -30000
+      ],
+      [
+        "Pooja Agarwal",
+        4,
+        200000,
+        80000
+      ],
+      [
+        "Karthik Subramanian",
+        4,
+        80000,
+        -40000
+      ],
+      [
+        "Lakshmi Menon",
+        4,
+        80000,
+        -40000
+      ],
+      [
+        "Faisal Ahmed",
+        5,
+        160000,
+        55666.66666666667
+      ],
+      [
+        "Tanvi Shah",
+        5,
+        75000,
+        -29333.33333333333
+      ],
+      [
+        "Aisha Siddiqui",
+        5,
+        78000,
+        -26333.33333333333
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-17",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show each employee's running total of salary within their department, ordered by hire date.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT dept_id, emp_name, hire_date, salary, SUM(salary) OVER (PARTITION BY dept_id ORDER BY hire_date, emp_id) AS running_salary FROM employees WHERE dept_id IS NOT NULL",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "emp_name",
+      "hire_date",
+      "salary",
+      "running_salary"
+    ],
+    "row_count": 21,
+    "expected_rows": [
+      [
+        1,
+        "Vikram Mehta",
+        "2015-04-01",
+        250000,
+        250000
+      ],
+      [
+        1,
+        "Suresh Iyer",
+        "2017-01-10",
+        180000,
+        430000
+      ],
+      [
+        1,
+        "Priya Nair",
+        "2018-03-20",
+        150000,
+        580000
+      ],
+      [
+        1,
+        "Rohan Gupta",
+        "2021-07-05",
+        95000,
+        675000
+      ],
+      [
+        1,
+        "Neha Kulkarni",
+        "2022-02-14",
+        95000,
+        770000
+      ],
+      [
+        1,
+        "Sneha Chatterjee",
+        "2023-03-13",
+        95000,
+        865000
+      ],
+      [
+        1,
+        "Arjun Reddy",
+        "2023-08-01",
+        60000,
+        925000
+      ],
+      [
+        2,
+        "Anita Desai",
+        "2016-06-15",
+        220000,
+        220000
+      ],
+      [
+        2,
+        "Sandeep Singh",
+        "2020-11-23",
+        70000,
+        290000
+      ],
+      [
+        2,
+        "Kavita Joshi",
+        "2021-03-01",
+        140000,
+        430000
+      ],
+      [
+        2,
+        "Meera Pillai",
+        "2021-05-17",
+        70000,
+        500000
+      ],
+      [
+        2,
+        "Imran Khan",
+        "2022-10-03",
+        65000,
+        565000
+      ],
+      [
+        2,
+        "Ritesh Kumar",
+        "2024-02-12",
+        72000,
+        637000
+      ],
+      [
+        3,
+        "Divya Bansal",
+        "2016-02-08",
+        130000,
+        130000
+      ],
+      [
+        3,
+        "Harish Rao",
+        "2022-04-11",
+        70000,
+        200000
+      ],
+      [
+        4,
+        "Pooja Agarwal",
+        "2015-11-30",
+        200000,
+        200000
+      ],
+      [
+        4,
+        "Karthik Subramanian",
+        "2019-06-24",
+        80000,
+        280000
+      ],
+      [
+        4,
+        "Lakshmi Menon",
+        "2020-01-06",
+        80000,
+        360000
+      ],
+      [
+        5,
+        "Faisal Ahmed",
+        "2018-08-19",
+        160000,
+        160000
+      ],
+      [
+        5,
+        "Tanvi Shah",
+        "2023-01-16",
+        75000,
+        235000
+      ],
+      [
+        5,
+        "Aisha Siddiqui",
+        "2024-01-08",
+        78000,
+        313000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-18",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List accounts with no successful transaction in the last 7 days (2024-06-24 to 2024-06-30), i.e. candidates for a dormancy alert.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT a.account_id, a.account_type FROM accounts a WHERE NOT EXISTS (SELECT 1 FROM transactions t WHERE t.account_id = a.account_id AND t.status = 'SUCCESS' AND t.txn_date BETWEEN '2024-06-24' AND '2024-06-30')",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "account_type"
+    ],
+    "row_count": 18,
+    "expected_rows": [
+      [
+        1,
+        "Salary"
+      ],
+      [
+        2,
+        "Current"
+      ],
+      [
+        3,
+        "Salary"
+      ],
+      [
+        6,
+        "Current"
+      ],
+      [
+        10,
+        "Savings"
+      ],
+      [
+        11,
+        "Salary"
+      ],
+      [
+        12,
+        "Savings"
+      ],
+      [
+        14,
+        "Salary"
+      ],
+      [
+        15,
+        "Savings"
+      ],
+      [
+        18,
+        "Savings"
+      ],
+      [
+        22,
+        "Current"
+      ],
+      [
+        24,
+        "Savings"
+      ],
+      [
+        28,
+        "Salary"
+      ],
+      [
+        30,
+        "Savings"
+      ],
+      [
+        31,
+        "Salary"
+      ],
+      [
+        32,
+        "Savings"
+      ],
+      [
+        34,
+        "Salary"
+      ],
+      [
+        35,
+        "Current"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-19",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Bucketing",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Show the number of loans and the default rate (percentage of Defaulted loans) for each tenure_months value.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT tenure_months, COUNT(*) AS loans, ROUND(SUM(CASE WHEN status = 'Defaulted' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 1) AS default_rate_pct FROM loans GROUP BY tenure_months ORDER BY tenure_months",
+    "executed_ok": true,
+    "columns": [
+      "tenure_months",
+      "loans",
+      "default_rate_pct"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        12,
+        3,
+        0
+      ],
+      [
+        24,
+        2,
+        0
+      ],
+      [
+        36,
+        1,
+        0
+      ],
+      [
+        60,
+        4,
+        25
+      ],
+      [
+        120,
+        6,
+        0
+      ],
+      [
+        240,
+        4,
+        25
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "DEL-20",
+    "company": "DEL",
+    "company_name": "Deloitte",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find categories whose average review rating is higher than the overall average rating of all reviews.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, AVG(r.rating) AS avg_rating FROM reviews r JOIN products p ON r.product_id = p.product_id GROUP BY p.category HAVING AVG(r.rating) > (SELECT AVG(rating) FROM reviews)",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "avg_rating"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Fashion",
+        4.2631578947368425
+      ],
+      [
+        "Grocery",
+        4.071428571428571
+      ],
+      [
+        "Home",
+        4.083333333333333
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-01",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "What does a RIGHT JOIN return?",
+    "options": {
+      "A": "All rows of the left table",
+      "B": "All rows of the right table plus matching left rows",
+      "C": "Only matching rows",
+      "D": "Only non-matching rows"
+    },
+    "answer": "B",
+    "explanation": "It is the mirror image of LEFT JOIN.",
+    "isPro": true
+  },
+  {
+    "id": "BIG4-02",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Functions",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "What does NULLIF(a, b) return?",
+    "options": {
+      "A": "NULL if a equals b, otherwise a",
+      "B": "b if a is NULL",
+      "C": "The larger of a and b",
+      "D": "TRUE or FALSE"
+    },
+    "answer": "A",
+    "explanation": "Commonly used to avoid division by zero: x / NULLIF(y, 0).",
+    "isPro": true
+  },
+  {
+    "id": "BIG4-03",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Data Concepts",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "What is a star schema?",
+    "model_answer": "A warehouse design with a central fact table (measures such as sales amount) surrounded by denormalised dimension tables (date, product, customer, region) joined by foreign keys. It makes analytical queries simple and fast.",
+    "isPro": true
+  },
+  {
+    "id": "BIG4-04",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "ETL",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "What is ETL and where does SQL fit in?",
+    "model_answer": "ETL means Extract, Transform, Load. SQL is used to extract from source systems, to transform (clean, join, aggregate, derive columns) and to load or merge results into warehouse tables.",
+    "isPro": true
+  },
+  {
+    "id": "BIG4-05",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show total successful payment amount per merchant category.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT m.category, SUM(p.amount) AS total_amount FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id WHERE p.status = 'SUCCESS' GROUP BY m.category ORDER BY total_amount DESC",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "total_amount"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Grocery",
+        816232.16
+      ],
+      [
+        "Food",
+        804384.26
+      ],
+      [
+        "Travel",
+        621547.08
+      ],
+      [
+        "Electronics",
+        518140.12
+      ],
+      [
+        "Fuel",
+        461561.67
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-06",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compute the success rate (percentage of payments with status SUCCESS) for each payment method.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT method, COUNT(*) AS attempts, ROUND(SUM(CASE WHEN status = 'SUCCESS' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS success_rate_pct FROM payments GROUP BY method",
+    "executed_ok": true,
+    "columns": [
+      "method",
+      "attempts",
+      "success_rate_pct"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Card",
+        98,
+        85.71
+      ],
+      [
+        "NetBanking",
+        41,
+        82.93
+      ],
+      [
+        "UPI",
+        295,
+        89.49
+      ],
+      [
+        "Wallet",
+        66,
+        86.36
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-07",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find merchants whose failure rate is higher than the overall failure rate across all payments.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT m.merchant_name, ROUND(SUM(CASE WHEN p.status = 'FAILED' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS failure_rate FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id GROUP BY m.merchant_id, m.merchant_name HAVING SUM(CASE WHEN p.status = 'FAILED' THEN 1 ELSE 0 END) * 1.0 / COUNT(*) > (SELECT SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) * 1.0 / COUNT(*) FROM payments)",
+    "executed_ok": true,
+    "columns": [
+      "merchant_name",
+      "failure_rate"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "ElectroHub",
+        12.2
+      ],
+      [
+        "Chai Point Cafe",
+        10.2
+      ],
+      [
+        "RailBook",
+        10.2
+      ],
+      [
+        "Daily Needs",
+        10
+      ],
+      [
+        "Pizza Planet",
+        11.76
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-08",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each merchant show their single largest successful payment (payment_id and amount).",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT merchant_id, payment_id, amount FROM (SELECT merchant_id, payment_id, amount, ROW_NUMBER() OVER (PARTITION BY merchant_id ORDER BY amount DESC, payment_id) AS rn FROM payments WHERE status = 'SUCCESS') t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "merchant_id",
+      "payment_id",
+      "amount"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        1,
+        312,
+        14530.83
+      ],
+      [
+        2,
+        35,
+        13508.37
+      ],
+      [
+        3,
+        346,
+        14111.62
+      ],
+      [
+        4,
+        129,
+        14539.55
+      ],
+      [
+        5,
+        423,
+        14561.76
+      ],
+      [
+        6,
+        223,
+        14711.4
+      ],
+      [
+        7,
+        350,
+        14995.6
+      ],
+      [
+        8,
+        358,
+        13705.38
+      ],
+      [
+        9,
+        28,
+        14864.26
+      ],
+      [
+        10,
+        298,
+        14883.72
+      ],
+      [
+        11,
+        268,
+        14933.11
+      ],
+      [
+        12,
+        387,
+        14389.95
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-09",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Within every merchant category find the top 3 merchants by successful revenue, handling ties with DENSE_RANK.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH r AS (SELECT m.category, m.merchant_name, SUM(p.amount) AS revenue FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id WHERE p.status = 'SUCCESS' GROUP BY m.merchant_id, m.category, m.merchant_name) SELECT category, merchant_name, revenue, rnk FROM (SELECT category, merchant_name, revenue, DENSE_RANK() OVER (PARTITION BY category ORDER BY revenue DESC) AS rnk FROM r) t WHERE rnk <= 3",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "merchant_name",
+      "revenue",
+      "rnk"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        "Electronics",
+        "GadgetGali",
+        295703.52,
+        1
+      ],
+      [
+        "Electronics",
+        "ElectroHub",
+        222436.6,
+        2
+      ],
+      [
+        "Food",
+        "Chai Point Cafe",
+        296890.98,
+        1
+      ],
+      [
+        "Food",
+        "Pizza Planet",
+        273495.92,
+        2
+      ],
+      [
+        "Food",
+        "Tasty Bites",
+        233997.36,
+        3
+      ],
+      [
+        "Fuel",
+        "Pump & Go",
+        251303.15,
+        1
+      ],
+      [
+        "Fuel",
+        "FuelUp Station",
+        210258.52,
+        2
+      ],
+      [
+        "Grocery",
+        "Daily Needs",
+        303278.73,
+        1
+      ],
+      [
+        "Grocery",
+        "FreshMart",
+        290795.21,
+        2
+      ],
+      [
+        "Grocery",
+        "Kirana King",
+        222158.22,
+        3
+      ],
+      [
+        "Travel",
+        "RailBook",
+        356788.94,
+        1
+      ],
+      [
+        "Travel",
+        "TravelEasy",
+        264758.14,
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-10",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find users who have at least one SUCCESS and at least one FAILED payment.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT user_id FROM payments GROUP BY user_id HAVING SUM(CASE WHEN status = 'SUCCESS' THEN 1 ELSE 0 END) > 0 AND SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) > 0",
+    "executed_ok": true,
+    "columns": [
+      "user_id"
+    ],
+    "row_count": 27,
+    "expected_rows": [
+      [
+        1
+      ],
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        8
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        14
+      ],
+      [
+        16
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ],
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ],
+      [
+        30
+      ],
+      [
+        31
+      ],
+      [
+        33
+      ],
+      [
+        34
+      ],
+      [
+        38
+      ],
+      [
+        39
+      ],
+      [
+        40
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-11",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List merchants that received no payment at all between 2024-06-27 and 2024-06-30.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT m.merchant_name FROM merchants m WHERE NOT EXISTS (SELECT 1 FROM payments p WHERE p.merchant_id = m.merchant_id AND p.pay_date BETWEEN '2024-06-27' AND '2024-06-30')",
+    "executed_ok": true,
+    "columns": [
+      "merchant_name"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "GadgetGali"
+      ],
+      [
+        "Tasty Bites"
+      ],
+      [
+        "ElectroHub"
+      ],
+      [
+        "Chai Point Cafe"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-12",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show monthly successful payment volume and the change versus the previous month.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH m AS (SELECT DATE_FORMAT(pay_date, '%Y-%m') AS ym, SUM(amount) AS volume FROM payments WHERE status = 'SUCCESS' GROUP BY DATE_FORMAT(pay_date, '%Y-%m')) SELECT ym, volume, volume - LAG(volume) OVER (ORDER BY ym) AS change_vs_prev FROM m ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "volume",
+      "change_vs_prev"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "2024-01",
+        483317.71,
+        null
+      ],
+      [
+        "2024-02",
+        538765.36,
+        55447.649999999965
+      ],
+      [
+        "2024-03",
+        604025.47,
+        65260.109999999986
+      ],
+      [
+        "2024-04",
+        515629.94,
+        -88395.52999999997
+      ],
+      [
+        "2024-05",
+        665039.39,
+        149409.45
+      ],
+      [
+        "2024-06",
+        415087.42,
+        -249951.97000000003
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-13",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List successful payments that are larger than the average successful payment of the same merchant.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT p.payment_id, p.merchant_id, p.amount FROM payments p WHERE p.status = 'SUCCESS' AND p.amount > (SELECT AVG(amount) FROM payments WHERE merchant_id = p.merchant_id AND status = 'SUCCESS')",
+    "executed_ok": true,
+    "columns": [
+      "payment_id",
+      "merchant_id",
+      "amount"
+    ],
+    "row_count": 210,
+    "expected_rows": [
+      [
+        2,
+        6,
+        12613.38
+      ],
+      [
+        5,
+        3,
+        12133.91
+      ],
+      [
+        7,
+        7,
+        12970.08
+      ],
+      [
+        9,
+        9,
+        9284.81
+      ],
+      [
+        10,
+        2,
+        9389.55
+      ],
+      [
+        16,
+        10,
+        9805.42
+      ],
+      [
+        19,
+        10,
+        14716.22
+      ],
+      [
+        21,
+        2,
+        7623.91
+      ],
+      [
+        22,
+        5,
+        13970.07
+      ],
+      [
+        23,
+        4,
+        12907.21
+      ],
+      [
+        28,
+        9,
+        14864.26
+      ],
+      [
+        30,
+        6,
+        13358.56
+      ],
+      [
+        33,
+        4,
+        14122.58
+      ],
+      [
+        34,
+        11,
+        13396.82
+      ],
+      [
+        35,
+        2,
+        13508.37
+      ],
+      [
+        36,
+        5,
+        13682.5
+      ],
+      [
+        40,
+        2,
+        12821.52
+      ],
+      [
+        42,
+        7,
+        9912.83
+      ],
+      [
+        43,
+        1,
+        13842.03
+      ],
+      [
+        47,
+        5,
+        7020.64
+      ],
+      [
+        48,
+        1,
+        14265.49
+      ],
+      [
+        49,
+        9,
+        8574.82
+      ],
+      [
+        50,
+        5,
+        12157.69
+      ],
+      [
+        51,
+        10,
+        12716.94
+      ],
+      [
+        52,
+        1,
+        14488.96
+      ],
+      [
+        61,
+        11,
+        9635.47
+      ],
+      [
+        65,
+        12,
+        10698.35
+      ],
+      [
+        67,
+        2,
+        8489.73
+      ],
+      [
+        68,
+        12,
+        11001.02
+      ],
+      [
+        69,
+        1,
+        9894.78
+      ],
+      [
+        70,
+        4,
+        13667.82
+      ],
+      [
+        74,
+        3,
+        11651.2
+      ],
+      [
+        75,
+        3,
+        11941.92
+      ],
+      [
+        76,
+        7,
+        14749.05
+      ],
+      [
+        82,
+        1,
+        14249.79
+      ],
+      [
+        83,
+        12,
+        11369.75
+      ],
+      [
+        87,
+        9,
+        12664.1
+      ],
+      [
+        89,
+        12,
+        7796.64
+      ],
+      [
+        91,
+        4,
+        14089.29
+      ],
+      [
+        95,
+        5,
+        10986.7
+      ],
+      [
+        97,
+        8,
+        12970.25
+      ],
+      [
+        98,
+        2,
+        11169.28
+      ],
+      [
+        100,
+        2,
+        6512
+      ],
+      [
+        101,
+        6,
+        9923.73
+      ],
+      [
+        105,
+        12,
+        6526.1
+      ],
+      [
+        108,
+        5,
+        10026.28
+      ],
+      [
+        114,
+        6,
+        12139.28
+      ],
+      [
+        115,
+        1,
+        10928.24
+      ],
+      [
+        117,
+        11,
+        9169.06
+      ],
+      [
+        120,
+        3,
+        12898.65
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-14",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Duplicates",
+    "topic_group": "Duplicates & Data Cleaning",
+    "also_tagged": [],
+    "question": "Detect potential duplicate payments: same user, merchant and pay_date appearing more than once.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT user_id, merchant_id, pay_date, COUNT(*) AS cnt FROM payments GROUP BY user_id, merchant_id, pay_date HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "merchant_id",
+      "pay_date",
+      "cnt"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        7,
+        2,
+        "2024-04-13",
+        2
+      ],
+      [
+        17,
+        12,
+        "2024-03-06",
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-15",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the nth highest salary (here n = 3) using DENSE_RANK; return all employees at that rank.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary FROM (SELECT emp_name, salary, DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk FROM employees) t WHERE rnk = 3",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Pooja Agarwal",
+        200000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-16",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show every manager with the number of direct reports and the total salary of those reports.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT m.emp_name AS manager, COUNT(e.emp_id) AS direct_reports, SUM(e.salary) AS reports_salary FROM employees m JOIN employees e ON e.manager_id = m.emp_id GROUP BY m.emp_id, m.emp_name ORDER BY direct_reports DESC",
+    "executed_ok": true,
+    "columns": [
+      "manager",
+      "direct_reports",
+      "reports_salary"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Suresh Iyer",
+        4,
+        435000
+      ],
+      [
+        "Kavita Joshi",
+        3,
+        205000
+      ],
+      [
+        "Vikram Mehta",
+        2,
+        300000
+      ],
+      [
+        "Pooja Agarwal",
+        2,
+        160000
+      ],
+      [
+        "Anita Desai",
+        1,
+        140000
+      ],
+      [
+        "Priya Nair",
+        1,
+        60000
+      ],
+      [
+        "Imran Khan",
+        1,
+        72000
+      ],
+      [
+        "Divya Bansal",
+        1,
+        70000
+      ],
+      [
+        "Faisal Ahmed",
+        1,
+        75000
+      ],
+      [
+        "Tanvi Shah",
+        1,
+        78000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-17",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Show each employee's total pay (salary plus commission, treating a missing commission as 0).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary + COALESCE(commission, 0) AS total_pay FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "total_pay"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        250000
+      ],
+      [
+        "Anita Desai",
+        240000
+      ],
+      [
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        "Priya Nair",
+        150000
+      ],
+      [
+        "Rohan Gupta",
+        95000
+      ],
+      [
+        "Neha Kulkarni",
+        95000
+      ],
+      [
+        "Arjun Reddy",
+        60000
+      ],
+      [
+        "Kavita Joshi",
+        155000
+      ],
+      [
+        "Sandeep Singh",
+        78000
+      ],
+      [
+        "Meera Pillai",
+        75000
+      ],
+      [
+        "Imran Khan",
+        65000
+      ],
+      [
+        "Divya Bansal",
+        130000
+      ],
+      [
+        "Harish Rao",
+        70000
+      ],
+      [
+        "Pooja Agarwal",
+        200000
+      ],
+      [
+        "Karthik Subramanian",
+        80000
+      ],
+      [
+        "Lakshmi Menon",
+        80000
+      ],
+      [
+        "Faisal Ahmed",
+        160000
+      ],
+      [
+        "Tanvi Shah",
+        75000
+      ],
+      [
+        "Gaurav Malhotra",
+        120000
+      ],
+      [
+        "Sneha Chatterjee",
+        95000
+      ],
+      [
+        "Ritesh Kumar",
+        75000
+      ],
+      [
+        "Aisha Siddiqui",
+        78000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "BIG4-18",
+    "company": "BIG4",
+    "company_name": "EY, PwC, KPMG",
+    "tier": "Consulting & Big 4",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Division Safety",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show each department's commission-to-salary ratio (total commission divided by total salary); avoid division by zero errors.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT dept_id, SUM(COALESCE(commission, 0)) * 1.0 / NULLIF(SUM(salary), 0) AS commission_ratio FROM employees WHERE dept_id IS NOT NULL GROUP BY dept_id",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "commission_ratio"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        0.08006279434850863
+      ],
+      [
+        3,
+        0
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        5,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-01",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List employees who joined the company before their own manager did.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, e.hire_date, m.emp_name AS manager_name, m.hire_date AS manager_hire_date FROM employees e JOIN employees m ON e.manager_id = m.emp_id WHERE e.hire_date < m.hire_date",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "hire_date",
+      "manager_name",
+      "manager_hire_date"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Sandeep Singh",
+        "2020-11-23",
+        "Kavita Joshi",
+        "2021-03-01"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-02",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find pairs of employees who work in the same department and the same city. List each pair once.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT a.emp_name AS emp1, b.emp_name AS emp2, a.dept_id, a.city FROM employees a JOIN employees b ON a.dept_id = b.dept_id AND a.city = b.city AND a.emp_id < b.emp_id",
+    "executed_ok": true,
+    "columns": [
+      "emp1",
+      "emp2",
+      "dept_id",
+      "city"
+    ],
+    "row_count": 15,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        "Suresh Iyer",
+        1,
+        "Bengaluru"
+      ],
+      [
+        "Vikram Mehta",
+        "Priya Nair",
+        1,
+        "Bengaluru"
+      ],
+      [
+        "Anita Desai",
+        "Kavita Joshi",
+        2,
+        "Mumbai"
+      ],
+      [
+        "Anita Desai",
+        "Meera Pillai",
+        2,
+        "Mumbai"
+      ],
+      [
+        "Suresh Iyer",
+        "Priya Nair",
+        1,
+        "Bengaluru"
+      ],
+      [
+        "Rohan Gupta",
+        "Arjun Reddy",
+        1,
+        "Hyderabad"
+      ],
+      [
+        "Kavita Joshi",
+        "Meera Pillai",
+        2,
+        "Mumbai"
+      ],
+      [
+        "Imran Khan",
+        "Ritesh Kumar",
+        2,
+        "Lucknow"
+      ],
+      [
+        "Divya Bansal",
+        "Harish Rao",
+        3,
+        "Pune"
+      ],
+      [
+        "Pooja Agarwal",
+        "Karthik Subramanian",
+        4,
+        "Chennai"
+      ],
+      [
+        "Pooja Agarwal",
+        "Lakshmi Menon",
+        4,
+        "Chennai"
+      ],
+      [
+        "Karthik Subramanian",
+        "Lakshmi Menon",
+        4,
+        "Chennai"
+      ],
+      [
+        "Faisal Ahmed",
+        "Tanvi Shah",
+        5,
+        "Delhi"
+      ],
+      [
+        "Faisal Ahmed",
+        "Aisha Siddiqui",
+        5,
+        "Delhi"
+      ],
+      [
+        "Tanvi Shah",
+        "Aisha Siddiqui",
+        5,
+        "Delhi"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-03",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List employees who earn the same salary as at least one other employee in a different department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT DISTINCT a.emp_name, a.salary FROM employees a JOIN employees b ON a.salary = b.salary AND a.dept_id <> b.dept_id",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Sandeep Singh",
+        70000
+      ],
+      [
+        "Meera Pillai",
+        70000
+      ],
+      [
+        "Harish Rao",
+        70000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-04",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Hierarchy",
+    "topic_group": "Recursive CTEs & Hierarchies",
+    "also_tagged": [],
+    "question": "List employees who are exactly two levels below the top of the hierarchy (their manager has a manager who has no manager).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name FROM employees e JOIN employees m ON e.manager_id = m.emp_id JOIN employees t ON m.manager_id = t.emp_id WHERE t.manager_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Priya Nair"
+      ],
+      [
+        "Rohan Gupta"
+      ],
+      [
+        "Neha Kulkarni"
+      ],
+      [
+        "Sandeep Singh"
+      ],
+      [
+        "Meera Pillai"
+      ],
+      [
+        "Imran Khan"
+      ],
+      [
+        "Sneha Chatterjee"
+      ],
+      [
+        "Aisha Siddiqui"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-05",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Recursive CTE",
+    "topic_group": "Recursive CTEs & Hierarchies",
+    "also_tagged": [],
+    "question": "Show every employee in the reporting chain under Vikram Mehta (direct and indirect), with their level below him.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "WITH RECURSIVE chain AS (SELECT emp_id, emp_name, manager_id, 1 AS lvl FROM employees WHERE manager_id = (SELECT emp_id FROM employees WHERE emp_name = 'Vikram Mehta') UNION ALL SELECT e.emp_id, e.emp_name, e.manager_id, c.lvl + 1 FROM employees e JOIN chain c ON e.manager_id = c.emp_id) SELECT emp_name, lvl FROM chain ORDER BY lvl, emp_name",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "lvl"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        "Gaurav Malhotra",
+        1
+      ],
+      [
+        "Suresh Iyer",
+        1
+      ],
+      [
+        "Neha Kulkarni",
+        2
+      ],
+      [
+        "Priya Nair",
+        2
+      ],
+      [
+        "Rohan Gupta",
+        2
+      ],
+      [
+        "Sneha Chatterjee",
+        2
+      ],
+      [
+        "Arjun Reddy",
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-06",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Recursive CTE",
+    "topic_group": "Recursive CTEs & Hierarchies",
+    "also_tagged": [],
+    "question": "For every employee show the full reporting path from the top, for example 'Vikram Mehta > Suresh Iyer > Priya Nair'.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "WITH RECURSIVE p AS (SELECT emp_id, emp_name, CAST(emp_name AS VARCHAR(500)) AS path FROM employees WHERE manager_id IS NULL UNION ALL SELECT e.emp_id, e.emp_name, CAST(p.path || ' > ' || e.emp_name AS VARCHAR(500)) FROM employees e JOIN p ON e.manager_id = p.emp_id) SELECT emp_name, path FROM p ORDER BY path",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "path"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Anita Desai",
+        "Anita Desai"
+      ],
+      [
+        "Kavita Joshi",
+        "Anita Desai > Kavita Joshi"
+      ],
+      [
+        "Imran Khan",
+        "Anita Desai > Kavita Joshi > Imran Khan"
+      ],
+      [
+        "Ritesh Kumar",
+        "Anita Desai > Kavita Joshi > Imran Khan > Ritesh Kumar"
+      ],
+      [
+        "Meera Pillai",
+        "Anita Desai > Kavita Joshi > Meera Pillai"
+      ],
+      [
+        "Sandeep Singh",
+        "Anita Desai > Kavita Joshi > Sandeep Singh"
+      ],
+      [
+        "Divya Bansal",
+        "Divya Bansal"
+      ],
+      [
+        "Harish Rao",
+        "Divya Bansal > Harish Rao"
+      ],
+      [
+        "Faisal Ahmed",
+        "Faisal Ahmed"
+      ],
+      [
+        "Tanvi Shah",
+        "Faisal Ahmed > Tanvi Shah"
+      ],
+      [
+        "Aisha Siddiqui",
+        "Faisal Ahmed > Tanvi Shah > Aisha Siddiqui"
+      ],
+      [
+        "Pooja Agarwal",
+        "Pooja Agarwal"
+      ],
+      [
+        "Karthik Subramanian",
+        "Pooja Agarwal > Karthik Subramanian"
+      ],
+      [
+        "Lakshmi Menon",
+        "Pooja Agarwal > Lakshmi Menon"
+      ],
+      [
+        "Vikram Mehta",
+        "Vikram Mehta"
+      ],
+      [
+        "Gaurav Malhotra",
+        "Vikram Mehta > Gaurav Malhotra"
+      ],
+      [
+        "Suresh Iyer",
+        "Vikram Mehta > Suresh Iyer"
+      ],
+      [
+        "Neha Kulkarni",
+        "Vikram Mehta > Suresh Iyer > Neha Kulkarni"
+      ],
+      [
+        "Priya Nair",
+        "Vikram Mehta > Suresh Iyer > Priya Nair"
+      ],
+      [
+        "Arjun Reddy",
+        "Vikram Mehta > Suresh Iyer > Priya Nair > Arjun Reddy"
+      ],
+      [
+        "Rohan Gupta",
+        "Vikram Mehta > Suresh Iyer > Rohan Gupta"
+      ],
+      [
+        "Sneha Chatterjee",
+        "Vikram Mehta > Suresh Iyer > Sneha Chatterjee"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-07",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the second highest paid employee (by distinct salary) in each department without window functions.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.dept_id, e.emp_name, e.salary FROM employees e WHERE e.dept_id IS NOT NULL AND 1 = (SELECT COUNT(DISTINCT e2.salary) FROM employees e2 WHERE e2.dept_id = e.dept_id AND e2.salary > e.salary)",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "emp_name",
+      "salary"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        1,
+        "Suresh Iyer",
+        180000
+      ],
+      [
+        2,
+        "Kavita Joshi",
+        140000
+      ],
+      [
+        3,
+        "Harish Rao",
+        70000
+      ],
+      [
+        4,
+        "Karthik Subramanian",
+        80000
+      ],
+      [
+        4,
+        "Lakshmi Menon",
+        80000
+      ],
+      [
+        5,
+        "Aisha Siddiqui",
+        78000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-08",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Universal Condition",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List departments in which every employee earns more than 60000.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name FROM departments d WHERE EXISTS (SELECT 1 FROM employees e WHERE e.dept_id = d.dept_id) AND NOT EXISTS (SELECT 1 FROM employees e WHERE e.dept_id = d.dept_id AND e.salary <= 60000)",
+    "executed_ok": true,
+    "columns": [
+      "dept_name"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Sales"
+      ],
+      [
+        "HR"
+      ],
+      [
+        "Finance"
+      ],
+      [
+        "Marketing"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-09",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "String Puzzle",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Find employees whose first name and surname begin with the same letter.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name FROM employees WHERE SUBSTR(emp_name, 1, 1) = SUBSTR(emp_name, INSTR(emp_name, ' ') + 1, 1)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Sandeep Singh"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-10",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "String Puzzle",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Count how many times the letter 'a' (case-insensitive) occurs in each employee name.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, LENGTH(emp_name) - LENGTH(REPLACE(LOWER(emp_name), 'a', '')) AS a_count FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "a_count"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        2
+      ],
+      [
+        "Anita Desai",
+        3
+      ],
+      [
+        "Suresh Iyer",
+        0
+      ],
+      [
+        "Priya Nair",
+        2
+      ],
+      [
+        "Rohan Gupta",
+        2
+      ],
+      [
+        "Neha Kulkarni",
+        2
+      ],
+      [
+        "Arjun Reddy",
+        1
+      ],
+      [
+        "Kavita Joshi",
+        2
+      ],
+      [
+        "Sandeep Singh",
+        1
+      ],
+      [
+        "Meera Pillai",
+        2
+      ],
+      [
+        "Imran Khan",
+        2
+      ],
+      [
+        "Divya Bansal",
+        3
+      ],
+      [
+        "Harish Rao",
+        2
+      ],
+      [
+        "Pooja Agarwal",
+        4
+      ],
+      [
+        "Karthik Subramanian",
+        4
+      ],
+      [
+        "Lakshmi Menon",
+        1
+      ],
+      [
+        "Faisal Ahmed",
+        3
+      ],
+      [
+        "Tanvi Shah",
+        2
+      ],
+      [
+        "Gaurav Malhotra",
+        4
+      ],
+      [
+        "Sneha Chatterjee",
+        2
+      ],
+      [
+        "Ritesh Kumar",
+        1
+      ],
+      [
+        "Aisha Siddiqui",
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-11",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "String Puzzle",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Split each employee name into first name and surname columns.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT SUBSTR(emp_name, 1, INSTR(emp_name, ' ') - 1) AS first_name, SUBSTR(emp_name, INSTR(emp_name, ' ') + 1) AS surname FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "first_name",
+      "surname"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram",
+        "Mehta"
+      ],
+      [
+        "Anita",
+        "Desai"
+      ],
+      [
+        "Suresh",
+        "Iyer"
+      ],
+      [
+        "Priya",
+        "Nair"
+      ],
+      [
+        "Rohan",
+        "Gupta"
+      ],
+      [
+        "Neha",
+        "Kulkarni"
+      ],
+      [
+        "Arjun",
+        "Reddy"
+      ],
+      [
+        "Kavita",
+        "Joshi"
+      ],
+      [
+        "Sandeep",
+        "Singh"
+      ],
+      [
+        "Meera",
+        "Pillai"
+      ],
+      [
+        "Imran",
+        "Khan"
+      ],
+      [
+        "Divya",
+        "Bansal"
+      ],
+      [
+        "Harish",
+        "Rao"
+      ],
+      [
+        "Pooja",
+        "Agarwal"
+      ],
+      [
+        "Karthik",
+        "Subramanian"
+      ],
+      [
+        "Lakshmi",
+        "Menon"
+      ],
+      [
+        "Faisal",
+        "Ahmed"
+      ],
+      [
+        "Tanvi",
+        "Shah"
+      ],
+      [
+        "Gaurav",
+        "Malhotra"
+      ],
+      [
+        "Sneha",
+        "Chatterjee"
+      ],
+      [
+        "Ritesh",
+        "Kumar"
+      ],
+      [
+        "Aisha",
+        "Siddiqui"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-12",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Operators",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List employees with an odd emp_id.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_id, emp_name FROM employees WHERE emp_id % 2 = 1",
+    "executed_ok": true,
+    "columns": [
+      "emp_id",
+      "emp_name"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        1,
+        "Vikram Mehta"
+      ],
+      [
+        3,
+        "Suresh Iyer"
+      ],
+      [
+        5,
+        "Rohan Gupta"
+      ],
+      [
+        7,
+        "Arjun Reddy"
+      ],
+      [
+        9,
+        "Sandeep Singh"
+      ],
+      [
+        11,
+        "Imran Khan"
+      ],
+      [
+        13,
+        "Harish Rao"
+      ],
+      [
+        15,
+        "Karthik Subramanian"
+      ],
+      [
+        17,
+        "Faisal Ahmed"
+      ],
+      [
+        19,
+        "Gaurav Malhotra"
+      ],
+      [
+        21,
+        "Ritesh Kumar"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-13",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Functions",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Find employees whose hire date fell on a weekend (MySQL DAYOFWEEK: 1 = Sunday, 7 = Saturday).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, hire_date FROM employees WHERE DAYOFWEEK(hire_date) IN (1, 7)",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "hire_date"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Faisal Ahmed",
+        "2018-08-19"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-14",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Sorting",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List employee names ordered by name length, then alphabetically.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name FROM employees ORDER BY LENGTH(emp_name), emp_name",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Harish Rao"
+      ],
+      [
+        "Imran Khan"
+      ],
+      [
+        "Priya Nair"
+      ],
+      [
+        "Tanvi Shah"
+      ],
+      [
+        "Anita Desai"
+      ],
+      [
+        "Arjun Reddy"
+      ],
+      [
+        "Rohan Gupta"
+      ],
+      [
+        "Suresh Iyer"
+      ],
+      [
+        "Divya Bansal"
+      ],
+      [
+        "Faisal Ahmed"
+      ],
+      [
+        "Kavita Joshi"
+      ],
+      [
+        "Meera Pillai"
+      ],
+      [
+        "Ritesh Kumar"
+      ],
+      [
+        "Vikram Mehta"
+      ],
+      [
+        "Lakshmi Menon"
+      ],
+      [
+        "Neha Kulkarni"
+      ],
+      [
+        "Pooja Agarwal"
+      ],
+      [
+        "Sandeep Singh"
+      ],
+      [
+        "Aisha Siddiqui"
+      ],
+      [
+        "Gaurav Malhotra"
+      ],
+      [
+        "Sneha Chatterjee"
+      ],
+      [
+        "Karthik Subramanian"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-15",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Legacy Syntax",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Rewrite an INNER JOIN of employees and departments using the old comma-join syntax with a WHERE condition.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name, d.dept_name FROM employees e, departments d WHERE e.dept_id = d.dept_id",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_name"
+    ],
+    "row_count": 21,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        "Engineering"
+      ],
+      [
+        "Anita Desai",
+        "Sales"
+      ],
+      [
+        "Suresh Iyer",
+        "Engineering"
+      ],
+      [
+        "Priya Nair",
+        "Engineering"
+      ],
+      [
+        "Rohan Gupta",
+        "Engineering"
+      ],
+      [
+        "Neha Kulkarni",
+        "Engineering"
+      ],
+      [
+        "Arjun Reddy",
+        "Engineering"
+      ],
+      [
+        "Kavita Joshi",
+        "Sales"
+      ],
+      [
+        "Sandeep Singh",
+        "Sales"
+      ],
+      [
+        "Meera Pillai",
+        "Sales"
+      ],
+      [
+        "Imran Khan",
+        "Sales"
+      ],
+      [
+        "Divya Bansal",
+        "HR"
+      ],
+      [
+        "Harish Rao",
+        "HR"
+      ],
+      [
+        "Pooja Agarwal",
+        "Finance"
+      ],
+      [
+        "Karthik Subramanian",
+        "Finance"
+      ],
+      [
+        "Lakshmi Menon",
+        "Finance"
+      ],
+      [
+        "Faisal Ahmed",
+        "Marketing"
+      ],
+      [
+        "Tanvi Shah",
+        "Marketing"
+      ],
+      [
+        "Sneha Chatterjee",
+        "Engineering"
+      ],
+      [
+        "Ritesh Kumar",
+        "Sales"
+      ],
+      [
+        "Aisha Siddiqui",
+        "Marketing"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-16",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Gaps and Islands",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [],
+    "question": "Find all numbers that appear at least three times in a row in seq_log (ordered by id).",
+    "schemas": [
+      "MISC"
+    ],
+    "solution_sql": "SELECT DISTINCT a.num FROM seq_log a JOIN seq_log b ON b.id = a.id + 1 AND b.num = a.num JOIN seq_log c ON c.id = a.id + 2 AND c.num = a.num",
+    "executed_ok": true,
+    "columns": [
+      "num"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        1
+      ],
+      [
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-17",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the topper (highest marks) of every course, showing the course name, student name and marks.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT c.course_name, s.student_name, e.marks FROM enrollments e JOIN courses c ON e.course_id = c.course_id JOIN students s ON e.student_id = s.student_id WHERE e.marks = (SELECT MAX(marks) FROM enrollments WHERE course_id = e.course_id)",
+    "executed_ok": true,
+    "columns": [
+      "course_name",
+      "student_name",
+      "marks"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Data Structures",
+        "Sneha Reddy",
+        88
+      ],
+      [
+        "Digital Electronics",
+        "Amit Patel",
+        89
+      ],
+      [
+        "Computer Networks",
+        "Ravi Kumar",
+        94
+      ],
+      [
+        "Database Systems",
+        "Anjali Mishra",
+        85
+      ],
+      [
+        "Operating Systems",
+        "Mohit Sharma",
+        68
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-18",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find students whose total marks are above the average of all students' total marks.",
+    "schemas": [
+      "CAMPUS"
+    ],
+    "solution_sql": "WITH t AS (SELECT student_id, SUM(marks) AS total FROM enrollments GROUP BY student_id) SELECT student_id, total FROM t WHERE total > (SELECT AVG(total) FROM t)",
+    "executed_ok": true,
+    "columns": [
+      "student_id",
+      "total"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        2,
+        212
+      ],
+      [
+        3,
+        199
+      ],
+      [
+        4,
+        206
+      ],
+      [
+        7,
+        221
+      ],
+      [
+        8,
+        222
+      ],
+      [
+        9,
+        206
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZOH-19",
+    "company": "ZOH",
+    "company_name": "Zoho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Ranking",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Build the points table: 2 points per win, 1 point for each no-result match, 0 for a loss. Show team, matches played, wins, points, ordered by points then wins.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "WITH m AS (SELECT team1_id AS team_id, winner_id FROM matches UNION ALL SELECT team2_id, winner_id FROM matches) SELECT t.team_name, COUNT(*) AS played, SUM(CASE WHEN m.winner_id = m.team_id THEN 1 ELSE 0 END) AS wins, SUM(CASE WHEN m.winner_id = m.team_id THEN 2 WHEN m.winner_id IS NULL THEN 1 ELSE 0 END) AS points FROM m JOIN teams t ON t.team_id = m.team_id GROUP BY t.team_id, t.team_name ORDER BY points DESC, wins DESC",
+    "executed_ok": true,
+    "columns": [
+      "team_name",
+      "played",
+      "wins",
+      "points"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Jaipur Jaguars",
+        7,
+        5,
+        11
+      ],
+      [
+        "Delhi Dynamos",
+        7,
+        4,
+        9
+      ],
+      [
+        "Punjab Panthers",
+        7,
+        4,
+        8
+      ],
+      [
+        "Bengaluru Bulls",
+        7,
+        3,
+        7
+      ],
+      [
+        "Mumbai Mariners",
+        7,
+        3,
+        7
+      ],
+      [
+        "Kolkata Kestrels",
+        7,
+        3,
+        6
+      ],
+      [
+        "Hyderabad Hawks",
+        7,
+        2,
+        4
+      ],
+      [
+        "Chennai Chargers",
+        7,
+        2,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-01",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Explain ROW_NUMBER, RANK and DENSE_RANK with a tie example.",
+    "model_answer": "With salaries 300, 200, 200, 100: ROW_NUMBER gives 1,2,3,4 (arbitrary among ties); RANK gives 1,2,2,4 (gap after ties); DENSE_RANK gives 1,2,2,3 (no gaps). Use ROW_NUMBER to pick exactly one row per group, DENSE_RANK for Nth-highest value problems.",
+    "isPro": true
+  },
+  {
+    "id": "AMZ-02",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "What is the difference between ROWS and RANGE in a window frame?",
+    "model_answer": "ROWS counts physical rows relative to the current row (e.g. 6 PRECEDING = previous six rows). RANGE works on the ORDER BY value, so peers with equal values are included together. The default frame with ORDER BY is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW, which surprises people with tied values.",
+    "isPro": true
+  },
+  {
+    "id": "AMZ-03",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "Describe nested loop, hash and merge joins and when each wins.",
+    "model_answer": "Nested loop: best when one side is small or an index lookup is available. Hash join: builds a hash table on the smaller input; best for large unsorted equi-joins. Merge join: needs both inputs sorted on the join key; best when already sorted or indexed.",
+    "isPro": true
+  },
+  {
+    "id": "AMZ-04",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Count the distinct customers who placed at least one order in each month (year-month and count).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(order_date, '%Y-%m') AS ym, COUNT(DISTINCT customer_id) AS active_customers FROM orders GROUP BY DATE_FORMAT(order_date, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "active_customers"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "2023-10",
+        12
+      ],
+      [
+        "2023-11",
+        16
+      ],
+      [
+        "2023-12",
+        13
+      ],
+      [
+        "2024-01",
+        12
+      ],
+      [
+        "2024-02",
+        12
+      ],
+      [
+        "2024-03",
+        11
+      ],
+      [
+        "2024-04",
+        10
+      ],
+      [
+        "2024-05",
+        12
+      ],
+      [
+        "2024-06",
+        8
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-05",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the top 3 best-selling products (by units) in every category, keeping ties.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH u AS (SELECT p.category, p.product_name, SUM(oi.quantity) AS units FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.product_id, p.category, p.product_name) SELECT category, product_name, units FROM (SELECT category, product_name, units, DENSE_RANK() OVER (PARTITION BY category ORDER BY units DESC) AS rnk FROM u) t WHERE rnk <= 3 ORDER BY category, units DESC",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "product_name",
+      "units"
+    ],
+    "row_count": 16,
+    "expected_rows": [
+      [
+        "Books",
+        "Indian Classics Box Set",
+        52
+      ],
+      [
+        "Books",
+        "Data Structures in Depth",
+        51
+      ],
+      [
+        "Books",
+        "SQL Mastery Handbook",
+        33
+      ],
+      [
+        "Electronics",
+        "Nova Buds Pro",
+        59
+      ],
+      [
+        "Electronics",
+        "Zenith 55in Smart TV",
+        56
+      ],
+      [
+        "Electronics",
+        "Pixel Laptop 14",
+        53
+      ],
+      [
+        "Fashion",
+        "Stride Running Shoes",
+        58
+      ],
+      [
+        "Fashion",
+        "Urban Denim Jeans",
+        46
+      ],
+      [
+        "Fashion",
+        "Stride Sports Tee",
+        46
+      ],
+      [
+        "Fashion",
+        "Urban Cotton Kurta",
+        25
+      ],
+      [
+        "Grocery",
+        "Organic Basmati 5kg",
+        58
+      ],
+      [
+        "Grocery",
+        "Cold Pressed Olive Oil 1L",
+        51
+      ],
+      [
+        "Grocery",
+        "Masala Tea 500g",
+        44
+      ],
+      [
+        "Home",
+        "HomeNest Cookware Set",
+        61
+      ],
+      [
+        "Home",
+        "HomeNest Mixer Grinder",
+        49
+      ],
+      [
+        "Home",
+        "CozyCo Bedsheet",
+        49
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-06",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find customers who placed orders on two consecutive calendar days.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DISTINCT o1.customer_id FROM orders o1 JOIN orders o2 ON o1.customer_id = o2.customer_id AND DATEDIFF(o2.order_date, o1.order_date) = 1",
+    "executed_ok": true,
+    "columns": [
+      "customer_id"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        18
+      ],
+      [
+        17
+      ],
+      [
+        23
+      ],
+      [
+        21
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-07",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show the number of orders per day with a cumulative count of orders up to that day.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH d AS (SELECT order_date, COUNT(*) AS orders FROM orders GROUP BY order_date) SELECT order_date, orders, SUM(orders) OVER (ORDER BY order_date) AS cumulative_orders FROM d ORDER BY order_date",
+    "executed_ok": true,
+    "columns": [
+      "order_date",
+      "orders",
+      "cumulative_orders"
+    ],
+    "row_count": 116,
+    "expected_rows": [
+      [
+        "2023-10-02",
+        2,
+        2
+      ],
+      [
+        "2023-10-05",
+        3,
+        5
+      ],
+      [
+        "2023-10-08",
+        1,
+        6
+      ],
+      [
+        "2023-10-13",
+        1,
+        7
+      ],
+      [
+        "2023-10-19",
+        1,
+        8
+      ],
+      [
+        "2023-10-21",
+        2,
+        10
+      ],
+      [
+        "2023-10-22",
+        1,
+        11
+      ],
+      [
+        "2023-10-23",
+        1,
+        12
+      ],
+      [
+        "2023-10-26",
+        2,
+        14
+      ],
+      [
+        "2023-10-27",
+        1,
+        15
+      ],
+      [
+        "2023-10-28",
+        1,
+        16
+      ],
+      [
+        "2023-10-30",
+        3,
+        19
+      ],
+      [
+        "2023-10-31",
+        1,
+        20
+      ],
+      [
+        "2023-11-01",
+        2,
+        22
+      ],
+      [
+        "2023-11-04",
+        1,
+        23
+      ],
+      [
+        "2023-11-05",
+        2,
+        25
+      ],
+      [
+        "2023-11-07",
+        2,
+        27
+      ],
+      [
+        "2023-11-08",
+        2,
+        29
+      ],
+      [
+        "2023-11-11",
+        2,
+        31
+      ],
+      [
+        "2023-11-17",
+        2,
+        33
+      ],
+      [
+        "2023-11-18",
+        1,
+        34
+      ],
+      [
+        "2023-11-19",
+        1,
+        35
+      ],
+      [
+        "2023-11-20",
+        2,
+        37
+      ],
+      [
+        "2023-11-21",
+        1,
+        38
+      ],
+      [
+        "2023-11-22",
+        1,
+        39
+      ],
+      [
+        "2023-11-23",
+        1,
+        40
+      ],
+      [
+        "2023-11-24",
+        1,
+        41
+      ],
+      [
+        "2023-11-25",
+        1,
+        42
+      ],
+      [
+        "2023-11-27",
+        1,
+        43
+      ],
+      [
+        "2023-11-29",
+        1,
+        44
+      ],
+      [
+        "2023-12-01",
+        1,
+        45
+      ],
+      [
+        "2023-12-05",
+        1,
+        46
+      ],
+      [
+        "2023-12-06",
+        1,
+        47
+      ],
+      [
+        "2023-12-07",
+        2,
+        49
+      ],
+      [
+        "2023-12-08",
+        1,
+        50
+      ],
+      [
+        "2023-12-11",
+        1,
+        51
+      ],
+      [
+        "2023-12-15",
+        1,
+        52
+      ],
+      [
+        "2023-12-16",
+        1,
+        53
+      ],
+      [
+        "2023-12-19",
+        3,
+        56
+      ],
+      [
+        "2023-12-20",
+        2,
+        58
+      ],
+      [
+        "2023-12-22",
+        1,
+        59
+      ],
+      [
+        "2023-12-23",
+        1,
+        60
+      ],
+      [
+        "2023-12-24",
+        1,
+        61
+      ],
+      [
+        "2023-12-25",
+        1,
+        62
+      ],
+      [
+        "2023-12-30",
+        1,
+        63
+      ],
+      [
+        "2023-12-31",
+        1,
+        64
+      ],
+      [
+        "2024-01-02",
+        1,
+        65
+      ],
+      [
+        "2024-01-04",
+        1,
+        66
+      ],
+      [
+        "2024-01-06",
+        3,
+        69
+      ],
+      [
+        "2024-01-07",
+        1,
+        70
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-08",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Moving Average",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute a 7-day moving average of daily delivered revenue (average of the current day and the previous 6 days that have data).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH d AS (SELECT o.order_date, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY o.order_date) SELECT order_date, revenue, ROUND(AVG(revenue) OVER (ORDER BY order_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW), 2) AS moving_avg_7 FROM d ORDER BY order_date",
+    "executed_ok": true,
+    "columns": [
+      "order_date",
+      "revenue",
+      "moving_avg_7"
+    ],
+    "row_count": 91,
+    "expected_rows": [
+      [
+        "2023-10-02",
+        119743,
+        119743
+      ],
+      [
+        "2023-10-05",
+        152008.9,
+        135875.95
+      ],
+      [
+        "2023-10-08",
+        12181.5,
+        94644.47
+      ],
+      [
+        "2023-10-13",
+        48114.1,
+        83011.88
+      ],
+      [
+        "2023-10-19",
+        4497,
+        67308.9
+      ],
+      [
+        "2023-10-21",
+        131565.5,
+        78018.33
+      ],
+      [
+        "2023-10-22",
+        8596,
+        68100.86
+      ],
+      [
+        "2023-10-26",
+        60957.5,
+        59702.93
+      ],
+      [
+        "2023-10-27",
+        38999,
+        43558.66
+      ],
+      [
+        "2023-10-30",
+        170123.4,
+        66121.79
+      ],
+      [
+        "2023-10-31",
+        112790.29999999999,
+        75361.24
+      ],
+      [
+        "2023-11-01",
+        174079.2,
+        99587.27
+      ],
+      [
+        "2023-11-04",
+        719.1,
+        80894.93
+      ],
+      [
+        "2023-11-05",
+        6998,
+        80666.64
+      ],
+      [
+        "2023-11-07",
+        268332,
+        110291.57
+      ],
+      [
+        "2023-11-08",
+        17885.3,
+        107275.33
+      ],
+      [
+        "2023-11-11",
+        63695,
+        92071.27
+      ],
+      [
+        "2023-11-17",
+        180737.4,
+        101778
+      ],
+      [
+        "2023-11-18",
+        51097.1,
+        84209.13
+      ],
+      [
+        "2023-11-19",
+        30591,
+        88476.54
+      ],
+      [
+        "2023-11-20",
+        7875.3,
+        88601.87
+      ],
+      [
+        "2023-11-21",
+        18600.3,
+        52925.91
+      ],
+      [
+        "2023-11-22",
+        62494,
+        59298.59
+      ],
+      [
+        "2023-11-23",
+        999,
+        50342.01
+      ],
+      [
+        "2023-11-25",
+        4664.2,
+        25188.7
+      ],
+      [
+        "2023-11-29",
+        169393,
+        42088.11
+      ],
+      [
+        "2023-12-06",
+        72295.2,
+        48045.86
+      ],
+      [
+        "2023-12-07",
+        21641.3,
+        50012.43
+      ],
+      [
+        "2023-12-08",
+        42597,
+        53440.53
+      ],
+      [
+        "2023-12-11",
+        12992.3,
+        46368.86
+      ],
+      [
+        "2023-12-16",
+        6747.299999999999,
+        47190.04
+      ],
+      [
+        "2023-12-19",
+        20392,
+        49436.87
+      ],
+      [
+        "2023-12-20",
+        3684.6000000000004,
+        25764.24
+      ],
+      [
+        "2023-12-22",
+        28892,
+        19563.79
+      ],
+      [
+        "2023-12-23",
+        47395.1,
+        23242.9
+      ],
+      [
+        "2023-12-24",
+        128962.2,
+        35580.79
+      ],
+      [
+        "2023-12-30",
+        3499,
+        34224.6
+      ],
+      [
+        "2024-01-02",
+        29796.1,
+        37517.29
+      ],
+      [
+        "2024-01-04",
+        51945.1,
+        42024.87
+      ],
+      [
+        "2024-01-06",
+        17357.2,
+        43978.1
+      ],
+      [
+        "2024-01-07",
+        57896,
+        48121.53
+      ],
+      [
+        "2024-01-13",
+        22790,
+        44606.51
+      ],
+      [
+        "2024-01-16",
+        77470.5,
+        37250.56
+      ],
+      [
+        "2024-01-18",
+        59585.1,
+        45262.86
+      ],
+      [
+        "2024-01-20",
+        18999,
+        43720.41
+      ],
+      [
+        "2024-01-30",
+        18187.1,
+        38897.84
+      ],
+      [
+        "2024-01-31",
+        44241,
+        42738.39
+      ],
+      [
+        "2024-02-03",
+        11498,
+        36110.1
+      ],
+      [
+        "2024-02-05",
+        21238.4,
+        35888.44
+      ],
+      [
+        "2024-02-06",
+        8482.3,
+        26032.99
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-09",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each customer show the first order's id, date and total value.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT o.customer_id, o.order_id, o.order_date, SUM(oi.quantity * oi.unit_price) AS order_value, ROW_NUMBER() OVER (PARTITION BY o.customer_id ORDER BY o.order_date, o.order_id) AS rn FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.customer_id, o.order_id, o.order_date) SELECT customer_id, order_id, order_date, order_value FROM t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "order_id",
+      "order_date",
+      "order_value"
+    ],
+    "row_count": 26,
+    "expected_rows": [
+      [
+        1,
+        44,
+        "2023-11-29",
+        169393
+      ],
+      [
+        2,
+        4,
+        "2023-10-05",
+        2427.3
+      ],
+      [
+        3,
+        60,
+        "2023-12-23",
+        47395.1
+      ],
+      [
+        4,
+        80,
+        "2024-01-30",
+        14191.1
+      ],
+      [
+        5,
+        12,
+        "2023-10-23",
+        110497
+      ],
+      [
+        6,
+        6,
+        "2023-10-08",
+        12181.5
+      ],
+      [
+        7,
+        42,
+        "2023-11-25",
+        4664.2
+      ],
+      [
+        8,
+        16,
+        "2023-10-28",
+        15892
+      ],
+      [
+        9,
+        34,
+        "2023-11-18",
+        51097.1
+      ],
+      [
+        10,
+        64,
+        "2023-12-31",
+        10446.3
+      ],
+      [
+        12,
+        3,
+        "2023-10-05",
+        30942
+      ],
+      [
+        13,
+        28,
+        "2023-11-08",
+        16994
+      ],
+      [
+        14,
+        31,
+        "2023-11-11",
+        25944
+      ],
+      [
+        15,
+        1,
+        "2023-10-02",
+        12533.2
+      ],
+      [
+        16,
+        17,
+        "2023-10-30",
+        2249.1
+      ],
+      [
+        17,
+        19,
+        "2023-10-30",
+        1619.1
+      ],
+      [
+        18,
+        13,
+        "2023-10-26",
+        50121.2
+      ],
+      [
+        19,
+        32,
+        "2023-11-17",
+        13996
+      ],
+      [
+        20,
+        93,
+        "2024-02-13",
+        109720.59999999999
+      ],
+      [
+        21,
+        38,
+        "2023-11-21",
+        18600.3
+      ],
+      [
+        22,
+        25,
+        "2023-11-05",
+        6998
+      ],
+      [
+        23,
+        21,
+        "2023-11-01",
+        3514.1
+      ],
+      [
+        24,
+        14,
+        "2023-10-26",
+        10836.3
+      ],
+      [
+        25,
+        83,
+        "2024-02-04",
+        14842.2
+      ],
+      [
+        26,
+        2,
+        "2023-10-02",
+        119743
+      ],
+      [
+        27,
+        9,
+        "2023-10-21",
+        111144.2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-10",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Market Basket",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Find the 5 most frequent pairs of products that were bought together in the same order.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p1.product_name AS product_a, p2.product_name AS product_b, COUNT(*) AS together FROM order_items a JOIN order_items b ON a.order_id = b.order_id AND a.product_id < b.product_id JOIN products p1 ON a.product_id = p1.product_id JOIN products p2 ON b.product_id = p2.product_id GROUP BY a.product_id, b.product_id, p1.product_name, p2.product_name ORDER BY together DESC, product_a, product_b LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "product_a",
+      "product_b",
+      "together"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "HomeNest Cookware Set",
+        "Organic Basmati 5kg",
+        7
+      ],
+      [
+        "Zenith Soundbar",
+        "HomeNest Cookware Set",
+        7
+      ],
+      [
+        "HomeNest Cookware Set",
+        "SQL Mastery Handbook",
+        6
+      ],
+      [
+        "HomeNest Mixer Grinder",
+        "Organic Basmati 5kg",
+        6
+      ],
+      [
+        "Nova Buds Pro",
+        "CozyCo Bedsheet",
+        6
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-11",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show categories with at least 5 reviews and their average rating.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, COUNT(*) AS reviews, ROUND(AVG(r.rating), 2) AS avg_rating FROM reviews r JOIN products p ON r.product_id = p.product_id GROUP BY p.category HAVING COUNT(*) >= 5",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "reviews",
+      "avg_rating"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        15,
+        4
+      ],
+      [
+        "Electronics",
+        20,
+        3.9
+      ],
+      [
+        "Fashion",
+        19,
+        4.26
+      ],
+      [
+        "Grocery",
+        14,
+        4.07
+      ],
+      [
+        "Home",
+        12,
+        4.08
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-12",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each category find the best rated product among products with at least 2 reviews (one row per category).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH s AS (SELECT p.category, p.product_name, AVG(r.rating) AS avg_rating, COUNT(*) AS n FROM reviews r JOIN products p ON r.product_id = p.product_id GROUP BY p.product_id, p.category, p.product_name HAVING COUNT(*) >= 2) SELECT category, product_name, ROUND(avg_rating, 2) AS avg_rating FROM (SELECT category, product_name, avg_rating, ROW_NUMBER() OVER (PARTITION BY category ORDER BY avg_rating DESC, n DESC, product_name) AS rn FROM s) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "product_name",
+      "avg_rating"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        "SQL Mastery Handbook",
+        4.43
+      ],
+      [
+        "Electronics",
+        "Zenith 55in Smart TV",
+        4.43
+      ],
+      [
+        "Fashion",
+        "Urban Denim Jeans",
+        4.75
+      ],
+      [
+        "Grocery",
+        "Cold Pressed Olive Oil 1L",
+        4.33
+      ],
+      [
+        "Home",
+        "HomeNest Mixer Grinder",
+        4.6
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-13",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compute the cancellation rate (percentage of orders with status Cancelled) for every month.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(order_date, '%Y-%m') AS ym, COUNT(*) AS orders, ROUND(SUM(CASE WHEN status = 'Cancelled' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS cancel_rate_pct FROM orders GROUP BY DATE_FORMAT(order_date, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "orders",
+      "cancel_rate_pct"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "2023-10",
+        20,
+        10
+      ],
+      [
+        "2023-11",
+        24,
+        8.33
+      ],
+      [
+        "2023-12",
+        20,
+        10
+      ],
+      [
+        "2024-01",
+        17,
+        0
+      ],
+      [
+        "2024-02",
+        20,
+        10
+      ],
+      [
+        "2024-03",
+        14,
+        7.14
+      ],
+      [
+        "2024-04",
+        15,
+        0
+      ],
+      [
+        "2024-05",
+        18,
+        5.56
+      ],
+      [
+        "2024-06",
+        12,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-14",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find customers whose second order was worth more than their first order (show both values).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT o.customer_id, o.order_id, SUM(oi.quantity * oi.unit_price) AS val, ROW_NUMBER() OVER (PARTITION BY o.customer_id ORDER BY o.order_date, o.order_id) AS rn FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.customer_id, o.order_id, o.order_date) SELECT a.customer_id, a.val AS first_value, b.val AS second_value FROM t a JOIN t b ON a.customer_id = b.customer_id AND a.rn = 1 AND b.rn = 2 WHERE b.val > a.val",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "first_value",
+      "second_value"
+    ],
+    "row_count": 13,
+    "expected_rows": [
+      [
+        2,
+        2427.3,
+        166255.2
+      ],
+      [
+        6,
+        12181.5,
+        20421.3
+      ],
+      [
+        7,
+        4664.2,
+        72295.2
+      ],
+      [
+        8,
+        15892,
+        63695
+      ],
+      [
+        10,
+        10446.3,
+        15641.3
+      ],
+      [
+        14,
+        25944,
+        37430.2
+      ],
+      [
+        15,
+        12533.2,
+        112790.29999999999
+      ],
+      [
+        16,
+        2249.1,
+        22790
+      ],
+      [
+        17,
+        1619.1,
+        174079.2
+      ],
+      [
+        19,
+        13996,
+        166741.4
+      ],
+      [
+        20,
+        109720.59999999999,
+        112695
+      ],
+      [
+        22,
+        6998,
+        121394
+      ],
+      [
+        23,
+        3514.1,
+        48391
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-15",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CTE",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List the orders whose total value is above the average order value.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT order_id, SUM(quantity * unit_price) AS val FROM order_items GROUP BY order_id) SELECT order_id, val FROM t WHERE val > (SELECT AVG(val) FROM t) ORDER BY val DESC",
+    "executed_ok": true,
+    "columns": [
+      "order_id",
+      "val"
+    ],
+    "row_count": 53,
+    "expected_rows": [
+      [
+        58,
+        274439.3
+      ],
+      [
+        26,
+        249490
+      ],
+      [
+        115,
+        199192
+      ],
+      [
+        158,
+        180442.3
+      ],
+      [
+        88,
+        179190
+      ],
+      [
+        102,
+        176391
+      ],
+      [
+        22,
+        174079.2
+      ],
+      [
+        44,
+        169393
+      ],
+      [
+        33,
+        166741.4
+      ],
+      [
+        18,
+        166255.2
+      ],
+      [
+        149,
+        166044
+      ],
+      [
+        89,
+        160192
+      ],
+      [
+        98,
+        135391
+      ],
+      [
+        61,
+        128962.2
+      ],
+      [
+        112,
+        124164.1
+      ],
+      [
+        118,
+        123441
+      ],
+      [
+        150,
+        122091
+      ],
+      [
+        94,
+        121394
+      ],
+      [
+        136,
+        120994.2
+      ],
+      [
+        121,
+        120495
+      ],
+      [
+        2,
+        119743
+      ],
+      [
+        5,
+        118639.59999999999
+      ],
+      [
+        114,
+        116997
+      ],
+      [
+        119,
+        116997
+      ],
+      [
+        20,
+        112790.29999999999
+      ],
+      [
+        160,
+        112697.1
+      ],
+      [
+        129,
+        112695
+      ],
+      [
+        9,
+        111144.2
+      ],
+      [
+        12,
+        110497
+      ],
+      [
+        157,
+        109998
+      ],
+      [
+        93,
+        109720.59999999999
+      ],
+      [
+        108,
+        100796.4
+      ],
+      [
+        43,
+        72595.2
+      ],
+      [
+        47,
+        72295.2
+      ],
+      [
+        41,
+        66793
+      ],
+      [
+        130,
+        66740.6
+      ],
+      [
+        67,
+        66291.3
+      ],
+      [
+        30,
+        63695
+      ],
+      [
+        154,
+        63295.2
+      ],
+      [
+        39,
+        62494
+      ],
+      [
+        70,
+        57896
+      ],
+      [
+        128,
+        57345
+      ],
+      [
+        75,
+        52195.1
+      ],
+      [
+        66,
+        51945.1
+      ],
+      [
+        34,
+        51097.1
+      ],
+      [
+        96,
+        50547.1
+      ],
+      [
+        13,
+        50121.2
+      ],
+      [
+        49,
+        49693.2
+      ],
+      [
+        148,
+        49496
+      ],
+      [
+        24,
+        48391
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-16",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Median",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute the median order value without using a MEDIAN function.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT order_id, SUM(quantity * unit_price) AS val FROM order_items GROUP BY order_id), r AS (SELECT val, ROW_NUMBER() OVER (ORDER BY val) AS rn, COUNT(*) OVER () AS n FROM t) SELECT AVG(val) AS median_order_value FROM r WHERE rn >= n / 2.0 AND rn <= n / 2.0 + 1",
+    "executed_ok": true,
+    "columns": [
+      "median_order_value"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        18138.65
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-17",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Comparison",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compare average order value of Prime and non-Prime customers.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT o.order_id, o.customer_id, SUM(oi.quantity * oi.unit_price) AS val FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.order_id, o.customer_id) SELECT c.is_prime, COUNT(*) AS orders, ROUND(AVG(t.val), 2) AS avg_order_value FROM t JOIN customers c ON t.customer_id = c.customer_id GROUP BY c.is_prime",
+    "executed_ok": true,
+    "columns": [
+      "is_prime",
+      "orders",
+      "avg_order_value"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        0,
+        124,
+        47023.76
+      ],
+      [
+        1,
+        36,
+        38004.17
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-18",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "GROUP BY / HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find orders that contain at least 3 distinct products.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT order_id, COUNT(DISTINCT product_id) AS distinct_products FROM order_items GROUP BY order_id HAVING COUNT(DISTINCT product_id) >= 3",
+    "executed_ok": true,
+    "columns": [
+      "order_id",
+      "distinct_products"
+    ],
+    "row_count": 90,
+    "expected_rows": [
+      [
+        1,
+        4
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        4
+      ],
+      [
+        7,
+        4
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        13,
+        4
+      ],
+      [
+        14,
+        4
+      ],
+      [
+        16,
+        4
+      ],
+      [
+        20,
+        4
+      ],
+      [
+        21,
+        3
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        24,
+        4
+      ],
+      [
+        26,
+        4
+      ],
+      [
+        27,
+        4
+      ],
+      [
+        28,
+        3
+      ],
+      [
+        30,
+        3
+      ],
+      [
+        32,
+        4
+      ],
+      [
+        33,
+        4
+      ],
+      [
+        35,
+        4
+      ],
+      [
+        37,
+        3
+      ],
+      [
+        38,
+        4
+      ],
+      [
+        39,
+        3
+      ],
+      [
+        41,
+        4
+      ],
+      [
+        42,
+        3
+      ],
+      [
+        44,
+        3
+      ],
+      [
+        45,
+        4
+      ],
+      [
+        48,
+        4
+      ],
+      [
+        49,
+        3
+      ],
+      [
+        51,
+        4
+      ],
+      [
+        52,
+        4
+      ],
+      [
+        57,
+        3
+      ],
+      [
+        58,
+        4
+      ],
+      [
+        59,
+        3
+      ],
+      [
+        60,
+        4
+      ],
+      [
+        61,
+        4
+      ],
+      [
+        62,
+        3
+      ],
+      [
+        65,
+        3
+      ],
+      [
+        66,
+        4
+      ],
+      [
+        67,
+        4
+      ],
+      [
+        68,
+        3
+      ],
+      [
+        70,
+        3
+      ],
+      [
+        72,
+        4
+      ],
+      [
+        73,
+        4
+      ],
+      [
+        75,
+        3
+      ],
+      [
+        76,
+        4
+      ],
+      [
+        80,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-19",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "NTILE",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "What share of total delivered revenue comes from the top 10 percent of customers (the first decile by spend)?",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH s AS (SELECT o.customer_id, SUM(oi.quantity * oi.unit_price) AS spend FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY o.customer_id), d AS (SELECT spend, NTILE(10) OVER (ORDER BY spend DESC) AS decile FROM s) SELECT ROUND(SUM(CASE WHEN decile = 1 THEN spend ELSE 0 END) * 100.0 / SUM(spend), 2) AS top_decile_share_pct FROM d",
+    "executed_ok": true,
+    "columns": [
+      "top_decile_share_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        32.37
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-20",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Churn",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Find customers who have ordered before but not since 1 April 2024 (their latest order is before that date).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, MAX(order_date) AS last_order FROM orders GROUP BY customer_id HAVING MAX(order_date) < '2024-04-01'",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "last_order"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        4,
+        "2024-01-30"
+      ],
+      [
+        5,
+        "2024-02-12"
+      ],
+      [
+        8,
+        "2024-03-02"
+      ],
+      [
+        16,
+        "2024-02-17"
+      ],
+      [
+        17,
+        "2024-02-29"
+      ],
+      [
+        19,
+        "2024-03-24"
+      ],
+      [
+        22,
+        "2024-03-30"
+      ],
+      [
+        25,
+        "2024-02-13"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-21",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Date Gaps",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Find the customer with the longest gap (in days) between two consecutive orders, and the gap length.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH g AS (SELECT customer_id, DATEDIFF(order_date, LAG(order_date) OVER (PARTITION BY customer_id ORDER BY order_date, order_id)) AS gap FROM orders) SELECT customer_id, gap FROM g WHERE gap IS NOT NULL ORDER BY gap DESC LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "gap"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        1,
+        189
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-22",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Ranking per Group",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every category find the year-month in which its delivered revenue was highest.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH m AS (SELECT p.category, DATE_FORMAT(o.order_date, '%Y-%m') AS ym, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY p.category, DATE_FORMAT(o.order_date, '%Y-%m')) SELECT category, ym, revenue FROM (SELECT category, ym, revenue, RANK() OVER (PARTITION BY category ORDER BY revenue DESC) AS rnk FROM m) t WHERE rnk = 1",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "ym",
+      "revenue"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        "2023-11",
+        16034
+      ],
+      [
+        "Electronics",
+        "2023-11",
+        955714.5
+      ],
+      [
+        "Fashion",
+        "2023-10",
+        47205.5
+      ],
+      [
+        "Grocery",
+        "2023-10",
+        13525.300000000001
+      ],
+      [
+        "Home",
+        "2023-11",
+        48281
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-23",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Repeat Rate",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Among customers who ordered at least once, what percentage placed more than one order?",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH c AS (SELECT customer_id, COUNT(*) AS n FROM orders GROUP BY customer_id) SELECT ROUND(SUM(CASE WHEN n > 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS repeat_pct FROM c",
+    "executed_ok": true,
+    "columns": [
+      "repeat_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        96.15
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-24",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the product that has been bought by the largest number of distinct customers.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, COUNT(DISTINCT o.customer_id) AS buyers FROM order_items oi JOIN orders o ON oi.order_id = o.order_id JOIN products p ON oi.product_id = p.product_id GROUP BY p.product_id, p.product_name ORDER BY buyers DESC, p.product_name LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "buyers"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "HomeNest Cookware Set",
+        18
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-25",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List products priced more than 1.5 times the average price of their category.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, p.category, p.price FROM products p WHERE p.price > 1.5 * (SELECT AVG(price) FROM products WHERE category = p.category)",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "category",
+      "price"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Zenith 55in Smart TV",
+        "Electronics",
+        38999
+      ],
+      [
+        "Pixel Laptop 14",
+        "Electronics",
+        54999
+      ],
+      [
+        "Stride Running Shoes",
+        "Fashion",
+        3499
+      ],
+      [
+        "Indian Classics Box Set",
+        "Books",
+        1499
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-26",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Ranking",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Rank states by delivered revenue (highest first) using RANK.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH s AS (SELECT c.state, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN customers c ON o.customer_id = c.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY c.state) SELECT state, revenue, RANK() OVER (ORDER BY revenue DESC) AS rnk FROM s",
+    "executed_ok": true,
+    "columns": [
+      "state",
+      "revenue",
+      "rnk"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "Maharashtra",
+        1430372.6,
+        1
+      ],
+      [
+        "Rajasthan",
+        839473.6,
+        2
+      ],
+      [
+        "Uttar Pradesh",
+        747912.9,
+        3
+      ],
+      [
+        "West Bengal",
+        517591.3,
+        4
+      ],
+      [
+        "Gujarat",
+        432480.2,
+        5
+      ],
+      [
+        "Tamil Nadu",
+        419493.2,
+        6
+      ],
+      [
+        "Telangana",
+        343676.7,
+        7
+      ],
+      [
+        "Delhi",
+        170656,
+        8
+      ],
+      [
+        "Karnataka",
+        15043.1,
+        9
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-27",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Cohorts",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For each first-order month (cohort), show the cohort size and how many of those customers ordered again in a later month.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH f AS (SELECT customer_id, DATE_FORMAT(MIN(order_date), '%Y-%m') AS cohort FROM orders GROUP BY customer_id) SELECT cohort, COUNT(*) AS cohort_size, SUM(CASE WHEN EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = f.customer_id AND DATE_FORMAT(o.order_date, '%Y-%m') > f.cohort) THEN 1 ELSE 0 END) AS returned_later FROM f GROUP BY cohort ORDER BY cohort",
+    "executed_ok": true,
+    "columns": [
+      "cohort",
+      "cohort_size",
+      "returned_later"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "2023-10",
+        12,
+        12
+      ],
+      [
+        "2023-11",
+        9,
+        9
+      ],
+      [
+        "2023-12",
+        2,
+        2
+      ],
+      [
+        "2024-01",
+        1,
+        0
+      ],
+      [
+        "2024-02",
+        2,
+        1
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-28",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find reviews written by customers who never bought that product.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT r.review_id, r.customer_id, r.product_id FROM reviews r WHERE NOT EXISTS (SELECT 1 FROM orders o JOIN order_items oi ON o.order_id = oi.order_id WHERE o.customer_id = r.customer_id AND oi.product_id = r.product_id)",
+    "executed_ok": true,
+    "columns": [
+      "review_id",
+      "customer_id",
+      "product_id"
+    ],
+    "row_count": 38,
+    "expected_rows": [
+      [
+        7,
+        1,
+        10
+      ],
+      [
+        8,
+        24,
+        4
+      ],
+      [
+        10,
+        8,
+        13
+      ],
+      [
+        13,
+        4,
+        15
+      ],
+      [
+        14,
+        7,
+        11
+      ],
+      [
+        16,
+        9,
+        1
+      ],
+      [
+        20,
+        25,
+        9
+      ],
+      [
+        22,
+        5,
+        6
+      ],
+      [
+        23,
+        18,
+        6
+      ],
+      [
+        26,
+        3,
+        8
+      ],
+      [
+        27,
+        17,
+        7
+      ],
+      [
+        30,
+        24,
+        17
+      ],
+      [
+        31,
+        17,
+        1
+      ],
+      [
+        32,
+        4,
+        6
+      ],
+      [
+        33,
+        8,
+        5
+      ],
+      [
+        34,
+        27,
+        9
+      ],
+      [
+        37,
+        3,
+        2
+      ],
+      [
+        39,
+        3,
+        6
+      ],
+      [
+        41,
+        7,
+        8
+      ],
+      [
+        43,
+        19,
+        18
+      ],
+      [
+        44,
+        1,
+        11
+      ],
+      [
+        46,
+        22,
+        13
+      ],
+      [
+        47,
+        25,
+        13
+      ],
+      [
+        49,
+        11,
+        3
+      ],
+      [
+        53,
+        25,
+        3
+      ],
+      [
+        57,
+        4,
+        9
+      ],
+      [
+        60,
+        3,
+        18
+      ],
+      [
+        61,
+        1,
+        13
+      ],
+      [
+        62,
+        24,
+        3
+      ],
+      [
+        65,
+        3,
+        5
+      ],
+      [
+        66,
+        10,
+        14
+      ],
+      [
+        67,
+        9,
+        12
+      ],
+      [
+        70,
+        15,
+        11
+      ],
+      [
+        71,
+        11,
+        10
+      ],
+      [
+        72,
+        11,
+        16
+      ],
+      [
+        74,
+        11,
+        8
+      ],
+      [
+        75,
+        4,
+        12
+      ],
+      [
+        78,
+        27,
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-29",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Period Comparison",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "For each category compare delivered revenue of Q1 2024 (Jan-Mar) against Q4 2023 (Oct-Dec) in two columns.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, SUM(CASE WHEN o.order_date BETWEEN '2023-10-01' AND '2023-12-31' THEN oi.quantity * oi.unit_price ELSE 0 END) AS q4_2023, SUM(CASE WHEN o.order_date BETWEEN '2024-01-01' AND '2024-03-31' THEN oi.quantity * oi.unit_price ELSE 0 END) AS q1_2024 FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY p.category",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "q4_2023",
+      "q1_2024"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        38127.8,
+        33481.7
+      ],
+      [
+        "Electronics",
+        2017822.2,
+        1298597
+      ],
+      [
+        "Fashion",
+        94559.4,
+        63617.1
+      ],
+      [
+        "Grocery",
+        29321.4,
+        29498.9
+      ],
+      [
+        "Home",
+        127003.3,
+        107967.8
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "AMZ-30",
+    "company": "AMZ",
+    "company_name": "Amazon",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "New Customers",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Count how many customers placed their very first order in each month.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(first_order, '%Y-%m') AS ym, COUNT(*) AS new_customers FROM (SELECT customer_id, MIN(order_date) AS first_order FROM orders GROUP BY customer_id) t GROUP BY DATE_FORMAT(first_order, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "new_customers"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "2023-10",
+        12
+      ],
+      [
+        "2023-11",
+        9
+      ],
+      [
+        "2023-12",
+        2
+      ],
+      [
+        "2024-01",
+        1
+      ],
+      [
+        "2024-02",
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-01",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Concurrency",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "What is a deadlock in a database and how can it be reduced?",
+    "model_answer": "A deadlock occurs when two transactions each hold a lock the other needs, so neither can proceed; the engine kills one as the victim. Reduce them by accessing tables in a consistent order, keeping transactions short, using appropriate indexes and lower isolation levels, and retrying on deadlock errors.",
+    "isPro": true
+  },
+  {
+    "id": "MSFT-02",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "What does SARGable mean and why does it matter?",
+    "model_answer": "A predicate is SARGable (Search ARGument ABLE) when the engine can use an index seek for it. WHERE order_date >= '2024-01-01' is SARGable; WHERE YEAR(order_date) = 2024 is not, because the function on the column forces a scan. Rewrite predicates so the column stays bare.",
+    "isPro": true
+  },
+  {
+    "id": "MSFT-03",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Concepts",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "View vs CTE: what is the difference?",
+    "model_answer": "A view is a stored object in the database that can be reused by many queries and permissions can be granted on it. A CTE exists only for the duration of one statement and is mainly for readability or recursion.",
+    "isPro": true
+  },
+  {
+    "id": "MSFT-04",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Product Analytics",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Calculate daily active users (distinct users who logged in) for each date in January 2024.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT login_date, COUNT(DISTINCT user_id) AS dau FROM logins WHERE login_date BETWEEN '2024-01-01' AND '2024-01-31' GROUP BY login_date ORDER BY login_date",
+    "executed_ok": true,
+    "columns": [
+      "login_date",
+      "dau"
+    ],
+    "row_count": 31,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        20
+      ],
+      [
+        "2024-01-02",
+        28
+      ],
+      [
+        "2024-01-03",
+        32
+      ],
+      [
+        "2024-01-04",
+        33
+      ],
+      [
+        "2024-01-05",
+        31
+      ],
+      [
+        "2024-01-06",
+        34
+      ],
+      [
+        "2024-01-07",
+        29
+      ],
+      [
+        "2024-01-08",
+        29
+      ],
+      [
+        "2024-01-09",
+        33
+      ],
+      [
+        "2024-01-10",
+        26
+      ],
+      [
+        "2024-01-11",
+        34
+      ],
+      [
+        "2024-01-12",
+        35
+      ],
+      [
+        "2024-01-13",
+        29
+      ],
+      [
+        "2024-01-14",
+        28
+      ],
+      [
+        "2024-01-15",
+        22
+      ],
+      [
+        "2024-01-16",
+        29
+      ],
+      [
+        "2024-01-17",
+        28
+      ],
+      [
+        "2024-01-18",
+        31
+      ],
+      [
+        "2024-01-19",
+        30
+      ],
+      [
+        "2024-01-20",
+        28
+      ],
+      [
+        "2024-01-21",
+        23
+      ],
+      [
+        "2024-01-22",
+        25
+      ],
+      [
+        "2024-01-23",
+        28
+      ],
+      [
+        "2024-01-24",
+        37
+      ],
+      [
+        "2024-01-25",
+        35
+      ],
+      [
+        "2024-01-26",
+        24
+      ],
+      [
+        "2024-01-27",
+        29
+      ],
+      [
+        "2024-01-28",
+        26
+      ],
+      [
+        "2024-01-29",
+        22
+      ],
+      [
+        "2024-01-30",
+        31
+      ],
+      [
+        "2024-01-31",
+        32
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-05",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Product Analytics",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Calculate monthly active users (distinct users) for January, February and March 2024.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(login_date, '%Y-%m') AS ym, COUNT(DISTINCT user_id) AS mau FROM logins GROUP BY DATE_FORMAT(login_date, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "mau"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "2024-01",
+        60
+      ],
+      [
+        "2024-02",
+        56
+      ],
+      [
+        "2024-03",
+        50
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-06",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Gaps and Islands",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [
+      "GOOG"
+    ],
+    "question": "Find the longest consecutive-day login streak for every user (user_id and streak length).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH r AS (SELECT user_id, login_date, DATEDIFF(login_date, '2024-01-01') - ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY login_date) AS grp FROM logins), s AS (SELECT user_id, grp, COUNT(*) AS streak FROM r GROUP BY user_id, grp) SELECT user_id, MAX(streak) AS longest_streak FROM s GROUP BY user_id ORDER BY longest_streak DESC, user_id",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "longest_streak"
+    ],
+    "row_count": 60,
+    "expected_rows": [
+      [
+        51,
+        41
+      ],
+      [
+        34,
+        29
+      ],
+      [
+        11,
+        26
+      ],
+      [
+        47,
+        26
+      ],
+      [
+        12,
+        23
+      ],
+      [
+        6,
+        22
+      ],
+      [
+        50,
+        21
+      ],
+      [
+        13,
+        20
+      ],
+      [
+        24,
+        19
+      ],
+      [
+        17,
+        17
+      ],
+      [
+        41,
+        17
+      ],
+      [
+        45,
+        17
+      ],
+      [
+        56,
+        16
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        23,
+        15
+      ],
+      [
+        28,
+        15
+      ],
+      [
+        7,
+        14
+      ],
+      [
+        59,
+        14
+      ],
+      [
+        14,
+        13
+      ],
+      [
+        19,
+        13
+      ],
+      [
+        35,
+        12
+      ],
+      [
+        39,
+        12
+      ],
+      [
+        40,
+        12
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        25,
+        11
+      ],
+      [
+        48,
+        11
+      ],
+      [
+        60,
+        11
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        21,
+        9
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        46,
+        8
+      ],
+      [
+        54,
+        8
+      ],
+      [
+        10,
+        7
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        29,
+        6
+      ],
+      [
+        57,
+        6
+      ],
+      [
+        2,
+        5
+      ],
+      [
+        16,
+        5
+      ],
+      [
+        20,
+        5
+      ],
+      [
+        30,
+        5
+      ],
+      [
+        36,
+        5
+      ],
+      [
+        38,
+        5
+      ],
+      [
+        42,
+        5
+      ],
+      [
+        53,
+        5
+      ],
+      [
+        26,
+        4
+      ],
+      [
+        31,
+        4
+      ],
+      [
+        43,
+        4
+      ],
+      [
+        15,
+        3
+      ],
+      [
+        37,
+        3
+      ],
+      [
+        49,
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-07",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Gaps and Islands",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [],
+    "question": "List users who logged in on at least 5 consecutive days at some point.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH r AS (SELECT user_id, DATEDIFF(login_date, '2024-01-01') - ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY login_date) AS grp FROM logins) SELECT DISTINCT user_id FROM r GROUP BY user_id, grp HAVING COUNT(*) >= 5 ORDER BY user_id",
+    "executed_ok": true,
+    "columns": [
+      "user_id"
+    ],
+    "row_count": 44,
+    "expected_rows": [
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        19
+      ],
+      [
+        20
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ],
+      [
+        23
+      ],
+      [
+        24
+      ],
+      [
+        25
+      ],
+      [
+        28
+      ],
+      [
+        29
+      ],
+      [
+        30
+      ],
+      [
+        34
+      ],
+      [
+        35
+      ],
+      [
+        36
+      ],
+      [
+        38
+      ],
+      [
+        39
+      ],
+      [
+        40
+      ],
+      [
+        41
+      ],
+      [
+        42
+      ],
+      [
+        45
+      ],
+      [
+        46
+      ],
+      [
+        47
+      ],
+      [
+        48
+      ],
+      [
+        50
+      ],
+      [
+        51
+      ],
+      [
+        53
+      ],
+      [
+        54
+      ],
+      [
+        56
+      ],
+      [
+        57
+      ],
+      [
+        59
+      ],
+      [
+        60
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-08",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find users who logged in on every single day from 2024-01-01 to 2024-01-05.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT user_id FROM logins WHERE login_date BETWEEN '2024-01-01' AND '2024-01-05' GROUP BY user_id HAVING COUNT(DISTINCT login_date) = 5",
+    "executed_ok": true,
+    "columns": [
+      "user_id"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        8
+      ],
+      [
+        12
+      ],
+      [
+        22
+      ],
+      [
+        35
+      ],
+      [
+        39
+      ],
+      [
+        40
+      ],
+      [
+        45
+      ],
+      [
+        59
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-09",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Funnel",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Show how many distinct users reached each funnel step (visit, signup_click, add_payment, purchase) and the percentage relative to visits.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT event_type, COUNT(DISTINCT user_id) AS users, ROUND(COUNT(DISTINCT user_id) * 100.0 / (SELECT COUNT(DISTINCT user_id) FROM events WHERE event_type = 'visit'), 1) AS pct_of_visits FROM events WHERE event_type IN ('visit', 'signup_click', 'add_payment', 'purchase') GROUP BY event_type",
+    "executed_ok": true,
+    "columns": [
+      "event_type",
+      "users",
+      "pct_of_visits"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "add_payment",
+        31,
+        51.7
+      ],
+      [
+        "purchase",
+        21,
+        35
+      ],
+      [
+        "signup_click",
+        47,
+        78.3
+      ],
+      [
+        "visit",
+        60,
+        100
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-10",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Funnel",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Find users who purchased within one calendar day (same or next day) of their first visit.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT v.user_id FROM (SELECT user_id, MIN(event_ts) AS first_visit FROM events WHERE event_type = 'visit' GROUP BY user_id) v JOIN events p ON p.user_id = v.user_id AND p.event_type = 'purchase' WHERE DATEDIFF(SUBSTR(p.event_ts, 1, 10), SUBSTR(v.first_visit, 1, 10)) <= 1",
+    "executed_ok": true,
+    "columns": [
+      "user_id"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        10
+      ],
+      [
+        12
+      ],
+      [
+        14
+      ],
+      [
+        26
+      ],
+      [
+        32
+      ],
+      [
+        43
+      ],
+      [
+        54
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-11",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Retention",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Day-1 retention: among users who signed up on or after 2024-01-01, what percentage logged in exactly one day after signing up?",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT ROUND(COUNT(DISTINCT l.user_id) * 100.0 / (SELECT COUNT(*) FROM app_users WHERE signup_date >= '2024-01-01'), 2) AS day1_retention_pct FROM app_users u JOIN logins l ON l.user_id = u.user_id AND DATEDIFF(l.login_date, u.signup_date) = 1 WHERE u.signup_date >= '2024-01-01'",
+    "executed_ok": true,
+    "columns": [
+      "day1_retention_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        57.69
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-12",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find users who logged in during 1-7 January 2024 but have no login at all between 15 and 31 March 2024 (churn candidates).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT DISTINCT user_id FROM logins j WHERE login_date BETWEEN '2024-01-01' AND '2024-01-07' AND NOT EXISTS (SELECT 1 FROM logins f WHERE f.user_id = j.user_id AND f.login_date BETWEEN '2024-03-15' AND '2024-03-31')",
+    "executed_ok": true,
+    "columns": [
+      "user_id"
+    ],
+    "row_count": 13,
+    "expected_rows": [
+      [
+        18
+      ],
+      [
+        22
+      ],
+      [
+        26
+      ],
+      [
+        27
+      ],
+      [
+        29
+      ],
+      [
+        32
+      ],
+      [
+        35
+      ],
+      [
+        36
+      ],
+      [
+        39
+      ],
+      [
+        40
+      ],
+      [
+        49
+      ],
+      [
+        53
+      ],
+      [
+        54
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-13",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the average number of login days per user for each month.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT ym, ROUND(AVG(days), 2) AS avg_login_days FROM (SELECT user_id, DATE_FORMAT(login_date, '%Y-%m') AS ym, COUNT(*) AS days FROM logins GROUP BY user_id, DATE_FORMAT(login_date, '%Y-%m')) t GROUP BY ym ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "avg_login_days"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "2024-01",
+        15.02
+      ],
+      [
+        "2024-02",
+        14.2
+      ],
+      [
+        "2024-03",
+        15.8
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-14",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show distinct February 2024 active users per country.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT u.country, COUNT(DISTINCT l.user_id) AS active_users FROM logins l JOIN app_users u ON l.user_id = u.user_id WHERE l.login_date BETWEEN '2024-02-01' AND '2024-02-29' GROUP BY u.country",
+    "executed_ok": true,
+    "columns": [
+      "country",
+      "active_users"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "IN",
+        42
+      ],
+      [
+        "SG",
+        5
+      ],
+      [
+        "UK",
+        4
+      ],
+      [
+        "US",
+        5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-15",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "List users who had a gap of more than 14 days between two consecutive logins, with the date they returned.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH g AS (SELECT user_id, login_date, DATEDIFF(login_date, LAG(login_date) OVER (PARTITION BY user_id ORDER BY login_date)) AS gap FROM logins) SELECT user_id, login_date AS returned_on, gap FROM g WHERE gap > 14 ORDER BY gap DESC",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "returned_on",
+      "gap"
+    ],
+    "row_count": 14,
+    "expected_rows": [
+      [
+        44,
+        "2024-02-11",
+        34
+      ],
+      [
+        44,
+        "2024-03-11",
+        29
+      ],
+      [
+        58,
+        "2024-02-23",
+        25
+      ],
+      [
+        1,
+        "2024-02-08",
+        24
+      ],
+      [
+        38,
+        "2024-03-09",
+        22
+      ],
+      [
+        58,
+        "2024-01-25",
+        20
+      ],
+      [
+        58,
+        "2024-03-25",
+        20
+      ],
+      [
+        23,
+        "2024-02-25",
+        19
+      ],
+      [
+        5,
+        "2024-03-27",
+        16
+      ],
+      [
+        23,
+        "2024-03-31",
+        16
+      ],
+      [
+        28,
+        "2024-02-01",
+        16
+      ],
+      [
+        28,
+        "2024-03-17",
+        16
+      ],
+      [
+        44,
+        "2024-03-27",
+        16
+      ],
+      [
+        52,
+        "2024-02-11",
+        15
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-16",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "New vs Returning",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For each login date, count users logging in for the first time ever (new) and users who have logged in before (returning).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH f AS (SELECT user_id, MIN(login_date) AS first_login FROM logins GROUP BY user_id) SELECT l.login_date, SUM(CASE WHEN l.login_date = f.first_login THEN 1 ELSE 0 END) AS new_users, SUM(CASE WHEN l.login_date > f.first_login THEN 1 ELSE 0 END) AS returning_users FROM logins l JOIN f ON l.user_id = f.user_id GROUP BY l.login_date ORDER BY l.login_date",
+    "executed_ok": true,
+    "columns": [
+      "login_date",
+      "new_users",
+      "returning_users"
+    ],
+    "row_count": 91,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        20,
+        0
+      ],
+      [
+        "2024-01-02",
+        14,
+        14
+      ],
+      [
+        "2024-01-03",
+        10,
+        22
+      ],
+      [
+        "2024-01-04",
+        5,
+        28
+      ],
+      [
+        "2024-01-05",
+        3,
+        28
+      ],
+      [
+        "2024-01-06",
+        2,
+        32
+      ],
+      [
+        "2024-01-07",
+        0,
+        29
+      ],
+      [
+        "2024-01-08",
+        1,
+        28
+      ],
+      [
+        "2024-01-09",
+        0,
+        33
+      ],
+      [
+        "2024-01-10",
+        1,
+        25
+      ],
+      [
+        "2024-01-11",
+        1,
+        33
+      ],
+      [
+        "2024-01-12",
+        0,
+        35
+      ],
+      [
+        "2024-01-13",
+        0,
+        29
+      ],
+      [
+        "2024-01-14",
+        0,
+        28
+      ],
+      [
+        "2024-01-15",
+        0,
+        22
+      ],
+      [
+        "2024-01-16",
+        0,
+        29
+      ],
+      [
+        "2024-01-17",
+        0,
+        28
+      ],
+      [
+        "2024-01-18",
+        1,
+        30
+      ],
+      [
+        "2024-01-19",
+        0,
+        30
+      ],
+      [
+        "2024-01-20",
+        0,
+        28
+      ],
+      [
+        "2024-01-21",
+        0,
+        23
+      ],
+      [
+        "2024-01-22",
+        0,
+        25
+      ],
+      [
+        "2024-01-23",
+        0,
+        28
+      ],
+      [
+        "2024-01-24",
+        0,
+        37
+      ],
+      [
+        "2024-01-25",
+        0,
+        35
+      ],
+      [
+        "2024-01-26",
+        0,
+        24
+      ],
+      [
+        "2024-01-27",
+        0,
+        29
+      ],
+      [
+        "2024-01-28",
+        0,
+        26
+      ],
+      [
+        "2024-01-29",
+        1,
+        21
+      ],
+      [
+        "2024-01-30",
+        1,
+        30
+      ],
+      [
+        "2024-01-31",
+        0,
+        32
+      ],
+      [
+        "2024-02-01",
+        0,
+        31
+      ],
+      [
+        "2024-02-02",
+        0,
+        31
+      ],
+      [
+        "2024-02-03",
+        0,
+        25
+      ],
+      [
+        "2024-02-04",
+        0,
+        28
+      ],
+      [
+        "2024-02-05",
+        0,
+        27
+      ],
+      [
+        "2024-02-06",
+        0,
+        29
+      ],
+      [
+        "2024-02-07",
+        0,
+        27
+      ],
+      [
+        "2024-02-08",
+        0,
+        32
+      ],
+      [
+        "2024-02-09",
+        0,
+        30
+      ],
+      [
+        "2024-02-10",
+        0,
+        22
+      ],
+      [
+        "2024-02-11",
+        0,
+        28
+      ],
+      [
+        "2024-02-12",
+        0,
+        26
+      ],
+      [
+        "2024-02-13",
+        0,
+        23
+      ],
+      [
+        "2024-02-14",
+        0,
+        30
+      ],
+      [
+        "2024-02-15",
+        0,
+        29
+      ],
+      [
+        "2024-02-16",
+        0,
+        33
+      ],
+      [
+        "2024-02-17",
+        0,
+        28
+      ],
+      [
+        "2024-02-18",
+        0,
+        29
+      ],
+      [
+        "2024-02-19",
+        0,
+        27
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MSFT-17",
+    "company": "MSFT",
+    "company_name": "Microsoft",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Ranking per Group",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each month find the three dates with the most logins.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH d AS (SELECT login_date, DATE_FORMAT(login_date, '%Y-%m') AS ym, COUNT(*) AS logins FROM logins GROUP BY login_date) SELECT ym, login_date, logins FROM (SELECT ym, login_date, logins, ROW_NUMBER() OVER (PARTITION BY ym ORDER BY logins DESC, login_date) AS rn FROM d) t WHERE rn <= 3 ORDER BY ym, logins DESC",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "login_date",
+      "logins"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "2024-01",
+        "2024-01-24",
+        37
+      ],
+      [
+        "2024-01",
+        "2024-01-12",
+        35
+      ],
+      [
+        "2024-01",
+        "2024-01-25",
+        35
+      ],
+      [
+        "2024-02",
+        "2024-02-16",
+        33
+      ],
+      [
+        "2024-02",
+        "2024-02-08",
+        32
+      ],
+      [
+        "2024-02",
+        "2024-02-20",
+        32
+      ],
+      [
+        "2024-03",
+        "2024-03-07",
+        30
+      ],
+      [
+        "2024-03",
+        "2024-03-30",
+        30
+      ],
+      [
+        "2024-03",
+        "2024-03-01",
+        29
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-01",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Execution Order",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "State the logical order in which a SELECT query is evaluated.",
+    "model_answer": "FROM / JOIN, WHERE, GROUP BY, HAVING, window functions, SELECT (projection and aliases), DISTINCT, ORDER BY, LIMIT/OFFSET. This explains why a column alias cannot be used in WHERE but can be used in ORDER BY.",
+    "isPro": true
+  },
+  {
+    "id": "GOOG-02",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Debugging",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "A join returns more rows than expected. How do you diagnose it?",
+    "model_answer": "The usual cause is row fan-out from a one-to-many or many-to-many join key. Check key uniqueness with GROUP BY ... HAVING COUNT(*) > 1 on each side, compare COUNT(*) before and after the join, and aggregate or deduplicate one side before joining.",
+    "isPro": true
+  },
+  {
+    "id": "GOOG-03",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "How do you write a NULL-safe equality comparison?",
+    "model_answer": "ANSI SQL: a IS NOT DISTINCT FROM b (PostgreSQL, SQL Server 2022). MySQL: a <=> b. Portable fallback: (a = b OR (a IS NULL AND b IS NULL)).",
+    "isPro": true
+  },
+  {
+    "id": "GOOG-04",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Rolling Window",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every login date, count the distinct users who logged in during that day and the 6 days before it (rolling 7-day active users).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH d AS (SELECT DISTINCT login_date FROM logins) SELECT d.login_date, COUNT(DISTINCT l.user_id) AS rolling_7d_users FROM d JOIN logins l ON DATEDIFF(d.login_date, l.login_date) BETWEEN 0 AND 6 GROUP BY d.login_date ORDER BY d.login_date",
+    "executed_ok": true,
+    "columns": [
+      "login_date",
+      "rolling_7d_users"
+    ],
+    "row_count": 91,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        20
+      ],
+      [
+        "2024-01-02",
+        34
+      ],
+      [
+        "2024-01-03",
+        44
+      ],
+      [
+        "2024-01-04",
+        49
+      ],
+      [
+        "2024-01-05",
+        52
+      ],
+      [
+        "2024-01-06",
+        54
+      ],
+      [
+        "2024-01-07",
+        54
+      ],
+      [
+        "2024-01-08",
+        54
+      ],
+      [
+        "2024-01-09",
+        54
+      ],
+      [
+        "2024-01-10",
+        54
+      ],
+      [
+        "2024-01-11",
+        55
+      ],
+      [
+        "2024-01-12",
+        56
+      ],
+      [
+        "2024-01-13",
+        54
+      ],
+      [
+        "2024-01-14",
+        53
+      ],
+      [
+        "2024-01-15",
+        53
+      ],
+      [
+        "2024-01-16",
+        52
+      ],
+      [
+        "2024-01-17",
+        53
+      ],
+      [
+        "2024-01-18",
+        55
+      ],
+      [
+        "2024-01-19",
+        53
+      ],
+      [
+        "2024-01-20",
+        54
+      ],
+      [
+        "2024-01-21",
+        54
+      ],
+      [
+        "2024-01-22",
+        53
+      ],
+      [
+        "2024-01-23",
+        51
+      ],
+      [
+        "2024-01-24",
+        51
+      ],
+      [
+        "2024-01-25",
+        51
+      ],
+      [
+        "2024-01-26",
+        48
+      ],
+      [
+        "2024-01-27",
+        49
+      ],
+      [
+        "2024-01-28",
+        51
+      ],
+      [
+        "2024-01-29",
+        53
+      ],
+      [
+        "2024-01-30",
+        55
+      ],
+      [
+        "2024-01-31",
+        55
+      ],
+      [
+        "2024-02-01",
+        54
+      ],
+      [
+        "2024-02-02",
+        52
+      ],
+      [
+        "2024-02-03",
+        54
+      ],
+      [
+        "2024-02-04",
+        53
+      ],
+      [
+        "2024-02-05",
+        51
+      ],
+      [
+        "2024-02-06",
+        50
+      ],
+      [
+        "2024-02-07",
+        52
+      ],
+      [
+        "2024-02-08",
+        53
+      ],
+      [
+        "2024-02-09",
+        52
+      ],
+      [
+        "2024-02-10",
+        51
+      ],
+      [
+        "2024-02-11",
+        52
+      ],
+      [
+        "2024-02-12",
+        53
+      ],
+      [
+        "2024-02-13",
+        52
+      ],
+      [
+        "2024-02-14",
+        53
+      ],
+      [
+        "2024-02-15",
+        51
+      ],
+      [
+        "2024-02-16",
+        49
+      ],
+      [
+        "2024-02-17",
+        48
+      ],
+      [
+        "2024-02-18",
+        48
+      ],
+      [
+        "2024-02-19",
+        49
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-05",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Median",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute the median salary of each department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "WITH r AS (SELECT dept_id, salary, ROW_NUMBER() OVER (PARTITION BY dept_id ORDER BY salary) AS rn, COUNT(*) OVER (PARTITION BY dept_id) AS n FROM employees WHERE dept_id IS NOT NULL) SELECT dept_id, AVG(salary) AS median_salary FROM r WHERE rn >= n / 2.0 AND rn <= n / 2.0 + 1 GROUP BY dept_id",
+    "executed_ok": true,
+    "columns": [
+      "dept_id",
+      "median_salary"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        1,
+        95000
+      ],
+      [
+        2,
+        71000
+      ],
+      [
+        3,
+        100000
+      ],
+      [
+        4,
+        80000
+      ],
+      [
+        5,
+        78000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-06",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Recursive CTE",
+    "topic_group": "Recursive CTEs & Hierarchies",
+    "also_tagged": [],
+    "question": "Find the manager with the largest total team size, counting direct and indirect reports.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "WITH RECURSIVE t AS (SELECT manager_id AS boss, emp_id FROM employees WHERE manager_id IS NOT NULL UNION ALL SELECT t.boss, e.emp_id FROM t JOIN employees e ON e.manager_id = t.emp_id) SELECT m.emp_name, COUNT(*) AS team_size FROM t JOIN employees m ON m.emp_id = t.boss GROUP BY t.boss, m.emp_name ORDER BY team_size DESC LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "team_size"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        7
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-07",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "List employees whose salary is within 10 percent of the highest salary in their department.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, dept_id, salary FROM (SELECT emp_name, dept_id, salary, MAX(salary) OVER (PARTITION BY dept_id) AS dept_max FROM employees WHERE dept_id IS NOT NULL) t WHERE salary >= 0.9 * dept_max",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "dept_id",
+      "salary"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        1,
+        250000
+      ],
+      [
+        "Anita Desai",
+        2,
+        220000
+      ],
+      [
+        "Divya Bansal",
+        3,
+        130000
+      ],
+      [
+        "Pooja Agarwal",
+        4,
+        200000
+      ],
+      [
+        "Faisal Ahmed",
+        5,
+        160000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-08",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each user, show the date of their 3rd login in the data, skipping users with fewer than 3 logins.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT user_id, login_date AS third_login FROM (SELECT user_id, login_date, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY login_date) AS rn FROM logins) t WHERE rn = 3",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "third_login"
+    ],
+    "row_count": 60,
+    "expected_rows": [
+      [
+        1,
+        "2024-01-15"
+      ],
+      [
+        2,
+        "2024-01-12"
+      ],
+      [
+        3,
+        "2024-01-05"
+      ],
+      [
+        4,
+        "2024-01-13"
+      ],
+      [
+        5,
+        "2024-01-25"
+      ],
+      [
+        6,
+        "2024-01-25"
+      ],
+      [
+        7,
+        "2024-01-07"
+      ],
+      [
+        8,
+        "2024-01-03"
+      ],
+      [
+        9,
+        "2024-01-13"
+      ],
+      [
+        10,
+        "2024-01-06"
+      ],
+      [
+        11,
+        "2024-01-04"
+      ],
+      [
+        12,
+        "2024-01-03"
+      ],
+      [
+        13,
+        "2024-01-06"
+      ],
+      [
+        14,
+        "2024-01-04"
+      ],
+      [
+        15,
+        "2024-01-03"
+      ],
+      [
+        16,
+        "2024-01-06"
+      ],
+      [
+        17,
+        "2024-01-04"
+      ],
+      [
+        18,
+        "2024-01-05"
+      ],
+      [
+        19,
+        "2024-01-04"
+      ],
+      [
+        20,
+        "2024-01-10"
+      ],
+      [
+        21,
+        "2024-01-05"
+      ],
+      [
+        22,
+        "2024-01-03"
+      ],
+      [
+        23,
+        "2024-01-31"
+      ],
+      [
+        24,
+        "2024-01-04"
+      ],
+      [
+        25,
+        "2024-02-08"
+      ],
+      [
+        26,
+        "2024-01-03"
+      ],
+      [
+        27,
+        "2024-01-19"
+      ],
+      [
+        28,
+        "2024-01-08"
+      ],
+      [
+        29,
+        "2024-01-06"
+      ],
+      [
+        30,
+        "2024-01-05"
+      ],
+      [
+        31,
+        "2024-01-04"
+      ],
+      [
+        32,
+        "2024-01-08"
+      ],
+      [
+        33,
+        "2024-01-11"
+      ],
+      [
+        34,
+        "2024-01-13"
+      ],
+      [
+        35,
+        "2024-01-03"
+      ],
+      [
+        36,
+        "2024-01-04"
+      ],
+      [
+        37,
+        "2024-01-04"
+      ],
+      [
+        38,
+        "2024-01-09"
+      ],
+      [
+        39,
+        "2024-01-03"
+      ],
+      [
+        40,
+        "2024-01-03"
+      ],
+      [
+        41,
+        "2024-01-05"
+      ],
+      [
+        42,
+        "2024-01-13"
+      ],
+      [
+        43,
+        "2024-01-06"
+      ],
+      [
+        44,
+        "2024-03-11"
+      ],
+      [
+        45,
+        "2024-01-03"
+      ],
+      [
+        46,
+        "2024-01-05"
+      ],
+      [
+        47,
+        "2024-01-07"
+      ],
+      [
+        48,
+        "2024-01-06"
+      ],
+      [
+        49,
+        "2024-01-09"
+      ],
+      [
+        50,
+        "2024-01-08"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-09",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find players who scored 50 or more runs in at least 3 matches.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT pl.player_name, COUNT(*) AS fifties FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id WHERE pp.runs >= 50 GROUP BY pl.player_id, pl.player_name HAVING COUNT(*) >= 3 ORDER BY fifties DESC",
+    "executed_ok": true,
+    "columns": [
+      "player_name",
+      "fifties"
+    ],
+    "row_count": 20,
+    "expected_rows": [
+      [
+        "Kunal Mukherjee",
+        6
+      ],
+      [
+        "Vivaan Khan",
+        5
+      ],
+      [
+        "Diya Reddy",
+        5
+      ],
+      [
+        "Ishaan Pandey",
+        5
+      ],
+      [
+        "Atharv Banerjee",
+        5
+      ],
+      [
+        "Navya Verma",
+        5
+      ],
+      [
+        "Gautam Verma",
+        4
+      ],
+      [
+        "Leela Bose",
+        4
+      ],
+      [
+        "Aditya Rao",
+        4
+      ],
+      [
+        "Saanvi Kulkarni",
+        4
+      ],
+      [
+        "Myra Menon",
+        4
+      ],
+      [
+        "Reyansh Sharma",
+        4
+      ],
+      [
+        "Tara Mukherjee",
+        4
+      ],
+      [
+        "Aditi Khan",
+        4
+      ],
+      [
+        "Disha Sharma",
+        3
+      ],
+      [
+        "Hema Das",
+        3
+      ],
+      [
+        "Kabir Patel",
+        3
+      ],
+      [
+        "Dhruv Das",
+        3
+      ],
+      [
+        "Rudra Bose",
+        3
+      ],
+      [
+        "Nikhil Rao",
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-10",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Derived Metrics",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "List the top 5 batters by strike rate (runs x 100 / balls), only for players who faced at least 100 balls in total.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT pl.player_name, SUM(pp.runs) AS runs, SUM(pp.balls) AS balls, ROUND(SUM(pp.runs) * 100.0 / SUM(pp.balls), 2) AS strike_rate FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id GROUP BY pl.player_id, pl.player_name HAVING SUM(pp.balls) >= 100 ORDER BY strike_rate DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "player_name",
+      "runs",
+      "balls",
+      "strike_rate"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Falguni Banerjee",
+        137,
+        110,
+        124.55
+      ],
+      [
+        "Yash Iyer",
+        218,
+        179,
+        121.79
+      ],
+      [
+        "Juhi Iyer",
+        244,
+        205,
+        119.02
+      ],
+      [
+        "Dhruv Das",
+        320,
+        270,
+        118.52
+      ],
+      [
+        "Arnav Gupta",
+        222,
+        189,
+        117.46
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-11",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the leading run scorer of every team (team name, player and total runs), keeping ties.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "WITH t AS (SELECT tm.team_name, pl.player_name, SUM(pp.runs) AS runs FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id JOIN teams tm ON pl.team_id = tm.team_id GROUP BY tm.team_id, tm.team_name, pl.player_id, pl.player_name) SELECT team_name, player_name, runs FROM (SELECT team_name, player_name, runs, RANK() OVER (PARTITION BY team_name ORDER BY runs DESC) AS rnk FROM t) x WHERE rnk = 1",
+    "executed_ok": true,
+    "columns": [
+      "team_name",
+      "player_name",
+      "runs"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Bengaluru Bulls",
+        "Myra Menon",
+        406
+      ],
+      [
+        "Chennai Chargers",
+        "Kunal Mukherjee",
+        580
+      ],
+      [
+        "Delhi Dynamos",
+        "Vivaan Khan",
+        430
+      ],
+      [
+        "Hyderabad Hawks",
+        "Atharv Banerjee",
+        458
+      ],
+      [
+        "Jaipur Jaguars",
+        "Tara Mukherjee",
+        370
+      ],
+      [
+        "Kolkata Kestrels",
+        "Diya Reddy",
+        460
+      ],
+      [
+        "Mumbai Mariners",
+        "Disha Sharma",
+        346
+      ],
+      [
+        "Punjab Panthers",
+        "Aditi Khan",
+        449
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GOOG-12",
+    "company": "GOOG",
+    "company_name": "Google",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Joins + Window",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List matches in which the best individual score of the winning team was lower than the best individual score of the losing team (ignore no-result matches).",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "WITH best AS (SELECT pp.match_id, pl.team_id, MAX(pp.runs) AS top_score FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id GROUP BY pp.match_id, pl.team_id) SELECT m.match_id, m.winner_id, w.top_score AS winner_top, l.top_score AS loser_top FROM matches m JOIN best w ON w.match_id = m.match_id AND w.team_id = m.winner_id JOIN best l ON l.match_id = m.match_id AND l.team_id = CASE WHEN m.winner_id = m.team1_id THEN m.team2_id ELSE m.team1_id END WHERE m.winner_id IS NOT NULL AND w.top_score < l.top_score",
+    "executed_ok": true,
+    "columns": [
+      "match_id",
+      "winner_id",
+      "winner_top",
+      "loser_top"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        1,
+        1,
+        80,
+        101
+      ],
+      [
+        3,
+        5,
+        77,
+        84
+      ],
+      [
+        6,
+        7,
+        29,
+        90
+      ],
+      [
+        8,
+        1,
+        65,
+        92
+      ],
+      [
+        10,
+        7,
+        76,
+        90
+      ],
+      [
+        12,
+        4,
+        60,
+        62
+      ],
+      [
+        13,
+        3,
+        54,
+        85
+      ],
+      [
+        16,
+        1,
+        76,
+        101
+      ],
+      [
+        22,
+        7,
+        47,
+        93
+      ],
+      [
+        23,
+        5,
+        56,
+        89
+      ],
+      [
+        24,
+        5,
+        74,
+        89
+      ],
+      [
+        27,
+        4,
+        51,
+        86
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-01",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Pagination",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Offset pagination gets slower on deep pages. What is the alternative?",
+    "model_answer": "Keyset (seek) pagination: remember the last seen sort key and query WHERE (created_at, id) < (:last_created_at, :last_id) ORDER BY created_at DESC, id DESC LIMIT n. It uses an index seek instead of scanning and discarding OFFSET rows.",
+    "isPro": true
+  },
+  {
+    "id": "FKT-02",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Concurrency",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "How would you avoid overselling stock during a flash sale at the database level?",
+    "model_answer": "Use an atomic conditional update (UPDATE inventory SET qty = qty - 1 WHERE sku = ? AND qty > 0 and check rows affected), or SELECT ... FOR UPDATE inside a short transaction, or optimistic locking with a version column. Keep the transaction short and index the sku column.",
+    "isPro": true
+  },
+  {
+    "id": "FKT-03",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Discount Analysis",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "For each category show how many items were sold at a discount (unit_price below list price) and the average discount percentage on those items.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, COUNT(*) AS discounted_items, ROUND(AVG((p.price - oi.unit_price) * 100.0 / p.price), 2) AS avg_discount_pct FROM order_items oi JOIN products p ON oi.product_id = p.product_id WHERE oi.unit_price < p.price GROUP BY p.category",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "discounted_items",
+      "avg_discount_pct"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        13,
+        10
+      ],
+      [
+        "Electronics",
+        24,
+        10
+      ],
+      [
+        "Fashion",
+        21,
+        10
+      ],
+      [
+        "Grocery",
+        21,
+        10
+      ],
+      [
+        "Home",
+        17,
+        10
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-04",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Discount Analysis",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Calculate the revenue given away as discounts, ((list price - unit_price) x quantity), for every brand, highest first.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.brand, SUM((p.price - oi.unit_price) * oi.quantity) AS discount_value FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.brand ORDER BY discount_value DESC",
+    "executed_ok": true,
+    "columns": [
+      "brand",
+      "discount_value"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Zenith",
+        58598.10000000002
+      ],
+      [
+        "Pixelo",
+        54999.000000000015
+      ],
+      [
+        "Nova",
+        19348.200000000015
+      ],
+      [
+        "HomeNest",
+        6797.9000000000015
+      ],
+      [
+        "Stride",
+        5347.700000000001
+      ],
+      [
+        "UrbanWear",
+        3098.1000000000013
+      ],
+      [
+        "FarmFresh",
+        3006.2999999999993
+      ],
+      [
+        "Heritage",
+        2098.6000000000013
+      ],
+      [
+        "CozyCo",
+        1428.900000000001
+      ],
+      [
+        "PagePress",
+        768.6999999999997
+      ],
+      [
+        "ChaiHouse",
+        383.89999999999975
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-05",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compare the cancellation-plus-return percentage of Cash-on-Delivery orders against all prepaid orders (two rows: COD and Prepaid).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT CASE WHEN payment_mode = 'COD' THEN 'COD' ELSE 'Prepaid' END AS mode_type, COUNT(*) AS orders, ROUND(SUM(CASE WHEN status IN ('Cancelled', 'Returned') THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS bad_order_pct FROM orders GROUP BY CASE WHEN payment_mode = 'COD' THEN 'COD' ELSE 'Prepaid' END",
+    "executed_ok": true,
+    "columns": [
+      "mode_type",
+      "orders",
+      "bad_order_pct"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "COD",
+        41,
+        14.63
+      ],
+      [
+        "Prepaid",
+        119,
+        17.65
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-06",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show the top 2 customers by delivered spend in every state.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH s AS (SELECT c.state, c.customer_name, SUM(oi.quantity * oi.unit_price) AS spend FROM customers c JOIN orders o ON c.customer_id = o.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY c.customer_id, c.state, c.customer_name) SELECT state, customer_name, spend FROM (SELECT state, customer_name, spend, ROW_NUMBER() OVER (PARTITION BY state ORDER BY spend DESC) AS rn FROM s) t WHERE rn <= 2",
+    "executed_ok": true,
+    "columns": [
+      "state",
+      "customer_name",
+      "spend"
+    ],
+    "row_count": 17,
+    "expected_rows": [
+      [
+        "Delhi",
+        "Siddharth Joshi",
+        156464.9
+      ],
+      [
+        "Delhi",
+        "Ananya Joshi",
+        14191.1
+      ],
+      [
+        "Gujarat",
+        "Rudra Bose",
+        361892.7
+      ],
+      [
+        "Gujarat",
+        "Arnav Gupta",
+        70587.5
+      ],
+      [
+        "Karnataka",
+        "Pranav Nair",
+        15043.1
+      ],
+      [
+        "Maharashtra",
+        "Kiara Singh",
+        476711.8
+      ],
+      [
+        "Maharashtra",
+        "Yash Iyer",
+        345884.7
+      ],
+      [
+        "Rajasthan",
+        "Manish Patel",
+        521934.1
+      ],
+      [
+        "Rajasthan",
+        "Kabir Patel",
+        270158.4
+      ],
+      [
+        "Tamil Nadu",
+        "Tara Mukherjee",
+        354299.2
+      ],
+      [
+        "Tamil Nadu",
+        "Riya Mishra",
+        65194
+      ],
+      [
+        "Telangana",
+        "Vivaan Khan",
+        176890
+      ],
+      [
+        "Telangana",
+        "Aditi Khan",
+        166786.69999999998
+      ],
+      [
+        "Uttar Pradesh",
+        "Shreya Reddy",
+        592766.3
+      ],
+      [
+        "Uttar Pradesh",
+        "Diya Reddy",
+        100983.1
+      ],
+      [
+        "West Bengal",
+        "Dhruv Das",
+        335758
+      ],
+      [
+        "West Bengal",
+        "Ishaan Pandey",
+        181833.3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-07",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List products that had no sale in June 2024.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_id, p.product_name FROM products p WHERE NOT EXISTS (SELECT 1 FROM order_items oi JOIN orders o ON oi.order_id = o.order_id WHERE oi.product_id = p.product_id AND o.order_date BETWEEN '2024-06-01' AND '2024-06-30')",
+    "executed_ok": true,
+    "columns": [
+      "product_id",
+      "product_name"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        3,
+        "Zenith 55in Smart TV"
+      ],
+      [
+        4,
+        "Zenith Soundbar"
+      ],
+      [
+        11,
+        "HomeNest Mixer Grinder"
+      ],
+      [
+        17,
+        "Cold Pressed Olive Oil 1L"
+      ],
+      [
+        19,
+        "Smart Fitness Band"
+      ],
+      [
+        20,
+        "Vintage Leather Wallet"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-08",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Percent of Total",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Within each category show every brand's share (percentage) of that category's revenue.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH b AS (SELECT p.category, p.brand, SUM(oi.quantity * oi.unit_price) AS revenue FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.category, p.brand) SELECT category, brand, revenue, ROUND(revenue * 100.0 / SUM(revenue) OVER (PARTITION BY category), 2) AS category_share_pct FROM b ORDER BY category, revenue DESC",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "brand",
+      "revenue",
+      "category_share_pct"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "Books",
+        "Heritage",
+        75849.4,
+        60.85
+      ],
+      [
+        "Books",
+        "PagePress",
+        48797.3,
+        39.15
+      ],
+      [
+        "Electronics",
+        "Pixelo",
+        2859948,
+        45.93
+      ],
+      [
+        "Electronics",
+        "Zenith",
+        2517296.9,
+        40.42
+      ],
+      [
+        "Electronics",
+        "Nova",
+        850054.7999999999,
+        13.65
+      ],
+      [
+        "Fashion",
+        "Stride",
+        234348.3,
+        69.13
+      ],
+      [
+        "Fashion",
+        "UrbanWear",
+        104630.9,
+        30.87
+      ],
+      [
+        "Grocery",
+        "FarmFresh",
+        83384.7,
+        84.78
+      ],
+      [
+        "Grocery",
+        "ChaiHouse",
+        14972.1,
+        15.22
+      ],
+      [
+        "Home",
+        "HomeNest",
+        347592.1,
+        84.82
+      ],
+      [
+        "Home",
+        "CozyCo",
+        62222.1,
+        15.18
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-09",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Rank products within their category by revenue and show how far each product's revenue is from the category leader.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH r AS (SELECT p.category, p.product_name, SUM(oi.quantity * oi.unit_price) AS revenue FROM order_items oi JOIN products p ON oi.product_id = p.product_id GROUP BY p.product_id, p.category, p.product_name) SELECT category, product_name, revenue, RANK() OVER (PARTITION BY category ORDER BY revenue DESC) AS rnk, MAX(revenue) OVER (PARTITION BY category) - revenue AS gap_to_leader FROM r ORDER BY category, rnk",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "product_name",
+      "revenue",
+      "rnk",
+      "gap_to_leader"
+    ],
+    "row_count": 18,
+    "expected_rows": [
+      [
+        "Books",
+        "Indian Classics Box Set",
+        75849.4,
+        1,
+        0
+      ],
+      [
+        "Books",
+        "Data Structures in Depth",
+        32579.8,
+        2,
+        43269.59999999999
+      ],
+      [
+        "Books",
+        "SQL Mastery Handbook",
+        16217.5,
+        3,
+        59631.899999999994
+      ],
+      [
+        "Electronics",
+        "Pixel Laptop 14",
+        2859948,
+        1,
+        0
+      ],
+      [
+        "Electronics",
+        "Zenith 55in Smart TV",
+        2129345.4,
+        2,
+        730602.6000000001
+      ],
+      [
+        "Electronics",
+        "Nova X1 Smartphone",
+        704862.9,
+        3,
+        2155085.1
+      ],
+      [
+        "Electronics",
+        "Zenith Soundbar",
+        387951.5,
+        4,
+        2471996.5
+      ],
+      [
+        "Electronics",
+        "Nova Buds Pro",
+        145191.9,
+        5,
+        2714756.1
+      ],
+      [
+        "Fashion",
+        "Stride Running Shoes",
+        198393.3,
+        1,
+        0
+      ],
+      [
+        "Fashion",
+        "Urban Denim Jeans",
+        80055.5,
+        2,
+        118337.79999999999
+      ],
+      [
+        "Fashion",
+        "Stride Sports Tee",
+        35955,
+        3,
+        162438.3
+      ],
+      [
+        "Fashion",
+        "Urban Cotton Kurta",
+        24575.4,
+        4,
+        173817.9
+      ],
+      [
+        "Grocery",
+        "Cold Pressed Olive Oil 1L",
+        43961.1,
+        1,
+        0
+      ],
+      [
+        "Grocery",
+        "Organic Basmati 5kg",
+        39423.6,
+        2,
+        4537.5
+      ],
+      [
+        "Grocery",
+        "Masala Tea 500g",
+        14972.1,
+        3,
+        28989
+      ],
+      [
+        "Home",
+        "HomeNest Cookware Set",
+        179640.1,
+        1,
+        0
+      ],
+      [
+        "Home",
+        "HomeNest Mixer Grinder",
+        167952,
+        2,
+        11688.100000000006
+      ],
+      [
+        "Home",
+        "CozyCo Bedsheet",
+        62222.1,
+        3,
+        117418
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-10",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Arithmetic",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Find the average number of days between a customer's signup and their first order (customers with orders only).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT ROUND(AVG(DATEDIFF(f.first_order, c.signup_date)), 1) AS avg_days_to_first_order FROM customers c JOIN (SELECT customer_id, MIN(order_date) AS first_order FROM orders GROUP BY customer_id) f ON c.customer_id = f.customer_id",
+    "executed_ok": true,
+    "columns": [
+      "avg_days_to_first_order"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        301.7
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-11",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Functions",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Show the number of orders placed on weekends (Saturday and Sunday) versus weekdays (MySQL DAYOFWEEK: 1 = Sunday, 7 = Saturday).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT CASE WHEN DAYOFWEEK(order_date) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' END AS day_type, COUNT(*) AS orders FROM orders GROUP BY CASE WHEN DAYOFWEEK(order_date) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' END",
+    "executed_ok": true,
+    "columns": [
+      "day_type",
+      "orders"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Weekday",
+        108
+      ],
+      [
+        "Weekend",
+        52
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-12",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List cities whose total delivered revenue is above the average city revenue.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH c AS (SELECT cu.city, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN customers cu ON o.customer_id = cu.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY cu.city) SELECT city, revenue FROM c WHERE revenue > (SELECT AVG(revenue) FROM c)",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "revenue"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Jaipur",
+        839473.6
+      ],
+      [
+        "Kolkata",
+        517591.3
+      ],
+      [
+        "Lucknow",
+        747912.9
+      ],
+      [
+        "Mumbai",
+        666383.5
+      ],
+      [
+        "Pune",
+        763989.1
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-13",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every customer find their second most frequently purchased category (by number of items); skip customers with only one category.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH c AS (SELECT o.customer_id, p.category, COUNT(*) AS items FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id GROUP BY o.customer_id, p.category) SELECT customer_id, category, items FROM (SELECT customer_id, category, items, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY items DESC, category) AS rn FROM c) t WHERE rn = 2",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "category",
+      "items"
+    ],
+    "row_count": 26,
+    "expected_rows": [
+      [
+        1,
+        "Books",
+        1
+      ],
+      [
+        2,
+        "Fashion",
+        6
+      ],
+      [
+        3,
+        "Books",
+        2
+      ],
+      [
+        4,
+        "Electronics",
+        1
+      ],
+      [
+        5,
+        "Home",
+        3
+      ],
+      [
+        6,
+        "Grocery",
+        7
+      ],
+      [
+        7,
+        "Electronics",
+        8
+      ],
+      [
+        8,
+        "Electronics",
+        2
+      ],
+      [
+        9,
+        "Electronics",
+        2
+      ],
+      [
+        10,
+        "Home",
+        2
+      ],
+      [
+        12,
+        "Home",
+        7
+      ],
+      [
+        13,
+        "Electronics",
+        3
+      ],
+      [
+        14,
+        "Books",
+        2
+      ],
+      [
+        15,
+        "Books",
+        5
+      ],
+      [
+        16,
+        "Books",
+        2
+      ],
+      [
+        17,
+        "Electronics",
+        5
+      ],
+      [
+        18,
+        "Grocery",
+        4
+      ],
+      [
+        19,
+        "Home",
+        8
+      ],
+      [
+        20,
+        "Electronics",
+        3
+      ],
+      [
+        21,
+        "Fashion",
+        4
+      ],
+      [
+        22,
+        "Electronics",
+        4
+      ],
+      [
+        23,
+        "Books",
+        7
+      ],
+      [
+        24,
+        "Books",
+        4
+      ],
+      [
+        25,
+        "Electronics",
+        1
+      ],
+      [
+        26,
+        "Fashion",
+        7
+      ],
+      [
+        27,
+        "Electronics",
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-14",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show every customer's most recent order with its status and date.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, order_id, order_date, status FROM (SELECT customer_id, order_id, order_date, status, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY order_date DESC, order_id DESC) AS rn FROM orders) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "order_id",
+      "order_date",
+      "status"
+    ],
+    "row_count": 26,
+    "expected_rows": [
+      [
+        1,
+        151,
+        "2024-06-05",
+        "Delivered"
+      ],
+      [
+        2,
+        156,
+        "2024-06-16",
+        "Shipped"
+      ],
+      [
+        3,
+        152,
+        "2024-06-06",
+        "Delivered"
+      ],
+      [
+        4,
+        80,
+        "2024-01-30",
+        "Delivered"
+      ],
+      [
+        5,
+        89,
+        "2024-02-12",
+        "Delivered"
+      ],
+      [
+        6,
+        149,
+        "2024-06-01",
+        "Returned"
+      ],
+      [
+        7,
+        159,
+        "2024-06-27",
+        "Returned"
+      ],
+      [
+        8,
+        103,
+        "2024-03-02",
+        "Delivered"
+      ],
+      [
+        9,
+        145,
+        "2024-05-22",
+        "Delivered"
+      ],
+      [
+        10,
+        135,
+        "2024-05-04",
+        "Shipped"
+      ],
+      [
+        12,
+        157,
+        "2024-06-17",
+        "Delivered"
+      ],
+      [
+        13,
+        126,
+        "2024-04-26",
+        "Delivered"
+      ],
+      [
+        14,
+        130,
+        "2024-04-29",
+        "Returned"
+      ],
+      [
+        15,
+        147,
+        "2024-05-27",
+        "Delivered"
+      ],
+      [
+        16,
+        95,
+        "2024-02-17",
+        "Cancelled"
+      ],
+      [
+        17,
+        101,
+        "2024-02-29",
+        "Delivered"
+      ],
+      [
+        18,
+        133,
+        "2024-05-04",
+        "Delivered"
+      ],
+      [
+        19,
+        112,
+        "2024-03-24",
+        "Delivered"
+      ],
+      [
+        20,
+        140,
+        "2024-05-14",
+        "Delivered"
+      ],
+      [
+        21,
+        143,
+        "2024-05-20",
+        "Delivered"
+      ],
+      [
+        22,
+        115,
+        "2024-03-30",
+        "Shipped"
+      ],
+      [
+        23,
+        160,
+        "2024-06-28",
+        "Delivered"
+      ],
+      [
+        24,
+        150,
+        "2024-06-03",
+        "Delivered"
+      ],
+      [
+        25,
+        91,
+        "2024-02-13",
+        "Cancelled"
+      ],
+      [
+        26,
+        139,
+        "2024-05-12",
+        "Delivered"
+      ],
+      [
+        27,
+        137,
+        "2024-05-08",
+        "Returned"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-15",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find customers all of whose orders were delivered (none cancelled, returned or still shipped) and who have at least 3 orders.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, COUNT(*) AS orders FROM orders GROUP BY customer_id HAVING COUNT(*) >= 3 AND SUM(CASE WHEN status <> 'Delivered' THEN 1 ELSE 0 END) = 0",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "orders"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        3,
+        4
+      ],
+      [
+        9,
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-16",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show cumulative monthly delivered revenue for each category (running total within the category).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH m AS (SELECT p.category, DATE_FORMAT(o.order_date, '%Y-%m') AS ym, SUM(oi.quantity * oi.unit_price) AS revenue FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY p.category, DATE_FORMAT(o.order_date, '%Y-%m')) SELECT category, ym, revenue, SUM(revenue) OVER (PARTITION BY category ORDER BY ym) AS cumulative_revenue FROM m ORDER BY category, ym",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "ym",
+      "revenue",
+      "cumulative_revenue"
+    ],
+    "row_count": 45,
+    "expected_rows": [
+      [
+        "Books",
+        "2023-10",
+        14582.3,
+        14582.3
+      ],
+      [
+        "Books",
+        "2023-11",
+        16034,
+        30616.3
+      ],
+      [
+        "Books",
+        "2023-12",
+        7511.5,
+        38127.8
+      ],
+      [
+        "Books",
+        "2024-01",
+        14847.2,
+        52975
+      ],
+      [
+        "Books",
+        "2024-02",
+        11392.4,
+        64367.4
+      ],
+      [
+        "Books",
+        "2024-03",
+        7242.1,
+        71609.5
+      ],
+      [
+        "Books",
+        "2024-04",
+        1298,
+        72907.5
+      ],
+      [
+        "Books",
+        "2024-05",
+        5146,
+        78053.5
+      ],
+      [
+        "Books",
+        "2024-06",
+        14337.3,
+        92390.8
+      ],
+      [
+        "Electronics",
+        "2023-10",
+        746324.7999999999,
+        746324.7999999999
+      ],
+      [
+        "Electronics",
+        "2023-11",
+        955714.5,
+        1702039.2999999998
+      ],
+      [
+        "Electronics",
+        "2023-12",
+        315782.9,
+        2017822.2
+      ],
+      [
+        "Electronics",
+        "2024-01",
+        308135.4,
+        2325957.6
+      ],
+      [
+        "Electronics",
+        "2024-02",
+        535479.1,
+        2861436.7
+      ],
+      [
+        "Electronics",
+        "2024-03",
+        454982.5,
+        3316419.2
+      ],
+      [
+        "Electronics",
+        "2024-04",
+        281994,
+        3598413.2
+      ],
+      [
+        "Electronics",
+        "2024-05",
+        75491,
+        3673904.2
+      ],
+      [
+        "Electronics",
+        "2024-06",
+        566982,
+        4240886.2
+      ],
+      [
+        "Fashion",
+        "2023-10",
+        47205.5,
+        47205.5
+      ],
+      [
+        "Fashion",
+        "2023-11",
+        30222.7,
+        77428.2
+      ],
+      [
+        "Fashion",
+        "2023-12",
+        17131.2,
+        94559.4
+      ],
+      [
+        "Fashion",
+        "2024-01",
+        19136.1,
+        113695.5
+      ],
+      [
+        "Fashion",
+        "2024-02",
+        10494,
+        124189.5
+      ],
+      [
+        "Fashion",
+        "2024-03",
+        33987,
+        158176.5
+      ],
+      [
+        "Fashion",
+        "2024-04",
+        5396.2,
+        163572.7
+      ],
+      [
+        "Fashion",
+        "2024-05",
+        29625.4,
+        193198.1
+      ],
+      [
+        "Fashion",
+        "2024-06",
+        24341.5,
+        217539.6
+      ],
+      [
+        "Grocery",
+        "2023-10",
+        13525.300000000001,
+        13525.300000000001
+      ],
+      [
+        "Grocery",
+        "2023-11",
+        7907.700000000001,
+        21433
+      ],
+      [
+        "Grocery",
+        "2023-12",
+        7888.4,
+        29321.4
+      ],
+      [
+        "Grocery",
+        "2024-01",
+        13363.3,
+        42684.7
+      ],
+      [
+        "Grocery",
+        "2024-02",
+        11882.4,
+        54567.1
+      ],
+      [
+        "Grocery",
+        "2024-03",
+        4253.2,
+        58820.3
+      ],
+      [
+        "Grocery",
+        "2024-04",
+        4443,
+        63263.3
+      ],
+      [
+        "Grocery",
+        "2024-05",
+        8823.3,
+        72086.6
+      ],
+      [
+        "Grocery",
+        "2024-06",
+        1398,
+        73484.6
+      ],
+      [
+        "Home",
+        "2023-10",
+        37938.3,
+        37938.3
+      ],
+      [
+        "Home",
+        "2023-11",
+        48281,
+        86219.3
+      ],
+      [
+        "Home",
+        "2023-12",
+        40784,
+        127003.3
+      ],
+      [
+        "Home",
+        "2024-01",
+        42785.1,
+        169788.4
+      ],
+      [
+        "Home",
+        "2024-02",
+        36527.3,
+        206315.7
+      ],
+      [
+        "Home",
+        "2024-03",
+        28655.399999999998,
+        234971.1
+      ],
+      [
+        "Home",
+        "2024-04",
+        21062.399999999998,
+        256033.5
+      ],
+      [
+        "Home",
+        "2024-05",
+        25329.6,
+        281363.1
+      ],
+      [
+        "Home",
+        "2024-06",
+        11035.3,
+        292398.4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-17",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Trend",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "For each month show what percentage of orders were paid by UPI.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(order_date, '%Y-%m') AS ym, ROUND(SUM(CASE WHEN payment_mode = 'UPI' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS upi_pct FROM orders GROUP BY DATE_FORMAT(order_date, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "upi_pct"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "2023-10",
+        55
+      ],
+      [
+        "2023-11",
+        29.17
+      ],
+      [
+        "2023-12",
+        35
+      ],
+      [
+        "2024-01",
+        52.94
+      ],
+      [
+        "2024-02",
+        50
+      ],
+      [
+        "2024-03",
+        35.71
+      ],
+      [
+        "2024-04",
+        40
+      ],
+      [
+        "2024-05",
+        33.33
+      ],
+      [
+        "2024-06",
+        33.33
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-18",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Inventory",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Find products whose current stock is less than twice the total units ever sold (a restocking alert).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, p.stock, COALESCE(SUM(oi.quantity), 0) AS units_sold FROM products p LEFT JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_id, p.product_name, p.stock HAVING p.stock < 2 * COALESCE(SUM(oi.quantity), 0)",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "stock",
+      "units_sold"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Zenith 55in Smart TV",
+        40,
+        56
+      ],
+      [
+        "Zenith Soundbar",
+        75,
+        49
+      ],
+      [
+        "Pixel Laptop 14",
+        35,
+        53
+      ],
+      [
+        "HomeNest Cookware Set",
+        90,
+        61
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-19",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "For each category show the percentage of reviews that are positive (rating 4 or 5).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.category, ROUND(SUM(CASE WHEN r.rating >= 4 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS positive_pct FROM reviews r JOIN products p ON r.product_id = p.product_id GROUP BY p.category",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "positive_pct"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        80
+      ],
+      [
+        "Electronics",
+        75
+      ],
+      [
+        "Fashion",
+        84.21
+      ],
+      [
+        "Grocery",
+        71.43
+      ],
+      [
+        "Home",
+        75
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FKT-20",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Reduce the list price by 5 percent for every product that has never been sold.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "UPDATE products SET price = price * 0.95 WHERE product_id NOT IN (SELECT DISTINCT product_id FROM order_items)",
+    "executed_ok": true,
+    "isPro": true
+  },
+  {
+    "id": "FKT-21",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Delete all cancelled orders together with their order items (write the statements in a safe order).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "DELETE FROM order_items WHERE order_id IN (SELECT order_id FROM orders WHERE status = 'Cancelled'); DELETE FROM orders WHERE status = 'Cancelled'",
+    "executed_ok": true,
+    "isPro": true
+  },
+  {
+    "id": "FKT-22",
+    "company": "FKT",
+    "company_name": "Flipkart",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Consecutive Months",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [],
+    "question": "Find customers who ordered in two consecutive calendar months at least once.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH m AS (SELECT DISTINCT customer_id, YEAR(order_date) * 12 + MONTH(order_date) AS mi FROM orders) SELECT DISTINCT a.customer_id FROM m a JOIN m b ON a.customer_id = b.customer_id AND b.mi = a.mi + 1",
+    "executed_ok": true,
+    "columns": [
+      "customer_id"
+    ],
+    "row_count": 19,
+    "expected_rows": [
+      [
+        15
+      ],
+      [
+        12
+      ],
+      [
+        2
+      ],
+      [
+        6
+      ],
+      [
+        24
+      ],
+      [
+        8
+      ],
+      [
+        17
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        21
+      ],
+      [
+        7
+      ],
+      [
+        26
+      ],
+      [
+        3
+      ],
+      [
+        23
+      ],
+      [
+        16
+      ],
+      [
+        19
+      ],
+      [
+        22
+      ],
+      [
+        18
+      ],
+      [
+        20
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-01",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Transactions",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Explain optimistic versus pessimistic locking.",
+    "model_answer": "Pessimistic locking acquires locks up front (SELECT ... FOR UPDATE), preventing conflicts but reducing concurrency. Optimistic locking lets transactions proceed and checks at commit that nothing changed (version or timestamp column); on conflict the transaction is retried. Optimistic suits low-contention workloads.",
+    "isPro": true
+  },
+  {
+    "id": "WMT-02",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Scaling",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "What is the difference between partitioning and sharding?",
+    "model_answer": "Partitioning splits a large table into pieces inside one database instance (by range, list or hash) to speed up pruning and maintenance. Sharding spreads data across multiple database servers, each owning a subset, to scale writes and storage horizontally.",
+    "isPro": true
+  },
+  {
+    "id": "WMT-03",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Performance",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "How would you optimise a query that joins two tables with hundreds of millions of rows?",
+    "model_answer": "Filter early and select only needed columns; index the join and filter keys; check the plan for the join strategy; pre-aggregate one side; partition by date to prune; avoid functions on join columns; consider materialised summaries; and update statistics.",
+    "isPro": true
+  },
+  {
+    "id": "WMT-04",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Inventory Value",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Show each product's stock value (price x stock) and rank products by it within their category.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT category, product_name, price * stock AS stock_value, RANK() OVER (PARTITION BY category ORDER BY price * stock DESC) AS rnk FROM products ORDER BY category, rnk",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "product_name",
+      "stock_value",
+      "rnk"
+    ],
+    "row_count": 20,
+    "expected_rows": [
+      [
+        "Books",
+        "Data Structures in Depth",
+        454300,
+        1
+      ],
+      [
+        "Books",
+        "SQL Mastery Handbook",
+        399200,
+        2
+      ],
+      [
+        "Books",
+        "Indian Classics Box Set",
+        224850,
+        3
+      ],
+      [
+        "Electronics",
+        "Nova X1 Smartphone",
+        2279880,
+        1
+      ],
+      [
+        "Electronics",
+        "Pixel Laptop 14",
+        1924965,
+        2
+      ],
+      [
+        "Electronics",
+        "Zenith 55in Smart TV",
+        1559960,
+        3
+      ],
+      [
+        "Electronics",
+        "Nova Buds Pro",
+        749700,
+        4
+      ],
+      [
+        "Electronics",
+        "Zenith Soundbar",
+        599925,
+        5
+      ],
+      [
+        "Electronics",
+        "Smart Fitness Band",
+        0,
+        6
+      ],
+      [
+        "Fashion",
+        "Stride Running Shoes",
+        769780,
+        1
+      ],
+      [
+        "Fashion",
+        "Urban Denim Jeans",
+        719600,
+        2
+      ],
+      [
+        "Fashion",
+        "Urban Cotton Kurta",
+        499500,
+        3
+      ],
+      [
+        "Fashion",
+        "Stride Sports Tee",
+        479400,
+        4
+      ],
+      [
+        "Fashion",
+        "Vintage Leather Wallet",
+        71940,
+        5
+      ],
+      [
+        "Grocery",
+        "Organic Basmati 5kg",
+        629100,
+        1
+      ],
+      [
+        "Grocery",
+        "Cold Pressed Olive Oil 1L",
+        449500,
+        2
+      ],
+      [
+        "Grocery",
+        "Masala Tea 500g",
+        418800,
+        3
+      ],
+      [
+        "Home",
+        "HomeNest Mixer Grinder",
+        384890,
+        1
+      ],
+      [
+        "Home",
+        "CozyCo Bedsheet",
+        337740,
+        2
+      ],
+      [
+        "Home",
+        "HomeNest Cookware Set",
+        269910,
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-05",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Ranking",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute a sell-through ratio (units sold divided by units sold plus current stock) for each product, and list the 5 products with the highest ratio.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, COALESCE(SUM(oi.quantity), 0) AS units_sold, p.stock, ROUND(COALESCE(SUM(oi.quantity), 0) * 1.0 / (COALESCE(SUM(oi.quantity), 0) + p.stock + 0.0001), 4) AS sell_through FROM products p LEFT JOIN order_items oi ON p.product_id = oi.product_id GROUP BY p.product_id, p.product_name, p.stock ORDER BY sell_through DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "units_sold",
+      "stock",
+      "sell_through"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Pixel Laptop 14",
+        53,
+        35,
+        0.6023
+      ],
+      [
+        "Zenith 55in Smart TV",
+        56,
+        40,
+        0.5833
+      ],
+      [
+        "HomeNest Cookware Set",
+        61,
+        90,
+        0.404
+      ],
+      [
+        "Zenith Soundbar",
+        49,
+        75,
+        0.3952
+      ],
+      [
+        "HomeNest Mixer Grinder",
+        49,
+        110,
+        0.3082
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-06",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Pivot",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show each customer's delivered spend on Electronics and on Fashion as two columns.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT o.customer_id, SUM(CASE WHEN p.category = 'Electronics' THEN oi.quantity * oi.unit_price ELSE 0 END) AS electronics_spend, SUM(CASE WHEN p.category = 'Fashion' THEN oi.quantity * oi.unit_price ELSE 0 END) AS fashion_spend FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY o.customer_id",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "electronics_spend",
+      "fashion_spend"
+    ],
+    "row_count": 23,
+    "expected_rows": [
+      [
+        1,
+        172494,
+        0
+      ],
+      [
+        2,
+        248989,
+        6366.2
+      ],
+      [
+        3,
+        82097.1,
+        0
+      ],
+      [
+        4,
+        2249.1,
+        0
+      ],
+      [
+        5,
+        155744.3,
+        0
+      ],
+      [
+        6,
+        210992,
+        18369.4
+      ],
+      [
+        7,
+        172391.4,
+        13190.2
+      ],
+      [
+        8,
+        62996,
+        0
+      ],
+      [
+        9,
+        54497.1,
+        1598
+      ],
+      [
+        12,
+        424483,
+        10395
+      ],
+      [
+        13,
+        34198.2,
+        11296
+      ],
+      [
+        15,
+        275292.3,
+        33504.1
+      ],
+      [
+        16,
+        25242.1,
+        8896
+      ],
+      [
+        17,
+        314990,
+        4857.299999999999
+      ],
+      [
+        18,
+        316989,
+        10497
+      ],
+      [
+        19,
+        317240.39999999997,
+        6998
+      ],
+      [
+        20,
+        7497,
+        0
+      ],
+      [
+        21,
+        139795.4,
+        5856.299999999999
+      ],
+      [
+        22,
+        7199.1,
+        14795
+      ],
+      [
+        23,
+        511985,
+        37275.9
+      ],
+      [
+        24,
+        117495,
+        11792
+      ],
+      [
+        26,
+        479533.6,
+        18704.1
+      ],
+      [
+        27,
+        106496.1,
+        3149.1
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-07",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Ranking per Group",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each city find the customer(s) with the highest number of orders.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH c AS (SELECT cu.city, cu.customer_name, COUNT(*) AS orders FROM orders o JOIN customers cu ON o.customer_id = cu.customer_id GROUP BY cu.customer_id, cu.city, cu.customer_name) SELECT city, customer_name, orders FROM (SELECT city, customer_name, orders, RANK() OVER (PARTITION BY city ORDER BY orders DESC) AS rnk FROM c) t WHERE rnk = 1",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "customer_name",
+      "orders"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Ahmedabad",
+        "Rudra Bose",
+        6
+      ],
+      [
+        "Bengaluru",
+        "Pranav Nair",
+        4
+      ],
+      [
+        "Chennai",
+        "Tara Mukherjee",
+        6
+      ],
+      [
+        "Delhi",
+        "Siddharth Joshi",
+        7
+      ],
+      [
+        "Hyderabad",
+        "Aditi Khan",
+        8
+      ],
+      [
+        "Jaipur",
+        "Kabir Patel",
+        12
+      ],
+      [
+        "Kolkata",
+        "Dhruv Das",
+        9
+      ],
+      [
+        "Lucknow",
+        "Shreya Reddy",
+        15
+      ],
+      [
+        "Mumbai",
+        "Saanvi Kulkarni",
+        10
+      ],
+      [
+        "Pune",
+        "Kiara Singh",
+        15
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-08",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "UNION ALL",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Build one activity feed per customer combining orders (activity 'ORDER') and reviews (activity 'REVIEW'), sorted by customer and date.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT customer_id, order_date AS activity_date, 'ORDER' AS activity FROM orders UNION ALL SELECT customer_id, review_date, 'REVIEW' FROM reviews ORDER BY customer_id, activity_date",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "activity_date",
+      "activity"
+    ],
+    "row_count": 240,
+    "expected_rows": [
+      [
+        1,
+        "2023-11-29",
+        "ORDER"
+      ],
+      [
+        1,
+        "2023-12-27",
+        "REVIEW"
+      ],
+      [
+        1,
+        "2024-01-20",
+        "REVIEW"
+      ],
+      [
+        1,
+        "2024-04-30",
+        "REVIEW"
+      ],
+      [
+        1,
+        "2024-06-05",
+        "ORDER"
+      ],
+      [
+        2,
+        "2023-10-05",
+        "ORDER"
+      ],
+      [
+        2,
+        "2023-10-30",
+        "ORDER"
+      ],
+      [
+        2,
+        "2023-11-08",
+        "ORDER"
+      ],
+      [
+        2,
+        "2023-11-20",
+        "ORDER"
+      ],
+      [
+        2,
+        "2023-11-22",
+        "REVIEW"
+      ],
+      [
+        2,
+        "2024-01-04",
+        "ORDER"
+      ],
+      [
+        2,
+        "2024-02-10",
+        "REVIEW"
+      ],
+      [
+        2,
+        "2024-03-06",
+        "ORDER"
+      ],
+      [
+        2,
+        "2024-03-06",
+        "REVIEW"
+      ],
+      [
+        2,
+        "2024-05-17",
+        "ORDER"
+      ],
+      [
+        2,
+        "2024-06-16",
+        "ORDER"
+      ],
+      [
+        3,
+        "2023-10-19",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2023-12-23",
+        "ORDER"
+      ],
+      [
+        3,
+        "2024-01-06",
+        "ORDER"
+      ],
+      [
+        3,
+        "2024-01-16",
+        "ORDER"
+      ],
+      [
+        3,
+        "2024-02-15",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-03-04",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-03-20",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-03-29",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-04-25",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-04-26",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-05-24",
+        "REVIEW"
+      ],
+      [
+        3,
+        "2024-06-06",
+        "ORDER"
+      ],
+      [
+        4,
+        "2024-01-18",
+        "REVIEW"
+      ],
+      [
+        4,
+        "2024-01-25",
+        "REVIEW"
+      ],
+      [
+        4,
+        "2024-01-30",
+        "ORDER"
+      ],
+      [
+        4,
+        "2024-04-13",
+        "REVIEW"
+      ],
+      [
+        4,
+        "2024-06-11",
+        "REVIEW"
+      ],
+      [
+        4,
+        "2024-07-09",
+        "REVIEW"
+      ],
+      [
+        5,
+        "2023-10-23",
+        "ORDER"
+      ],
+      [
+        5,
+        "2023-12-07",
+        "ORDER"
+      ],
+      [
+        5,
+        "2024-02-09",
+        "REVIEW"
+      ],
+      [
+        5,
+        "2024-02-12",
+        "ORDER"
+      ],
+      [
+        5,
+        "2024-02-15",
+        "REVIEW"
+      ],
+      [
+        5,
+        "2024-06-21",
+        "REVIEW"
+      ],
+      [
+        6,
+        "2023-10-08",
+        "ORDER"
+      ],
+      [
+        6,
+        "2023-10-21",
+        "ORDER"
+      ],
+      [
+        6,
+        "2023-10-28",
+        "REVIEW"
+      ],
+      [
+        6,
+        "2023-11-22",
+        "ORDER"
+      ],
+      [
+        6,
+        "2023-12-07",
+        "ORDER"
+      ],
+      [
+        6,
+        "2023-12-20",
+        "ORDER"
+      ],
+      [
+        6,
+        "2024-01-07",
+        "ORDER"
+      ],
+      [
+        6,
+        "2024-01-09",
+        "REVIEW"
+      ],
+      [
+        6,
+        "2024-01-31",
+        "ORDER"
+      ],
+      [
+        6,
+        "2024-03-27",
+        "ORDER"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-09",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Rewrite",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Rewrite this query using a JOIN instead of IN: SELECT emp_name FROM employees WHERE dept_id IN (SELECT dept_id FROM departments WHERE location = 'Bengaluru').",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT e.emp_name FROM employees e JOIN departments d ON e.dept_id = d.dept_id WHERE d.location = 'Bengaluru'",
+    "executed_ok": true,
+    "columns": [
+      "emp_name"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        "Vikram Mehta"
+      ],
+      [
+        "Suresh Iyer"
+      ],
+      [
+        "Priya Nair"
+      ],
+      [
+        "Rohan Gupta"
+      ],
+      [
+        "Neha Kulkarni"
+      ],
+      [
+        "Arjun Reddy"
+      ],
+      [
+        "Sneha Chatterjee"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-10",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Running Balance",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [
+      "GS"
+    ],
+    "question": "For each account show successful transactions in date order with a running balance of net movement (credits positive, debits negative).",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT account_id, txn_id, txn_date, txn_type, amount, SUM(CASE WHEN txn_type = 'CREDIT' THEN amount ELSE -amount END) OVER (PARTITION BY account_id ORDER BY txn_date, txn_id) AS running_net FROM transactions WHERE status = 'SUCCESS' ORDER BY account_id, txn_date, txn_id",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "txn_id",
+      "txn_date",
+      "txn_type",
+      "amount",
+      "running_net"
+    ],
+    "row_count": 530,
+    "expected_rows": [
+      [
+        1,
+        407,
+        "2024-01-03",
+        "CREDIT",
+        27164.27,
+        27164.27
+      ],
+      [
+        1,
+        561,
+        "2024-01-25",
+        "CREDIT",
+        25211.68,
+        52375.95
+      ],
+      [
+        1,
+        354,
+        "2024-01-26",
+        "DEBIT",
+        24653.1,
+        27722.850000000002
+      ],
+      [
+        1,
+        201,
+        "2024-02-06",
+        "DEBIT",
+        3292.11,
+        24430.74
+      ],
+      [
+        1,
+        462,
+        "2024-02-09",
+        "CREDIT",
+        14603.96,
+        39034.700000000004
+      ],
+      [
+        1,
+        262,
+        "2024-02-13",
+        "DEBIT",
+        178.77,
+        38855.93
+      ],
+      [
+        1,
+        70,
+        "2024-03-12",
+        "CREDIT",
+        35044.72,
+        73900.65000000001
+      ],
+      [
+        1,
+        434,
+        "2024-03-14",
+        "CREDIT",
+        7878.78,
+        81779.43000000001
+      ],
+      [
+        1,
+        524,
+        "2024-03-25",
+        "CREDIT",
+        23322.29,
+        105101.72
+      ],
+      [
+        1,
+        396,
+        "2024-04-01",
+        "CREDIT",
+        36550.79,
+        141652.51
+      ],
+      [
+        1,
+        345,
+        "2024-04-18",
+        "DEBIT",
+        12286.89,
+        129365.62000000001
+      ],
+      [
+        1,
+        477,
+        "2024-04-25",
+        "CREDIT",
+        31751.22,
+        161116.84
+      ],
+      [
+        1,
+        77,
+        "2024-04-26",
+        "DEBIT",
+        49149.23,
+        111967.61
+      ],
+      [
+        1,
+        530,
+        "2024-04-28",
+        "DEBIT",
+        6639.8,
+        105327.81
+      ],
+      [
+        1,
+        66,
+        "2024-05-12",
+        "CREDIT",
+        4330.43,
+        109658.24
+      ],
+      [
+        1,
+        10,
+        "2024-05-14",
+        "CREDIT",
+        20879.31,
+        130537.55
+      ],
+      [
+        1,
+        316,
+        "2024-05-22",
+        "DEBIT",
+        40045.6,
+        90491.95000000001
+      ],
+      [
+        1,
+        432,
+        "2024-05-25",
+        "DEBIT",
+        7570.89,
+        82921.06
+      ],
+      [
+        1,
+        565,
+        "2024-06-01",
+        "DEBIT",
+        48480.12,
+        34440.94
+      ],
+      [
+        1,
+        405,
+        "2024-06-03",
+        "CREDIT",
+        18955.97,
+        53396.91
+      ],
+      [
+        1,
+        406,
+        "2024-06-13",
+        "CREDIT",
+        6695.73,
+        60092.64
+      ],
+      [
+        2,
+        571,
+        "2024-02-07",
+        "DEBIT",
+        42827.65,
+        -42827.65
+      ],
+      [
+        2,
+        283,
+        "2024-02-11",
+        "DEBIT",
+        45142.16,
+        -87969.81
+      ],
+      [
+        2,
+        564,
+        "2024-02-15",
+        "DEBIT",
+        44074.75,
+        -132044.56
+      ],
+      [
+        2,
+        136,
+        "2024-02-27",
+        "DEBIT",
+        47893.01,
+        -179937.57
+      ],
+      [
+        2,
+        572,
+        "2024-03-03",
+        "DEBIT",
+        18035.05,
+        -197972.62
+      ],
+      [
+        2,
+        99,
+        "2024-03-11",
+        "CREDIT",
+        12339.81,
+        -185632.81
+      ],
+      [
+        2,
+        101,
+        "2024-03-28",
+        "DEBIT",
+        9107.35,
+        -194740.16
+      ],
+      [
+        2,
+        220,
+        "2024-04-17",
+        "CREDIT",
+        49465.6,
+        -145274.56
+      ],
+      [
+        2,
+        499,
+        "2024-04-21",
+        "CREDIT",
+        31481.82,
+        -113792.74
+      ],
+      [
+        2,
+        96,
+        "2024-05-26",
+        "DEBIT",
+        28096.11,
+        -141888.85
+      ],
+      [
+        2,
+        163,
+        "2024-06-22",
+        "CREDIT",
+        19008.25,
+        -122880.6
+      ],
+      [
+        3,
+        203,
+        "2024-01-24",
+        "DEBIT",
+        32350.33,
+        -32350.33
+      ],
+      [
+        3,
+        173,
+        "2024-02-23",
+        "CREDIT",
+        44754.74,
+        12404.409999999996
+      ],
+      [
+        3,
+        580,
+        "2024-02-25",
+        "DEBIT",
+        41290.98,
+        -28886.570000000007
+      ],
+      [
+        3,
+        222,
+        "2024-04-16",
+        "CREDIT",
+        40799.65,
+        11913.079999999994
+      ],
+      [
+        3,
+        210,
+        "2024-04-28",
+        "CREDIT",
+        3752.46,
+        15665.539999999994
+      ],
+      [
+        3,
+        156,
+        "2024-05-06",
+        "CREDIT",
+        46005.68,
+        61671.219999999994
+      ],
+      [
+        3,
+        27,
+        "2024-05-11",
+        "CREDIT",
+        25581.51,
+        87252.73
+      ],
+      [
+        3,
+        55,
+        "2024-05-22",
+        "DEBIT",
+        44826.25,
+        42426.479999999996
+      ],
+      [
+        3,
+        576,
+        "2024-05-28",
+        "DEBIT",
+        41725.16,
+        701.3199999999897
+      ],
+      [
+        3,
+        294,
+        "2024-06-02",
+        "DEBIT",
+        15513.68,
+        -14812.360000000011
+      ],
+      [
+        3,
+        461,
+        "2024-06-07",
+        "CREDIT",
+        37078.02,
+        22265.659999999985
+      ],
+      [
+        3,
+        95,
+        "2024-06-20",
+        "DEBIT",
+        36822.05,
+        -14556.390000000018
+      ],
+      [
+        4,
+        233,
+        "2024-02-05",
+        "DEBIT",
+        24986.45,
+        -24986.45
+      ],
+      [
+        4,
+        374,
+        "2024-02-16",
+        "CREDIT",
+        126.74,
+        -24859.71
+      ],
+      [
+        4,
+        537,
+        "2024-03-07",
+        "CREDIT",
+        5629.1,
+        -19230.61
+      ],
+      [
+        4,
+        105,
+        "2024-03-17",
+        "DEBIT",
+        5027.34,
+        -24257.95
+      ],
+      [
+        4,
+        427,
+        "2024-03-30",
+        "DEBIT",
+        42452.7,
+        -66710.65
+      ],
+      [
+        4,
+        352,
+        "2024-04-01",
+        "CREDIT",
+        30814.96,
+        -35895.689999999995
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-11",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the account with the highest net inflow (credits minus debits, successful only) in the quarter April to June 2024.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT account_id, SUM(CASE WHEN txn_type = 'CREDIT' THEN amount ELSE -amount END) AS net_inflow FROM transactions WHERE status = 'SUCCESS' AND txn_date BETWEEN '2024-04-01' AND '2024-06-30' GROUP BY account_id ORDER BY net_inflow DESC LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "net_inflow"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        10,
+        166576.46
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "WMT-12",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Deduplication",
+    "topic_group": "Duplicates & Data Cleaning",
+    "also_tagged": [],
+    "question": "Delete duplicate payments that share the same user, merchant, date and amount, keeping the one with the lowest payment_id.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "DELETE FROM payments WHERE payment_id IN (SELECT payment_id FROM (SELECT payment_id, ROW_NUMBER() OVER (PARTITION BY user_id, merchant_id, pay_date, amount ORDER BY payment_id) AS rn FROM payments) t WHERE rn > 1)",
+    "executed_ok": true,
+    "isPro": true
+  },
+  {
+    "id": "WMT-13",
+    "company": "WMT",
+    "company_name": "Walmart Global Tech",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Transactions",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Write a transaction that moves 5000 from account 1 to account 2 and rolls back if the debit would make the balance negative (MySQL-style pseudocode with ROLLBACK).",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "START TRANSACTION; UPDATE accounts SET balance = balance - 5000 WHERE account_id = 1 AND balance >= 5000; -- check ROW_COUNT() = 1, else ROLLBACK; UPDATE accounts SET balance = balance + 5000 WHERE account_id = 2; COMMIT;",
+    "executed_ok": false,
+    "isPro": true
+  },
+  {
+    "id": "SWG-01",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "For every restaurant city show the total orders, delivered orders and GMV (order_value minus discount for delivered orders).",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT r.city, COUNT(*) AS orders, SUM(CASE WHEN f.status = 'Delivered' THEN 1 ELSE 0 END) AS delivered, SUM(CASE WHEN f.status = 'Delivered' THEN f.order_value - f.discount ELSE 0 END) AS gmv FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id GROUP BY r.city",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "orders",
+      "delivered",
+      "gmv"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        79,
+        72,
+        40063
+      ],
+      [
+        "Chennai",
+        57,
+        50,
+        33023
+      ],
+      [
+        "Delhi",
+        87,
+        77,
+        47095
+      ],
+      [
+        "Hyderabad",
+        58,
+        51,
+        31049
+      ],
+      [
+        "Kolkata",
+        52,
+        43,
+        27147
+      ],
+      [
+        "Mumbai",
+        87,
+        70,
+        43574
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-02",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Find the 5 restaurants with the highest cancellation rate (percentage of cancelled orders), showing the rate.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT r.restaurant_name, COUNT(*) AS orders, ROUND(SUM(CASE WHEN f.status = 'Cancelled' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS cancel_rate_pct FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id GROUP BY r.restaurant_id, r.restaurant_name ORDER BY cancel_rate_pct DESC, orders DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "restaurant_name",
+      "orders",
+      "cancel_rate_pct"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Sweet Tooth",
+        24,
+        29.17
+      ],
+      [
+        "Green Bowl",
+        30,
+        20
+      ],
+      [
+        "Dosa Darbar",
+        30,
+        20
+      ],
+      [
+        "Cake Walk",
+        27,
+        18.52
+      ],
+      [
+        "Chaat Corner",
+        19,
+        15.79
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-03",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List riders whose average delivery time is slower than the overall average delivery time.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT rd.rider_name, ROUND(AVG(f.delivery_minutes), 1) AS avg_minutes FROM food_orders f JOIN riders rd ON f.rider_id = rd.rider_id WHERE f.delivery_minutes IS NOT NULL GROUP BY rd.rider_id, rd.rider_name HAVING AVG(f.delivery_minutes) > (SELECT AVG(delivery_minutes) FROM food_orders)",
+    "executed_ok": true,
+    "columns": [
+      "rider_name",
+      "avg_minutes"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Siddharth Joshi",
+        41.2
+      ],
+      [
+        "Pallavi Pandey",
+        40.9
+      ],
+      [
+        "Manish Patel",
+        41.1
+      ],
+      [
+        "Varun Mishra",
+        38.4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-04",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Time Buckets",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Show the number of orders placed in each hour of the day and identify the busiest hour.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT HOUR(order_ts) AS hr, COUNT(*) AS orders FROM food_orders GROUP BY HOUR(order_ts) ORDER BY orders DESC",
+    "executed_ok": true,
+    "columns": [
+      "hr",
+      "orders"
+    ],
+    "row_count": 16,
+    "expected_rows": [
+      [
+        17,
+        31
+      ],
+      [
+        15,
+        31
+      ],
+      [
+        12,
+        30
+      ],
+      [
+        9,
+        30
+      ],
+      [
+        11,
+        29
+      ],
+      [
+        20,
+        27
+      ],
+      [
+        19,
+        27
+      ],
+      [
+        23,
+        26
+      ],
+      [
+        22,
+        26
+      ],
+      [
+        10,
+        26
+      ],
+      [
+        21,
+        25
+      ],
+      [
+        8,
+        25
+      ],
+      [
+        18,
+        24
+      ],
+      [
+        13,
+        24
+      ],
+      [
+        14,
+        20
+      ],
+      [
+        16,
+        19
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-05",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Within each cuisine, list the top 3 restaurants by GMV (delivered orders), keeping ties.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH g AS (SELECT r.cuisine, r.restaurant_name, SUM(f.order_value - f.discount) AS gmv FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id WHERE f.status = 'Delivered' GROUP BY r.restaurant_id, r.cuisine, r.restaurant_name) SELECT cuisine, restaurant_name, gmv FROM (SELECT cuisine, restaurant_name, gmv, DENSE_RANK() OVER (PARTITION BY cuisine ORDER BY gmv DESC) AS rnk FROM g) t WHERE rnk <= 3",
+    "executed_ok": true,
+    "columns": [
+      "cuisine",
+      "restaurant_name",
+      "gmv"
+    ],
+    "row_count": 15,
+    "expected_rows": [
+      [
+        "Biryani",
+        "Dum Pukht House",
+        15603
+      ],
+      [
+        "Biryani",
+        "Biryani Junction",
+        13803
+      ],
+      [
+        "Chinese",
+        "Wok This Way",
+        19040
+      ],
+      [
+        "Chinese",
+        "Noodle Nest",
+        14182
+      ],
+      [
+        "Desserts",
+        "Cake Walk",
+        13316
+      ],
+      [
+        "Desserts",
+        "Sweet Tooth",
+        11544
+      ],
+      [
+        "Healthy",
+        "Green Bowl",
+        15358
+      ],
+      [
+        "North Indian",
+        "Tandoor Tales",
+        17567
+      ],
+      [
+        "North Indian",
+        "Spice Route",
+        14340
+      ],
+      [
+        "Pizza",
+        "Pizza Piazza",
+        18841
+      ],
+      [
+        "Pizza",
+        "Slice Society",
+        15659
+      ],
+      [
+        "South Indian",
+        "Idli Express",
+        17246
+      ],
+      [
+        "South Indian",
+        "Dosa Darbar",
+        14900
+      ],
+      [
+        "Street Food",
+        "Roll Mania",
+        10488
+      ],
+      [
+        "Street Food",
+        "Chaat Corner",
+        10064
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-06",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find users who ordered from at least 3 different restaurants.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT user_id, COUNT(DISTINCT restaurant_id) AS restaurants FROM food_orders GROUP BY user_id HAVING COUNT(DISTINCT restaurant_id) >= 3",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "restaurants"
+    ],
+    "row_count": 36,
+    "expected_rows": [
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        9
+      ],
+      [
+        4,
+        9
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        7,
+        13
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        12,
+        12
+      ],
+      [
+        13,
+        8
+      ],
+      [
+        14,
+        5
+      ],
+      [
+        15,
+        11
+      ],
+      [
+        16,
+        11
+      ],
+      [
+        17,
+        9
+      ],
+      [
+        18,
+        10
+      ],
+      [
+        19,
+        9
+      ],
+      [
+        20,
+        12
+      ],
+      [
+        21,
+        10
+      ],
+      [
+        22,
+        4
+      ],
+      [
+        23,
+        5
+      ],
+      [
+        25,
+        6
+      ],
+      [
+        26,
+        7
+      ],
+      [
+        28,
+        10
+      ],
+      [
+        29,
+        7
+      ],
+      [
+        30,
+        8
+      ],
+      [
+        31,
+        3
+      ],
+      [
+        32,
+        12
+      ],
+      [
+        33,
+        11
+      ],
+      [
+        34,
+        5
+      ],
+      [
+        35,
+        4
+      ],
+      [
+        36,
+        11
+      ],
+      [
+        37,
+        11
+      ],
+      [
+        39,
+        7
+      ],
+      [
+        40,
+        5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-07",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Repeat Rate",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "What percentage of ordering users placed more than one delivered order?",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH u AS (SELECT user_id, COUNT(*) AS n FROM food_orders WHERE status = 'Delivered' GROUP BY user_id) SELECT ROUND(SUM(CASE WHEN n > 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS repeat_user_pct FROM u",
+    "executed_ok": true,
+    "columns": [
+      "repeat_user_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        97.44
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-08",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "New Users",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For each month show how many users placed their first-ever order in that month.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(first_order, '%Y-%m') AS ym, COUNT(*) AS new_users FROM (SELECT user_id, MIN(order_ts) AS first_order FROM food_orders GROUP BY user_id) t GROUP BY DATE_FORMAT(first_order, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "new_users"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "2024-01",
+        28
+      ],
+      [
+        "2024-02",
+        7
+      ],
+      [
+        "2024-03",
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-09",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Gaps and Islands",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [],
+    "question": "Find users who ordered on at least 3 consecutive days.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH d AS (SELECT DISTINCT user_id, SUBSTR(order_ts, 1, 10) AS od FROM food_orders), r AS (SELECT user_id, od, DATEDIFF(od, '2024-01-01') - ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY od) AS grp FROM d) SELECT user_id, MIN(od) AS streak_start, COUNT(*) AS streak_days FROM r GROUP BY user_id, grp HAVING COUNT(*) >= 3",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "streak_start",
+      "streak_days"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        20,
+        "2024-06-16",
+        3
+      ],
+      [
+        33,
+        "2024-04-05",
+        3
+      ],
+      [
+        39,
+        "2024-03-27",
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-10",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Comparison",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compare the average order value (order_value minus discount) of Pro and non-Pro users on delivered orders.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT u.is_pro, COUNT(*) AS orders, ROUND(AVG(f.order_value - f.discount), 2) AS avg_order_value FROM food_orders f JOIN food_users u ON f.user_id = u.user_id WHERE f.status = 'Delivered' GROUP BY u.is_pro",
+    "executed_ok": true,
+    "columns": [
+      "is_pro",
+      "orders",
+      "avg_order_value"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        0,
+        242,
+        612.2
+      ],
+      [
+        1,
+        121,
+        609.91
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-11",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "SLA Analysis",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "For each rider compute the percentage of delivered orders that took more than 45 minutes.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT rider_id, COUNT(*) AS deliveries, ROUND(SUM(CASE WHEN delivery_minutes > 45 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS sla_breach_pct FROM food_orders WHERE status = 'Delivered' GROUP BY rider_id ORDER BY sla_breach_pct DESC",
+    "executed_ok": true,
+    "columns": [
+      "rider_id",
+      "deliveries",
+      "sla_breach_pct"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        4,
+        36,
+        47.22
+      ],
+      [
+        6,
+        49,
+        44.9
+      ],
+      [
+        5,
+        53,
+        41.51
+      ],
+      [
+        8,
+        42,
+        38.1
+      ],
+      [
+        7,
+        42,
+        35.71
+      ],
+      [
+        1,
+        58,
+        32.76
+      ],
+      [
+        3,
+        45,
+        31.11
+      ],
+      [
+        2,
+        38,
+        26.32
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-12",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show monthly GMV (delivered orders) with the month-over-month growth percentage.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH m AS (SELECT DATE_FORMAT(order_ts, '%Y-%m') AS ym, SUM(order_value - discount) AS gmv FROM food_orders WHERE status = 'Delivered' GROUP BY DATE_FORMAT(order_ts, '%Y-%m')) SELECT ym, gmv, ROUND((gmv - LAG(gmv) OVER (ORDER BY ym)) * 100.0 / LAG(gmv) OVER (ORDER BY ym), 2) AS mom_growth_pct FROM m ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "gmv",
+      "mom_growth_pct"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "2024-01",
+        35652,
+        null
+      ],
+      [
+        "2024-02",
+        39623,
+        11.14
+      ],
+      [
+        "2024-03",
+        36160,
+        -8.74
+      ],
+      [
+        "2024-04",
+        31719,
+        -12.28
+      ],
+      [
+        "2024-05",
+        36707,
+        15.73
+      ],
+      [
+        "2024-06",
+        42090,
+        14.66
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-13",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CASE Bucketing",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Bucket delivered orders by discount (None, up to 50, above 50) and show order count and average order value per bucket.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT CASE WHEN discount = 0 THEN 'None' WHEN discount <= 50 THEN 'Up to 50' ELSE 'Above 50' END AS discount_bucket, COUNT(*) AS orders, ROUND(AVG(order_value), 2) AS avg_order_value FROM food_orders WHERE status = 'Delivered' GROUP BY CASE WHEN discount = 0 THEN 'None' WHEN discount <= 50 THEN 'Up to 50' ELSE 'Above 50' END",
+    "executed_ok": true,
+    "columns": [
+      "discount_bucket",
+      "orders",
+      "avg_order_value"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Above 50",
+        96,
+        656.25
+      ],
+      [
+        "None",
+        153,
+        641.61
+      ],
+      [
+        "Up to 50",
+        114,
+        640.69
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-14",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Peak Hours",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "What share of delivered orders is placed in the lunch window (12:00-14:59) and the dinner window (19:00-22:59)?",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT ROUND(SUM(CASE WHEN HOUR(order_ts) BETWEEN 12 AND 14 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS lunch_pct, ROUND(SUM(CASE WHEN HOUR(order_ts) BETWEEN 19 AND 22 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS dinner_pct FROM food_orders WHERE status = 'Delivered'",
+    "executed_ok": true,
+    "columns": [
+      "lunch_pct",
+      "dinner_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        17.08,
+        24.79
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-15",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List restaurants with a listed rating of at least 4.0 whose cancellation rate is below 15 percent.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT r.restaurant_name, r.avg_rating FROM restaurants r WHERE r.avg_rating >= 4.0 AND (SELECT SUM(CASE WHEN f.status = 'Cancelled' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) FROM food_orders f WHERE f.restaurant_id = r.restaurant_id) < 15",
+    "executed_ok": true,
+    "columns": [
+      "restaurant_name",
+      "avg_rating"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Biryani Junction",
+        4.2
+      ],
+      [
+        "Roll Mania",
+        4.2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-16",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Retention",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "What percentage of users who ordered in January 2024 ordered again in February 2024?",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT ROUND(COUNT(DISTINCT f.user_id) * 100.0 / (SELECT COUNT(DISTINCT user_id) FROM food_orders WHERE order_ts BETWEEN '2024-01-01 00:00:00' AND '2024-01-31 23:59:59'), 2) AS retained_pct FROM food_orders f WHERE f.order_ts BETWEEN '2024-02-01 00:00:00' AND '2024-02-29 23:59:59' AND f.user_id IN (SELECT user_id FROM food_orders WHERE order_ts BETWEEN '2024-01-01 00:00:00' AND '2024-01-31 23:59:59')",
+    "executed_ok": true,
+    "columns": [
+      "retained_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        85.71
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-17",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Productivity",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Compute the average number of delivered orders per rider per active day.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT rider_id, ROUND(COUNT(*) * 1.0 / COUNT(DISTINCT SUBSTR(order_ts, 1, 10)), 2) AS orders_per_active_day FROM food_orders WHERE status = 'Delivered' GROUP BY rider_id",
+    "executed_ok": true,
+    "columns": [
+      "rider_id",
+      "orders_per_active_day"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        1,
+        1.14
+      ],
+      [
+        2,
+        1.03
+      ],
+      [
+        3,
+        1.13
+      ],
+      [
+        4,
+        1.03
+      ],
+      [
+        5,
+        1.04
+      ],
+      [
+        6,
+        1.09
+      ],
+      [
+        7,
+        1.11
+      ],
+      [
+        8,
+        1.08
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-18",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For users with at least two orders, show the number of days between their first and second order.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH r AS (SELECT user_id, SUBSTR(order_ts, 1, 10) AS od, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY order_ts) AS rn FROM food_orders) SELECT a.user_id, DATEDIFF(b.od, a.od) AS days_to_second_order FROM r a JOIN r b ON a.user_id = b.user_id AND a.rn = 1 AND b.rn = 2",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "days_to_second_order"
+    ],
+    "row_count": 39,
+    "expected_rows": [
+      [
+        1,
+        18
+      ],
+      [
+        2,
+        73
+      ],
+      [
+        3,
+        28
+      ],
+      [
+        4,
+        10
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        27
+      ],
+      [
+        7,
+        5
+      ],
+      [
+        8,
+        5
+      ],
+      [
+        9,
+        30
+      ],
+      [
+        10,
+        22
+      ],
+      [
+        11,
+        108
+      ],
+      [
+        12,
+        3
+      ],
+      [
+        13,
+        10
+      ],
+      [
+        14,
+        41
+      ],
+      [
+        15,
+        9
+      ],
+      [
+        16,
+        22
+      ],
+      [
+        17,
+        8
+      ],
+      [
+        18,
+        14
+      ],
+      [
+        19,
+        6
+      ],
+      [
+        20,
+        17
+      ],
+      [
+        21,
+        23
+      ],
+      [
+        22,
+        11
+      ],
+      [
+        23,
+        14
+      ],
+      [
+        25,
+        21
+      ],
+      [
+        26,
+        25
+      ],
+      [
+        27,
+        91
+      ],
+      [
+        28,
+        17
+      ],
+      [
+        29,
+        15
+      ],
+      [
+        30,
+        6
+      ],
+      [
+        31,
+        11
+      ],
+      [
+        32,
+        3
+      ],
+      [
+        33,
+        12
+      ],
+      [
+        34,
+        2
+      ],
+      [
+        35,
+        3
+      ],
+      [
+        36,
+        6
+      ],
+      [
+        37,
+        2
+      ],
+      [
+        38,
+        54
+      ],
+      [
+        39,
+        3
+      ],
+      [
+        40,
+        24
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-19",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "List users whose most recent order was cancelled.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT user_id, order_id, order_ts FROM (SELECT user_id, order_id, order_ts, status, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY order_ts DESC) AS rn FROM food_orders) t WHERE rn = 1 AND status = 'Cancelled'",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "order_id",
+      "order_ts"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        26,
+        404,
+        "2024-06-24 12:21:57"
+      ],
+      [
+        31,
+        207,
+        "2024-04-03 22:07:06"
+      ],
+      [
+        37,
+        401,
+        "2024-06-23 12:46:01"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-20",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Having Threshold",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the restaurant with the best average customer rating among restaurants with at least 10 rated orders.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT r.restaurant_name, COUNT(f.rating) AS rated_orders, ROUND(AVG(f.rating), 2) AS avg_customer_rating FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id WHERE f.rating IS NOT NULL GROUP BY r.restaurant_id, r.restaurant_name HAVING COUNT(f.rating) >= 10 ORDER BY avg_customer_rating DESC LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "restaurant_name",
+      "rated_orders",
+      "avg_customer_rating"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Roll Mania",
+        10,
+        4.4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "SWG-21",
+    "company": "SWG",
+    "company_name": "Swiggy",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Weekday Analysis",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Compare delivered GMV on weekends versus weekdays (MySQL DAYOFWEEK: 1 = Sunday, 7 = Saturday).",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT CASE WHEN DAYOFWEEK(order_ts) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' END AS day_type, SUM(order_value - discount) AS gmv, COUNT(*) AS orders FROM food_orders WHERE status = 'Delivered' GROUP BY CASE WHEN DAYOFWEEK(order_ts) IN (1, 7) THEN 'Weekend' ELSE 'Weekday' END",
+    "executed_ok": true,
+    "columns": [
+      "day_type",
+      "gmv",
+      "orders"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Weekday",
+        148915,
+        247
+      ],
+      [
+        "Weekend",
+        73036,
+        116
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-01",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Rating Gap",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Find restaurants whose listed avg_rating is more than 0.5 higher than the average rating customers actually gave on their orders.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT r.restaurant_name, r.avg_rating AS listed_rating, ROUND(AVG(f.rating), 2) AS actual_rating FROM restaurants r JOIN food_orders f ON r.restaurant_id = f.restaurant_id WHERE f.rating IS NOT NULL GROUP BY r.restaurant_id, r.restaurant_name, r.avg_rating HAVING r.avg_rating - AVG(f.rating) > 0.5",
+    "executed_ok": true,
+    "columns": [
+      "restaurant_name",
+      "listed_rating",
+      "actual_rating"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Sweet Tooth",
+        4.6,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-02",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "For each cuisine show the number of orders and the number of distinct users who ordered it.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT r.cuisine, COUNT(*) AS orders, COUNT(DISTINCT f.user_id) AS unique_users FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id GROUP BY r.cuisine ORDER BY orders DESC",
+    "executed_ok": true,
+    "columns": [
+      "cuisine",
+      "orders",
+      "unique_users"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Chinese",
+        64,
+        31
+      ],
+      [
+        "South Indian",
+        63,
+        30
+      ],
+      [
+        "North Indian",
+        63,
+        28
+      ],
+      [
+        "Pizza",
+        60,
+        32
+      ],
+      [
+        "Biryani",
+        53,
+        28
+      ],
+      [
+        "Desserts",
+        51,
+        30
+      ],
+      [
+        "Street Food",
+        36,
+        24
+      ],
+      [
+        "Healthy",
+        30,
+        19
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-03",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "In each city list the top 2 restaurants by number of delivered orders.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH c AS (SELECT r.city, r.restaurant_name, COUNT(*) AS orders FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id WHERE f.status = 'Delivered' GROUP BY r.restaurant_id, r.city, r.restaurant_name) SELECT city, restaurant_name, orders FROM (SELECT city, restaurant_name, orders, ROW_NUMBER() OVER (PARTITION BY city ORDER BY orders DESC, restaurant_name) AS rn FROM c) t WHERE rn <= 2",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "restaurant_name",
+      "orders"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        "Slice Society",
+        28
+      ],
+      [
+        "Bengaluru",
+        "Spice Route",
+        28
+      ],
+      [
+        "Chennai",
+        "Pizza Piazza",
+        27
+      ],
+      [
+        "Chennai",
+        "Noodle Nest",
+        23
+      ],
+      [
+        "Delhi",
+        "Wok This Way",
+        34
+      ],
+      [
+        "Delhi",
+        "Tandoor Tales",
+        28
+      ],
+      [
+        "Hyderabad",
+        "Idli Express",
+        28
+      ],
+      [
+        "Hyderabad",
+        "Biryani Junction",
+        23
+      ],
+      [
+        "Kolkata",
+        "Dum Pukht House",
+        26
+      ],
+      [
+        "Kolkata",
+        "Sweet Tooth",
+        17
+      ],
+      [
+        "Mumbai",
+        "Dosa Darbar",
+        24
+      ],
+      [
+        "Mumbai",
+        "Green Bowl",
+        24
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-04",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Top-N",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Show the 5 users who received the most total discount value on delivered orders.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT user_id, SUM(discount) AS total_discount FROM food_orders WHERE status = 'Delivered' GROUP BY user_id ORDER BY total_discount DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "total_discount"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        33,
+        750
+      ],
+      [
+        13,
+        660
+      ],
+      [
+        20,
+        655
+      ],
+      [
+        15,
+        650
+      ],
+      [
+        8,
+        620
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-05",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Time Buckets",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Show the cancellation percentage by time of day: Morning (6-11), Afternoon (12-16), Evening (17-21), Night (otherwise).",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT CASE WHEN HOUR(order_ts) BETWEEN 6 AND 11 THEN 'Morning' WHEN HOUR(order_ts) BETWEEN 12 AND 16 THEN 'Afternoon' WHEN HOUR(order_ts) BETWEEN 17 AND 21 THEN 'Evening' ELSE 'Night' END AS slot, COUNT(*) AS orders, ROUND(SUM(CASE WHEN status = 'Cancelled' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS cancel_pct FROM food_orders GROUP BY CASE WHEN HOUR(order_ts) BETWEEN 6 AND 11 THEN 'Morning' WHEN HOUR(order_ts) BETWEEN 12 AND 16 THEN 'Afternoon' WHEN HOUR(order_ts) BETWEEN 17 AND 21 THEN 'Evening' ELSE 'Night' END",
+    "executed_ok": true,
+    "columns": [
+      "slot",
+      "orders",
+      "cancel_pct"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Afternoon",
+        124,
+        15.32
+      ],
+      [
+        "Evening",
+        134,
+        11.94
+      ],
+      [
+        "Morning",
+        110,
+        12.73
+      ],
+      [
+        "Night",
+        52,
+        15.38
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-06",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find users with at least 5 orders none of which was cancelled.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT user_id, COUNT(*) AS orders FROM food_orders GROUP BY user_id HAVING COUNT(*) >= 5 AND SUM(CASE WHEN status = 'Cancelled' THEN 1 ELSE 0 END) = 0",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "orders"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        7,
+        15
+      ],
+      [
+        17,
+        14
+      ],
+      [
+        32,
+        19
+      ],
+      [
+        40,
+        8
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-07",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every user find the cuisine they ordered most often (one row per user; break ties alphabetically).",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH c AS (SELECT f.user_id, r.cuisine, COUNT(*) AS n FROM food_orders f JOIN restaurants r ON f.restaurant_id = r.restaurant_id GROUP BY f.user_id, r.cuisine) SELECT user_id, cuisine, n FROM (SELECT user_id, cuisine, n, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY n DESC, cuisine) AS rn FROM c) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "cuisine",
+      "n"
+    ],
+    "row_count": 39,
+    "expected_rows": [
+      [
+        1,
+        "Pizza",
+        3
+      ],
+      [
+        2,
+        "Biryani",
+        1
+      ],
+      [
+        3,
+        "Chinese",
+        2
+      ],
+      [
+        4,
+        "Pizza",
+        3
+      ],
+      [
+        5,
+        "Biryani",
+        2
+      ],
+      [
+        6,
+        "North Indian",
+        3
+      ],
+      [
+        7,
+        "Biryani",
+        3
+      ],
+      [
+        8,
+        "Biryani",
+        2
+      ],
+      [
+        9,
+        "Desserts",
+        1
+      ],
+      [
+        10,
+        "Pizza",
+        4
+      ],
+      [
+        11,
+        "Chinese",
+        1
+      ],
+      [
+        12,
+        "Chinese",
+        3
+      ],
+      [
+        13,
+        "Chinese",
+        4
+      ],
+      [
+        14,
+        "South Indian",
+        2
+      ],
+      [
+        15,
+        "North Indian",
+        4
+      ],
+      [
+        16,
+        "Biryani",
+        5
+      ],
+      [
+        17,
+        "Healthy",
+        3
+      ],
+      [
+        18,
+        "North Indian",
+        5
+      ],
+      [
+        19,
+        "Desserts",
+        4
+      ],
+      [
+        20,
+        "Pizza",
+        4
+      ],
+      [
+        21,
+        "Biryani",
+        4
+      ],
+      [
+        22,
+        "North Indian",
+        2
+      ],
+      [
+        23,
+        "Pizza",
+        3
+      ],
+      [
+        25,
+        "South Indian",
+        2
+      ],
+      [
+        26,
+        "Biryani",
+        2
+      ],
+      [
+        27,
+        "Biryani",
+        1
+      ],
+      [
+        28,
+        "Chinese",
+        2
+      ],
+      [
+        29,
+        "Biryani",
+        2
+      ],
+      [
+        30,
+        "Chinese",
+        3
+      ],
+      [
+        31,
+        "Biryani",
+        1
+      ],
+      [
+        32,
+        "South Indian",
+        5
+      ],
+      [
+        33,
+        "North Indian",
+        6
+      ],
+      [
+        34,
+        "Street Food",
+        3
+      ],
+      [
+        35,
+        "North Indian",
+        2
+      ],
+      [
+        36,
+        "Chinese",
+        3
+      ],
+      [
+        37,
+        "Chinese",
+        5
+      ],
+      [
+        38,
+        "Biryani",
+        2
+      ],
+      [
+        39,
+        "Chinese",
+        3
+      ],
+      [
+        40,
+        "Chinese",
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-08",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Number each user's delivered orders in sequence and show the average order value of the 1st, 2nd and 3rd orders.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH s AS (SELECT user_id, order_value, ROW_NUMBER() OVER (PARTITION BY user_id ORDER BY order_ts) AS seq FROM food_orders WHERE status = 'Delivered') SELECT seq, COUNT(*) AS orders, ROUND(AVG(order_value), 2) AS avg_order_value FROM s WHERE seq <= 3 GROUP BY seq ORDER BY seq",
+    "executed_ok": true,
+    "columns": [
+      "seq",
+      "orders",
+      "avg_order_value"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        1,
+        39,
+        677.21
+      ],
+      [
+        2,
+        38,
+        653.11
+      ],
+      [
+        3,
+        36,
+        667.25
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-09",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Arithmetic",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "List restaurants that were opened more than 2 years before 2024-06-30 and have a listed rating of 4.0 or above.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT restaurant_name, opened_date, avg_rating FROM restaurants WHERE DATEDIFF('2024-06-30', opened_date) > 2 * 365 AND avg_rating >= 4.0",
+    "executed_ok": true,
+    "columns": [
+      "restaurant_name",
+      "opened_date",
+      "avg_rating"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Biryani Junction",
+        "2022-04-17",
+        4.2
+      ],
+      [
+        "Sweet Tooth",
+        "2022-06-18",
+        4.6
+      ],
+      [
+        "Green Bowl",
+        "2020-09-01",
+        4.3
+      ],
+      [
+        "Tandoor Tales",
+        "2022-04-23",
+        4.7
+      ],
+      [
+        "Cake Walk",
+        "2021-05-06",
+        4
+      ],
+      [
+        "Roll Mania",
+        "2022-03-23",
+        4.2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-10",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CASE Bucketing",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Show the distribution of delivery time among delivered orders: under 20 minutes, 20 to 40 minutes, over 40 minutes.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT CASE WHEN delivery_minutes < 20 THEN 'Under 20' WHEN delivery_minutes <= 40 THEN '20 to 40' ELSE 'Over 40' END AS bucket, COUNT(*) AS orders FROM food_orders WHERE status = 'Delivered' GROUP BY CASE WHEN delivery_minutes < 20 THEN 'Under 20' WHEN delivery_minutes <= 40 THEN '20 to 40' ELSE 'Over 40' END",
+    "executed_ok": true,
+    "columns": [
+      "bucket",
+      "orders"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "20 to 40",
+        161
+      ],
+      [
+        "Over 40",
+        169
+      ],
+      [
+        "Under 20",
+        33
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-11",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Join Condition",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find delivered orders where the rider's city differs from the restaurant's city.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT f.order_id, rd.city AS rider_city, r.city AS restaurant_city FROM food_orders f JOIN riders rd ON f.rider_id = rd.rider_id JOIN restaurants r ON f.restaurant_id = r.restaurant_id WHERE f.status = 'Delivered' AND rd.city <> r.city",
+    "executed_ok": true,
+    "columns": [
+      "order_id",
+      "rider_city",
+      "restaurant_city"
+    ],
+    "row_count": 307,
+    "expected_rows": [
+      [
+        1,
+        "Hyderabad",
+        "Chennai"
+      ],
+      [
+        3,
+        "Chennai",
+        "Hyderabad"
+      ],
+      [
+        4,
+        "Mumbai",
+        "Bengaluru"
+      ],
+      [
+        6,
+        "Chennai",
+        "Kolkata"
+      ],
+      [
+        8,
+        "Kolkata",
+        "Hyderabad"
+      ],
+      [
+        9,
+        "Mumbai",
+        "Hyderabad"
+      ],
+      [
+        11,
+        "Bengaluru",
+        "Mumbai"
+      ],
+      [
+        12,
+        "Delhi",
+        "Bengaluru"
+      ],
+      [
+        13,
+        "Chennai",
+        "Hyderabad"
+      ],
+      [
+        14,
+        "Kolkata",
+        "Bengaluru"
+      ],
+      [
+        18,
+        "Mumbai",
+        "Hyderabad"
+      ],
+      [
+        19,
+        "Delhi",
+        "Bengaluru"
+      ],
+      [
+        20,
+        "Kolkata",
+        "Delhi"
+      ],
+      [
+        22,
+        "Mumbai",
+        "Bengaluru"
+      ],
+      [
+        23,
+        "Delhi",
+        "Hyderabad"
+      ],
+      [
+        24,
+        "Hyderabad",
+        "Mumbai"
+      ],
+      [
+        25,
+        "Kolkata",
+        "Delhi"
+      ],
+      [
+        28,
+        "Kolkata",
+        "Hyderabad"
+      ],
+      [
+        30,
+        "Chennai",
+        "Mumbai"
+      ],
+      [
+        31,
+        "Delhi",
+        "Chennai"
+      ],
+      [
+        32,
+        "Bengaluru",
+        "Delhi"
+      ],
+      [
+        33,
+        "Mumbai",
+        "Kolkata"
+      ],
+      [
+        34,
+        "Delhi",
+        "Mumbai"
+      ],
+      [
+        35,
+        "Kolkata",
+        "Mumbai"
+      ],
+      [
+        36,
+        "Delhi",
+        "Kolkata"
+      ],
+      [
+        37,
+        "Mumbai",
+        "Hyderabad"
+      ],
+      [
+        38,
+        "Kolkata",
+        "Delhi"
+      ],
+      [
+        40,
+        "Hyderabad",
+        "Chennai"
+      ],
+      [
+        41,
+        "Bengaluru",
+        "Chennai"
+      ],
+      [
+        42,
+        "Delhi",
+        "Bengaluru"
+      ],
+      [
+        43,
+        "Kolkata",
+        "Chennai"
+      ],
+      [
+        44,
+        "Delhi",
+        "Chennai"
+      ],
+      [
+        45,
+        "Delhi",
+        "Mumbai"
+      ],
+      [
+        48,
+        "Chennai",
+        "Bengaluru"
+      ],
+      [
+        49,
+        "Mumbai",
+        "Delhi"
+      ],
+      [
+        50,
+        "Kolkata",
+        "Bengaluru"
+      ],
+      [
+        52,
+        "Bengaluru",
+        "Delhi"
+      ],
+      [
+        55,
+        "Mumbai",
+        "Delhi"
+      ],
+      [
+        57,
+        "Delhi",
+        "Kolkata"
+      ],
+      [
+        58,
+        "Mumbai",
+        "Hyderabad"
+      ],
+      [
+        59,
+        "Mumbai",
+        "Delhi"
+      ],
+      [
+        60,
+        "Kolkata",
+        "Bengaluru"
+      ],
+      [
+        61,
+        "Chennai",
+        "Bengaluru"
+      ],
+      [
+        62,
+        "Bengaluru",
+        "Chennai"
+      ],
+      [
+        63,
+        "Hyderabad",
+        "Bengaluru"
+      ],
+      [
+        64,
+        "Mumbai",
+        "Chennai"
+      ],
+      [
+        68,
+        "Mumbai",
+        "Kolkata"
+      ],
+      [
+        71,
+        "Mumbai",
+        "Kolkata"
+      ],
+      [
+        73,
+        "Bengaluru",
+        "Kolkata"
+      ],
+      [
+        74,
+        "Hyderabad",
+        "Chennai"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-12",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "NTILE",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Split delivered orders into 4 quartiles by order value and show the minimum and maximum value of each quartile.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH q AS (SELECT order_value, NTILE(4) OVER (ORDER BY order_value) AS quartile FROM food_orders WHERE status = 'Delivered') SELECT quartile, MIN(order_value) AS min_value, MAX(order_value) AS max_value, COUNT(*) AS orders FROM q GROUP BY quartile ORDER BY quartile",
+    "executed_ok": true,
+    "columns": [
+      "quartile",
+      "min_value",
+      "max_value",
+      "orders"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        1,
+        126,
+        394,
+        91
+      ],
+      [
+        2,
+        396,
+        626,
+        91
+      ],
+      [
+        3,
+        626,
+        916,
+        91
+      ],
+      [
+        4,
+        917,
+        1198,
+        90
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-13",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List orders where the discount exceeds 10 percent of the order value.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT order_id, order_value, discount FROM food_orders WHERE discount > 0.1 * order_value",
+    "executed_ok": true,
+    "columns": [
+      "order_id",
+      "order_value",
+      "discount"
+    ],
+    "row_count": 112,
+    "expected_rows": [
+      [
+        1,
+        706,
+        75
+      ],
+      [
+        13,
+        201,
+        75
+      ],
+      [
+        15,
+        727,
+        75
+      ],
+      [
+        16,
+        135,
+        75
+      ],
+      [
+        17,
+        556,
+        100
+      ],
+      [
+        18,
+        267,
+        75
+      ],
+      [
+        21,
+        132,
+        75
+      ],
+      [
+        23,
+        696,
+        100
+      ],
+      [
+        33,
+        686,
+        100
+      ],
+      [
+        34,
+        854,
+        100
+      ],
+      [
+        35,
+        406,
+        50
+      ],
+      [
+        36,
+        158,
+        100
+      ],
+      [
+        45,
+        133,
+        50
+      ],
+      [
+        51,
+        412,
+        100
+      ],
+      [
+        56,
+        589,
+        100
+      ],
+      [
+        60,
+        655,
+        100
+      ],
+      [
+        66,
+        283,
+        50
+      ],
+      [
+        68,
+        478,
+        75
+      ],
+      [
+        69,
+        188,
+        100
+      ],
+      [
+        70,
+        609,
+        75
+      ],
+      [
+        72,
+        702,
+        75
+      ],
+      [
+        75,
+        632,
+        75
+      ],
+      [
+        80,
+        600,
+        75
+      ],
+      [
+        81,
+        439,
+        100
+      ],
+      [
+        82,
+        133,
+        100
+      ],
+      [
+        93,
+        561,
+        100
+      ],
+      [
+        104,
+        626,
+        75
+      ],
+      [
+        105,
+        850,
+        100
+      ],
+      [
+        106,
+        396,
+        75
+      ],
+      [
+        113,
+        703,
+        75
+      ],
+      [
+        114,
+        346,
+        75
+      ],
+      [
+        119,
+        901,
+        100
+      ],
+      [
+        120,
+        626,
+        75
+      ],
+      [
+        138,
+        239,
+        100
+      ],
+      [
+        146,
+        153,
+        50
+      ],
+      [
+        150,
+        644,
+        100
+      ],
+      [
+        151,
+        784,
+        100
+      ],
+      [
+        153,
+        973,
+        100
+      ],
+      [
+        162,
+        528,
+        75
+      ],
+      [
+        168,
+        675,
+        75
+      ],
+      [
+        176,
+        543,
+        75
+      ],
+      [
+        180,
+        173,
+        100
+      ],
+      [
+        182,
+        496,
+        100
+      ],
+      [
+        187,
+        200,
+        50
+      ],
+      [
+        190,
+        305,
+        75
+      ],
+      [
+        195,
+        209,
+        100
+      ],
+      [
+        196,
+        486,
+        100
+      ],
+      [
+        197,
+        711,
+        75
+      ],
+      [
+        198,
+        145,
+        20
+      ],
+      [
+        200,
+        282,
+        50
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-14",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show orders per day for the first 10 days of January 2024 with the day-over-day change.",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "WITH d AS (SELECT SUBSTR(order_ts, 1, 10) AS od, COUNT(*) AS orders FROM food_orders WHERE order_ts < '2024-01-11' GROUP BY SUBSTR(order_ts, 1, 10)) SELECT od, orders, orders - LAG(orders) OVER (ORDER BY od) AS change_vs_prev FROM d ORDER BY od",
+    "executed_ok": true,
+    "columns": [
+      "od",
+      "orders",
+      "change_vs_prev"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        2,
+        null
+      ],
+      [
+        "2024-01-02",
+        2,
+        0
+      ],
+      [
+        "2024-01-03",
+        1,
+        -1
+      ],
+      [
+        "2024-01-04",
+        5,
+        4
+      ],
+      [
+        "2024-01-06",
+        3,
+        -2
+      ],
+      [
+        "2024-01-07",
+        3,
+        0
+      ],
+      [
+        "2024-01-08",
+        1,
+        -2
+      ],
+      [
+        "2024-01-09",
+        2,
+        1
+      ],
+      [
+        "2024-01-10",
+        2,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "ZMT-15",
+    "company": "ZMT",
+    "company_name": "Zomato",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the rider with the highest average customer rating (ignore NULL ratings; at least 15 rated deliveries).",
+    "schemas": [
+      "FOOD"
+    ],
+    "solution_sql": "SELECT rd.rider_name, COUNT(f.rating) AS rated, ROUND(AVG(f.rating), 2) AS avg_rating FROM food_orders f JOIN riders rd ON f.rider_id = rd.rider_id WHERE f.rating IS NOT NULL GROUP BY rd.rider_id, rd.rider_name HAVING COUNT(f.rating) >= 15 ORDER BY avg_rating DESC LIMIT 1",
+    "executed_ok": true,
+    "columns": [
+      "rider_name",
+      "rated",
+      "avg_rating"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        "Pallavi Pandey",
+        44,
+        4.14
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-01",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Money Handling",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Why should monetary values be stored as DECIMAL (or integer paise) rather than FLOAT?",
+    "model_answer": "FLOAT/DOUBLE are binary approximations, so 0.1 + 0.2 style rounding errors accumulate in sums and reconciliation. DECIMAL(p,s) or integers in the smallest currency unit are exact.",
+    "isPro": true
+  },
+  {
+    "id": "PHP-02",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Idempotency",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "How do you make a payment-insert API idempotent at the database layer?",
+    "model_answer": "Store a client-supplied idempotency key (or payment reference) with a UNIQUE constraint. On retry, INSERT ... ON CONFLICT DO NOTHING (PostgreSQL) / INSERT IGNORE or ON DUPLICATE KEY (MySQL) returns the original row instead of creating a duplicate.",
+    "isPro": true
+  },
+  {
+    "id": "PHP-03",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Ledger Design",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "What is a double-entry ledger and why is it used in payment systems?",
+    "model_answer": "Every movement is recorded as two entries, a debit on one account and an equal credit on another, in an append-only table. Balances are derived or verified from the entries, giving auditability and making it easy to detect inconsistencies (sum of all entries must be zero).",
+    "isPro": true
+  },
+  {
+    "id": "PHP-04",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show the success rate of each payment method for every month.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(pay_date, '%Y-%m') AS ym, method, COUNT(*) AS attempts, ROUND(SUM(CASE WHEN status = 'SUCCESS' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS success_rate_pct FROM payments GROUP BY DATE_FORMAT(pay_date, '%Y-%m'), method ORDER BY ym, method",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "method",
+      "attempts",
+      "success_rate_pct"
+    ],
+    "row_count": 24,
+    "expected_rows": [
+      [
+        "2024-01",
+        "Card",
+        12,
+        75
+      ],
+      [
+        "2024-01",
+        "NetBanking",
+        7,
+        71.43
+      ],
+      [
+        "2024-01",
+        "UPI",
+        45,
+        91.11
+      ],
+      [
+        "2024-01",
+        "Wallet",
+        7,
+        85.71
+      ],
+      [
+        "2024-02",
+        "Card",
+        12,
+        83.33
+      ],
+      [
+        "2024-02",
+        "NetBanking",
+        10,
+        70
+      ],
+      [
+        "2024-02",
+        "UPI",
+        41,
+        95.12
+      ],
+      [
+        "2024-02",
+        "Wallet",
+        16,
+        87.5
+      ],
+      [
+        "2024-03",
+        "Card",
+        19,
+        89.47
+      ],
+      [
+        "2024-03",
+        "NetBanking",
+        5,
+        100
+      ],
+      [
+        "2024-03",
+        "UPI",
+        59,
+        88.14
+      ],
+      [
+        "2024-03",
+        "Wallet",
+        11,
+        100
+      ],
+      [
+        "2024-04",
+        "Card",
+        25,
+        80
+      ],
+      [
+        "2024-04",
+        "NetBanking",
+        7,
+        100
+      ],
+      [
+        "2024-04",
+        "UPI",
+        47,
+        82.98
+      ],
+      [
+        "2024-04",
+        "Wallet",
+        13,
+        84.62
+      ],
+      [
+        "2024-05",
+        "Card",
+        16,
+        100
+      ],
+      [
+        "2024-05",
+        "NetBanking",
+        7,
+        100
+      ],
+      [
+        "2024-05",
+        "UPI",
+        57,
+        91.23
+      ],
+      [
+        "2024-05",
+        "Wallet",
+        13,
+        76.92
+      ],
+      [
+        "2024-06",
+        "Card",
+        14,
+        85.71
+      ],
+      [
+        "2024-06",
+        "NetBanking",
+        5,
+        60
+      ],
+      [
+        "2024-06",
+        "UPI",
+        46,
+        89.13
+      ],
+      [
+        "2024-06",
+        "Wallet",
+        6,
+        83.33
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-05",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find merchants whose successful monthly volume increased in each of three consecutive months.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH m AS (SELECT merchant_id, DATE_FORMAT(pay_date, '%Y-%m') AS ym, SUM(amount) AS vol FROM payments WHERE status = 'SUCCESS' GROUP BY merchant_id, DATE_FORMAT(pay_date, '%Y-%m')), l AS (SELECT merchant_id, ym, vol, LAG(vol, 1) OVER (PARTITION BY merchant_id ORDER BY ym) AS p1, LAG(vol, 2) OVER (PARTITION BY merchant_id ORDER BY ym) AS p2 FROM m) SELECT DISTINCT merchant_id FROM l WHERE vol > p1 AND p1 > p2",
+    "executed_ok": true,
+    "columns": [
+      "merchant_id"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        2
+      ],
+      [
+        4
+      ],
+      [
+        5
+      ],
+      [
+        8
+      ],
+      [
+        11
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-06",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every user show the date, merchant category and amount of their first successful payment.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT user_id, pay_date, category, amount FROM (SELECT p.user_id, p.pay_date, m.category, p.amount, ROW_NUMBER() OVER (PARTITION BY p.user_id ORDER BY p.pay_date, p.payment_id) AS rn FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id WHERE p.status = 'SUCCESS') t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "pay_date",
+      "category",
+      "amount"
+    ],
+    "row_count": 40,
+    "expected_rows": [
+      [
+        1,
+        "2024-01-02",
+        "Food",
+        4916.36
+      ],
+      [
+        2,
+        "2024-02-09",
+        "Electronics",
+        9380.44
+      ],
+      [
+        3,
+        "2024-02-06",
+        "Grocery",
+        12714.27
+      ],
+      [
+        4,
+        "2024-02-29",
+        "Grocery",
+        1734.41
+      ],
+      [
+        5,
+        "2024-01-15",
+        "Grocery",
+        1918.2
+      ],
+      [
+        6,
+        "2024-02-08",
+        "Grocery",
+        124.21
+      ],
+      [
+        7,
+        "2024-01-10",
+        "Food",
+        5555.62
+      ],
+      [
+        8,
+        "2024-02-12",
+        "Food",
+        2976.57
+      ],
+      [
+        9,
+        "2024-01-25",
+        "Food",
+        3422.33
+      ],
+      [
+        10,
+        "2024-02-05",
+        "Food",
+        10432.15
+      ],
+      [
+        11,
+        "2024-01-08",
+        "Fuel",
+        7473.38
+      ],
+      [
+        12,
+        "2024-01-08",
+        "Electronics",
+        9748.12
+      ],
+      [
+        13,
+        "2024-01-02",
+        "Food",
+        7335.72
+      ],
+      [
+        14,
+        "2024-01-01",
+        "Food",
+        6526.1
+      ],
+      [
+        15,
+        "2024-01-06",
+        "Travel",
+        13970.07
+      ],
+      [
+        16,
+        "2024-02-09",
+        "Fuel",
+        10277.01
+      ],
+      [
+        17,
+        "2024-01-17",
+        "Food",
+        11733.67
+      ],
+      [
+        18,
+        "2024-01-05",
+        "Electronics",
+        12281.63
+      ],
+      [
+        19,
+        "2024-02-02",
+        "Food",
+        13102.13
+      ],
+      [
+        20,
+        "2024-02-28",
+        "Fuel",
+        14995.6
+      ],
+      [
+        21,
+        "2024-01-10",
+        "Fuel",
+        6512
+      ],
+      [
+        22,
+        "2024-01-14",
+        "Grocery",
+        14555.47
+      ],
+      [
+        23,
+        "2024-01-07",
+        "Food",
+        2076.94
+      ],
+      [
+        24,
+        "2024-02-10",
+        "Electronics",
+        1520.07
+      ],
+      [
+        25,
+        "2024-01-01",
+        "Grocery",
+        8449.42
+      ],
+      [
+        26,
+        "2024-01-15",
+        "Grocery",
+        14530.83
+      ],
+      [
+        27,
+        "2024-01-02",
+        "Travel",
+        4036.81
+      ],
+      [
+        28,
+        "2024-01-17",
+        "Travel",
+        14298.4
+      ],
+      [
+        29,
+        "2024-01-07",
+        "Grocery",
+        13072.63
+      ],
+      [
+        30,
+        "2024-01-10",
+        "Grocery",
+        14488.96
+      ],
+      [
+        31,
+        "2024-01-05",
+        "Fuel",
+        14270.61
+      ],
+      [
+        32,
+        "2024-01-02",
+        "Electronics",
+        4801.73
+      ],
+      [
+        33,
+        "2024-01-20",
+        "Fuel",
+        3569.94
+      ],
+      [
+        34,
+        "2024-02-08",
+        "Electronics",
+        11134.66
+      ],
+      [
+        35,
+        "2024-01-14",
+        "Fuel",
+        9912.83
+      ],
+      [
+        36,
+        "2024-02-21",
+        "Food",
+        11966.17
+      ],
+      [
+        37,
+        "2024-01-12",
+        "Food",
+        14864.26
+      ],
+      [
+        38,
+        "2024-01-07",
+        "Electronics",
+        1611.36
+      ],
+      [
+        39,
+        "2024-03-07",
+        "Electronics",
+        11941.92
+      ],
+      [
+        40,
+        "2024-03-04",
+        "Grocery",
+        2513.55
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-07",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "List users who had at least 3 failed payments.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT user_id, COUNT(*) AS failures FROM payments WHERE status = 'FAILED' GROUP BY user_id HAVING COUNT(*) >= 3",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "failures"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        5,
+        3
+      ],
+      [
+        22,
+        3
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-08",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Repeat Behaviour",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For each merchant compute the percentage of its paying users who paid it more than once (successful payments).",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH u AS (SELECT merchant_id, user_id, COUNT(*) AS n FROM payments WHERE status = 'SUCCESS' GROUP BY merchant_id, user_id) SELECT merchant_id, COUNT(*) AS payers, ROUND(SUM(CASE WHEN n > 1 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS repeat_payer_pct FROM u GROUP BY merchant_id",
+    "executed_ok": true,
+    "columns": [
+      "merchant_id",
+      "payers",
+      "repeat_payer_pct"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        1,
+        19,
+        42.11
+      ],
+      [
+        2,
+        22,
+        36.36
+      ],
+      [
+        3,
+        26,
+        57.69
+      ],
+      [
+        4,
+        26,
+        34.62
+      ],
+      [
+        5,
+        25,
+        52
+      ],
+      [
+        6,
+        24,
+        50
+      ],
+      [
+        7,
+        21,
+        38.1
+      ],
+      [
+        8,
+        26,
+        26.92
+      ],
+      [
+        9,
+        27,
+        37.04
+      ],
+      [
+        10,
+        27,
+        40.74
+      ],
+      [
+        11,
+        23,
+        43.48
+      ],
+      [
+        12,
+        23,
+        52.17
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-09",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the average successful ticket size (payment amount) for each payment method.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT method, ROUND(AVG(amount), 2) AS avg_ticket FROM payments WHERE status = 'SUCCESS' GROUP BY method",
+    "executed_ok": true,
+    "columns": [
+      "method",
+      "avg_ticket"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "Card",
+        6751.12
+      ],
+      [
+        "NetBanking",
+        8359.02
+      ],
+      [
+        "UPI",
+        7543.27
+      ],
+      [
+        "Wallet",
+        6651.59
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-10",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show daily successful GMV for June 2024 with a cumulative month-to-date total.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH d AS (SELECT pay_date, SUM(amount) AS gmv FROM payments WHERE status = 'SUCCESS' AND pay_date BETWEEN '2024-06-01' AND '2024-06-30' GROUP BY pay_date) SELECT pay_date, gmv, SUM(gmv) OVER (ORDER BY pay_date) AS mtd_gmv FROM d ORDER BY pay_date",
+    "executed_ok": true,
+    "columns": [
+      "pay_date",
+      "gmv",
+      "mtd_gmv"
+    ],
+    "row_count": 26,
+    "expected_rows": [
+      [
+        "2024-06-01",
+        14389.95,
+        14389.95
+      ],
+      [
+        "2024-06-02",
+        40311.09,
+        54701.03999999999
+      ],
+      [
+        "2024-06-03",
+        3470.64,
+        58171.68
+      ],
+      [
+        "2024-06-04",
+        25315.3,
+        83486.98
+      ],
+      [
+        "2024-06-06",
+        9169.06,
+        92656.04
+      ],
+      [
+        "2024-06-08",
+        486.74,
+        93142.78
+      ],
+      [
+        "2024-06-09",
+        9288.05,
+        102430.83
+      ],
+      [
+        "2024-06-10",
+        28721.579999999998,
+        131152.41
+      ],
+      [
+        "2024-06-11",
+        553.51,
+        131705.91999999998
+      ],
+      [
+        "2024-06-12",
+        17241.2,
+        148947.12
+      ],
+      [
+        "2024-06-13",
+        9897.33,
+        158844.44999999998
+      ],
+      [
+        "2024-06-14",
+        17298.59,
+        176143.04
+      ],
+      [
+        "2024-06-15",
+        13175.76,
+        189318.8
+      ],
+      [
+        "2024-06-16",
+        26273.49,
+        215592.29
+      ],
+      [
+        "2024-06-17",
+        6383.8,
+        221976.09
+      ],
+      [
+        "2024-06-18",
+        8513.4,
+        230489.49
+      ],
+      [
+        "2024-06-19",
+        4193.86,
+        234683.35
+      ],
+      [
+        "2024-06-20",
+        27605.75,
+        262289.1
+      ],
+      [
+        "2024-06-21",
+        23556.05,
+        285845.15
+      ],
+      [
+        "2024-06-23",
+        51592.94,
+        337438.09
+      ],
+      [
+        "2024-06-24",
+        16542.56,
+        353980.65
+      ],
+      [
+        "2024-06-26",
+        12100.01,
+        366080.66
+      ],
+      [
+        "2024-06-27",
+        7126.63,
+        373207.29
+      ],
+      [
+        "2024-06-28",
+        11583.81,
+        384791.1
+      ],
+      [
+        "2024-06-29",
+        17337.440000000002,
+        402128.54
+      ],
+      [
+        "2024-06-30",
+        12958.88,
+        415087.42
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-11",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "List merchants whose refund rate (REFUNDED payments divided by all payments) is above 5 percent.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT merchant_id, COUNT(*) AS payments, ROUND(SUM(CASE WHEN status = 'REFUNDED' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS refund_rate_pct FROM payments GROUP BY merchant_id HAVING SUM(CASE WHEN status = 'REFUNDED' THEN 1 ELSE 0 END) * 100.0 / COUNT(*) > 5",
+    "executed_ok": true,
+    "columns": [
+      "merchant_id",
+      "payments",
+      "refund_rate_pct"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        2,
+        39,
+        10.26
+      ],
+      [
+        8,
+        41,
+        7.32
+      ],
+      [
+        9,
+        49,
+        8.16
+      ],
+      [
+        12,
+        51,
+        5.88
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-12",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For every month find the day with the highest successful GMV.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH d AS (SELECT pay_date, DATE_FORMAT(pay_date, '%Y-%m') AS ym, SUM(amount) AS gmv FROM payments WHERE status = 'SUCCESS' GROUP BY pay_date) SELECT ym, pay_date, gmv FROM (SELECT ym, pay_date, gmv, ROW_NUMBER() OVER (PARTITION BY ym ORDER BY gmv DESC) AS rn FROM d) t WHERE rn = 1 ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "pay_date",
+      "gmv"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "2024-01",
+        "2024-01-10",
+        47086.59
+      ],
+      [
+        "2024-02",
+        "2024-02-08",
+        56068.04
+      ],
+      [
+        "2024-03",
+        "2024-03-08",
+        59339.38
+      ],
+      [
+        "2024-04",
+        "2024-04-26",
+        55407.36
+      ],
+      [
+        "2024-05",
+        "2024-05-14",
+        47151.86
+      ],
+      [
+        "2024-06",
+        "2024-06-23",
+        51592.94
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-13",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the top spender (by successful amount) in every merchant category.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH s AS (SELECT m.category, p.user_id, SUM(p.amount) AS spend FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id WHERE p.status = 'SUCCESS' GROUP BY m.category, p.user_id) SELECT category, user_id, spend FROM (SELECT category, user_id, spend, ROW_NUMBER() OVER (PARTITION BY category ORDER BY spend DESC) AS rn FROM s) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "user_id",
+      "spend"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Electronics",
+        33,
+        36712.06
+      ],
+      [
+        "Food",
+        17,
+        59340.450000000004
+      ],
+      [
+        "Fuel",
+        2,
+        36308.8
+      ],
+      [
+        "Grocery",
+        39,
+        76029.92
+      ],
+      [
+        "Travel",
+        34,
+        40130.28
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-14",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Percent of Total",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Within each merchant category show the percentage mix of payment methods (by number of successful payments).",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH c AS (SELECT m.category, p.method, COUNT(*) AS n FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id WHERE p.status = 'SUCCESS' GROUP BY m.category, p.method) SELECT category, method, n, ROUND(n * 100.0 / SUM(n) OVER (PARTITION BY category), 2) AS mix_pct FROM c ORDER BY category, n DESC",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "method",
+      "n",
+      "mix_pct"
+    ],
+    "row_count": 20,
+    "expected_rows": [
+      [
+        "Electronics",
+        "UPI",
+        48,
+        63.16
+      ],
+      [
+        "Electronics",
+        "Card",
+        17,
+        22.37
+      ],
+      [
+        "Electronics",
+        "Wallet",
+        8,
+        10.53
+      ],
+      [
+        "Electronics",
+        "NetBanking",
+        3,
+        3.95
+      ],
+      [
+        "Food",
+        "UPI",
+        73,
+        62.39
+      ],
+      [
+        "Food",
+        "Card",
+        19,
+        16.24
+      ],
+      [
+        "Food",
+        "Wallet",
+        17,
+        14.53
+      ],
+      [
+        "Food",
+        "NetBanking",
+        8,
+        6.84
+      ],
+      [
+        "Fuel",
+        "UPI",
+        36,
+        57.14
+      ],
+      [
+        "Fuel",
+        "Card",
+        12,
+        19.05
+      ],
+      [
+        "Fuel",
+        "NetBanking",
+        9,
+        14.29
+      ],
+      [
+        "Fuel",
+        "Wallet",
+        6,
+        9.52
+      ],
+      [
+        "Grocery",
+        "UPI",
+        70,
+        67.96
+      ],
+      [
+        "Grocery",
+        "Card",
+        14,
+        13.59
+      ],
+      [
+        "Grocery",
+        "Wallet",
+        12,
+        11.65
+      ],
+      [
+        "Grocery",
+        "NetBanking",
+        7,
+        6.8
+      ],
+      [
+        "Travel",
+        "UPI",
+        37,
+        46.25
+      ],
+      [
+        "Travel",
+        "Card",
+        22,
+        27.5
+      ],
+      [
+        "Travel",
+        "Wallet",
+        14,
+        17.5
+      ],
+      [
+        "Travel",
+        "NetBanking",
+        7,
+        8.75
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-15",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find users who have paid using all four payment methods (UPI, Card, Wallet, NetBanking).",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT user_id FROM payments WHERE status = 'SUCCESS' GROUP BY user_id HAVING COUNT(DISTINCT method) = 4",
+    "executed_ok": true,
+    "columns": [
+      "user_id"
+    ],
+    "row_count": 17,
+    "expected_rows": [
+      [
+        5
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        11
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ],
+      [
+        23
+      ],
+      [
+        25
+      ],
+      [
+        26
+      ],
+      [
+        33
+      ],
+      [
+        37
+      ],
+      [
+        38
+      ],
+      [
+        39
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-16",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Self Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find retry successes: a FAILED payment followed by a SUCCESS payment by the same user to the same merchant within one day.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT f.payment_id AS failed_payment, s.payment_id AS success_payment, f.user_id, f.merchant_id FROM payments f JOIN payments s ON f.user_id = s.user_id AND f.merchant_id = s.merchant_id AND s.status = 'SUCCESS' AND DATEDIFF(s.pay_date, f.pay_date) BETWEEN 0 AND 1 AND s.payment_id <> f.payment_id WHERE f.status = 'FAILED'",
+    "executed_ok": true,
+    "columns": [
+      "failed_payment",
+      "success_payment",
+      "user_id",
+      "merchant_id"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        309,
+        406,
+        39,
+        11
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PHP-17",
+    "company": "PHP",
+    "company_name": "PhonePe",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Cohorts",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Per month, count active payers (distinct users with a successful payment) and how many of them are new, i.e. their first successful payment is in that month.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH f AS (SELECT user_id, MIN(DATE_FORMAT(pay_date, '%Y-%m')) AS first_ym FROM payments WHERE status = 'SUCCESS' GROUP BY user_id) SELECT DATE_FORMAT(p.pay_date, '%Y-%m') AS ym, COUNT(DISTINCT p.user_id) AS active_payers, COUNT(DISTINCT CASE WHEN f.first_ym = DATE_FORMAT(p.pay_date, '%Y-%m') THEN p.user_id END) AS new_payers FROM payments p JOIN f ON p.user_id = f.user_id WHERE p.status = 'SUCCESS' GROUP BY DATE_FORMAT(p.pay_date, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "active_payers",
+      "new_payers"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "2024-01",
+        26,
+        26
+      ],
+      [
+        "2024-02",
+        35,
+        12
+      ],
+      [
+        "2024-03",
+        34,
+        2
+      ],
+      [
+        "2024-04",
+        35,
+        0
+      ],
+      [
+        "2024-05",
+        36,
+        0
+      ],
+      [
+        "2024-06",
+        32,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-01",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Transactions",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Why must a money transfer be executed inside one transaction?",
+    "model_answer": "A transfer has two writes (debit one account, credit another). Without atomicity a crash between them loses or creates money. A transaction guarantees both succeed or neither does (Atomicity) and prevents interleaved reads from seeing a half-done transfer (Isolation).",
+    "isPro": true
+  },
+  {
+    "id": "PTM-02",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Indexing",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "What is a covering index?",
+    "model_answer": "An index that contains every column a query needs, so the engine answers from the index alone without touching the table rows. Example: INDEX (account_id, txn_date) INCLUDE (amount) for a query that filters by account and date and returns amount.",
+    "isPro": true
+  },
+  {
+    "id": "PTM-03",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show each customer's total balance across all their accounts and list the top 3 customers.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT c.cust_name, SUM(a.balance) AS total_balance FROM bank_customers c JOIN accounts a ON c.cust_id = a.cust_id GROUP BY c.cust_id, c.cust_name ORDER BY total_balance DESC LIMIT 3",
+    "executed_ok": true,
+    "columns": [
+      "cust_name",
+      "total_balance"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Pallavi Pandey",
+        1870933.52
+      ],
+      [
+        "Shreya Reddy",
+        1465975.99
+      ],
+      [
+        "Kiara Singh",
+        1448695.38
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-04",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find customers whose total balance is above the average total balance per customer.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "WITH t AS (SELECT cust_id, SUM(balance) AS total FROM accounts GROUP BY cust_id) SELECT c.cust_name, t.total FROM t JOIN bank_customers c ON t.cust_id = c.cust_id WHERE t.total > (SELECT AVG(total) FROM t)",
+    "executed_ok": true,
+    "columns": [
+      "cust_name",
+      "total"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Kiara Singh",
+        1448695.38
+      ],
+      [
+        "Atharv Banerjee",
+        1178028.96
+      ],
+      [
+        "Navya Verma",
+        834215.01
+      ],
+      [
+        "Aditi Khan",
+        1368809.0899999999
+      ],
+      [
+        "Shreya Reddy",
+        1465975.99
+      ],
+      [
+        "Pallavi Pandey",
+        1870933.52
+      ],
+      [
+        "Manish Patel",
+        1181247.9500000002
+      ],
+      [
+        "Ritu Kulkarni",
+        973165.84
+      ],
+      [
+        "Zoya Gupta",
+        914080.2000000001
+      ],
+      [
+        "Komal Banerjee",
+        1052472.75
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-05",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "For every channel show the percentage of transactions that failed.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT channel, COUNT(*) AS txns, ROUND(SUM(CASE WHEN status = 'FAILED' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS failed_pct FROM transactions GROUP BY channel",
+    "executed_ok": true,
+    "columns": [
+      "channel",
+      "txns",
+      "failed_pct"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "ATM",
+        128,
+        7.81
+      ],
+      [
+        "IMPS",
+        105,
+        9.52
+      ],
+      [
+        "NEFT",
+        119,
+        9.24
+      ],
+      [
+        "POS",
+        110,
+        9.09
+      ],
+      [
+        "UPI",
+        138,
+        5.07
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-06",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anomaly Detection",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Flag successful transactions whose amount is more than 3 times the average successful amount of the same account.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT t.txn_id, t.account_id, t.amount FROM transactions t WHERE t.status = 'SUCCESS' AND t.amount > 3 * (SELECT AVG(amount) FROM transactions WHERE account_id = t.account_id AND status = 'SUCCESS')",
+    "executed_ok": true,
+    "columns": [
+      "txn_id",
+      "account_id",
+      "amount"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        394,
+        24,
+        47326.75
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-07",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Moving Average",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show daily successful debit volume with a 3-day moving average (current and previous 2 days that have data).",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "WITH d AS (SELECT txn_date, SUM(amount) AS vol FROM transactions WHERE status = 'SUCCESS' AND txn_type = 'DEBIT' GROUP BY txn_date) SELECT txn_date, vol, ROUND(AVG(vol) OVER (ORDER BY txn_date ROWS BETWEEN 2 PRECEDING AND CURRENT ROW), 2) AS ma3 FROM d ORDER BY txn_date",
+    "executed_ok": true,
+    "columns": [
+      "txn_date",
+      "vol",
+      "ma3"
+    ],
+    "row_count": 140,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        929.85,
+        929.85
+      ],
+      [
+        "2024-01-02",
+        142361.7,
+        71645.78
+      ],
+      [
+        "2024-01-03",
+        74422.98,
+        72571.51
+      ],
+      [
+        "2024-01-06",
+        13565.42,
+        76783.37
+      ],
+      [
+        "2024-01-07",
+        65941.29000000001,
+        51309.9
+      ],
+      [
+        "2024-01-08",
+        31713.71,
+        37073.47
+      ],
+      [
+        "2024-01-09",
+        1439.24,
+        33031.41
+      ],
+      [
+        "2024-01-10",
+        20044.05,
+        17732.33
+      ],
+      [
+        "2024-01-12",
+        21119.74,
+        14201.01
+      ],
+      [
+        "2024-01-14",
+        60292.19,
+        33818.66
+      ],
+      [
+        "2024-01-16",
+        39499,
+        40303.64
+      ],
+      [
+        "2024-01-18",
+        10529.52,
+        36773.57
+      ],
+      [
+        "2024-01-20",
+        106059.14,
+        52029.22
+      ],
+      [
+        "2024-01-21",
+        4376.78,
+        40321.81
+      ],
+      [
+        "2024-01-22",
+        25346.53,
+        45260.82
+      ],
+      [
+        "2024-01-23",
+        61592.6,
+        30438.64
+      ],
+      [
+        "2024-01-24",
+        73442.04000000001,
+        53460.39
+      ],
+      [
+        "2024-01-25",
+        35052.73,
+        56695.79
+      ],
+      [
+        "2024-01-26",
+        24653.1,
+        44382.62
+      ],
+      [
+        "2024-01-27",
+        50260.87,
+        36655.57
+      ],
+      [
+        "2024-01-31",
+        39820.22,
+        38244.73
+      ],
+      [
+        "2024-02-01",
+        4769.54,
+        31616.88
+      ],
+      [
+        "2024-02-02",
+        59411,
+        34666.92
+      ],
+      [
+        "2024-02-03",
+        23964.73,
+        29381.76
+      ],
+      [
+        "2024-02-05",
+        45715.58,
+        43030.44
+      ],
+      [
+        "2024-02-06",
+        40753.74,
+        36811.35
+      ],
+      [
+        "2024-02-07",
+        43808.950000000004,
+        43426.09
+      ],
+      [
+        "2024-02-08",
+        11456.17,
+        32006.29
+      ],
+      [
+        "2024-02-09",
+        22846.05,
+        26037.06
+      ],
+      [
+        "2024-02-11",
+        45142.16,
+        26481.46
+      ],
+      [
+        "2024-02-12",
+        85169.85,
+        51052.69
+      ],
+      [
+        "2024-02-13",
+        47935.829999999994,
+        59415.95
+      ],
+      [
+        "2024-02-15",
+        44074.75,
+        59060.14
+      ],
+      [
+        "2024-02-17",
+        42188.56,
+        44733.05
+      ],
+      [
+        "2024-02-18",
+        89163.43000000001,
+        58475.58
+      ],
+      [
+        "2024-02-19",
+        50411.32,
+        60587.77
+      ],
+      [
+        "2024-02-21",
+        22327.58,
+        53967.44
+      ],
+      [
+        "2024-02-22",
+        41175.07,
+        37971.32
+      ],
+      [
+        "2024-02-24",
+        46080.68,
+        36527.78
+      ],
+      [
+        "2024-02-25",
+        103295,
+        63516.92
+      ],
+      [
+        "2024-02-27",
+        111441.95,
+        86939.21
+      ],
+      [
+        "2024-02-29",
+        48368.1,
+        87701.68
+      ],
+      [
+        "2024-03-03",
+        67303.65,
+        75704.57
+      ],
+      [
+        "2024-03-05",
+        60277.71000000001,
+        58649.82
+      ],
+      [
+        "2024-03-06",
+        47015.95,
+        58199.1
+      ],
+      [
+        "2024-03-07",
+        184496.12,
+        97263.26
+      ],
+      [
+        "2024-03-09",
+        44468.12,
+        91993.4
+      ],
+      [
+        "2024-03-11",
+        22606.699999999997,
+        83856.98
+      ],
+      [
+        "2024-03-16",
+        40427.28,
+        35834.03
+      ],
+      [
+        "2024-03-17",
+        5027.34,
+        22687.11
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-08",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each account find the date and amount of its largest successful debit.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT account_id, txn_date, amount FROM (SELECT account_id, txn_date, amount, ROW_NUMBER() OVER (PARTITION BY account_id ORDER BY amount DESC, txn_id) AS rn FROM transactions WHERE status = 'SUCCESS' AND txn_type = 'DEBIT') t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "txn_date",
+      "amount"
+    ],
+    "row_count": 35,
+    "expected_rows": [
+      [
+        1,
+        "2024-04-26",
+        49149.23
+      ],
+      [
+        2,
+        "2024-02-27",
+        47893.01
+      ],
+      [
+        3,
+        "2024-05-22",
+        44826.25
+      ],
+      [
+        4,
+        "2024-03-30",
+        42452.7
+      ],
+      [
+        5,
+        "2024-06-10",
+        49768.43
+      ],
+      [
+        6,
+        "2024-03-06",
+        47015.95
+      ],
+      [
+        7,
+        "2024-01-02",
+        44520.79
+      ],
+      [
+        8,
+        "2024-05-27",
+        47983.31
+      ],
+      [
+        9,
+        "2024-01-27",
+        43083.3
+      ],
+      [
+        10,
+        "2024-01-07",
+        23899.96
+      ],
+      [
+        11,
+        "2024-02-19",
+        47859.13
+      ],
+      [
+        12,
+        "2024-01-20",
+        41986.51
+      ],
+      [
+        13,
+        "2024-04-22",
+        38484.04
+      ],
+      [
+        14,
+        "2024-02-18",
+        34852.66
+      ],
+      [
+        15,
+        "2024-02-29",
+        48368.1
+      ],
+      [
+        16,
+        "2024-03-18",
+        49349.04
+      ],
+      [
+        17,
+        "2024-06-23",
+        49962.17
+      ],
+      [
+        18,
+        "2024-04-03",
+        47155.64
+      ],
+      [
+        19,
+        "2024-06-30",
+        38122.04
+      ],
+      [
+        20,
+        "2024-01-03",
+        40539.03
+      ],
+      [
+        21,
+        "2024-03-07",
+        47084.72
+      ],
+      [
+        22,
+        "2024-03-18",
+        49483.27
+      ],
+      [
+        23,
+        "2024-04-13",
+        41110.88
+      ],
+      [
+        24,
+        "2024-01-22",
+        25346.53
+      ],
+      [
+        25,
+        "2024-04-18",
+        48348.65
+      ],
+      [
+        26,
+        "2024-05-30",
+        47268.8
+      ],
+      [
+        27,
+        "2024-04-18",
+        38165.79
+      ],
+      [
+        28,
+        "2024-02-02",
+        48870.05
+      ],
+      [
+        29,
+        "2024-01-20",
+        33873.44
+      ],
+      [
+        30,
+        "2024-02-13",
+        47757.06
+      ],
+      [
+        31,
+        "2024-06-18",
+        48819.84
+      ],
+      [
+        32,
+        "2024-01-25",
+        35052.73
+      ],
+      [
+        33,
+        "2024-06-15",
+        29710.28
+      ],
+      [
+        34,
+        "2024-06-23",
+        47192.64
+      ],
+      [
+        35,
+        "2024-02-18",
+        48994.49
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-09",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List customers with Pending KYC who have made successful transactions above 20000.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT DISTINCT c.cust_name FROM bank_customers c JOIN accounts a ON c.cust_id = a.cust_id JOIN transactions t ON a.account_id = t.account_id WHERE c.kyc_status = 'Pending' AND t.status = 'SUCCESS' AND t.amount > 20000",
+    "executed_ok": true,
+    "columns": [
+      "cust_name"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Jatin Singh"
+      ],
+      [
+        "Nikhil Rao"
+      ],
+      [
+        "Atharv Banerjee"
+      ],
+      [
+        "Navya Verma"
+      ],
+      [
+        "Tara Mukherjee"
+      ],
+      [
+        "Komal Banerjee"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-10",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find accounts that have fewer than 10 transactions in the data.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT a.account_id, COUNT(t.txn_id) AS txns FROM accounts a LEFT JOIN transactions t ON a.account_id = t.account_id GROUP BY a.account_id HAVING COUNT(t.txn_id) < 10",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "txns"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        15,
+        8
+      ],
+      [
+        18,
+        9
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-11",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show monthly net flow (successful credits minus debits) across the bank.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(txn_date, '%Y-%m') AS ym, SUM(CASE WHEN txn_type = 'CREDIT' THEN amount ELSE -amount END) AS net_flow FROM transactions WHERE status = 'SUCCESS' GROUP BY DATE_FORMAT(txn_date, '%Y-%m') ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "net_flow"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "2024-01",
+        51698.22999999998
+      ],
+      [
+        "2024-02",
+        -70443.04000000001
+      ],
+      [
+        "2024-03",
+        -31386.040000000008
+      ],
+      [
+        "2024-04",
+        238346.75000000003
+      ],
+      [
+        "2024-05",
+        103560.89000000001
+      ],
+      [
+        "2024-06",
+        -194564.69
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-12",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Pivot",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show the number of transactions per channel as separate columns (upi, neft, imps, atm, pos) in a single row.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT SUM(CASE WHEN channel = 'UPI' THEN 1 ELSE 0 END) AS upi, SUM(CASE WHEN channel = 'NEFT' THEN 1 ELSE 0 END) AS neft, SUM(CASE WHEN channel = 'IMPS' THEN 1 ELSE 0 END) AS imps, SUM(CASE WHEN channel = 'ATM' THEN 1 ELSE 0 END) AS atm, SUM(CASE WHEN channel = 'POS' THEN 1 ELSE 0 END) AS pos FROM transactions",
+    "executed_ok": true,
+    "columns": [
+      "upi",
+      "neft",
+      "imps",
+      "atm",
+      "pos"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        138,
+        119,
+        105,
+        128,
+        110
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "PTM-13",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Credit 3.5 percent interest to the balance of every Savings account.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "UPDATE accounts SET balance = balance * 1.035 WHERE account_type = 'Savings'",
+    "executed_ok": true,
+    "isPro": true
+  },
+  {
+    "id": "PTM-14",
+    "company": "PTM",
+    "company_name": "Paytm",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List the latest successful transaction of each account (transaction id, date and amount).",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT t.account_id, t.txn_id, t.txn_date, t.amount FROM transactions t WHERE t.status = 'SUCCESS' AND t.txn_id = (SELECT t2.txn_id FROM transactions t2 WHERE t2.account_id = t.account_id AND t2.status = 'SUCCESS' ORDER BY t2.txn_date DESC, t2.txn_id DESC LIMIT 1)",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "txn_id",
+      "txn_date",
+      "amount"
+    ],
+    "row_count": 35,
+    "expected_rows": [
+      [
+        21,
+        1,
+        "2024-06-30",
+        7175.61
+      ],
+      [
+        23,
+        7,
+        "2024-06-30",
+        22942.21
+      ],
+      [
+        7,
+        56,
+        "2024-06-29",
+        46338.94
+      ],
+      [
+        11,
+        58,
+        "2024-06-10",
+        43556.39
+      ],
+      [
+        19,
+        59,
+        "2024-06-30",
+        38122.04
+      ],
+      [
+        34,
+        65,
+        "2024-06-23",
+        47192.64
+      ],
+      [
+        3,
+        95,
+        "2024-06-20",
+        36822.05
+      ],
+      [
+        28,
+        132,
+        "2024-06-13",
+        42707.6
+      ],
+      [
+        2,
+        163,
+        "2024-06-22",
+        19008.25
+      ],
+      [
+        16,
+        238,
+        "2024-06-24",
+        30442.35
+      ],
+      [
+        17,
+        259,
+        "2024-06-26",
+        25082.28
+      ],
+      [
+        35,
+        285,
+        "2024-06-11",
+        4613.04
+      ],
+      [
+        32,
+        293,
+        "2024-06-23",
+        7456.53
+      ],
+      [
+        13,
+        300,
+        "2024-06-28",
+        4956.25
+      ],
+      [
+        4,
+        301,
+        "2024-06-30",
+        22930.87
+      ],
+      [
+        29,
+        302,
+        "2024-06-27",
+        14624.97
+      ],
+      [
+        14,
+        317,
+        "2024-06-16",
+        4482.26
+      ],
+      [
+        27,
+        338,
+        "2024-06-29",
+        9236.92
+      ],
+      [
+        33,
+        344,
+        "2024-06-24",
+        20333.03
+      ],
+      [
+        22,
+        349,
+        "2024-06-22",
+        41603.15
+      ],
+      [
+        26,
+        403,
+        "2024-06-24",
+        3565.76
+      ],
+      [
+        30,
+        404,
+        "2024-06-14",
+        5101.67
+      ],
+      [
+        1,
+        406,
+        "2024-06-13",
+        6695.73
+      ],
+      [
+        18,
+        410,
+        "2024-06-09",
+        1158.27
+      ],
+      [
+        25,
+        413,
+        "2024-06-24",
+        24641.85
+      ],
+      [
+        12,
+        416,
+        "2024-06-22",
+        7595.98
+      ],
+      [
+        15,
+        437,
+        "2024-04-18",
+        13664.2
+      ],
+      [
+        5,
+        439,
+        "2024-06-26",
+        23923.07
+      ],
+      [
+        6,
+        444,
+        "2024-05-25",
+        28230.59
+      ],
+      [
+        9,
+        447,
+        "2024-06-28",
+        16632.78
+      ],
+      [
+        24,
+        452,
+        "2024-06-08",
+        2096.64
+      ],
+      [
+        8,
+        481,
+        "2024-06-28",
+        32480.69
+      ],
+      [
+        10,
+        503,
+        "2024-06-09",
+        31955.49
+      ],
+      [
+        31,
+        541,
+        "2024-06-18",
+        48819.84
+      ],
+      [
+        20,
+        562,
+        "2024-06-25",
+        8594.61
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-01",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Idempotency",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "Which constraint prevents a webhook from creating the same payment twice?",
+    "model_answer": "A UNIQUE constraint (or primary key) on the gateway payment reference. The insert then fails or is ignored on a duplicate, so retries and duplicate webhook deliveries are harmless.",
+    "isPro": true
+  },
+  {
+    "id": "RZP-02",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Reporting",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "Why avoid SELECT * in reporting queries?",
+    "model_answer": "It fetches unneeded columns (more I/O and network), defeats covering indexes, breaks when the schema changes and can expose sensitive columns. Name the required columns explicitly.",
+    "isPro": true
+  },
+  {
+    "id": "RZP-03",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Settlement",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Compute each merchant's net settlement: successful amount minus refunded amount.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT m.merchant_name, SUM(CASE WHEN p.status = 'SUCCESS' THEN p.amount ELSE 0 END) - SUM(CASE WHEN p.status = 'REFUNDED' THEN p.amount ELSE 0 END) AS net_settlement FROM merchants m LEFT JOIN payments p ON m.merchant_id = p.merchant_id GROUP BY m.merchant_id, m.merchant_name ORDER BY net_settlement DESC",
+    "executed_ok": true,
+    "columns": [
+      "merchant_name",
+      "net_settlement"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        "RailBook",
+        342198.77
+      ],
+      [
+        "Daily Needs",
+        299258.26999999996
+      ],
+      [
+        "GadgetGali",
+        293329.67000000004
+      ],
+      [
+        "FreshMart",
+        284443.29000000004
+      ],
+      [
+        "Chai Point Cafe",
+        274536.27999999997
+      ],
+      [
+        "TravelEasy",
+        264758.14
+      ],
+      [
+        "Pizza Planet",
+        253060.69999999998
+      ],
+      [
+        "Pump & Go",
+        251303.15
+      ],
+      [
+        "Tasty Bites",
+        233997.36
+      ],
+      [
+        "Kirana King",
+        214057.15
+      ],
+      [
+        "ElectroHub",
+        205454.84
+      ],
+      [
+        "FuelUp Station",
+        181790.05
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-04",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Two-way Breakdown",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show the success rate for each combination of merchant category and payment method.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT m.category, p.method, COUNT(*) AS attempts, ROUND(SUM(CASE WHEN p.status = 'SUCCESS' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS success_pct FROM payments p JOIN merchants m ON p.merchant_id = m.merchant_id GROUP BY m.category, p.method ORDER BY m.category, p.method",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "method",
+      "attempts",
+      "success_pct"
+    ],
+    "row_count": 20,
+    "expected_rows": [
+      [
+        "Electronics",
+        "Card",
+        17,
+        100
+      ],
+      [
+        "Electronics",
+        "NetBanking",
+        5,
+        60
+      ],
+      [
+        "Electronics",
+        "UPI",
+        55,
+        87.27
+      ],
+      [
+        "Electronics",
+        "Wallet",
+        10,
+        80
+      ],
+      [
+        "Food",
+        "Card",
+        22,
+        86.36
+      ],
+      [
+        "Food",
+        "NetBanking",
+        10,
+        80
+      ],
+      [
+        "Food",
+        "UPI",
+        84,
+        86.9
+      ],
+      [
+        "Food",
+        "Wallet",
+        21,
+        80.95
+      ],
+      [
+        "Fuel",
+        "Card",
+        15,
+        80
+      ],
+      [
+        "Fuel",
+        "NetBanking",
+        11,
+        81.82
+      ],
+      [
+        "Fuel",
+        "UPI",
+        39,
+        92.31
+      ],
+      [
+        "Fuel",
+        "Wallet",
+        6,
+        100
+      ],
+      [
+        "Grocery",
+        "Card",
+        19,
+        73.68
+      ],
+      [
+        "Grocery",
+        "NetBanking",
+        8,
+        87.5
+      ],
+      [
+        "Grocery",
+        "UPI",
+        75,
+        93.33
+      ],
+      [
+        "Grocery",
+        "Wallet",
+        14,
+        85.71
+      ],
+      [
+        "Travel",
+        "Card",
+        25,
+        88
+      ],
+      [
+        "Travel",
+        "NetBanking",
+        7,
+        100
+      ],
+      [
+        "Travel",
+        "UPI",
+        42,
+        88.1
+      ],
+      [
+        "Travel",
+        "Wallet",
+        15,
+        93.33
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-05",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "NTILE",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "List merchants in the top 25 percent by successful volume.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH v AS (SELECT merchant_id, SUM(amount) AS vol FROM payments WHERE status = 'SUCCESS' GROUP BY merchant_id), q AS (SELECT merchant_id, vol, NTILE(4) OVER (ORDER BY vol DESC) AS quartile FROM v) SELECT m.merchant_name, q.vol FROM q JOIN merchants m ON q.merchant_id = m.merchant_id WHERE q.quartile = 1",
+    "executed_ok": true,
+    "columns": [
+      "merchant_name",
+      "vol"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "RailBook",
+        356788.94
+      ],
+      [
+        "Daily Needs",
+        303278.73
+      ],
+      [
+        "Chai Point Cafe",
+        296890.98
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-06",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Moving Window",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show daily successful GMV with a trailing 7-day total (current day and the previous 6 days that have data).",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH d AS (SELECT pay_date, SUM(amount) AS gmv FROM payments WHERE status = 'SUCCESS' GROUP BY pay_date) SELECT pay_date, gmv, SUM(gmv) OVER (ORDER BY pay_date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS trailing_7_total FROM d ORDER BY pay_date",
+    "executed_ok": true,
+    "columns": [
+      "pay_date",
+      "gmv",
+      "trailing_7_total"
+    ],
+    "row_count": 164,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        14975.52,
+        14975.52
+      ],
+      [
+        "2024-01-02",
+        21090.62,
+        36066.14
+      ],
+      [
+        "2024-01-05",
+        26552.239999999998,
+        62618.38
+      ],
+      [
+        "2024-01-06",
+        25486.7,
+        88105.08
+      ],
+      [
+        "2024-01-07",
+        16760.93,
+        104866.01
+      ],
+      [
+        "2024-01-08",
+        22348.850000000002,
+        127214.86
+      ],
+      [
+        "2024-01-09",
+        4069.07,
+        131283.93
+      ],
+      [
+        "2024-01-10",
+        47086.59,
+        163395
+      ],
+      [
+        "2024-01-11",
+        9032.9,
+        151337.28
+      ],
+      [
+        "2024-01-12",
+        28697.11,
+        153482.15
+      ],
+      [
+        "2024-01-13",
+        14386.67,
+        142382.12
+      ],
+      [
+        "2024-01-14",
+        30287.43,
+        155908.62
+      ],
+      [
+        "2024-01-15",
+        16449.03,
+        150008.8
+      ],
+      [
+        "2024-01-16",
+        2106.54,
+        148046.27
+      ],
+      [
+        "2024-01-17",
+        44061.21,
+        145020.88999999998
+      ],
+      [
+        "2024-01-18",
+        4925.37,
+        140913.36
+      ],
+      [
+        "2024-01-19",
+        20351.71,
+        132567.96
+      ],
+      [
+        "2024-01-20",
+        7232.139999999999,
+        125413.43
+      ],
+      [
+        "2024-01-21",
+        16249.12,
+        111375.12
+      ],
+      [
+        "2024-01-22",
+        6587.39,
+        101513.48
+      ],
+      [
+        "2024-01-23",
+        21587.65,
+        120994.59
+      ],
+      [
+        "2024-01-25",
+        5202.08,
+        82135.46
+      ],
+      [
+        "2024-01-26",
+        24364.53,
+        101574.62
+      ],
+      [
+        "2024-01-27",
+        12678.24,
+        93901.15
+      ],
+      [
+        "2024-01-29",
+        10805.32,
+        97474.33
+      ],
+      [
+        "2024-01-30",
+        580.53,
+        81805.74
+      ],
+      [
+        "2024-01-31",
+        29362.22,
+        104580.57
+      ],
+      [
+        "2024-02-01",
+        13770.95,
+        96763.87
+      ],
+      [
+        "2024-02-02",
+        37315.76,
+        128877.55
+      ],
+      [
+        "2024-02-03",
+        1260.71,
+        105773.73000000001
+      ],
+      [
+        "2024-02-04",
+        12856.6,
+        105952.09000000001
+      ],
+      [
+        "2024-02-05",
+        10432.15,
+        105578.92
+      ],
+      [
+        "2024-02-06",
+        41057.65,
+        146056.04
+      ],
+      [
+        "2024-02-08",
+        56068.04,
+        172761.86000000002
+      ],
+      [
+        "2024-02-09",
+        22506.38,
+        181497.29
+      ],
+      [
+        "2024-02-10",
+        14113.14,
+        158294.67
+      ],
+      [
+        "2024-02-11",
+        7955.540000000001,
+        164989.5
+      ],
+      [
+        "2024-02-12",
+        38540.65,
+        190673.55000000002
+      ],
+      [
+        "2024-02-13",
+        14969.6,
+        195211
+      ],
+      [
+        "2024-02-14",
+        7610.42,
+        161763.77000000002
+      ],
+      [
+        "2024-02-15",
+        25326.199999999997,
+        131021.93
+      ],
+      [
+        "2024-02-16",
+        8037.51,
+        116553.06
+      ],
+      [
+        "2024-02-17",
+        19032.55,
+        121472.47
+      ],
+      [
+        "2024-02-18",
+        34077.28,
+        147594.21
+      ],
+      [
+        "2024-02-19",
+        8907.04,
+        117960.59999999999
+      ],
+      [
+        "2024-02-20",
+        21458.3,
+        124449.29999999999
+      ],
+      [
+        "2024-02-21",
+        22382.97,
+        139221.85
+      ],
+      [
+        "2024-02-22",
+        14200.42,
+        128096.07
+      ],
+      [
+        "2024-02-23",
+        5841.1,
+        125899.66
+      ],
+      [
+        "2024-02-24",
+        9164.89,
+        116032
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-07",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find users who made more than one successful payment above 5000.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT user_id, COUNT(*) AS big_payments FROM payments WHERE status = 'SUCCESS' AND amount > 5000 GROUP BY user_id HAVING COUNT(*) > 1",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "big_payments"
+    ],
+    "row_count": 40,
+    "expected_rows": [
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        7,
+        6
+      ],
+      [
+        8,
+        7
+      ],
+      [
+        9,
+        2
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        11,
+        9
+      ],
+      [
+        12,
+        8
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        14,
+        10
+      ],
+      [
+        15,
+        5
+      ],
+      [
+        16,
+        5
+      ],
+      [
+        17,
+        9
+      ],
+      [
+        18,
+        10
+      ],
+      [
+        19,
+        6
+      ],
+      [
+        20,
+        5
+      ],
+      [
+        21,
+        9
+      ],
+      [
+        22,
+        7
+      ],
+      [
+        23,
+        8
+      ],
+      [
+        24,
+        3
+      ],
+      [
+        25,
+        6
+      ],
+      [
+        26,
+        7
+      ],
+      [
+        27,
+        10
+      ],
+      [
+        28,
+        8
+      ],
+      [
+        29,
+        6
+      ],
+      [
+        30,
+        5
+      ],
+      [
+        31,
+        5
+      ],
+      [
+        32,
+        9
+      ],
+      [
+        33,
+        8
+      ],
+      [
+        34,
+        6
+      ],
+      [
+        35,
+        9
+      ],
+      [
+        36,
+        5
+      ],
+      [
+        37,
+        9
+      ],
+      [
+        38,
+        7
+      ],
+      [
+        39,
+        12
+      ],
+      [
+        40,
+        5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-08",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Failure Streaks",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [],
+    "question": "Find merchants that had two FAILED payments in a row (by payment_id order), a possible outage signal.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH x AS (SELECT merchant_id, payment_id, status, LAG(status, 1) OVER (PARTITION BY merchant_id ORDER BY payment_id) AS s1, LAG(status, 2) OVER (PARTITION BY merchant_id ORDER BY payment_id) AS s2 FROM payments) SELECT DISTINCT merchant_id FROM x WHERE status = 'FAILED' AND s1 = 'FAILED'",
+    "executed_ok": true,
+    "columns": [
+      "merchant_id"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        9
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-09",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Histogram",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Bucket successful payments into amount ranges (under 500, 500-4999, 5000 and above) and count each bucket.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT CASE WHEN amount < 500 THEN 'Under 500' WHEN amount < 5000 THEN '500-4999' ELSE '5000+' END AS bucket, COUNT(*) AS payments FROM payments WHERE status = 'SUCCESS' GROUP BY CASE WHEN amount < 500 THEN 'Under 500' WHEN amount < 5000 THEN '500-4999' ELSE '5000+' END",
+    "executed_ok": true,
+    "columns": [
+      "bucket",
+      "payments"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "500-4999",
+        150
+      ],
+      [
+        "5000+",
+        274
+      ],
+      [
+        "Under 500",
+        15
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-10",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each merchant show the payment method that has the most successful payments.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "WITH c AS (SELECT merchant_id, method, COUNT(*) AS n FROM payments WHERE status = 'SUCCESS' GROUP BY merchant_id, method) SELECT merchant_id, method, n FROM (SELECT merchant_id, method, n, ROW_NUMBER() OVER (PARTITION BY merchant_id ORDER BY n DESC, method) AS rn FROM c) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "merchant_id",
+      "method",
+      "n"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        1,
+        "UPI",
+        24
+      ],
+      [
+        2,
+        "UPI",
+        19
+      ],
+      [
+        3,
+        "UPI",
+        29
+      ],
+      [
+        4,
+        "UPI",
+        21
+      ],
+      [
+        5,
+        "UPI",
+        17
+      ],
+      [
+        6,
+        "UPI",
+        20
+      ],
+      [
+        7,
+        "UPI",
+        17
+      ],
+      [
+        8,
+        "UPI",
+        19
+      ],
+      [
+        9,
+        "UPI",
+        27
+      ],
+      [
+        10,
+        "UPI",
+        20
+      ],
+      [
+        11,
+        "UPI",
+        26
+      ],
+      [
+        12,
+        "UPI",
+        25
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-11",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Arithmetic",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "For every merchant compute the number of days between onboarding and the first successful payment.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "SELECT m.merchant_name, DATEDIFF(MIN(p.pay_date), m.onboarded_date) AS days_to_first_payment FROM merchants m JOIN payments p ON p.merchant_id = m.merchant_id AND p.status = 'SUCCESS' GROUP BY m.merchant_id, m.merchant_name, m.onboarded_date",
+    "executed_ok": true,
+    "columns": [
+      "merchant_name",
+      "days_to_first_payment"
+    ],
+    "row_count": 12,
+    "expected_rows": [
+      [
+        "Kirana King",
+        878
+      ],
+      [
+        "FuelUp Station",
+        80
+      ],
+      [
+        "GadgetGali",
+        121
+      ],
+      [
+        "Tasty Bites",
+        439
+      ],
+      [
+        "TravelEasy",
+        626
+      ],
+      [
+        "FreshMart",
+        617
+      ],
+      [
+        "Pump & Go",
+        884
+      ],
+      [
+        "ElectroHub",
+        743
+      ],
+      [
+        "Chai Point Cafe",
+        310
+      ],
+      [
+        "RailBook",
+        236
+      ],
+      [
+        "Daily Needs",
+        973
+      ],
+      [
+        "Pizza Planet",
+        969
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "RZP-12",
+    "company": "RZP",
+    "company_name": "Razorpay",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Constraints",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Add a unique constraint so the same user cannot pay the same merchant for the same amount on the same date twice.",
+    "schemas": [
+      "PAY"
+    ],
+    "solution_sql": "ALTER TABLE payments ADD CONSTRAINT uq_payment_dedupe UNIQUE (user_id, merchant_id, pay_date, amount)",
+    "executed_ok": false,
+    "isPro": true
+  },
+  {
+    "id": "GS-01",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Isolation",
+    "topic_group": "Transactions, ACID & Concurrency",
+    "also_tagged": [],
+    "question": "A trading system reads a balance then updates it. Which problem can occur at READ COMMITTED and how do you prevent it?",
+    "model_answer": "A lost update: two sessions read the same balance, both compute a new value and the last write wins. Prevent it with SELECT ... FOR UPDATE, an atomic UPDATE balance = balance - x, optimistic version checks, or SERIALIZABLE isolation.",
+    "isPro": true
+  },
+  {
+    "id": "GS-02",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Indexing",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "What is the difference between a clustered index and a heap table?",
+    "model_answer": "A clustered index stores the table rows physically ordered by the index key, so lookups by that key read the data directly. A heap has no ordering; non-clustered indexes point to row locations. Range scans on the clustered key are fast; inserts at random keys cause page splits.",
+    "isPro": true
+  },
+  {
+    "id": "GS-03",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "What does the default frame of a window function with ORDER BY mean and why is it risky?",
+    "model_answer": "It is RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW, so rows with equal ORDER BY values are treated as peers and all included. A running SUM over a date with several trades on that date therefore jumps by the whole group at once. Use ROWS BETWEEN ... for row-by-row behaviour.",
+    "isPro": true
+  },
+  {
+    "id": "GS-04",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Returns",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute the daily percentage return of every symbol: (close - previous close) / previous close x 100.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, price_date, close_price, ROUND((close_price - LAG(close_price) OVER (PARTITION BY symbol ORDER BY price_date)) * 100.0 / LAG(close_price) OVER (PARTITION BY symbol ORDER BY price_date), 2) AS daily_return_pct FROM stock_prices ORDER BY symbol, price_date",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "price_date",
+      "close_price",
+      "daily_return_pct"
+    ],
+    "row_count": 80,
+    "expected_rows": [
+      [
+        "ALFA",
+        "2024-03-01",
+        119.43,
+        null
+      ],
+      [
+        "ALFA",
+        "2024-03-04",
+        122.69,
+        2.73
+      ],
+      [
+        "ALFA",
+        "2024-03-05",
+        124.91,
+        1.81
+      ],
+      [
+        "ALFA",
+        "2024-03-06",
+        127.7,
+        2.23
+      ],
+      [
+        "ALFA",
+        "2024-03-07",
+        124.22,
+        -2.73
+      ],
+      [
+        "ALFA",
+        "2024-03-08",
+        126.23,
+        1.62
+      ],
+      [
+        "ALFA",
+        "2024-03-11",
+        129.43,
+        2.54
+      ],
+      [
+        "ALFA",
+        "2024-03-12",
+        126.6,
+        -2.19
+      ],
+      [
+        "ALFA",
+        "2024-03-13",
+        125.71,
+        -0.7
+      ],
+      [
+        "ALFA",
+        "2024-03-14",
+        125.38,
+        -0.26
+      ],
+      [
+        "ALFA",
+        "2024-03-15",
+        125.37,
+        -0.01
+      ],
+      [
+        "ALFA",
+        "2024-03-18",
+        125.23,
+        -0.11
+      ],
+      [
+        "ALFA",
+        "2024-03-19",
+        125.25,
+        0.02
+      ],
+      [
+        "ALFA",
+        "2024-03-20",
+        124.15,
+        -0.88
+      ],
+      [
+        "ALFA",
+        "2024-03-21",
+        121.5,
+        -2.13
+      ],
+      [
+        "ALFA",
+        "2024-03-22",
+        119.48,
+        -1.66
+      ],
+      [
+        "ALFA",
+        "2024-03-25",
+        121.43,
+        1.63
+      ],
+      [
+        "ALFA",
+        "2024-03-26",
+        119.32,
+        -1.74
+      ],
+      [
+        "ALFA",
+        "2024-03-27",
+        120.85,
+        1.28
+      ],
+      [
+        "ALFA",
+        "2024-03-28",
+        120.08,
+        -0.64
+      ],
+      [
+        "BRVO",
+        "2024-03-01",
+        643.61,
+        null
+      ],
+      [
+        "BRVO",
+        "2024-03-04",
+        657.44,
+        2.15
+      ],
+      [
+        "BRVO",
+        "2024-03-05",
+        665.24,
+        1.19
+      ],
+      [
+        "BRVO",
+        "2024-03-06",
+        662.27,
+        -0.45
+      ],
+      [
+        "BRVO",
+        "2024-03-07",
+        647.08,
+        -2.29
+      ],
+      [
+        "BRVO",
+        "2024-03-08",
+        646.69,
+        -0.06
+      ],
+      [
+        "BRVO",
+        "2024-03-11",
+        663.86,
+        2.66
+      ],
+      [
+        "BRVO",
+        "2024-03-12",
+        646.14,
+        -2.67
+      ],
+      [
+        "BRVO",
+        "2024-03-13",
+        640.94,
+        -0.8
+      ],
+      [
+        "BRVO",
+        "2024-03-14",
+        649.19,
+        1.29
+      ],
+      [
+        "BRVO",
+        "2024-03-15",
+        647.93,
+        -0.19
+      ],
+      [
+        "BRVO",
+        "2024-03-18",
+        629.5,
+        -2.84
+      ],
+      [
+        "BRVO",
+        "2024-03-19",
+        626.41,
+        -0.49
+      ],
+      [
+        "BRVO",
+        "2024-03-20",
+        614.63,
+        -1.88
+      ],
+      [
+        "BRVO",
+        "2024-03-21",
+        623.38,
+        1.42
+      ],
+      [
+        "BRVO",
+        "2024-03-22",
+        610.99,
+        -1.99
+      ],
+      [
+        "BRVO",
+        "2024-03-25",
+        615.5,
+        0.74
+      ],
+      [
+        "BRVO",
+        "2024-03-26",
+        604.95,
+        -1.71
+      ],
+      [
+        "BRVO",
+        "2024-03-27",
+        599.25,
+        -0.94
+      ],
+      [
+        "BRVO",
+        "2024-03-28",
+        615.08,
+        2.64
+      ],
+      [
+        "CHRL",
+        "2024-03-01",
+        1478.38,
+        null
+      ],
+      [
+        "CHRL",
+        "2024-03-04",
+        1464.42,
+        -0.94
+      ],
+      [
+        "CHRL",
+        "2024-03-05",
+        1478.77,
+        0.98
+      ],
+      [
+        "CHRL",
+        "2024-03-06",
+        1494.78,
+        1.08
+      ],
+      [
+        "CHRL",
+        "2024-03-07",
+        1515.64,
+        1.4
+      ],
+      [
+        "CHRL",
+        "2024-03-08",
+        1476.61,
+        -2.58
+      ],
+      [
+        "CHRL",
+        "2024-03-11",
+        1433.14,
+        -2.94
+      ],
+      [
+        "CHRL",
+        "2024-03-12",
+        1421.03,
+        -0.84
+      ],
+      [
+        "CHRL",
+        "2024-03-13",
+        1407.34,
+        -0.96
+      ],
+      [
+        "CHRL",
+        "2024-03-14",
+        1383.69,
+        -1.68
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-05",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Moving Average",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute the 5-day simple moving average of the closing price for each symbol (only where 5 days of history exist).",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, price_date, close_price, ma5 FROM (SELECT symbol, price_date, close_price, AVG(close_price) OVER (PARTITION BY symbol ORDER BY price_date ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) AS ma5, COUNT(*) OVER (PARTITION BY symbol ORDER BY price_date ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) AS n FROM stock_prices) t WHERE n = 5",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "price_date",
+      "close_price",
+      "ma5"
+    ],
+    "row_count": 64,
+    "expected_rows": [
+      [
+        "ALFA",
+        "2024-03-07",
+        124.22,
+        123.79
+      ],
+      [
+        "ALFA",
+        "2024-03-08",
+        126.23,
+        125.15
+      ],
+      [
+        "ALFA",
+        "2024-03-11",
+        129.43,
+        126.498
+      ],
+      [
+        "ALFA",
+        "2024-03-12",
+        126.6,
+        126.83600000000001
+      ],
+      [
+        "ALFA",
+        "2024-03-13",
+        125.71,
+        126.43800000000002
+      ],
+      [
+        "ALFA",
+        "2024-03-14",
+        125.38,
+        126.67
+      ],
+      [
+        "ALFA",
+        "2024-03-15",
+        125.37,
+        126.498
+      ],
+      [
+        "ALFA",
+        "2024-03-18",
+        125.23,
+        125.65799999999999
+      ],
+      [
+        "ALFA",
+        "2024-03-19",
+        125.25,
+        125.388
+      ],
+      [
+        "ALFA",
+        "2024-03-20",
+        124.15,
+        125.076
+      ],
+      [
+        "ALFA",
+        "2024-03-21",
+        121.5,
+        124.3
+      ],
+      [
+        "ALFA",
+        "2024-03-22",
+        119.48,
+        123.122
+      ],
+      [
+        "ALFA",
+        "2024-03-25",
+        121.43,
+        122.36200000000001
+      ],
+      [
+        "ALFA",
+        "2024-03-26",
+        119.32,
+        121.176
+      ],
+      [
+        "ALFA",
+        "2024-03-27",
+        120.85,
+        120.516
+      ],
+      [
+        "ALFA",
+        "2024-03-28",
+        120.08,
+        120.232
+      ],
+      [
+        "BRVO",
+        "2024-03-07",
+        647.08,
+        655.128
+      ],
+      [
+        "BRVO",
+        "2024-03-08",
+        646.69,
+        655.744
+      ],
+      [
+        "BRVO",
+        "2024-03-11",
+        663.86,
+        657.028
+      ],
+      [
+        "BRVO",
+        "2024-03-12",
+        646.14,
+        653.208
+      ],
+      [
+        "BRVO",
+        "2024-03-13",
+        640.94,
+        648.942
+      ],
+      [
+        "BRVO",
+        "2024-03-14",
+        649.19,
+        649.364
+      ],
+      [
+        "BRVO",
+        "2024-03-15",
+        647.93,
+        649.612
+      ],
+      [
+        "BRVO",
+        "2024-03-18",
+        629.5,
+        642.74
+      ],
+      [
+        "BRVO",
+        "2024-03-19",
+        626.41,
+        638.7940000000001
+      ],
+      [
+        "BRVO",
+        "2024-03-20",
+        614.63,
+        633.5319999999999
+      ],
+      [
+        "BRVO",
+        "2024-03-21",
+        623.38,
+        628.37
+      ],
+      [
+        "BRVO",
+        "2024-03-22",
+        610.99,
+        620.982
+      ],
+      [
+        "BRVO",
+        "2024-03-25",
+        615.5,
+        618.182
+      ],
+      [
+        "BRVO",
+        "2024-03-26",
+        604.95,
+        613.89
+      ],
+      [
+        "BRVO",
+        "2024-03-27",
+        599.25,
+        610.8140000000001
+      ],
+      [
+        "BRVO",
+        "2024-03-28",
+        615.08,
+        609.154
+      ],
+      [
+        "CHRL",
+        "2024-03-07",
+        1515.64,
+        1486.398
+      ],
+      [
+        "CHRL",
+        "2024-03-08",
+        1476.61,
+        1486.044
+      ],
+      [
+        "CHRL",
+        "2024-03-11",
+        1433.14,
+        1479.788
+      ],
+      [
+        "CHRL",
+        "2024-03-12",
+        1421.03,
+        1468.24
+      ],
+      [
+        "CHRL",
+        "2024-03-13",
+        1407.34,
+        1450.752
+      ],
+      [
+        "CHRL",
+        "2024-03-14",
+        1383.69,
+        1424.3619999999999
+      ],
+      [
+        "CHRL",
+        "2024-03-15",
+        1428.34,
+        1414.708
+      ],
+      [
+        "CHRL",
+        "2024-03-18",
+        1463.54,
+        1420.788
+      ],
+      [
+        "CHRL",
+        "2024-03-19",
+        1478.92,
+        1432.366
+      ],
+      [
+        "CHRL",
+        "2024-03-20",
+        1490.64,
+        1449.026
+      ],
+      [
+        "CHRL",
+        "2024-03-21",
+        1491.95,
+        1470.678
+      ],
+      [
+        "CHRL",
+        "2024-03-22",
+        1464.18,
+        1477.846
+      ],
+      [
+        "CHRL",
+        "2024-03-25",
+        1429.91,
+        1471.1200000000001
+      ],
+      [
+        "CHRL",
+        "2024-03-26",
+        1401.87,
+        1455.71
+      ],
+      [
+        "CHRL",
+        "2024-03-27",
+        1374.69,
+        1432.52
+      ],
+      [
+        "CHRL",
+        "2024-03-28",
+        1381.01,
+        1410.3319999999999
+      ],
+      [
+        "DLTA",
+        "2024-03-07",
+        330.99,
+        317.32
+      ],
+      [
+        "DLTA",
+        "2024-03-08",
+        341.4,
+        323.808
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-06",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each symbol find the date of its highest closing price.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, price_date, close_price FROM (SELECT symbol, price_date, close_price, ROW_NUMBER() OVER (PARTITION BY symbol ORDER BY close_price DESC) AS rn FROM stock_prices) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "price_date",
+      "close_price"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "ALFA",
+        "2024-03-11",
+        129.43
+      ],
+      [
+        "BRVO",
+        "2024-03-05",
+        665.24
+      ],
+      [
+        "CHRL",
+        "2024-03-07",
+        1515.64
+      ],
+      [
+        "DLTA",
+        "2024-03-25",
+        364.77
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-07",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find each symbol's biggest single-day gain in absolute price points.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "WITH d AS (SELECT symbol, price_date, close_price - LAG(close_price) OVER (PARTITION BY symbol ORDER BY price_date) AS gain FROM stock_prices) SELECT symbol, price_date, ROUND(gain, 2) AS gain FROM (SELECT symbol, price_date, gain, ROW_NUMBER() OVER (PARTITION BY symbol ORDER BY gain DESC) AS rn FROM d WHERE gain IS NOT NULL) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "price_date",
+      "gain"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "ALFA",
+        "2024-03-04",
+        3.26
+      ],
+      [
+        "BRVO",
+        "2024-03-11",
+        17.17
+      ],
+      [
+        "CHRL",
+        "2024-03-15",
+        44.65
+      ],
+      [
+        "DLTA",
+        "2024-03-25",
+        12.07
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-08",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Weighted Average",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Calculate the VWAP (sum of close x volume divided by sum of volume) for every symbol.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, ROUND(SUM(close_price * volume) * 1.0 / SUM(volume), 2) AS vwap FROM stock_prices GROUP BY symbol",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "vwap"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "ALFA",
+        123.59
+      ],
+      [
+        "BRVO",
+        635
+      ],
+      [
+        "CHRL",
+        1457
+      ],
+      [
+        "DLTA",
+        335.95
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-09",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Signals",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "List the days on which a symbol's close was above its own 5-day moving average (including the current day).",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "WITH m AS (SELECT symbol, price_date, close_price, AVG(close_price) OVER (PARTITION BY symbol ORDER BY price_date ROWS BETWEEN 4 PRECEDING AND CURRENT ROW) AS ma5 FROM stock_prices) SELECT symbol, price_date, close_price, ROUND(ma5, 2) AS ma5 FROM m WHERE close_price > ma5",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "price_date",
+      "close_price",
+      "ma5"
+    ],
+    "row_count": 34,
+    "expected_rows": [
+      [
+        "ALFA",
+        "2024-03-04",
+        122.69,
+        121.06
+      ],
+      [
+        "ALFA",
+        "2024-03-05",
+        124.91,
+        122.34
+      ],
+      [
+        "ALFA",
+        "2024-03-06",
+        127.7,
+        123.68
+      ],
+      [
+        "ALFA",
+        "2024-03-07",
+        124.22,
+        123.79
+      ],
+      [
+        "ALFA",
+        "2024-03-08",
+        126.23,
+        125.15
+      ],
+      [
+        "ALFA",
+        "2024-03-11",
+        129.43,
+        126.5
+      ],
+      [
+        "ALFA",
+        "2024-03-27",
+        120.85,
+        120.52
+      ],
+      [
+        "BRVO",
+        "2024-03-04",
+        657.44,
+        650.53
+      ],
+      [
+        "BRVO",
+        "2024-03-05",
+        665.24,
+        655.43
+      ],
+      [
+        "BRVO",
+        "2024-03-06",
+        662.27,
+        657.14
+      ],
+      [
+        "BRVO",
+        "2024-03-11",
+        663.86,
+        657.03
+      ],
+      [
+        "BRVO",
+        "2024-03-28",
+        615.08,
+        609.15
+      ],
+      [
+        "CHRL",
+        "2024-03-05",
+        1478.77,
+        1473.86
+      ],
+      [
+        "CHRL",
+        "2024-03-06",
+        1494.78,
+        1479.09
+      ],
+      [
+        "CHRL",
+        "2024-03-07",
+        1515.64,
+        1486.4
+      ],
+      [
+        "CHRL",
+        "2024-03-15",
+        1428.34,
+        1414.71
+      ],
+      [
+        "CHRL",
+        "2024-03-18",
+        1463.54,
+        1420.79
+      ],
+      [
+        "CHRL",
+        "2024-03-19",
+        1478.92,
+        1432.37
+      ],
+      [
+        "CHRL",
+        "2024-03-20",
+        1490.64,
+        1449.03
+      ],
+      [
+        "CHRL",
+        "2024-03-21",
+        1491.95,
+        1470.68
+      ],
+      [
+        "DLTA",
+        "2024-03-04",
+        310.78,
+        309.87
+      ],
+      [
+        "DLTA",
+        "2024-03-05",
+        315.59,
+        311.78
+      ],
+      [
+        "DLTA",
+        "2024-03-06",
+        320.28,
+        313.9
+      ],
+      [
+        "DLTA",
+        "2024-03-07",
+        330.99,
+        317.32
+      ],
+      [
+        "DLTA",
+        "2024-03-08",
+        341.4,
+        323.81
+      ],
+      [
+        "DLTA",
+        "2024-03-11",
+        333.31,
+        328.31
+      ],
+      [
+        "DLTA",
+        "2024-03-18",
+        332.75,
+        325.74
+      ],
+      [
+        "DLTA",
+        "2024-03-19",
+        335.14,
+        327.52
+      ],
+      [
+        "DLTA",
+        "2024-03-20",
+        344.56,
+        331.13
+      ],
+      [
+        "DLTA",
+        "2024-03-21",
+        355.42,
+        338.15
+      ],
+      [
+        "DLTA",
+        "2024-03-22",
+        352.7,
+        344.11
+      ],
+      [
+        "DLTA",
+        "2024-03-25",
+        364.77,
+        350.52
+      ],
+      [
+        "DLTA",
+        "2024-03-26",
+        355.46,
+        354.58
+      ],
+      [
+        "DLTA",
+        "2024-03-27",
+        359.21,
+        357.51
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-10",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Gaps and Islands",
+    "topic_group": "Gaps, Islands & Streaks",
+    "also_tagged": [],
+    "question": "Find the longest run of consecutive up days (close higher than previous day) for each symbol.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "WITH u AS (SELECT symbol, price_date, CASE WHEN close_price > LAG(close_price) OVER (PARTITION BY symbol ORDER BY price_date) THEN 1 ELSE 0 END AS up FROM stock_prices), g AS (SELECT symbol, price_date, up, ROW_NUMBER() OVER (PARTITION BY symbol ORDER BY price_date) - ROW_NUMBER() OVER (PARTITION BY symbol, up ORDER BY price_date) AS grp FROM u), s AS (SELECT symbol, grp, COUNT(*) AS run FROM g WHERE up = 1 GROUP BY symbol, grp) SELECT symbol, MAX(run) AS longest_up_run FROM s GROUP BY symbol",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "longest_up_run"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "ALFA",
+        3
+      ],
+      [
+        "BRVO",
+        2
+      ],
+      [
+        "CHRL",
+        5
+      ],
+      [
+        "DLTA",
+        5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-11",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Drawdown",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute the maximum drawdown (largest percentage fall from a running peak) for each symbol.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "WITH p AS (SELECT symbol, price_date, close_price, MAX(close_price) OVER (PARTITION BY symbol ORDER BY price_date ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS peak FROM stock_prices) SELECT symbol, ROUND(MIN((close_price - peak) * 100.0 / peak), 2) AS max_drawdown_pct FROM p GROUP BY symbol",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "max_drawdown_pct"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "ALFA",
+        -7.81
+      ],
+      [
+        "BRVO",
+        -9.92
+      ],
+      [
+        "CHRL",
+        -9.3
+      ],
+      [
+        "DLTA",
+        -6.18
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-12",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Ranking",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Rank the symbols by total traded volume over the period.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, SUM(volume) AS total_volume, RANK() OVER (ORDER BY SUM(volume) DESC) AS rnk FROM stock_prices GROUP BY symbol",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "total_volume",
+      "rnk"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "BRVO",
+        10830144,
+        1
+      ],
+      [
+        "ALFA",
+        10132466,
+        2
+      ],
+      [
+        "DLTA",
+        9087131,
+        3
+      ],
+      [
+        "CHRL",
+        8727177,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-13",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Positions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Compute each trader's net position (BUY quantity minus SELL quantity) in every symbol.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT t.trader_name, tr.symbol, SUM(CASE WHEN tr.side = 'BUY' THEN tr.quantity ELSE -tr.quantity END) AS net_position FROM trades tr JOIN traders t ON tr.trader_id = t.trader_id GROUP BY t.trader_id, t.trader_name, tr.symbol ORDER BY t.trader_name, tr.symbol",
+    "executed_ok": true,
+    "columns": [
+      "trader_name",
+      "symbol",
+      "net_position"
+    ],
+    "row_count": 24,
+    "expected_rows": [
+      [
+        "Ayesha Qureshi",
+        "ALFA",
+        0
+      ],
+      [
+        "Ayesha Qureshi",
+        "BRVO",
+        200
+      ],
+      [
+        "Ayesha Qureshi",
+        "CHRL",
+        -650
+      ],
+      [
+        "Ayesha Qureshi",
+        "DLTA",
+        200
+      ],
+      [
+        "Mohan Das",
+        "ALFA",
+        100
+      ],
+      [
+        "Mohan Das",
+        "BRVO",
+        300
+      ],
+      [
+        "Mohan Das",
+        "CHRL",
+        900
+      ],
+      [
+        "Mohan Das",
+        "DLTA",
+        3000
+      ],
+      [
+        "Nandini Sethi",
+        "ALFA",
+        -1050
+      ],
+      [
+        "Nandini Sethi",
+        "BRVO",
+        450
+      ],
+      [
+        "Nandini Sethi",
+        "CHRL",
+        -1000
+      ],
+      [
+        "Nandini Sethi",
+        "DLTA",
+        50
+      ],
+      [
+        "Rahul Bhatia",
+        "ALFA",
+        0
+      ],
+      [
+        "Rahul Bhatia",
+        "BRVO",
+        900
+      ],
+      [
+        "Rahul Bhatia",
+        "CHRL",
+        700
+      ],
+      [
+        "Rahul Bhatia",
+        "DLTA",
+        150
+      ],
+      [
+        "Sunita Rao",
+        "ALFA",
+        50
+      ],
+      [
+        "Sunita Rao",
+        "BRVO",
+        1000
+      ],
+      [
+        "Sunita Rao",
+        "CHRL",
+        150
+      ],
+      [
+        "Sunita Rao",
+        "DLTA",
+        1900
+      ],
+      [
+        "Vishal Anand",
+        "ALFA",
+        -400
+      ],
+      [
+        "Vishal Anand",
+        "BRVO",
+        -1850
+      ],
+      [
+        "Vishal Anand",
+        "CHRL",
+        -1500
+      ],
+      [
+        "Vishal Anand",
+        "DLTA",
+        -1000
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-14",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find traders who hold a net long position in at least 2 symbols.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "WITH p AS (SELECT trader_id, symbol, SUM(CASE WHEN side = 'BUY' THEN quantity ELSE -quantity END) AS net FROM trades GROUP BY trader_id, symbol) SELECT trader_id, COUNT(*) AS long_symbols FROM p WHERE net > 0 GROUP BY trader_id HAVING COUNT(*) >= 2",
+    "executed_ok": true,
+    "columns": [
+      "trader_id",
+      "long_symbols"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        2
+      ],
+      [
+        5,
+        4
+      ],
+      [
+        6,
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-15",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Percent of Total",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show each desk's traded notional (quantity x price) and its percentage of the total.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "WITH d AS (SELECT t.desk, SUM(tr.quantity * tr.price) AS notional FROM trades tr JOIN traders t ON tr.trader_id = t.trader_id GROUP BY t.desk) SELECT desk, notional, ROUND(notional * 100.0 / SUM(notional) OVER (), 2) AS pct FROM d",
+    "executed_ok": true,
+    "columns": [
+      "desk",
+      "notional",
+      "pct"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Derivatives",
+        6992516,
+        29.14
+      ],
+      [
+        "Equities",
+        8880610.5,
+        37.01
+      ],
+      [
+        "FX",
+        8123419,
+        33.85
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-16",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the largest trade (by notional value) of every desk.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT desk, trade_id, notional FROM (SELECT t.desk, tr.trade_id, tr.quantity * tr.price AS notional, ROW_NUMBER() OVER (PARTITION BY t.desk ORDER BY tr.quantity * tr.price DESC) AS rn FROM trades tr JOIN traders t ON tr.trader_id = t.trader_id) x WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "desk",
+      "trade_id",
+      "notional"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Derivatives",
+        3,
+        1365990
+      ],
+      [
+        "Equities",
+        34,
+        1424460
+      ],
+      [
+        "FX",
+        40,
+        1420670
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-17",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "List symbols that were traded by at least 4 different traders.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, COUNT(DISTINCT trader_id) AS traders FROM trades GROUP BY symbol HAVING COUNT(DISTINCT trader_id) >= 4",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "traders"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "ALFA",
+        6
+      ],
+      [
+        "BRVO",
+        6
+      ],
+      [
+        "CHRL",
+        6
+      ],
+      [
+        "DLTA",
+        6
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-18",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show cumulative traded quantity per symbol over trade dates.",
+    "schemas": [
+      "FIN"
+    ],
+    "solution_sql": "SELECT symbol, trade_date, quantity, SUM(quantity) OVER (PARTITION BY symbol ORDER BY trade_date, trade_id ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_qty FROM trades ORDER BY symbol, trade_date, trade_id",
+    "executed_ok": true,
+    "columns": [
+      "symbol",
+      "trade_date",
+      "quantity",
+      "cumulative_qty"
+    ],
+    "row_count": 80,
+    "expected_rows": [
+      [
+        "ALFA",
+        "2024-03-01",
+        500,
+        500
+      ],
+      [
+        "ALFA",
+        "2024-03-01",
+        200,
+        700
+      ],
+      [
+        "ALFA",
+        "2024-03-04",
+        500,
+        1200
+      ],
+      [
+        "ALFA",
+        "2024-03-04",
+        1000,
+        2200
+      ],
+      [
+        "ALFA",
+        "2024-03-04",
+        500,
+        2700
+      ],
+      [
+        "ALFA",
+        "2024-03-08",
+        50,
+        2750
+      ],
+      [
+        "ALFA",
+        "2024-03-08",
+        200,
+        2950
+      ],
+      [
+        "ALFA",
+        "2024-03-13",
+        200,
+        3150
+      ],
+      [
+        "ALFA",
+        "2024-03-14",
+        100,
+        3250
+      ],
+      [
+        "ALFA",
+        "2024-03-15",
+        100,
+        3350
+      ],
+      [
+        "ALFA",
+        "2024-03-15",
+        500,
+        3850
+      ],
+      [
+        "ALFA",
+        "2024-03-15",
+        1000,
+        4850
+      ],
+      [
+        "ALFA",
+        "2024-03-20",
+        200,
+        5050
+      ],
+      [
+        "ALFA",
+        "2024-03-21",
+        100,
+        5150
+      ],
+      [
+        "ALFA",
+        "2024-03-25",
+        100,
+        5250
+      ],
+      [
+        "ALFA",
+        "2024-03-27",
+        200,
+        5450
+      ],
+      [
+        "ALFA",
+        "2024-03-27",
+        200,
+        5650
+      ],
+      [
+        "ALFA",
+        "2024-03-28",
+        100,
+        5750
+      ],
+      [
+        "ALFA",
+        "2024-03-28",
+        50,
+        5800
+      ],
+      [
+        "ALFA",
+        "2024-03-28",
+        200,
+        6000
+      ],
+      [
+        "BRVO",
+        "2024-03-01",
+        500,
+        500
+      ],
+      [
+        "BRVO",
+        "2024-03-05",
+        200,
+        700
+      ],
+      [
+        "BRVO",
+        "2024-03-06",
+        50,
+        750
+      ],
+      [
+        "BRVO",
+        "2024-03-06",
+        100,
+        850
+      ],
+      [
+        "BRVO",
+        "2024-03-07",
+        1000,
+        1850
+      ],
+      [
+        "BRVO",
+        "2024-03-07",
+        1000,
+        2850
+      ],
+      [
+        "BRVO",
+        "2024-03-08",
+        1000,
+        3850
+      ],
+      [
+        "BRVO",
+        "2024-03-11",
+        50,
+        3900
+      ],
+      [
+        "BRVO",
+        "2024-03-11",
+        200,
+        4100
+      ],
+      [
+        "BRVO",
+        "2024-03-12",
+        50,
+        4150
+      ],
+      [
+        "BRVO",
+        "2024-03-12",
+        50,
+        4200
+      ],
+      [
+        "BRVO",
+        "2024-03-15",
+        50,
+        4250
+      ],
+      [
+        "BRVO",
+        "2024-03-15",
+        100,
+        4350
+      ],
+      [
+        "BRVO",
+        "2024-03-15",
+        200,
+        4550
+      ],
+      [
+        "BRVO",
+        "2024-03-18",
+        500,
+        5050
+      ],
+      [
+        "BRVO",
+        "2024-03-22",
+        500,
+        5550
+      ],
+      [
+        "BRVO",
+        "2024-03-25",
+        1000,
+        6550
+      ],
+      [
+        "BRVO",
+        "2024-03-25",
+        200,
+        6750
+      ],
+      [
+        "BRVO",
+        "2024-03-25",
+        100,
+        6850
+      ],
+      [
+        "BRVO",
+        "2024-03-27",
+        50,
+        6900
+      ],
+      [
+        "BRVO",
+        "2024-03-27",
+        100,
+        7000
+      ],
+      [
+        "CHRL",
+        "2024-03-05",
+        500,
+        500
+      ],
+      [
+        "CHRL",
+        "2024-03-05",
+        500,
+        1000
+      ],
+      [
+        "CHRL",
+        "2024-03-05",
+        500,
+        1500
+      ],
+      [
+        "CHRL",
+        "2024-03-06",
+        50,
+        1550
+      ],
+      [
+        "CHRL",
+        "2024-03-06",
+        200,
+        1750
+      ],
+      [
+        "CHRL",
+        "2024-03-07",
+        1000,
+        2750
+      ],
+      [
+        "CHRL",
+        "2024-03-11",
+        200,
+        2950
+      ],
+      [
+        "CHRL",
+        "2024-03-12",
+        500,
+        3450
+      ],
+      [
+        "CHRL",
+        "2024-03-12",
+        500,
+        3950
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-19",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Weighted Average",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Compute the principal-weighted average interest rate for each loan status.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT status, ROUND(SUM(principal * interest_rate) / SUM(principal), 3) AS weighted_rate FROM loans GROUP BY status",
+    "executed_ok": true,
+    "columns": [
+      "status",
+      "weighted_rate"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Active",
+        10.911
+      ],
+      [
+        "Closed",
+        9.7
+      ],
+      [
+        "Defaulted",
+        9.5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-20",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Credit Risk",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Calculate the default ratio (defaulted principal divided by total principal) for each customer city.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT c.city, ROUND(SUM(CASE WHEN l.status = 'Defaulted' THEN l.principal ELSE 0 END) * 100.0 / SUM(l.principal), 2) AS default_ratio_pct FROM loans l JOIN bank_customers c ON l.cust_id = c.cust_id GROUP BY c.city",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "default_ratio_pct"
+    ],
+    "row_count": 9,
+    "expected_rows": [
+      [
+        "Ahmedabad",
+        0
+      ],
+      [
+        "Bengaluru",
+        0
+      ],
+      [
+        "Chennai",
+        0
+      ],
+      [
+        "Delhi",
+        28.57
+      ],
+      [
+        "Hyderabad",
+        2.96
+      ],
+      [
+        "Jaipur",
+        0
+      ],
+      [
+        "Kolkata",
+        0
+      ],
+      [
+        "Mumbai",
+        0
+      ],
+      [
+        "Pune",
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-21",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find customers whose total loan principal is more than 10 times their total account balance.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT c.cust_name, l.total_loan, COALESCE(a.total_bal, 0) AS total_balance FROM bank_customers c JOIN (SELECT cust_id, SUM(principal) AS total_loan FROM loans GROUP BY cust_id) l ON c.cust_id = l.cust_id LEFT JOIN (SELECT cust_id, SUM(balance) AS total_bal FROM accounts GROUP BY cust_id) a ON c.cust_id = a.cust_id WHERE l.total_loan > 10 * COALESCE(a.total_bal, 0)",
+    "executed_ok": true,
+    "columns": [
+      "cust_name",
+      "total_loan",
+      "total_balance"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Rudra Bose",
+        2500000,
+        184067.41
+      ],
+      [
+        "Lakshya Verma",
+        3350000,
+        0
+      ],
+      [
+        "Mansi Das",
+        5000000,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-22",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each account find its second highest successful transaction amount (DENSE_RANK), skipping accounts with fewer than two distinct amounts.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT account_id, amount FROM (SELECT account_id, amount, DENSE_RANK() OVER (PARTITION BY account_id ORDER BY amount DESC) AS rnk FROM transactions WHERE status = 'SUCCESS') t WHERE rnk = 2",
+    "executed_ok": true,
+    "columns": [
+      "account_id",
+      "amount"
+    ],
+    "row_count": 35,
+    "expected_rows": [
+      [
+        1,
+        48480.12
+      ],
+      [
+        2,
+        47893.01
+      ],
+      [
+        3,
+        44826.25
+      ],
+      [
+        4,
+        37061.69
+      ],
+      [
+        5,
+        49624.38
+      ],
+      [
+        6,
+        47015.95
+      ],
+      [
+        7,
+        44520.79
+      ],
+      [
+        8,
+        41198.15
+      ],
+      [
+        9,
+        39284.64
+      ],
+      [
+        10,
+        37276.8
+      ],
+      [
+        11,
+        46092.7
+      ],
+      [
+        12,
+        38814.91
+      ],
+      [
+        13,
+        43096.59
+      ],
+      [
+        14,
+        43969.84
+      ],
+      [
+        15,
+        47377.99
+      ],
+      [
+        16,
+        45524.1
+      ],
+      [
+        17,
+        47580.04
+      ],
+      [
+        18,
+        30561.22
+      ],
+      [
+        19,
+        38122.04
+      ],
+      [
+        20,
+        40539.03
+      ],
+      [
+        21,
+        40446.6
+      ],
+      [
+        22,
+        48984.05
+      ],
+      [
+        23,
+        40832.41
+      ],
+      [
+        24,
+        38997.78
+      ],
+      [
+        25,
+        48276.11
+      ],
+      [
+        26,
+        42632.06
+      ],
+      [
+        27,
+        38866.32
+      ],
+      [
+        28,
+        48204.48
+      ],
+      [
+        29,
+        33873.44
+      ],
+      [
+        30,
+        47757.06
+      ],
+      [
+        31,
+        48819.84
+      ],
+      [
+        32,
+        44379.65
+      ],
+      [
+        33,
+        29710.28
+      ],
+      [
+        34,
+        43931.55
+      ],
+      [
+        35,
+        40662.11
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-23",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each branch show the account with the highest balance.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT branch, account_id, balance FROM (SELECT branch, account_id, balance, ROW_NUMBER() OVER (PARTITION BY branch ORDER BY balance DESC) AS rn FROM accounts) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "branch",
+      "account_id",
+      "balance"
+    ],
+    "row_count": 6,
+    "expected_rows": [
+      [
+        "Bengaluru-MG Road",
+        10,
+        763029.58
+      ],
+      [
+        "Chennai-T Nagar",
+        2,
+        780467.91
+      ],
+      [
+        "Delhi-CP",
+        4,
+        789701.3
+      ],
+      [
+        "Kolkata-Park Street",
+        25,
+        878634.71
+      ],
+      [
+        "Mumbai-Fort",
+        15,
+        831185.55
+      ],
+      [
+        "Pune-FC Road",
+        3,
+        834215.01
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-24",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the customer with the highest total balance in every city.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "WITH t AS (SELECT c.city, c.cust_name, SUM(a.balance) AS total FROM bank_customers c JOIN accounts a ON c.cust_id = a.cust_id GROUP BY c.cust_id, c.city, c.cust_name) SELECT city, cust_name, total FROM (SELECT city, cust_name, total, RANK() OVER (PARTITION BY city ORDER BY total DESC) AS rnk FROM t) x WHERE rnk = 1",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "cust_name",
+      "total"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Ahmedabad",
+        "Tara Mukherjee",
+        568989.93
+      ],
+      [
+        "Bengaluru",
+        "Aditi Khan",
+        1368809.0899999999
+      ],
+      [
+        "Chennai",
+        "Pallavi Pandey",
+        1870933.52
+      ],
+      [
+        "Delhi",
+        "Shreya Reddy",
+        1465975.99
+      ],
+      [
+        "Hyderabad",
+        "Navya Verma",
+        834215.01
+      ],
+      [
+        "Jaipur",
+        "Zoya Gupta",
+        914080.2000000001
+      ],
+      [
+        "Kolkata",
+        "Manish Patel",
+        1181247.9500000002
+      ],
+      [
+        "Lucknow",
+        "Pranav Nair",
+        104191.24
+      ],
+      [
+        "Mumbai",
+        "Kiara Singh",
+        1448695.38
+      ],
+      [
+        "Pune",
+        "Ritu Kulkarni",
+        973165.84
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "GS-25",
+    "company": "GS",
+    "company_name": "Goldman Sachs, JP Morgan, Morgan Stanley, Barclays",
+    "tier": "Finance (BFSI)",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Math Functions",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Calculate the monthly EMI of every loan using EMI = P x r x (1+r)^n / ((1+r)^n - 1), where r = annual rate / 12 / 100 and n = tenure_months.",
+    "schemas": [
+      "BANK"
+    ],
+    "solution_sql": "SELECT loan_id, principal, ROUND(principal * (interest_rate / 1200.0) * POWER(1 + interest_rate / 1200.0, tenure_months) / (POWER(1 + interest_rate / 1200.0, tenure_months) - 1), 2) AS emi FROM loans",
+    "executed_ok": true,
+    "columns": [
+      "loan_id",
+      "principal",
+      "emi"
+    ],
+    "row_count": 20,
+    "expected_rows": [
+      [
+        1,
+        250000,
+        22095.41
+      ],
+      [
+        2,
+        100000,
+        8814.86
+      ],
+      [
+        3,
+        100000,
+        2100.19
+      ],
+      [
+        4,
+        2500000,
+        32349.39
+      ],
+      [
+        5,
+        100000,
+        4637.6
+      ],
+      [
+        6,
+        5000000,
+        228423.71
+      ],
+      [
+        7,
+        250000,
+        5373.48
+      ],
+      [
+        8,
+        2500000,
+        81256.11
+      ],
+      [
+        9,
+        100000,
+        2149.39
+      ],
+      [
+        10,
+        1000000,
+        12398.57
+      ],
+      [
+        11,
+        100000,
+        1136.14
+      ],
+      [
+        12,
+        250000,
+        2495.95
+      ],
+      [
+        13,
+        500000,
+        6887.5
+      ],
+      [
+        14,
+        2500000,
+        33733.75
+      ],
+      [
+        15,
+        500000,
+        5680.7
+      ],
+      [
+        16,
+        250000,
+        2330.33
+      ],
+      [
+        17,
+        5000000,
+        107469.5
+      ],
+      [
+        18,
+        2500000,
+        36594.04
+      ],
+      [
+        19,
+        500000,
+        6887.5
+      ],
+      [
+        20,
+        100000,
+        8721.98
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-01",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Show the completion rate (completed rides divided by all ride requests) for each city.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT city, COUNT(*) AS requests, ROUND(SUM(CASE WHEN status = 'Completed' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS completion_rate_pct FROM rides GROUP BY city",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "requests",
+      "completion_rate_pct"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        99,
+        74.75
+      ],
+      [
+        "Chennai",
+        106,
+        73.58
+      ],
+      [
+        "Delhi",
+        97,
+        70.1
+      ],
+      [
+        "Hyderabad",
+        103,
+        79.61
+      ],
+      [
+        "Mumbai",
+        95,
+        67.37
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-02",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Split cancellations by who cancelled (rider or driver) for each city and show both counts.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT city, SUM(CASE WHEN status = 'Cancelled_Rider' THEN 1 ELSE 0 END) AS rider_cancels, SUM(CASE WHEN status = 'Cancelled_Driver' THEN 1 ELSE 0 END) AS driver_cancels FROM rides GROUP BY city",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "rider_cancels",
+      "driver_cancels"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        10,
+        8
+      ],
+      [
+        "Chennai",
+        16,
+        4
+      ],
+      [
+        "Delhi",
+        10,
+        10
+      ],
+      [
+        "Hyderabad",
+        7,
+        4
+      ],
+      [
+        "Mumbai",
+        15,
+        7
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-03",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Derived Metrics",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Compute the average fare per kilometre for completed rides in each city.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT city, ROUND(SUM(fare) / SUM(distance_km), 2) AS fare_per_km FROM rides WHERE status = 'Completed' GROUP BY city",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "fare_per_km"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        16.51
+      ],
+      [
+        "Chennai",
+        15.97
+      ],
+      [
+        "Delhi",
+        15.78
+      ],
+      [
+        "Hyderabad",
+        15.97
+      ],
+      [
+        "Mumbai",
+        15.92
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-04",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each rider show the date, distance and fare of their first completed ride.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT rider_id, request_ts, distance_km, fare FROM (SELECT rider_id, request_ts, distance_km, fare, ROW_NUMBER() OVER (PARTITION BY rider_id ORDER BY request_ts) AS rn FROM rides WHERE status = 'Completed') t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "rider_id",
+      "request_ts",
+      "distance_km",
+      "fare"
+    ],
+    "row_count": 40,
+    "expected_rows": [
+      [
+        1,
+        "2024-03-13 06:01:00",
+        4,
+        104.53
+      ],
+      [
+        2,
+        "2024-03-23 09:35:00",
+        22.6,
+        319.05
+      ],
+      [
+        3,
+        "2024-03-02 03:09:00",
+        18.6,
+        295.87
+      ],
+      [
+        4,
+        "2024-03-15 16:34:00",
+        2.7,
+        102.33
+      ],
+      [
+        5,
+        "2024-03-01 05:16:00",
+        27.1,
+        384.18
+      ],
+      [
+        6,
+        "2024-03-06 05:57:00",
+        17.6,
+        265.45
+      ],
+      [
+        7,
+        "2024-03-08 00:32:00",
+        8.9,
+        149
+      ],
+      [
+        8,
+        "2024-03-03 06:27:00",
+        15.9,
+        265.01
+      ],
+      [
+        9,
+        "2024-03-03 16:32:00",
+        1.6,
+        96.44
+      ],
+      [
+        10,
+        "2024-03-04 12:02:00",
+        2.9,
+        109.73
+      ],
+      [
+        11,
+        "2024-03-04 05:05:00",
+        12.5,
+        204.46
+      ],
+      [
+        12,
+        "2024-03-18 07:32:00",
+        14,
+        212.34
+      ],
+      [
+        13,
+        "2024-03-06 07:12:00",
+        11.5,
+        199.81
+      ],
+      [
+        14,
+        "2024-03-20 06:04:00",
+        13.1,
+        200.94
+      ],
+      [
+        15,
+        "2024-03-19 17:14:00",
+        25.2,
+        358.83
+      ],
+      [
+        16,
+        "2024-03-10 06:30:00",
+        25.2,
+        345.68
+      ],
+      [
+        17,
+        "2024-03-02 03:33:00",
+        7.9,
+        134.97
+      ],
+      [
+        18,
+        "2024-03-02 20:23:00",
+        26.9,
+        384.21
+      ],
+      [
+        19,
+        "2024-03-01 03:30:00",
+        13.3,
+        212.9
+      ],
+      [
+        20,
+        "2024-03-08 18:56:00",
+        9.3,
+        167.87
+      ],
+      [
+        21,
+        "2024-03-09 08:06:00",
+        21.7,
+        335.94
+      ],
+      [
+        22,
+        "2024-04-02 11:14:00",
+        27.5,
+        399.02
+      ],
+      [
+        23,
+        "2024-03-28 10:22:00",
+        7.6,
+        156.67
+      ],
+      [
+        24,
+        "2024-03-07 00:30:00",
+        11.5,
+        185.96
+      ],
+      [
+        25,
+        "2024-03-08 12:08:00",
+        19.8,
+        317.57
+      ],
+      [
+        26,
+        "2024-04-02 17:05:00",
+        20.1,
+        310.34
+      ],
+      [
+        27,
+        "2024-03-09 17:05:00",
+        2.1,
+        68.92
+      ],
+      [
+        28,
+        "2024-03-03 15:32:00",
+        1.4,
+        59.99
+      ],
+      [
+        29,
+        "2024-03-02 10:54:00",
+        26.7,
+        369.96
+      ],
+      [
+        30,
+        "2024-04-01 04:01:00",
+        7.8,
+        168.54
+      ],
+      [
+        31,
+        "2024-03-15 22:15:00",
+        21.8,
+        333.03
+      ],
+      [
+        32,
+        "2024-03-20 17:59:00",
+        26,
+        384.68
+      ],
+      [
+        33,
+        "2024-04-10 03:08:00",
+        23.2,
+        333.13
+      ],
+      [
+        34,
+        "2024-03-07 09:23:00",
+        3.6,
+        105.66
+      ],
+      [
+        35,
+        "2024-03-06 02:24:00",
+        23.6,
+        341.81
+      ],
+      [
+        36,
+        "2024-03-07 11:29:00",
+        13.8,
+        245.45
+      ],
+      [
+        37,
+        "2024-03-07 01:53:00",
+        6.1,
+        127.42
+      ],
+      [
+        38,
+        "2024-03-01 20:02:00",
+        9.5,
+        162.92
+      ],
+      [
+        39,
+        "2024-03-19 02:44:00",
+        23.7,
+        347.01
+      ],
+      [
+        40,
+        "2024-03-06 09:00:00",
+        25.6,
+        379.38
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-05",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Correlated Subquery",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List drivers whose rating is above the average rating of drivers in the same city.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT d.driver_name, d.city, d.rating FROM drivers d WHERE d.rating > (SELECT AVG(rating) FROM drivers WHERE city = d.city)",
+    "executed_ok": true,
+    "columns": [
+      "driver_name",
+      "city",
+      "rating"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Sahil Khan",
+        "Mumbai",
+        4.54
+      ],
+      [
+        "Trisha Rao",
+        "Delhi",
+        4.94
+      ],
+      [
+        "Vidya Joshi",
+        "Chennai",
+        4.67
+      ],
+      [
+        "Zara Kulkarni",
+        "Delhi",
+        4.97
+      ],
+      [
+        "Abhay Mishra",
+        "Hyderabad",
+        4.85
+      ],
+      [
+        "Disha Sharma",
+        "Mumbai",
+        4.88
+      ],
+      [
+        "Falguni Banerjee",
+        "Hyderabad",
+        4.92
+      ],
+      [
+        "Hema Das",
+        "Bengaluru",
+        4.69
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-06",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Supply Gap",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "For each hour of the day show the number of requests and the percentage that ended with No_Driver.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT HOUR(request_ts) AS hr, COUNT(*) AS requests, ROUND(SUM(CASE WHEN status = 'No_Driver' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS no_driver_pct FROM rides GROUP BY HOUR(request_ts) ORDER BY no_driver_pct DESC",
+    "executed_ok": true,
+    "columns": [
+      "hr",
+      "requests",
+      "no_driver_pct"
+    ],
+    "row_count": 24,
+    "expected_rows": [
+      [
+        8,
+        23,
+        21.74
+      ],
+      [
+        6,
+        20,
+        15
+      ],
+      [
+        15,
+        27,
+        11.11
+      ],
+      [
+        3,
+        18,
+        11.11
+      ],
+      [
+        10,
+        19,
+        10.53
+      ],
+      [
+        20,
+        20,
+        10
+      ],
+      [
+        19,
+        20,
+        10
+      ],
+      [
+        13,
+        20,
+        10
+      ],
+      [
+        18,
+        21,
+        9.52
+      ],
+      [
+        14,
+        21,
+        9.52
+      ],
+      [
+        1,
+        21,
+        9.52
+      ],
+      [
+        16,
+        22,
+        9.09
+      ],
+      [
+        4,
+        22,
+        9.09
+      ],
+      [
+        2,
+        22,
+        9.09
+      ],
+      [
+        12,
+        25,
+        8
+      ],
+      [
+        7,
+        25,
+        8
+      ],
+      [
+        22,
+        15,
+        6.67
+      ],
+      [
+        21,
+        19,
+        5.26
+      ],
+      [
+        0,
+        19,
+        5.26
+      ],
+      [
+        9,
+        20,
+        5
+      ],
+      [
+        11,
+        21,
+        4.76
+      ],
+      [
+        17,
+        25,
+        4
+      ],
+      [
+        23,
+        15,
+        0
+      ],
+      [
+        5,
+        20,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-07",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find the top 3 earning drivers (completed ride fares) in every city, keeping ties.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "WITH e AS (SELECT d.city, d.driver_name, SUM(r.fare) AS earnings FROM rides r JOIN drivers d ON r.driver_id = d.driver_id WHERE r.status = 'Completed' GROUP BY d.driver_id, d.city, d.driver_name) SELECT city, driver_name, earnings FROM (SELECT city, driver_name, earnings, DENSE_RANK() OVER (PARTITION BY city ORDER BY earnings DESC) AS rnk FROM e) t WHERE rnk <= 3",
+    "executed_ok": true,
+    "columns": [
+      "city",
+      "driver_name",
+      "earnings"
+    ],
+    "row_count": 15,
+    "expected_rows": [
+      [
+        "Bengaluru",
+        "Wasim Pandey",
+        5651.37
+      ],
+      [
+        "Bengaluru",
+        "Chirag Menon",
+        5615.54
+      ],
+      [
+        "Bengaluru",
+        "Hema Das",
+        5255.2699999999995
+      ],
+      [
+        "Chennai",
+        "Vidya Joshi",
+        7971.04
+      ],
+      [
+        "Chennai",
+        "Gautam Verma",
+        7197.11
+      ],
+      [
+        "Chennai",
+        "Bhavna Gupta",
+        3769.1
+      ],
+      [
+        "Delhi",
+        "Eshan Singh",
+        6204.26
+      ],
+      [
+        "Delhi",
+        "Zara Kulkarni",
+        5004.86
+      ],
+      [
+        "Delhi",
+        "Trisha Rao",
+        4971.57
+      ],
+      [
+        "Hyderabad",
+        "Uday Reddy",
+        8681.18
+      ],
+      [
+        "Hyderabad",
+        "Falguni Banerjee",
+        6223.2
+      ],
+      [
+        "Hyderabad",
+        "Abhay Mishra",
+        4771.72
+      ],
+      [
+        "Mumbai",
+        "Sahil Khan",
+        6370.03
+      ],
+      [
+        "Mumbai",
+        "Yamini Patel",
+        4923.93
+      ],
+      [
+        "Mumbai",
+        "Disha Sharma",
+        4484.81
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-08",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find riders who completed at least 2 rides on the same calendar day.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT rider_id, SUBSTR(request_ts, 1, 10) AS ride_day, COUNT(*) AS rides FROM rides WHERE status = 'Completed' GROUP BY rider_id, SUBSTR(request_ts, 1, 10) HAVING COUNT(*) >= 2",
+    "executed_ok": true,
+    "columns": [
+      "rider_id",
+      "ride_day",
+      "rides"
+    ],
+    "row_count": 23,
+    "expected_rows": [
+      [
+        1,
+        "2024-05-10",
+        2
+      ],
+      [
+        3,
+        "2024-03-25",
+        2
+      ],
+      [
+        4,
+        "2024-03-29",
+        2
+      ],
+      [
+        4,
+        "2024-04-02",
+        2
+      ],
+      [
+        6,
+        "2024-03-09",
+        2
+      ],
+      [
+        7,
+        "2024-03-10",
+        2
+      ],
+      [
+        7,
+        "2024-04-30",
+        2
+      ],
+      [
+        7,
+        "2024-05-02",
+        2
+      ],
+      [
+        8,
+        "2024-03-11",
+        2
+      ],
+      [
+        9,
+        "2024-03-24",
+        2
+      ],
+      [
+        11,
+        "2024-04-21",
+        2
+      ],
+      [
+        11,
+        "2024-05-10",
+        2
+      ],
+      [
+        11,
+        "2024-05-17",
+        2
+      ],
+      [
+        12,
+        "2024-05-27",
+        2
+      ],
+      [
+        21,
+        "2024-04-20",
+        2
+      ],
+      [
+        22,
+        "2024-05-18",
+        2
+      ],
+      [
+        22,
+        "2024-05-27",
+        2
+      ],
+      [
+        32,
+        "2024-05-29",
+        2
+      ],
+      [
+        33,
+        "2024-04-17",
+        2
+      ],
+      [
+        35,
+        "2024-03-06",
+        2
+      ],
+      [
+        35,
+        "2024-04-26",
+        2
+      ],
+      [
+        37,
+        "2024-04-30",
+        2
+      ],
+      [
+        39,
+        "2024-04-04",
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-09",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Utilisation",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "For each driver count the number of distinct days on which they completed at least one ride.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT driver_id, COUNT(DISTINCT SUBSTR(request_ts, 1, 10)) AS active_days FROM rides WHERE status = 'Completed' GROUP BY driver_id ORDER BY active_days DESC",
+    "executed_ok": true,
+    "columns": [
+      "driver_id",
+      "active_days"
+    ],
+    "row_count": 15,
+    "expected_rows": [
+      [
+        3,
+        29
+      ],
+      [
+        15,
+        25
+      ],
+      [
+        4,
+        23
+      ],
+      [
+        1,
+        23
+      ],
+      [
+        14,
+        22
+      ],
+      [
+        12,
+        22
+      ],
+      [
+        7,
+        22
+      ],
+      [
+        5,
+        22
+      ],
+      [
+        8,
+        21
+      ],
+      [
+        6,
+        21
+      ],
+      [
+        13,
+        20
+      ],
+      [
+        10,
+        19
+      ],
+      [
+        11,
+        16
+      ],
+      [
+        2,
+        16
+      ],
+      [
+        9,
+        15
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-10",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Outliers",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Find completed rides whose fare per kilometre is more than twice the overall average fare per kilometre.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT ride_id, distance_km, fare, ROUND(fare / distance_km, 2) AS fare_per_km FROM rides WHERE status = 'Completed' AND fare / distance_km > 2 * (SELECT SUM(fare) / SUM(distance_km) FROM rides WHERE status = 'Completed')",
+    "executed_ok": true,
+    "columns": [
+      "ride_id",
+      "distance_km",
+      "fare",
+      "fare_per_km"
+    ],
+    "row_count": 29,
+    "expected_rows": [
+      [
+        13,
+        1.4,
+        59.99,
+        42.85
+      ],
+      [
+        14,
+        1.6,
+        96.44,
+        60.27
+      ],
+      [
+        18,
+        2.9,
+        109.73,
+        37.84
+      ],
+      [
+        52,
+        2.1,
+        68.92,
+        32.82
+      ],
+      [
+        76,
+        2.7,
+        102.33,
+        37.9
+      ],
+      [
+        116,
+        1.9,
+        90.18,
+        47.46
+      ],
+      [
+        149,
+        1.7,
+        62.35,
+        36.68
+      ],
+      [
+        191,
+        1.3,
+        63.95,
+        49.19
+      ],
+      [
+        192,
+        1.8,
+        74.98,
+        41.66
+      ],
+      [
+        204,
+        2,
+        69.2,
+        34.6
+      ],
+      [
+        205,
+        2.2,
+        91.62,
+        41.65
+      ],
+      [
+        221,
+        2.2,
+        92.21,
+        41.91
+      ],
+      [
+        222,
+        2.4,
+        86.86,
+        36.19
+      ],
+      [
+        232,
+        1.6,
+        94.69,
+        59.18
+      ],
+      [
+        254,
+        1,
+        69.37,
+        69.37
+      ],
+      [
+        285,
+        3,
+        101.56,
+        33.85
+      ],
+      [
+        306,
+        2,
+        95.94,
+        47.97
+      ],
+      [
+        322,
+        1.8,
+        91.82,
+        51.01
+      ],
+      [
+        352,
+        2.6,
+        101.51,
+        39.04
+      ],
+      [
+        363,
+        1.7,
+        95.7,
+        56.29
+      ],
+      [
+        380,
+        1.7,
+        91.08,
+        53.58
+      ],
+      [
+        408,
+        2.2,
+        85.96,
+        39.07
+      ],
+      [
+        442,
+        1.5,
+        67.15,
+        44.77
+      ],
+      [
+        445,
+        1.7,
+        95.92,
+        56.42
+      ],
+      [
+        453,
+        1.9,
+        67.79,
+        35.68
+      ],
+      [
+        459,
+        2.6,
+        103.09,
+        39.65
+      ],
+      [
+        475,
+        2.7,
+        105.63,
+        39.12
+      ],
+      [
+        476,
+        1.5,
+        97.19,
+        64.79
+      ],
+      [
+        498,
+        3.6,
+        120.95,
+        33.6
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-11",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING Logic",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find riders who have more cancelled or unfulfilled requests than completed rides.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT rider_id, SUM(CASE WHEN status = 'Completed' THEN 1 ELSE 0 END) AS completed, SUM(CASE WHEN status <> 'Completed' THEN 1 ELSE 0 END) AS not_completed FROM rides GROUP BY rider_id HAVING SUM(CASE WHEN status <> 'Completed' THEN 1 ELSE 0 END) > SUM(CASE WHEN status = 'Completed' THEN 1 ELSE 0 END)",
+    "executed_ok": true,
+    "columns": [
+      "rider_id",
+      "completed",
+      "not_completed"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        3,
+        4,
+        7
+      ],
+      [
+        17,
+        5,
+        6
+      ],
+      [
+        18,
+        5,
+        6
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-12",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show monthly completed rides and the growth percentage versus the previous month.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "WITH m AS (SELECT DATE_FORMAT(request_ts, '%Y-%m') AS ym, COUNT(*) AS rides FROM rides WHERE status = 'Completed' GROUP BY DATE_FORMAT(request_ts, '%Y-%m')) SELECT ym, rides, ROUND((rides - LAG(rides) OVER (ORDER BY ym)) * 100.0 / LAG(rides) OVER (ORDER BY ym), 2) AS growth_pct FROM m ORDER BY ym",
+    "executed_ok": true,
+    "columns": [
+      "ym",
+      "rides",
+      "growth_pct"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "2024-03",
+        123,
+        null
+      ],
+      [
+        "2024-04",
+        120,
+        -2.44
+      ],
+      [
+        "2024-05",
+        123,
+        2.5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-13",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Pairs",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find rider-driver pairs that completed at least 2 rides together.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT rider_id, driver_id, COUNT(*) AS rides_together FROM rides WHERE status = 'Completed' GROUP BY rider_id, driver_id HAVING COUNT(*) >= 2 ORDER BY rides_together DESC",
+    "executed_ok": true,
+    "columns": [
+      "rider_id",
+      "driver_id",
+      "rides_together"
+    ],
+    "row_count": 70,
+    "expected_rows": [
+      [
+        28,
+        3,
+        5
+      ],
+      [
+        8,
+        5,
+        4
+      ],
+      [
+        24,
+        12,
+        4
+      ],
+      [
+        2,
+        14,
+        3
+      ],
+      [
+        5,
+        14,
+        3
+      ],
+      [
+        7,
+        14,
+        3
+      ],
+      [
+        11,
+        3,
+        3
+      ],
+      [
+        12,
+        1,
+        3
+      ],
+      [
+        21,
+        2,
+        3
+      ],
+      [
+        21,
+        4,
+        3
+      ],
+      [
+        22,
+        4,
+        3
+      ],
+      [
+        26,
+        4,
+        3
+      ],
+      [
+        31,
+        14,
+        3
+      ],
+      [
+        1,
+        15,
+        2
+      ],
+      [
+        2,
+        3,
+        2
+      ],
+      [
+        2,
+        5,
+        2
+      ],
+      [
+        2,
+        10,
+        2
+      ],
+      [
+        3,
+        3,
+        2
+      ],
+      [
+        4,
+        5,
+        2
+      ],
+      [
+        4,
+        12,
+        2
+      ],
+      [
+        5,
+        6,
+        2
+      ],
+      [
+        6,
+        4,
+        2
+      ],
+      [
+        6,
+        6,
+        2
+      ],
+      [
+        7,
+        7,
+        2
+      ],
+      [
+        7,
+        13,
+        2
+      ],
+      [
+        7,
+        15,
+        2
+      ],
+      [
+        8,
+        8,
+        2
+      ],
+      [
+        8,
+        11,
+        2
+      ],
+      [
+        9,
+        8,
+        2
+      ],
+      [
+        9,
+        15,
+        2
+      ],
+      [
+        10,
+        2,
+        2
+      ],
+      [
+        10,
+        8,
+        2
+      ],
+      [
+        11,
+        6,
+        2
+      ],
+      [
+        12,
+        4,
+        2
+      ],
+      [
+        14,
+        3,
+        2
+      ],
+      [
+        14,
+        11,
+        2
+      ],
+      [
+        14,
+        15,
+        2
+      ],
+      [
+        15,
+        13,
+        2
+      ],
+      [
+        16,
+        5,
+        2
+      ],
+      [
+        16,
+        11,
+        2
+      ],
+      [
+        17,
+        12,
+        2
+      ],
+      [
+        18,
+        1,
+        2
+      ],
+      [
+        19,
+        3,
+        2
+      ],
+      [
+        19,
+        12,
+        2
+      ],
+      [
+        19,
+        13,
+        2
+      ],
+      [
+        19,
+        15,
+        2
+      ],
+      [
+        20,
+        10,
+        2
+      ],
+      [
+        22,
+        8,
+        2
+      ],
+      [
+        22,
+        14,
+        2
+      ],
+      [
+        26,
+        13,
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-14",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show each driver's completed rides with a running count of rides completed so far.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT driver_id, ride_id, request_ts, ROW_NUMBER() OVER (PARTITION BY driver_id ORDER BY request_ts, ride_id) AS ride_number FROM rides WHERE status = 'Completed' ORDER BY driver_id, request_ts",
+    "executed_ok": true,
+    "columns": [
+      "driver_id",
+      "ride_id",
+      "request_ts",
+      "ride_number"
+    ],
+    "row_count": 366,
+    "expected_rows": [
+      [
+        1,
+        8,
+        "2024-03-02 20:23:00",
+        1
+      ],
+      [
+        1,
+        25,
+        "2024-03-06 09:00:00",
+        2
+      ],
+      [
+        1,
+        90,
+        "2024-03-18 07:32:00",
+        3
+      ],
+      [
+        1,
+        105,
+        "2024-03-20 17:59:00",
+        4
+      ],
+      [
+        1,
+        155,
+        "2024-03-29 08:06:00",
+        5
+      ],
+      [
+        1,
+        157,
+        "2024-03-30 02:45:00",
+        6
+      ],
+      [
+        1,
+        191,
+        "2024-04-04 08:55:00",
+        7
+      ],
+      [
+        1,
+        225,
+        "2024-04-11 06:15:00",
+        8
+      ],
+      [
+        1,
+        236,
+        "2024-04-12 20:42:00",
+        9
+      ],
+      [
+        1,
+        242,
+        "2024-04-13 17:40:00",
+        10
+      ],
+      [
+        1,
+        245,
+        "2024-04-14 21:31:00",
+        11
+      ],
+      [
+        1,
+        259,
+        "2024-04-17 23:11:00",
+        12
+      ],
+      [
+        1,
+        275,
+        "2024-04-20 16:42:00",
+        13
+      ],
+      [
+        1,
+        279,
+        "2024-04-21 00:44:00",
+        14
+      ],
+      [
+        1,
+        337,
+        "2024-05-01 02:14:00",
+        15
+      ],
+      [
+        1,
+        368,
+        "2024-05-08 19:20:00",
+        16
+      ],
+      [
+        1,
+        378,
+        "2024-05-10 18:52:00",
+        17
+      ],
+      [
+        1,
+        406,
+        "2024-05-16 07:14:00",
+        18
+      ],
+      [
+        1,
+        429,
+        "2024-05-18 14:22:00",
+        19
+      ],
+      [
+        1,
+        449,
+        "2024-05-24 05:37:00",
+        20
+      ],
+      [
+        1,
+        460,
+        "2024-05-26 15:07:00",
+        21
+      ],
+      [
+        1,
+        462,
+        "2024-05-26 15:43:00",
+        22
+      ],
+      [
+        1,
+        469,
+        "2024-05-27 21:23:00",
+        23
+      ],
+      [
+        1,
+        490,
+        "2024-05-30 14:13:00",
+        24
+      ],
+      [
+        2,
+        67,
+        "2024-03-12 18:47:00",
+        1
+      ],
+      [
+        2,
+        84,
+        "2024-03-17 03:59:00",
+        2
+      ],
+      [
+        2,
+        109,
+        "2024-03-21 02:39:00",
+        3
+      ],
+      [
+        2,
+        113,
+        "2024-03-21 19:30:00",
+        4
+      ],
+      [
+        2,
+        115,
+        "2024-03-21 22:30:00",
+        5
+      ],
+      [
+        2,
+        135,
+        "2024-03-25 11:19:00",
+        6
+      ],
+      [
+        2,
+        145,
+        "2024-03-27 19:50:00",
+        7
+      ],
+      [
+        2,
+        152,
+        "2024-03-28 20:33:00",
+        8
+      ],
+      [
+        2,
+        222,
+        "2024-04-10 01:27:00",
+        9
+      ],
+      [
+        2,
+        247,
+        "2024-04-15 10:12:00",
+        10
+      ],
+      [
+        2,
+        260,
+        "2024-04-17 23:35:00",
+        11
+      ],
+      [
+        2,
+        271,
+        "2024-04-20 07:36:00",
+        12
+      ],
+      [
+        2,
+        278,
+        "2024-04-20 22:55:00",
+        13
+      ],
+      [
+        2,
+        300,
+        "2024-04-24 02:27:00",
+        14
+      ],
+      [
+        2,
+        324,
+        "2024-04-29 08:44:00",
+        15
+      ],
+      [
+        2,
+        331,
+        "2024-04-30 05:00:00",
+        16
+      ],
+      [
+        2,
+        369,
+        "2024-05-08 20:46:00",
+        17
+      ],
+      [
+        2,
+        428,
+        "2024-05-18 13:06:00",
+        18
+      ],
+      [
+        2,
+        478,
+        "2024-05-29 02:28:00",
+        19
+      ],
+      [
+        3,
+        24,
+        "2024-03-06 07:12:00",
+        1
+      ],
+      [
+        3,
+        27,
+        "2024-03-06 14:46:00",
+        2
+      ],
+      [
+        3,
+        38,
+        "2024-03-07 11:29:00",
+        3
+      ],
+      [
+        3,
+        42,
+        "2024-03-08 12:08:00",
+        4
+      ],
+      [
+        3,
+        76,
+        "2024-03-15 16:34:00",
+        5
+      ],
+      [
+        3,
+        88,
+        "2024-03-18 04:47:00",
+        6
+      ],
+      [
+        3,
+        110,
+        "2024-03-21 11:42:00",
+        7
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "UBR-15",
+    "company": "UBR",
+    "company_name": "Uber and Ola",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Comparison",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compare average distance of completed rides with that of rider-cancelled requests.",
+    "schemas": [
+      "RIDES"
+    ],
+    "solution_sql": "SELECT status, ROUND(AVG(distance_km), 2) AS avg_km, COUNT(*) AS rides FROM rides WHERE status IN ('Completed', 'Cancelled_Rider') GROUP BY status",
+    "executed_ok": true,
+    "columns": [
+      "status",
+      "avg_km",
+      "rides"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Cancelled_Rider",
+        14.63,
+        58
+      ],
+      [
+        "Completed",
+        14.85,
+        366
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-01",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conditional Aggregation",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Rank brands by return rate (items from Returned orders divided by all items sold), showing only brands with at least 20 items sold.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.brand, COUNT(*) AS items, ROUND(SUM(CASE WHEN o.status = 'Returned' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS return_rate_pct FROM order_items oi JOIN orders o ON oi.order_id = o.order_id JOIN products p ON oi.product_id = p.product_id GROUP BY p.brand HAVING COUNT(*) >= 20 ORDER BY return_rate_pct DESC",
+    "executed_ok": true,
+    "columns": [
+      "brand",
+      "items",
+      "return_rate_pct"
+    ],
+    "row_count": 11,
+    "expected_rows": [
+      [
+        "ChaiHouse",
+        21,
+        23.81
+      ],
+      [
+        "UrbanWear",
+        34,
+        17.65
+      ],
+      [
+        "Zenith",
+        52,
+        13.46
+      ],
+      [
+        "CozyCo",
+        27,
+        11.11
+      ],
+      [
+        "Stride",
+        50,
+        10
+      ],
+      [
+        "HomeNest",
+        52,
+        9.62
+      ],
+      [
+        "FarmFresh",
+        53,
+        9.43
+      ],
+      [
+        "Nova",
+        47,
+        8.51
+      ],
+      [
+        "Heritage",
+        24,
+        8.33
+      ],
+      [
+        "PagePress",
+        40,
+        5
+      ],
+      [
+        "Pixelo",
+        25,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-02",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the average basket size (items per order) for every payment mode.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT o.payment_mode, ROUND(SUM(oi.quantity) * 1.0 / COUNT(DISTINCT o.order_id), 2) AS avg_items_per_order FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.payment_mode",
+    "executed_ok": true,
+    "columns": [
+      "payment_mode",
+      "avg_items_per_order"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "COD",
+        6.07
+      ],
+      [
+        "Card",
+        5.13
+      ],
+      [
+        "NetBanking",
+        4.94
+      ],
+      [
+        "UPI",
+        5.46
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-03",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Set Logic",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Find customers who bought from both the Fashion and the Home categories.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT o.customer_id FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE p.category IN ('Fashion', 'Home') GROUP BY o.customer_id HAVING COUNT(DISTINCT p.category) = 2",
+    "executed_ok": true,
+    "columns": [
+      "customer_id"
+    ],
+    "row_count": 19,
+    "expected_rows": [
+      [
+        2
+      ],
+      [
+        6
+      ],
+      [
+        7
+      ],
+      [
+        8
+      ],
+      [
+        9
+      ],
+      [
+        10
+      ],
+      [
+        12
+      ],
+      [
+        13
+      ],
+      [
+        14
+      ],
+      [
+        15
+      ],
+      [
+        16
+      ],
+      [
+        17
+      ],
+      [
+        18
+      ],
+      [
+        19
+      ],
+      [
+        21
+      ],
+      [
+        22
+      ],
+      [
+        23
+      ],
+      [
+        24
+      ],
+      [
+        26
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-04",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CASE Bucketing",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Bucket orders by total value (under 2000, 2000-9999, 10000 and above) and show orders and total revenue per bucket.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT order_id, SUM(quantity * unit_price) AS val FROM order_items GROUP BY order_id) SELECT CASE WHEN val < 2000 THEN 'Under 2000' WHEN val < 10000 THEN '2000-9999' ELSE '10000+' END AS bucket, COUNT(*) AS orders, SUM(val) AS revenue FROM t GROUP BY CASE WHEN val < 2000 THEN 'Under 2000' WHEN val < 10000 THEN '2000-9999' ELSE '10000+' END",
+    "executed_ok": true,
+    "columns": [
+      "bucket",
+      "orders",
+      "revenue"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "10000+",
+        106,
+        6933751.8
+      ],
+      [
+        "2000-9999",
+        42,
+        251396.3
+      ],
+      [
+        "Under 2000",
+        12,
+        13948.5
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-05",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Comparison",
+    "topic_group": "Pivot & Conditional Aggregation",
+    "also_tagged": [],
+    "question": "Compare Prime and non-Prime customers on number of orders per customer.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT c.is_prime, COUNT(DISTINCT c.customer_id) AS customers, ROUND(COUNT(o.order_id) * 1.0 / COUNT(DISTINCT c.customer_id), 2) AS orders_per_customer FROM customers c LEFT JOIN orders o ON c.customer_id = o.customer_id GROUP BY c.is_prime",
+    "executed_ok": true,
+    "columns": [
+      "is_prime",
+      "customers",
+      "orders_per_customer"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        0,
+        21,
+        5.9
+      ],
+      [
+        1,
+        9,
+        4
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-06",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each category find the month with the largest month-over-month increase in delivered revenue.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH m AS (SELECT p.category, DATE_FORMAT(o.order_date, '%Y-%m') AS ym, SUM(oi.quantity * oi.unit_price) AS rev FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE o.status = 'Delivered' GROUP BY p.category, DATE_FORMAT(o.order_date, '%Y-%m')), d AS (SELECT category, ym, rev - LAG(rev) OVER (PARTITION BY category ORDER BY ym) AS inc FROM m) SELECT category, ym, inc FROM (SELECT category, ym, inc, ROW_NUMBER() OVER (PARTITION BY category ORDER BY inc DESC) AS rn FROM d WHERE inc IS NOT NULL) t WHERE rn = 1",
+    "executed_ok": true,
+    "columns": [
+      "category",
+      "ym",
+      "inc"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Books",
+        "2024-06",
+        9191.3
+      ],
+      [
+        "Electronics",
+        "2024-06",
+        491491
+      ],
+      [
+        "Fashion",
+        "2024-05",
+        24229.2
+      ],
+      [
+        "Grocery",
+        "2024-01",
+        5474.9
+      ],
+      [
+        "Home",
+        "2023-11",
+        10342.699999999997
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-07",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Inventory",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Show the total value of unsold inventory (price x stock) for products that have never been ordered.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT p.product_name, p.price * p.stock AS dead_stock_value FROM products p WHERE NOT EXISTS (SELECT 1 FROM order_items oi WHERE oi.product_id = p.product_id)",
+    "executed_ok": true,
+    "columns": [
+      "product_name",
+      "dead_stock_value"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Smart Fitness Band",
+        0
+      ],
+      [
+        "Vintage Leather Wallet",
+        71940
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-08",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Distribution",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Show the count of reviews for each rating value 1 to 5, including ratings with zero reviews.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH r AS (SELECT 1 AS rating UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL SELECT 5) SELECT r.rating, COUNT(rv.review_id) AS reviews FROM r LEFT JOIN reviews rv ON rv.rating = r.rating GROUP BY r.rating ORDER BY r.rating",
+    "executed_ok": true,
+    "columns": [
+      "rating",
+      "reviews"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        1,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        11
+      ],
+      [
+        4,
+        29
+      ],
+      [
+        5,
+        33
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-09",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Cross Sell",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "For customers who bought a Fashion item, list the other categories they have also bought from (customer_id and category).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT DISTINCT o.customer_id, p.category FROM orders o JOIN order_items oi ON o.order_id = oi.order_id JOIN products p ON oi.product_id = p.product_id WHERE p.category <> 'Fashion' AND o.customer_id IN (SELECT o2.customer_id FROM orders o2 JOIN order_items oi2 ON o2.order_id = oi2.order_id JOIN products p2 ON oi2.product_id = p2.product_id WHERE p2.category = 'Fashion')",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "category"
+    ],
+    "row_count": 75,
+    "expected_rows": [
+      [
+        15,
+        "Books"
+      ],
+      [
+        26,
+        "Electronics"
+      ],
+      [
+        26,
+        "Grocery"
+      ],
+      [
+        12,
+        "Electronics"
+      ],
+      [
+        12,
+        "Books"
+      ],
+      [
+        2,
+        "Grocery"
+      ],
+      [
+        26,
+        "Home"
+      ],
+      [
+        6,
+        "Home"
+      ],
+      [
+        6,
+        "Books"
+      ],
+      [
+        27,
+        "Electronics"
+      ],
+      [
+        27,
+        "Books"
+      ],
+      [
+        6,
+        "Grocery"
+      ],
+      [
+        12,
+        "Grocery"
+      ],
+      [
+        18,
+        "Books"
+      ],
+      [
+        18,
+        "Electronics"
+      ],
+      [
+        18,
+        "Grocery"
+      ],
+      [
+        24,
+        "Books"
+      ],
+      [
+        24,
+        "Grocery"
+      ],
+      [
+        8,
+        "Home"
+      ],
+      [
+        8,
+        "Books"
+      ],
+      [
+        16,
+        "Electronics"
+      ],
+      [
+        2,
+        "Electronics"
+      ],
+      [
+        15,
+        "Electronics"
+      ],
+      [
+        15,
+        "Home"
+      ],
+      [
+        23,
+        "Grocery"
+      ],
+      [
+        23,
+        "Books"
+      ],
+      [
+        23,
+        "Home"
+      ],
+      [
+        17,
+        "Electronics"
+      ],
+      [
+        17,
+        "Books"
+      ],
+      [
+        17,
+        "Home"
+      ],
+      [
+        23,
+        "Electronics"
+      ],
+      [
+        13,
+        "Electronics"
+      ],
+      [
+        13,
+        "Home"
+      ],
+      [
+        8,
+        "Grocery"
+      ],
+      [
+        8,
+        "Electronics"
+      ],
+      [
+        14,
+        "Electronics"
+      ],
+      [
+        14,
+        "Books"
+      ],
+      [
+        19,
+        "Home"
+      ],
+      [
+        19,
+        "Electronics"
+      ],
+      [
+        19,
+        "Books"
+      ],
+      [
+        9,
+        "Electronics"
+      ],
+      [
+        21,
+        "Home"
+      ],
+      [
+        21,
+        "Books"
+      ],
+      [
+        6,
+        "Electronics"
+      ],
+      [
+        7,
+        "Grocery"
+      ],
+      [
+        7,
+        "Books"
+      ],
+      [
+        21,
+        "Electronics"
+      ],
+      [
+        21,
+        "Grocery"
+      ],
+      [
+        7,
+        "Electronics"
+      ],
+      [
+        24,
+        "Home"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-10",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show each product's price rank within its brand (1 = most expensive) and the difference from the brand's average price.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT brand, product_name, price, RANK() OVER (PARTITION BY brand ORDER BY price DESC) AS price_rank, ROUND(price - AVG(price) OVER (PARTITION BY brand), 2) AS diff_from_brand_avg FROM products ORDER BY brand, price_rank",
+    "executed_ok": true,
+    "columns": [
+      "brand",
+      "product_name",
+      "price",
+      "price_rank",
+      "diff_from_brand_avg"
+    ],
+    "row_count": 20,
+    "expected_rows": [
+      [
+        "ChaiHouse",
+        "Masala Tea 500g",
+        349,
+        1,
+        0
+      ],
+      [
+        "CozyCo",
+        "CozyCo Bedsheet",
+        1299,
+        1,
+        0
+      ],
+      [
+        "FarmFresh",
+        "Cold Pressed Olive Oil 1L",
+        899,
+        1,
+        100
+      ],
+      [
+        "FarmFresh",
+        "Organic Basmati 5kg",
+        699,
+        2,
+        -100
+      ],
+      [
+        "Heritage",
+        "Indian Classics Box Set",
+        1499,
+        1,
+        150
+      ],
+      [
+        "Heritage",
+        "Vintage Leather Wallet",
+        1199,
+        2,
+        -150
+      ],
+      [
+        "HomeNest",
+        "HomeNest Mixer Grinder",
+        3499,
+        1,
+        250
+      ],
+      [
+        "HomeNest",
+        "HomeNest Cookware Set",
+        2999,
+        2,
+        -250
+      ],
+      [
+        "Nova",
+        "Nova X1 Smartphone",
+        18999,
+        1,
+        10833.33
+      ],
+      [
+        "Nova",
+        "Smart Fitness Band",
+        2999,
+        2,
+        -5166.67
+      ],
+      [
+        "Nova",
+        "Nova Buds Pro",
+        2499,
+        3,
+        -5666.67
+      ],
+      [
+        "PagePress",
+        "Data Structures in Depth",
+        649,
+        1,
+        75
+      ],
+      [
+        "PagePress",
+        "SQL Mastery Handbook",
+        499,
+        2,
+        -75
+      ],
+      [
+        "Pixelo",
+        "Pixel Laptop 14",
+        54999,
+        1,
+        0
+      ],
+      [
+        "Stride",
+        "Stride Running Shoes",
+        3499,
+        1,
+        1350
+      ],
+      [
+        "Stride",
+        "Stride Sports Tee",
+        799,
+        2,
+        -1350
+      ],
+      [
+        "UrbanWear",
+        "Urban Denim Jeans",
+        1799,
+        1,
+        400
+      ],
+      [
+        "UrbanWear",
+        "Urban Cotton Kurta",
+        999,
+        2,
+        -400
+      ],
+      [
+        "Zenith",
+        "Zenith 55in Smart TV",
+        38999,
+        1,
+        15500
+      ],
+      [
+        "Zenith",
+        "Zenith Soundbar",
+        7999,
+        2,
+        -15500
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-11",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Anti Join",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Find customers who signed up before 2023 but have not ordered anything in 2024.",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "SELECT c.customer_id, c.customer_name FROM customers c WHERE c.signup_date < '2023-01-01' AND NOT EXISTS (SELECT 1 FROM orders o WHERE o.customer_id = c.customer_id AND o.order_date >= '2024-01-01')",
+    "executed_ok": true,
+    "columns": [
+      "customer_id",
+      "customer_name"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        29,
+        "Zoya Gupta"
+      ],
+      [
+        30,
+        "Harsh Menon"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-12",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Share Calculation",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "What percentage of delivered revenue comes from customers in the top 3 cities?",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH c AS (SELECT cu.city, SUM(oi.quantity * oi.unit_price) AS rev FROM orders o JOIN customers cu ON o.customer_id = cu.customer_id JOIN order_items oi ON o.order_id = oi.order_id WHERE o.status = 'Delivered' GROUP BY cu.city), r AS (SELECT city, rev, ROW_NUMBER() OVER (ORDER BY rev DESC) AS rn FROM c) SELECT ROUND(SUM(CASE WHEN rn <= 3 THEN rev ELSE 0 END) * 100.0 / SUM(rev), 2) AS top3_city_share_pct FROM r",
+    "executed_ok": true,
+    "columns": [
+      "top3_city_share_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        47.82
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "MYN-13",
+    "company": "MYN",
+    "company_name": "Myntra and Meesho",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Find customers whose order value has increased in each successive order (strictly increasing across all their orders, at least 3 orders).",
+    "schemas": [
+      "SHOP"
+    ],
+    "solution_sql": "WITH t AS (SELECT o.customer_id, o.order_id, SUM(oi.quantity * oi.unit_price) AS val FROM orders o JOIN order_items oi ON o.order_id = oi.order_id GROUP BY o.customer_id, o.order_id), l AS (SELECT customer_id, val, LAG(val) OVER (PARTITION BY customer_id ORDER BY order_id) AS prev_val FROM t) SELECT customer_id FROM l GROUP BY customer_id HAVING COUNT(*) >= 3 AND SUM(CASE WHEN prev_val IS NOT NULL AND val <= prev_val THEN 1 ELSE 0 END) = 0",
+    "executed_ok": true,
+    "columns": [
+      "customer_id"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        14
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-01",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Metrics",
+    "topic_group": "Business Metrics & Domain Analytics",
+    "also_tagged": [],
+    "question": "Define MRR and ARR and how churn affects them.",
+    "model_answer": "MRR (monthly recurring revenue) is the sum of normalised monthly fees of active subscriptions; ARR is MRR x 12. Churned MRR is the fee of subscriptions that ended in the period. Net new MRR = new + expansion - contraction - churned.",
+    "isPro": true
+  },
+  {
+    "id": "FWS-02",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Modelling",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "How would you model subscription history so that past plan changes are preserved (SCD Type 2)?",
+    "model_answer": "Store one row per plan period with start_date, end_date (NULL or 9999-12-31 for current) and an is_current flag. A change closes the old row (set end_date) and inserts a new row. Queries 'as of date D' filter start_date <= D AND (end_date IS NULL OR end_date > D).",
+    "isPro": true
+  },
+  {
+    "id": "FWS-03",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Point-in-Time",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "How many subscriptions were active on 2024-03-31, and what was the MRR (sum of monthly_fee) by plan on that date?",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT plan, COUNT(*) AS active_subs, SUM(monthly_fee) AS mrr FROM subscriptions WHERE start_date <= '2024-03-31' AND (end_date IS NULL OR end_date > '2024-03-31') GROUP BY plan",
+    "executed_ok": true,
+    "columns": [
+      "plan",
+      "active_subs",
+      "mrr"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "basic",
+        10,
+        2990
+      ],
+      [
+        "enterprise",
+        4,
+        19996
+      ],
+      [
+        "pro",
+        15,
+        14985
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-04",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Time Series",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Show MRR at the end of January, February and March 2024 (use a small CTE of month-end dates).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH m AS (SELECT '2024-01-31' AS d UNION ALL SELECT '2024-02-29' UNION ALL SELECT '2024-03-31') SELECT m.d AS month_end, COALESCE(SUM(s.monthly_fee), 0) AS mrr FROM m LEFT JOIN subscriptions s ON s.start_date <= m.d AND (s.end_date IS NULL OR s.end_date > m.d) GROUP BY m.d ORDER BY m.d",
+    "executed_ok": true,
+    "columns": [
+      "month_end",
+      "mrr"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "2024-01-31",
+        47863
+      ],
+      [
+        "2024-02-29",
+        46864
+      ],
+      [
+        "2024-03-31",
+        37971
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-05",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Churn",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For each month of 2024 show subscriptions that churned (end_date in that month) and the churn rate versus subscriptions active at the start of the month.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH m AS (SELECT '2024-01-01' AS s, '2024-01-31' AS e UNION ALL SELECT '2024-02-01', '2024-02-29' UNION ALL SELECT '2024-03-01', '2024-03-31' UNION ALL SELECT '2024-04-01', '2024-04-30') SELECT m.s AS month_start, (SELECT COUNT(*) FROM subscriptions x WHERE x.end_date BETWEEN m.s AND m.e) AS churned, (SELECT COUNT(*) FROM subscriptions x WHERE x.start_date < m.s AND (x.end_date IS NULL OR x.end_date >= m.s)) AS active_at_start FROM m ORDER BY m.s",
+    "executed_ok": true,
+    "columns": [
+      "month_start",
+      "churned",
+      "active_at_start"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        0,
+        32
+      ],
+      [
+        "2024-02-01",
+        1,
+        37
+      ],
+      [
+        "2024-03-01",
+        7,
+        36
+      ],
+      [
+        "2024-04-01",
+        1,
+        29
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-06",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Compute ARPU: the average monthly_fee across currently active subscriptions (end_date IS NULL).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT ROUND(AVG(monthly_fee), 2) AS arpu FROM subscriptions WHERE end_date IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "arpu"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        1560.9
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-07",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Duration",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For churned subscriptions, find the average lifetime in days for each plan.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT plan, COUNT(*) AS churned_subs, ROUND(AVG(DATEDIFF(end_date, start_date)), 1) AS avg_lifetime_days FROM subscriptions WHERE end_date IS NOT NULL GROUP BY plan",
+    "executed_ok": true,
+    "columns": [
+      "plan",
+      "churned_subs",
+      "avg_lifetime_days"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "basic",
+        10,
+        182.1
+      ],
+      [
+        "enterprise",
+        2,
+        173.5
+      ],
+      [
+        "pro",
+        9,
+        167.9
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-08",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Lifetime Value",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Estimate each subscription's revenue to date through 2024-06-30: monthly_fee x months active (use days / 30.4), ending at end_date or 2024-06-30.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT sub_id, user_id, plan, ROUND(monthly_fee * DATEDIFF(COALESCE(end_date, '2024-06-30'), start_date) / 30.4, 2) AS revenue_to_date FROM subscriptions",
+    "executed_ok": true,
+    "columns": [
+      "sub_id",
+      "user_id",
+      "plan",
+      "revenue_to_date"
+    ],
+    "row_count": 42,
+    "expected_rows": [
+      [
+        1,
+        57,
+        "basic",
+        2803.13
+      ],
+      [
+        2,
+        32,
+        "pro",
+        10877.27
+      ],
+      [
+        3,
+        9,
+        "pro",
+        5225.03
+      ],
+      [
+        4,
+        54,
+        "enterprise",
+        18252.93
+      ],
+      [
+        5,
+        18,
+        "basic",
+        472.11
+      ],
+      [
+        6,
+        22,
+        "pro",
+        5882.27
+      ],
+      [
+        7,
+        10,
+        "basic",
+        2606.41
+      ],
+      [
+        8,
+        36,
+        "pro",
+        9037.01
+      ],
+      [
+        9,
+        56,
+        "basic",
+        963.88
+      ],
+      [
+        10,
+        8,
+        "pro",
+        12421.78
+      ],
+      [
+        11,
+        14,
+        "basic",
+        1190.1
+      ],
+      [
+        12,
+        24,
+        "basic",
+        2626.09
+      ],
+      [
+        13,
+        25,
+        "pro",
+        7952.57
+      ],
+      [
+        14,
+        40,
+        "pro",
+        3089.01
+      ],
+      [
+        15,
+        52,
+        "pro",
+        11665.95
+      ],
+      [
+        16,
+        34,
+        "pro",
+        8511.22
+      ],
+      [
+        17,
+        1,
+        "basic",
+        2272.01
+      ],
+      [
+        18,
+        20,
+        "pro",
+        6013.72
+      ],
+      [
+        19,
+        21,
+        "basic",
+        1858.91
+      ],
+      [
+        20,
+        3,
+        "enterprise",
+        56238.75
+      ],
+      [
+        21,
+        30,
+        "enterprise",
+        38808.03
+      ],
+      [
+        22,
+        50,
+        "basic",
+        826.18
+      ],
+      [
+        23,
+        23,
+        "basic",
+        1849.08
+      ],
+      [
+        24,
+        48,
+        "enterprise",
+        32888.16
+      ],
+      [
+        25,
+        59,
+        "pro",
+        11731.68
+      ],
+      [
+        26,
+        43,
+        "basic",
+        2104.8
+      ],
+      [
+        27,
+        33,
+        "pro",
+        1675.95
+      ],
+      [
+        28,
+        44,
+        "enterprise",
+        25981.64
+      ],
+      [
+        29,
+        42,
+        "basic",
+        2065.46
+      ],
+      [
+        30,
+        16,
+        "pro",
+        11994.57
+      ],
+      [
+        31,
+        53,
+        "pro",
+        8116.88
+      ],
+      [
+        32,
+        47,
+        "basic",
+        3462.11
+      ],
+      [
+        33,
+        51,
+        "pro",
+        8182.6
+      ],
+      [
+        34,
+        19,
+        "pro",
+        8511.22
+      ],
+      [
+        35,
+        58,
+        "basic",
+        2645.76
+      ],
+      [
+        36,
+        55,
+        "basic",
+        2734.28
+      ],
+      [
+        37,
+        45,
+        "enterprise",
+        40616.88
+      ],
+      [
+        38,
+        11,
+        "basic",
+        2508.06
+      ],
+      [
+        39,
+        27,
+        "pro",
+        10351.48
+      ],
+      [
+        40,
+        29,
+        "pro",
+        1971.71
+      ],
+      [
+        41,
+        46,
+        "pro",
+        6703.82
+      ],
+      [
+        42,
+        2,
+        "pro",
+        6703.82
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-09",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Engagement",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Find active subscribers who logged in on fewer than 20 days in the whole period (low-engagement paying users).",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT s.user_id, COUNT(l.login_date) AS login_days FROM subscriptions s LEFT JOIN logins l ON l.user_id = s.user_id WHERE s.end_date IS NULL GROUP BY s.user_id HAVING COUNT(l.login_date) < 20",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "login_days"
+    ],
+    "row_count": 7,
+    "expected_rows": [
+      [
+        1,
+        10
+      ],
+      [
+        22,
+        15
+      ],
+      [
+        27,
+        12
+      ],
+      [
+        32,
+        14
+      ],
+      [
+        36,
+        15
+      ],
+      [
+        44,
+        4
+      ],
+      [
+        52,
+        19
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-10",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Percent of Total",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Show the share of each plan among currently active subscriptions.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT plan, COUNT(*) AS subs, ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER (), 2) AS share_pct FROM subscriptions WHERE end_date IS NULL GROUP BY plan",
+    "executed_ok": true,
+    "columns": [
+      "plan",
+      "subs",
+      "share_pct"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "basic",
+        6,
+        28.57
+      ],
+      [
+        "enterprise",
+        4,
+        19.05
+      ],
+      [
+        "pro",
+        11,
+        52.38
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-11",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Conversion",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "Find users who started a subscription within 30 days of signing up.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT s.user_id, u.signup_date, s.start_date FROM subscriptions s JOIN app_users u ON s.user_id = u.user_id WHERE DATEDIFF(s.start_date, u.signup_date) BETWEEN 0 AND 30",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "signup_date",
+      "start_date"
+    ],
+    "row_count": 4,
+    "expected_rows": [
+      [
+        9,
+        "2023-11-29",
+        "2023-12-25"
+      ],
+      [
+        40,
+        "2023-11-26",
+        "2023-12-24"
+      ],
+      [
+        1,
+        "2023-11-07",
+        "2023-11-12"
+      ],
+      [
+        48,
+        "2023-12-03",
+        "2023-12-13"
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-12",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Cohorts",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For each subscription start month show how many subscriptions started and how many are still active.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT DATE_FORMAT(start_date, '%Y-%m') AS start_month, COUNT(*) AS started, SUM(CASE WHEN end_date IS NULL THEN 1 ELSE 0 END) AS still_active FROM subscriptions GROUP BY DATE_FORMAT(start_date, '%Y-%m') ORDER BY start_month",
+    "executed_ok": true,
+    "columns": [
+      "start_month",
+      "started",
+      "still_active"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "2023-06",
+        2,
+        1
+      ],
+      [
+        "2023-07",
+        7,
+        5
+      ],
+      [
+        "2023-08",
+        7,
+        2
+      ],
+      [
+        "2023-09",
+        6,
+        2
+      ],
+      [
+        "2023-10",
+        4,
+        4
+      ],
+      [
+        "2023-11",
+        2,
+        1
+      ],
+      [
+        "2023-12",
+        9,
+        4
+      ],
+      [
+        "2024-01",
+        5,
+        2
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-13",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Early Churn",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "What percentage of subscriptions ended within 90 days of starting?",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT ROUND(SUM(CASE WHEN end_date IS NOT NULL AND DATEDIFF(end_date, start_date) <= 90 THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS early_churn_pct FROM subscriptions",
+    "executed_ok": true,
+    "columns": [
+      "early_churn_pct"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        9.52
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-14",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Engagement",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For active subscribers show the number of distinct days they logged in during March 2024.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "SELECT s.user_id, COUNT(DISTINCT l.login_date) AS login_days FROM subscriptions s LEFT JOIN logins l ON l.user_id = s.user_id AND l.login_date BETWEEN '2024-03-01' AND '2024-03-31' WHERE s.end_date IS NULL GROUP BY s.user_id ORDER BY login_days DESC",
+    "executed_ok": true,
+    "columns": [
+      "user_id",
+      "login_days"
+    ],
+    "row_count": 21,
+    "expected_rows": [
+      [
+        47,
+        29
+      ],
+      [
+        45,
+        28
+      ],
+      [
+        24,
+        26
+      ],
+      [
+        59,
+        23
+      ],
+      [
+        51,
+        23
+      ],
+      [
+        48,
+        23
+      ],
+      [
+        3,
+        20
+      ],
+      [
+        57,
+        18
+      ],
+      [
+        46,
+        17
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        8,
+        15
+      ],
+      [
+        42,
+        12
+      ],
+      [
+        23,
+        12
+      ],
+      [
+        52,
+        5
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        44,
+        2
+      ],
+      [
+        53,
+        0
+      ],
+      [
+        36,
+        0
+      ],
+      [
+        32,
+        0
+      ],
+      [
+        27,
+        0
+      ],
+      [
+        22,
+        0
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "FWS-15",
+    "company": "FWS",
+    "company_name": "Freshworks and SaaS companies (Zoho, Chargebee, Postman)",
+    "tier": "Product / Startup",
+    "type": "query",
+    "difficulty": "hard",
+    "topic": "Net New MRR",
+    "topic_group": "Cohorts, Retention, Funnels & Churn",
+    "also_tagged": [],
+    "question": "For January to March 2024 compute new MRR (fees of subscriptions starting that month) and churned MRR (fees of subscriptions ending that month), and the net.",
+    "schemas": [
+      "APP"
+    ],
+    "solution_sql": "WITH m AS (SELECT '2024-01-01' AS s, '2024-01-31' AS e UNION ALL SELECT '2024-02-01', '2024-02-29' UNION ALL SELECT '2024-03-01', '2024-03-31') SELECT m.s AS month_start, COALESCE((SELECT SUM(monthly_fee) FROM subscriptions x WHERE x.start_date BETWEEN m.s AND m.e), 0) AS new_mrr, COALESCE((SELECT SUM(monthly_fee) FROM subscriptions x WHERE x.end_date BETWEEN m.s AND m.e), 0) AS churned_mrr, COALESCE((SELECT SUM(monthly_fee) FROM subscriptions x WHERE x.start_date BETWEEN m.s AND m.e), 0) - COALESCE((SELECT SUM(monthly_fee) FROM subscriptions x WHERE x.end_date BETWEEN m.s AND m.e), 0) AS net_new_mrr FROM m ORDER BY m.s",
+    "executed_ok": true,
+    "columns": [
+      "month_start",
+      "new_mrr",
+      "churned_mrr",
+      "net_new_mrr"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "2024-01-01",
+        7595,
+        0,
+        7595
+      ],
+      [
+        "2024-02-01",
+        0,
+        999,
+        -999
+      ],
+      [
+        "2024-03-01",
+        0,
+        8893,
+        -8893
+      ]
+    ],
+    "isPro": true
+  },
+  {
+    "id": "CORE-01",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "What does SELECT COUNT(commission) FROM employees return (HR schema)?",
+    "options": {
+      "A": "22",
+      "B": "5",
+      "C": "17",
+      "D": "0"
+    },
+    "answer": "B",
+    "explanation": "COUNT(column) counts only non-NULL values; five employees have a commission.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-02",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How many rows does SELECT COUNT(*) FROM employees WHERE dept_id IS NULL count?",
+    "options": {
+      "A": "0",
+      "B": "1",
+      "C": "2",
+      "D": "22"
+    },
+    "answer": "B",
+    "explanation": "Only Gaurav Malhotra has no department.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-03",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "What does SELECT AVG(commission) FROM employees return?",
+    "options": {
+      "A": "2318.18",
+      "B": "10200",
+      "C": "51000",
+      "D": "NULL"
+    },
+    "answer": "B",
+    "explanation": "AVG ignores NULLs: (20000 + 15000 + 8000 + 5000 + 3000) / 5 = 10200.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-04",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "SELECT MAX(salary) - MIN(salary) FROM employees returns...",
+    "options": {
+      "A": "190000",
+      "B": "195000",
+      "C": "250000",
+      "D": "60000"
+    },
+    "answer": "A",
+    "explanation": "Maximum 250000 minus minimum 60000.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-05",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How many rows does employees CROSS JOIN departments return (22 employees, 6 departments)?",
+    "options": {
+      "A": "28",
+      "B": "132",
+      "C": "22",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": "22 x 6 = 132.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-06",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How many rows does an INNER JOIN of employees and departments on dept_id return?",
+    "options": {
+      "A": "22",
+      "B": "21",
+      "C": "20",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": "One employee has a NULL dept_id and therefore matches nothing.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-07",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How many rows does departments LEFT JOIN employees on dept_id return?",
+    "options": {
+      "A": "21",
+      "B": "22",
+      "C": "23",
+      "D": "6"
+    },
+    "answer": "B",
+    "explanation": "21 matched employee rows plus 1 row for the department with no employees (Support).",
+    "isPro": false
+  },
+  {
+    "id": "CORE-08",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How many rows does SELECT DISTINCT dept_id FROM employees return?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "22",
+      "D": "1"
+    },
+    "answer": "B",
+    "explanation": "Five department ids plus one NULL group; DISTINCT treats NULLs as equal.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-09",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "What does SELECT COUNT(DISTINCT dept_id) FROM employees return?",
+    "options": {
+      "A": "5",
+      "B": "6",
+      "C": "22",
+      "D": "0"
+    },
+    "answer": "A",
+    "explanation": "COUNT(DISTINCT col) ignores NULL.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-10",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "NULL Traps",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "SELECT COUNT(*) FROM departments WHERE dept_id NOT IN (SELECT dept_id FROM employees) returns...",
+    "options": {
+      "A": "1",
+      "B": "0",
+      "C": "6",
+      "D": "Error"
+    },
+    "answer": "B",
+    "explanation": "employees.dept_id contains a NULL, so NOT IN evaluates to UNKNOWN for every row. Use NOT EXISTS instead.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-11",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Output Prediction",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "How many rows does SELECT city FROM employees UNION ALL SELECT city FROM students return (22 employees, 12 students)?",
+    "options": {
+      "A": "34",
+      "B": "22",
+      "C": "12",
+      "D": "Fewer than 34 because of duplicates"
+    },
+    "answer": "A",
+    "explanation": "UNION ALL keeps duplicates, so rows add up.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-12",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Syntax",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "What does LIMIT 3 OFFSET 2 return?",
+    "options": {
+      "A": "Rows 1 to 3",
+      "B": "Rows 3 to 5",
+      "C": "Rows 2 to 4",
+      "D": "Rows 2 to 3"
+    },
+    "answer": "B",
+    "explanation": "OFFSET 2 skips two rows; LIMIT 3 then returns the next three (rows 3, 4 and 5).",
+    "isPro": false
+  },
+  {
+    "id": "CORE-13",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Syntax",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "What does the pattern LIKE '_a%' match?",
+    "options": {
+      "A": "Strings starting with a",
+      "B": "Strings whose second character is a",
+      "C": "Strings ending with a",
+      "D": "Strings containing a"
+    },
+    "answer": "B",
+    "explanation": "_ matches exactly one character, % matches any sequence.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-14",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Syntax",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Is BETWEEN 10 AND 20 inclusive of both ends?",
+    "options": {
+      "A": "Yes",
+      "B": "No",
+      "C": "Only of 10",
+      "D": "Only of 20"
+    },
+    "answer": "A",
+    "explanation": "BETWEEN is inclusive on both ends.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-15",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Dialects",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "In MySQL SELECT 5/2 returns 2.5; in PostgreSQL SELECT 5/2 returns...",
+    "options": {
+      "A": "2.5",
+      "B": "2",
+      "C": "3",
+      "D": "Error"
+    },
+    "answer": "B",
+    "explanation": "PostgreSQL and SQL Server use integer division for two integers; cast to decimal for fractional results.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-16",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Dialects",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "Where do NULLs appear in an ascending ORDER BY by default?",
+    "options": {
+      "A": "Always first",
+      "B": "Always last",
+      "C": "MySQL first, PostgreSQL last",
+      "D": "Never shown"
+    },
+    "answer": "C",
+    "explanation": "Behaviour differs; use NULLS FIRST/LAST (PostgreSQL, Oracle) or an explicit CASE to control it.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-17",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "SQL Categories",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "GRANT and REVOKE belong to which sub-language?",
+    "options": {
+      "A": "DDL",
+      "B": "DML",
+      "C": "DCL",
+      "D": "TCL"
+    },
+    "answer": "C",
+    "explanation": "DCL (Data Control Language) manages permissions.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-18",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "SQL Categories",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "COMMIT, ROLLBACK and SAVEPOINT belong to which sub-language?",
+    "options": {
+      "A": "DDL",
+      "B": "DML",
+      "C": "DCL",
+      "D": "TCL"
+    },
+    "answer": "D",
+    "explanation": "TCL (Transaction Control Language).",
+    "isPro": false
+  },
+  {
+    "id": "CORE-19",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For salaries 300, 200, 200, 100, what does DENSE_RANK() OVER (ORDER BY salary DESC) give to 100?",
+    "options": {
+      "A": "3",
+      "B": "4",
+      "C": "2",
+      "D": "1"
+    },
+    "answer": "A",
+    "explanation": "DENSE_RANK has no gaps: 1, 2, 2, 3.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-20",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "mcq",
+    "difficulty": "easy",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "Which function returns the value from the previous row in a window?",
+    "options": {
+      "A": "LEAD",
+      "B": "LAG",
+      "C": "FIRST_VALUE",
+      "D": "NTILE"
+    },
+    "answer": "B",
+    "explanation": "LAG looks backwards; LEAD looks forward.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-21",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "SQL Categories",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "List the sub-languages of SQL with two commands each.",
+    "model_answer": "DDL: CREATE, ALTER, DROP, TRUNCATE. DML: INSERT, UPDATE, DELETE, MERGE. DQL: SELECT. DCL: GRANT, REVOKE. TCL: COMMIT, ROLLBACK, SAVEPOINT.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-22",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Functions",
+    "topic_group": "Fundamentals, Dialects & Output Prediction",
+    "also_tagged": [],
+    "question": "What is the difference between aggregate and scalar functions?",
+    "model_answer": "Aggregate functions (SUM, AVG, COUNT, MIN, MAX) collapse many rows into one value per group. Scalar functions (UPPER, LENGTH, ROUND, COALESCE) operate on each row and return one value per row.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-23",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Keys",
+    "topic_group": "Normalization, Keys & Data Modelling",
+    "also_tagged": [],
+    "question": "Surrogate key versus natural key: trade-offs?",
+    "model_answer": "A natural key is a real-world attribute (email, PAN) that may change or be reused. A surrogate key is a meaningless generated id (auto-increment, UUID) that is stable and compact. Use surrogate keys as primary keys and add UNIQUE constraints on natural keys.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-24",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "What is a Cartesian product and how does it happen by accident?",
+    "model_answer": "It pairs every row of one table with every row of the other (m x n rows). It happens when a join condition is missing or incorrect, e.g. FROM a, b without a WHERE linking them.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-25",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Subqueries",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Name the kinds of subqueries.",
+    "model_answer": "Scalar (one value), row (one row), table (derived table in FROM), and correlated (references the outer query and is re-evaluated per row). They can appear in SELECT, FROM, WHERE or HAVING.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-26",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Optimisation",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "What does EXPLAIN show and how do you use it?",
+    "model_answer": "EXPLAIN displays the execution plan chosen by the optimiser: scan types, index usage, join order and estimated rows or cost. Use it to find full table scans, missing indexes and bad join orders, then re-run after the change.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-27",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Counting",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Is COUNT(1) faster than COUNT(*)?",
+    "model_answer": "No. Modern optimisers treat COUNT(1) and COUNT(*) identically; both count rows. COUNT(column) differs because it skips NULLs.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-28",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Integrity",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "What are orphan records and how are they prevented?",
+    "model_answer": "Child rows whose parent key no longer exists (e.g. orders for a deleted customer). Prevent them with foreign key constraints, using ON DELETE RESTRICT, CASCADE or SET NULL as appropriate.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-29",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Cursors",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "What is a cursor and why is it usually discouraged?",
+    "model_answer": "A cursor processes a result set row by row inside procedural code. It is slow compared with set-based SQL because it adds per-row overhead and prevents the optimiser from working on the whole set. Prefer set-based statements and window functions.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-30",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Views",
+    "topic_group": "Views, Procedures & Triggers",
+    "also_tagged": [],
+    "question": "What is a materialised view?",
+    "model_answer": "A view whose result is physically stored and refreshed periodically or on demand. It trades storage and staleness for fast reads of expensive aggregations. (PostgreSQL and Oracle support it natively; MySQL does not.)",
+    "isPro": false
+  },
+  {
+    "id": "CORE-31",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "concept",
+    "difficulty": "easy",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "How are JOIN and UNION different?",
+    "model_answer": "JOIN combines columns from tables horizontally using a condition. UNION stacks result sets vertically; the queries must return the same number of columns with compatible types.",
+    "isPro": false
+  },
+  {
+    "id": "CORE-32",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "SELECT Basics",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Show each employee's name and annual salary (salary x 12) as annual_salary.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, salary * 12 AS annual_salary FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "annual_salary"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        3000000
+      ],
+      [
+        "Anita Desai",
+        2640000
+      ],
+      [
+        "Suresh Iyer",
+        2160000
+      ],
+      [
+        "Priya Nair",
+        1800000
+      ],
+      [
+        "Rohan Gupta",
+        1140000
+      ],
+      [
+        "Neha Kulkarni",
+        1140000
+      ],
+      [
+        "Arjun Reddy",
+        720000
+      ],
+      [
+        "Kavita Joshi",
+        1680000
+      ],
+      [
+        "Sandeep Singh",
+        840000
+      ],
+      [
+        "Meera Pillai",
+        840000
+      ],
+      [
+        "Imran Khan",
+        780000
+      ],
+      [
+        "Divya Bansal",
+        1560000
+      ],
+      [
+        "Harish Rao",
+        840000
+      ],
+      [
+        "Pooja Agarwal",
+        2400000
+      ],
+      [
+        "Karthik Subramanian",
+        960000
+      ],
+      [
+        "Lakshmi Menon",
+        960000
+      ],
+      [
+        "Faisal Ahmed",
+        1920000
+      ],
+      [
+        "Tanvi Shah",
+        900000
+      ],
+      [
+        "Gaurav Malhotra",
+        1440000
+      ],
+      [
+        "Sneha Chatterjee",
+        1140000
+      ],
+      [
+        "Ritesh Kumar",
+        864000
+      ],
+      [
+        "Aisha Siddiqui",
+        936000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-33",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "SELECT Basics",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List the distinct job titles in the company.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT DISTINCT job_title FROM employees ORDER BY job_title",
+    "executed_ok": true,
+    "columns": [
+      "job_title"
+    ],
+    "row_count": 17,
+    "expected_rows": [
+      [
+        "Accountant"
+      ],
+      [
+        "Brand Designer"
+      ],
+      [
+        "CTO"
+      ],
+      [
+        "Consultant"
+      ],
+      [
+        "Content Strategist"
+      ],
+      [
+        "Engineer"
+      ],
+      [
+        "Engineering Manager"
+      ],
+      [
+        "Finance Controller"
+      ],
+      [
+        "HR Executive"
+      ],
+      [
+        "HR Head"
+      ],
+      [
+        "Junior Engineer"
+      ],
+      [
+        "Marketing Head"
+      ],
+      [
+        "Sales Executive"
+      ],
+      [
+        "Sales Manager"
+      ],
+      [
+        "Senior Engineer"
+      ],
+      [
+        "Senior Sales Executive"
+      ],
+      [
+        "VP Sales"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-34",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Pagination",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "Return the second page of employees ordered by emp_id when each page holds 5 rows.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_id, emp_name FROM employees ORDER BY emp_id LIMIT 5 OFFSET 5",
+    "executed_ok": true,
+    "columns": [
+      "emp_id",
+      "emp_name"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        6,
+        "Neha Kulkarni"
+      ],
+      [
+        7,
+        "Arjun Reddy"
+      ],
+      [
+        8,
+        "Kavita Joshi"
+      ],
+      [
+        9,
+        "Sandeep Singh"
+      ],
+      [
+        10,
+        "Meera Pillai"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-35",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "List the employees who have a commission.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, commission FROM employees WHERE commission IS NOT NULL",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "commission"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Anita Desai",
+        20000
+      ],
+      [
+        "Kavita Joshi",
+        15000
+      ],
+      [
+        "Sandeep Singh",
+        8000
+      ],
+      [
+        "Meera Pillai",
+        5000
+      ],
+      [
+        "Ritesh Kumar",
+        3000
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-36",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Derived Table",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "Find the average of the department-wise average salaries.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT AVG(avg_sal) AS avg_of_dept_avgs FROM (SELECT dept_id, AVG(salary) AS avg_sal FROM employees WHERE dept_id IS NOT NULL GROUP BY dept_id) t",
+    "executed_ok": true,
+    "columns": [
+      "avg_of_dept_avgs"
+    ],
+    "row_count": 1,
+    "expected_rows": [
+      [
+        112528.57142857143
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-37",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "EXISTS",
+    "topic_group": "Subqueries & CTEs",
+    "also_tagged": [],
+    "question": "List the departments that have at least one project.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT d.dept_name FROM departments d WHERE EXISTS (SELECT 1 FROM projects p WHERE p.dept_id = d.dept_id)",
+    "executed_ok": true,
+    "columns": [
+      "dept_name"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Engineering"
+      ],
+      [
+        "Sales"
+      ],
+      [
+        "HR"
+      ],
+      [
+        "Finance"
+      ],
+      [
+        "Marketing"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-38",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Find the cities that appear in both employees and students.",
+    "schemas": [
+      "HR",
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT city FROM employees INTERSECT SELECT city FROM students",
+    "executed_ok": true,
+    "columns": [
+      "city"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Bengaluru"
+      ],
+      [
+        "Chennai"
+      ],
+      [
+        "Delhi"
+      ],
+      [
+        "Hyderabad"
+      ],
+      [
+        "Kolkata"
+      ],
+      [
+        "Lucknow"
+      ],
+      [
+        "Mumbai"
+      ],
+      [
+        "Pune"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-39",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Set Operations",
+    "topic_group": "Set Operations",
+    "also_tagged": [],
+    "question": "Find the cities where students live but no employee works.",
+    "schemas": [
+      "HR",
+      "CAMPUS"
+    ],
+    "solution_sql": "SELECT city FROM students EXCEPT SELECT city FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "city"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Ahmedabad"
+      ],
+      [
+        "Jaipur"
+      ],
+      [
+        "Kochi"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-40",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "CASE",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "Count how many employees fall in each salary band: below 80000, 80000 to 149999 and 150000 or more.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT CASE WHEN salary < 80000 THEN 'Below 80k' WHEN salary < 150000 THEN '80k-149k' ELSE '150k+' END AS band, COUNT(*) AS employees FROM employees GROUP BY CASE WHEN salary < 80000 THEN 'Below 80k' WHEN salary < 150000 THEN '80k-149k' ELSE '150k+' END",
+    "executed_ok": true,
+    "columns": [
+      "band",
+      "employees"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "150k+",
+        6
+      ],
+      [
+        "80k-149k",
+        8
+      ],
+      [
+        "Below 80k",
+        8
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-41",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "String Functions",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Show each employee's initials, e.g. 'VM' for Vikram Mehta.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, SUBSTR(emp_name, 1, 1) || SUBSTR(emp_name, INSTR(emp_name, ' ') + 1, 1) AS initials FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "initials"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        "VM"
+      ],
+      [
+        "Anita Desai",
+        "AD"
+      ],
+      [
+        "Suresh Iyer",
+        "SI"
+      ],
+      [
+        "Priya Nair",
+        "PN"
+      ],
+      [
+        "Rohan Gupta",
+        "RG"
+      ],
+      [
+        "Neha Kulkarni",
+        "NK"
+      ],
+      [
+        "Arjun Reddy",
+        "AR"
+      ],
+      [
+        "Kavita Joshi",
+        "KJ"
+      ],
+      [
+        "Sandeep Singh",
+        "SS"
+      ],
+      [
+        "Meera Pillai",
+        "MP"
+      ],
+      [
+        "Imran Khan",
+        "IK"
+      ],
+      [
+        "Divya Bansal",
+        "DB"
+      ],
+      [
+        "Harish Rao",
+        "HR"
+      ],
+      [
+        "Pooja Agarwal",
+        "PA"
+      ],
+      [
+        "Karthik Subramanian",
+        "KS"
+      ],
+      [
+        "Lakshmi Menon",
+        "LM"
+      ],
+      [
+        "Faisal Ahmed",
+        "FA"
+      ],
+      [
+        "Tanvi Shah",
+        "TS"
+      ],
+      [
+        "Gaurav Malhotra",
+        "GM"
+      ],
+      [
+        "Sneha Chatterjee",
+        "SC"
+      ],
+      [
+        "Ritesh Kumar",
+        "RK"
+      ],
+      [
+        "Aisha Siddiqui",
+        "AS"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-42",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "String Functions",
+    "topic_group": "String Functions & Puzzles",
+    "also_tagged": [],
+    "question": "Show each email with the domain changed from acme.in to acme.com (do not update the table).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT REPLACE(email, '@acme.in', '@acme.com') AS new_email FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "new_email"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "vikram.mehta@acme.com"
+      ],
+      [
+        "anita.desai@acme.com"
+      ],
+      [
+        "suresh.iyer@acme.com"
+      ],
+      [
+        "priya.nair@acme.com"
+      ],
+      [
+        "rohan.gupta@acme.com"
+      ],
+      [
+        "neha.kulkarni@acme.com"
+      ],
+      [
+        "arjun.reddy@acme.com"
+      ],
+      [
+        "kavita.joshi@acme.com"
+      ],
+      [
+        "sandeep.singh@acme.com"
+      ],
+      [
+        "meera.pillai@acme.com"
+      ],
+      [
+        "imran.khan@acme.com"
+      ],
+      [
+        "divya.bansal@acme.com"
+      ],
+      [
+        "harish.rao@acme.com"
+      ],
+      [
+        "pooja.agarwal@acme.com"
+      ],
+      [
+        "karthik.subramanian@acme.com"
+      ],
+      [
+        "lakshmi.menon@acme.com"
+      ],
+      [
+        "faisal.ahmed@acme.com"
+      ],
+      [
+        "tanvi.shah@acme.com"
+      ],
+      [
+        "gaurav.malhotra@acme.com"
+      ],
+      [
+        "sneha.chatterjee@acme.com"
+      ],
+      [
+        "ritesh.kumar@acme.com"
+      ],
+      [
+        "aisha.siddiqui@acme.com"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-43",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Insert two new departments, (7, 'Legal', 'Delhi') and (8, 'Research', 'Bengaluru'), in one statement.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "INSERT INTO departments (dept_id, dept_name, location) VALUES (7, 'Legal', 'Delhi'), (8, 'Research', 'Bengaluru')",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "CORE-44",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Raise salaries by 10 percent for department 1 and 5 percent for all other employees using a single UPDATE.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "UPDATE employees SET salary = CASE WHEN dept_id = 1 THEN salary * 1.10 ELSE salary * 1.05 END",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "CORE-45",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DML",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Delete employees hired before 2016.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "DELETE FROM employees WHERE hire_date < '2016-01-01'",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "CORE-46",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "DDL",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Rename the column city in employees to work_city.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "ALTER TABLE employees RENAME COLUMN city TO work_city",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "CORE-47",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "DDL",
+    "topic_group": "DDL, DML & Constraints",
+    "also_tagged": [],
+    "question": "Create an attendance table (att_id primary key, emp_id foreign key to employees, att_date, status) with a unique pair of emp_id and att_date.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "CREATE TABLE attendance (att_id INT PRIMARY KEY, emp_id INT NOT NULL, att_date DATE NOT NULL, status VARCHAR(10), FOREIGN KEY (emp_id) REFERENCES employees(emp_id), UNIQUE (emp_id, att_date))",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "CORE-48",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Indexes",
+    "topic_group": "Indexes & Query Performance",
+    "also_tagged": [],
+    "question": "Create a composite index on employees (dept_id, salary).",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "CREATE INDEX idx_emp_dept_salary ON employees (dept_id, salary)",
+    "executed_ok": true,
+    "isPro": false
+  },
+  {
+    "id": "CORE-49",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Date Arithmetic",
+    "topic_group": "Date & Time",
+    "also_tagged": [],
+    "question": "Show each employee's tenure in whole years as of 2024-06-30.",
+    "schemas": [
+      "HR"
+    ],
+    "solution_sql": "SELECT emp_name, CAST(DATEDIFF('2024-06-30', hire_date) / 365 AS INTEGER) AS tenure_years FROM employees",
+    "executed_ok": true,
+    "columns": [
+      "emp_name",
+      "tenure_years"
+    ],
+    "row_count": 22,
+    "expected_rows": [
+      [
+        "Vikram Mehta",
+        9
+      ],
+      [
+        "Anita Desai",
+        8
+      ],
+      [
+        "Suresh Iyer",
+        7
+      ],
+      [
+        "Priya Nair",
+        6
+      ],
+      [
+        "Rohan Gupta",
+        2
+      ],
+      [
+        "Neha Kulkarni",
+        2
+      ],
+      [
+        "Arjun Reddy",
+        0
+      ],
+      [
+        "Kavita Joshi",
+        3
+      ],
+      [
+        "Sandeep Singh",
+        3
+      ],
+      [
+        "Meera Pillai",
+        3
+      ],
+      [
+        "Imran Khan",
+        1
+      ],
+      [
+        "Divya Bansal",
+        8
+      ],
+      [
+        "Harish Rao",
+        2
+      ],
+      [
+        "Pooja Agarwal",
+        8
+      ],
+      [
+        "Karthik Subramanian",
+        5
+      ],
+      [
+        "Lakshmi Menon",
+        4
+      ],
+      [
+        "Faisal Ahmed",
+        5
+      ],
+      [
+        "Tanvi Shah",
+        1
+      ],
+      [
+        "Gaurav Malhotra",
+        1
+      ],
+      [
+        "Sneha Chatterjee",
+        1
+      ],
+      [
+        "Ritesh Kumar",
+        0
+      ],
+      [
+        "Aisha Siddiqui",
+        0
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-50",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Basics",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List all teams ordered by team name.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT team_name, city FROM teams ORDER BY team_name",
+    "executed_ok": true,
+    "columns": [
+      "team_name",
+      "city"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Bengaluru Bulls",
+        "Bengaluru"
+      ],
+      [
+        "Chennai Chargers",
+        "Chennai"
+      ],
+      [
+        "Delhi Dynamos",
+        "Delhi"
+      ],
+      [
+        "Hyderabad Hawks",
+        "Hyderabad"
+      ],
+      [
+        "Jaipur Jaguars",
+        "Jaipur"
+      ],
+      [
+        "Kolkata Kestrels",
+        "Kolkata"
+      ],
+      [
+        "Mumbai Mariners",
+        "Mumbai"
+      ],
+      [
+        "Punjab Panthers",
+        "Mohali"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-51",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show the number of matches won by each team, including teams with zero wins.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT t.team_name, COUNT(m.match_id) AS wins FROM teams t LEFT JOIN matches m ON m.winner_id = t.team_id GROUP BY t.team_id, t.team_name ORDER BY wins DESC",
+    "executed_ok": true,
+    "columns": [
+      "team_name",
+      "wins"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Jaipur Jaguars",
+        5
+      ],
+      [
+        "Delhi Dynamos",
+        4
+      ],
+      [
+        "Punjab Panthers",
+        4
+      ],
+      [
+        "Mumbai Mariners",
+        3
+      ],
+      [
+        "Kolkata Kestrels",
+        3
+      ],
+      [
+        "Bengaluru Bulls",
+        3
+      ],
+      [
+        "Chennai Chargers",
+        2
+      ],
+      [
+        "Hyderabad Hawks",
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-52",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins + Aggregation",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "Show total runs scored by each team across all matches.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT t.team_name, SUM(pp.runs) AS total_runs FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id JOIN teams t ON pl.team_id = t.team_id GROUP BY t.team_id, t.team_name ORDER BY total_runs DESC",
+    "executed_ok": true,
+    "columns": [
+      "team_name",
+      "total_runs"
+    ],
+    "row_count": 8,
+    "expected_rows": [
+      [
+        "Hyderabad Hawks",
+        1425
+      ],
+      [
+        "Kolkata Kestrels",
+        1234
+      ],
+      [
+        "Punjab Panthers",
+        1214
+      ],
+      [
+        "Delhi Dynamos",
+        1212
+      ],
+      [
+        "Chennai Chargers",
+        1200
+      ],
+      [
+        "Bengaluru Bulls",
+        1080
+      ],
+      [
+        "Jaipur Jaguars",
+        980
+      ],
+      [
+        "Mumbai Mariners",
+        904
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-53",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Top-N",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List the top 5 run scorers of the season (player name and total runs).",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT pl.player_name, SUM(pp.runs) AS total_runs FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id GROUP BY pl.player_id, pl.player_name ORDER BY total_runs DESC LIMIT 5",
+    "executed_ok": true,
+    "columns": [
+      "player_name",
+      "total_runs"
+    ],
+    "row_count": 5,
+    "expected_rows": [
+      [
+        "Kunal Mukherjee",
+        580
+      ],
+      [
+        "Diya Reddy",
+        460
+      ],
+      [
+        "Atharv Banerjee",
+        458
+      ],
+      [
+        "Reyansh Sharma",
+        454
+      ],
+      [
+        "Aditi Khan",
+        449
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-54",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Filtering",
+    "topic_group": "SELECT, Filtering & Sorting",
+    "also_tagged": [],
+    "question": "List all individual innings of 100 runs or more (player name, match id, runs).",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT pl.player_name, pp.match_id, pp.runs FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id WHERE pp.runs >= 100",
+    "executed_ok": true,
+    "columns": [
+      "player_name",
+      "match_id",
+      "runs"
+    ],
+    "row_count": 10,
+    "expected_rows": [
+      [
+        "Kabir Patel",
+        1,
+        101
+      ],
+      [
+        "Nikhil Rao",
+        4,
+        103
+      ],
+      [
+        "Reyansh Sharma",
+        7,
+        104
+      ],
+      [
+        "Aditya Rao",
+        11,
+        102
+      ],
+      [
+        "Reyansh Sharma",
+        14,
+        103
+      ],
+      [
+        "Aditi Khan",
+        16,
+        101
+      ],
+      [
+        "Aditi Khan",
+        19,
+        100
+      ],
+      [
+        "Aditi Khan",
+        20,
+        101
+      ],
+      [
+        "Vivaan Khan",
+        21,
+        100
+      ],
+      [
+        "Vivaan Khan",
+        28,
+        100
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-55",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Show the average runs per innings for each player role.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT pl.role, ROUND(AVG(pp.runs), 2) AS avg_runs FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id GROUP BY pl.role",
+    "executed_ok": true,
+    "columns": [
+      "role",
+      "avg_runs"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "All-rounder",
+        45.09
+      ],
+      [
+        "Batsman",
+        55.02
+      ],
+      [
+        "Bowler",
+        10.04
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-56",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "easy",
+    "topic": "NULL Handling",
+    "topic_group": "CASE, NULL Handling & Bucketing",
+    "also_tagged": [],
+    "question": "List the matches that ended with no result.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT match_id, match_date, venue FROM matches WHERE winner_id IS NULL",
+    "executed_ok": true,
+    "columns": [
+      "match_id",
+      "match_date",
+      "venue"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        9,
+        "2024-04-09",
+        "Mumbai Stadium"
+      ],
+      [
+        21,
+        "2024-05-03",
+        "Delhi Stadium"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-57",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Aggregation",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "Find the top 3 wicket takers of the season.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT pl.player_name, SUM(pp.wickets) AS wickets FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id GROUP BY pl.player_id, pl.player_name ORDER BY wickets DESC LIMIT 3",
+    "executed_ok": true,
+    "columns": [
+      "player_name",
+      "wickets"
+    ],
+    "row_count": 3,
+    "expected_rows": [
+      [
+        "Vivaan Khan",
+        19
+      ],
+      [
+        "Atharv Banerjee",
+        19
+      ],
+      [
+        "Pranav Nair",
+        19
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-58",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Joins",
+    "topic_group": "Joins: inner, outer, self and anti",
+    "also_tagged": [],
+    "question": "List every match with both team names and the winner's name (show 'No Result' when there is no winner).",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT m.match_id, t1.team_name AS team1, t2.team_name AS team2, COALESCE(w.team_name, 'No Result') AS winner FROM matches m JOIN teams t1 ON m.team1_id = t1.team_id JOIN teams t2 ON m.team2_id = t2.team_id LEFT JOIN teams w ON m.winner_id = w.team_id",
+    "executed_ok": true,
+    "columns": [
+      "match_id",
+      "team1",
+      "team2",
+      "winner"
+    ],
+    "row_count": 28,
+    "expected_rows": [
+      [
+        1,
+        "Mumbai Mariners",
+        "Kolkata Kestrels",
+        "Mumbai Mariners"
+      ],
+      [
+        2,
+        "Delhi Dynamos",
+        "Kolkata Kestrels",
+        "Kolkata Kestrels"
+      ],
+      [
+        3,
+        "Bengaluru Bulls",
+        "Punjab Panthers",
+        "Bengaluru Bulls"
+      ],
+      [
+        4,
+        "Kolkata Kestrels",
+        "Punjab Panthers",
+        "Punjab Panthers"
+      ],
+      [
+        5,
+        "Chennai Chargers",
+        "Hyderabad Hawks",
+        "Chennai Chargers"
+      ],
+      [
+        6,
+        "Hyderabad Hawks",
+        "Jaipur Jaguars",
+        "Jaipur Jaguars"
+      ],
+      [
+        7,
+        "Bengaluru Bulls",
+        "Hyderabad Hawks",
+        "Hyderabad Hawks"
+      ],
+      [
+        8,
+        "Mumbai Mariners",
+        "Chennai Chargers",
+        "Mumbai Mariners"
+      ],
+      [
+        9,
+        "Mumbai Mariners",
+        "Bengaluru Bulls",
+        "No Result"
+      ],
+      [
+        10,
+        "Jaipur Jaguars",
+        "Punjab Panthers",
+        "Jaipur Jaguars"
+      ],
+      [
+        11,
+        "Chennai Chargers",
+        "Delhi Dynamos",
+        "Delhi Dynamos"
+      ],
+      [
+        12,
+        "Kolkata Kestrels",
+        "Jaipur Jaguars",
+        "Kolkata Kestrels"
+      ],
+      [
+        13,
+        "Delhi Dynamos",
+        "Bengaluru Bulls",
+        "Delhi Dynamos"
+      ],
+      [
+        14,
+        "Mumbai Mariners",
+        "Hyderabad Hawks",
+        "Hyderabad Hawks"
+      ],
+      [
+        15,
+        "Chennai Chargers",
+        "Kolkata Kestrels",
+        "Chennai Chargers"
+      ],
+      [
+        16,
+        "Mumbai Mariners",
+        "Punjab Panthers",
+        "Mumbai Mariners"
+      ],
+      [
+        17,
+        "Bengaluru Bulls",
+        "Jaipur Jaguars",
+        "Jaipur Jaguars"
+      ],
+      [
+        18,
+        "Mumbai Mariners",
+        "Jaipur Jaguars",
+        "Jaipur Jaguars"
+      ],
+      [
+        19,
+        "Chennai Chargers",
+        "Punjab Panthers",
+        "Punjab Panthers"
+      ],
+      [
+        20,
+        "Hyderabad Hawks",
+        "Punjab Panthers",
+        "Punjab Panthers"
+      ],
+      [
+        21,
+        "Delhi Dynamos",
+        "Jaipur Jaguars",
+        "No Result"
+      ],
+      [
+        22,
+        "Chennai Chargers",
+        "Jaipur Jaguars",
+        "Jaipur Jaguars"
+      ],
+      [
+        23,
+        "Chennai Chargers",
+        "Bengaluru Bulls",
+        "Bengaluru Bulls"
+      ],
+      [
+        24,
+        "Kolkata Kestrels",
+        "Bengaluru Bulls",
+        "Bengaluru Bulls"
+      ],
+      [
+        25,
+        "Delhi Dynamos",
+        "Punjab Panthers",
+        "Punjab Panthers"
+      ],
+      [
+        26,
+        "Mumbai Mariners",
+        "Delhi Dynamos",
+        "Delhi Dynamos"
+      ],
+      [
+        27,
+        "Kolkata Kestrels",
+        "Hyderabad Hawks",
+        "Kolkata Kestrels"
+      ],
+      [
+        28,
+        "Delhi Dynamos",
+        "Hyderabad Hawks",
+        "Delhi Dynamos"
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-59",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "HAVING",
+    "topic_group": "Aggregation, GROUP BY & HAVING",
+    "also_tagged": [],
+    "question": "List teams with fewer than 3 wins.",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT t.team_name, COUNT(m.match_id) AS wins FROM teams t LEFT JOIN matches m ON m.winner_id = t.team_id GROUP BY t.team_id, t.team_name HAVING COUNT(m.match_id) < 3",
+    "executed_ok": true,
+    "columns": [
+      "team_name",
+      "wins"
+    ],
+    "row_count": 2,
+    "expected_rows": [
+      [
+        "Chennai Chargers",
+        2
+      ],
+      [
+        "Hyderabad Hawks",
+        2
+      ]
+    ],
+    "isPro": false
+  },
+  {
+    "id": "CORE-60",
+    "company": "CORE",
+    "company_name": "Core SQL Pack (all companies)",
+    "tier": "Fundamentals",
+    "type": "query",
+    "difficulty": "medium",
+    "topic": "Window Functions",
+    "topic_group": "Window Functions & Ranking",
+    "also_tagged": [],
+    "question": "For each match show the player with the most runs (match id, player name, runs).",
+    "schemas": [
+      "CRICKET"
+    ],
+    "solution_sql": "SELECT match_id, player_name, runs FROM (SELECT pp.match_id, pl.player_name, pp.runs, ROW_NUMBER() OVER (PARTITION BY pp.match_id ORDER BY pp.runs DESC, pp.player_id) AS rn FROM player_performance pp JOIN players pl ON pp.player_id = pl.player_id) t WHERE rn = 1 ORDER BY match_id",
+    "executed_ok": true,
+    "columns": [
+      "match_id",
+      "player_name",
+      "runs"
+    ],
+    "row_count": 28,
+    "expected_rows": [
+      [
+        1,
+        "Kabir Patel",
+        101
+      ],
+      [
+        2,
+        "Diya Reddy",
+        91
+      ],
+      [
+        3,
+        "Rudra Bose",
+        84
+      ],
+      [
+        4,
+        "Nikhil Rao",
+        103
+      ],
+      [
+        5,
+        "Kunal Mukherjee",
+        86
+      ],
+      [
+        6,
+        "Reyansh Sharma",
+        90
+      ],
+      [
+        7,
+        "Reyansh Sharma",
+        104
+      ],
+      [
+        8,
+        "Kunal Mukherjee",
+        92
+      ],
+      [
+        9,
+        "Saanvi Kulkarni",
+        97
+      ],
+      [
+        10,
+        "Rudra Bose",
+        90
+      ],
+      [
+        11,
+        "Aditya Rao",
+        102
+      ],
+      [
+        12,
+        "Tara Mukherjee",
+        62
+      ],
+      [
+        13,
+        "Saanvi Kulkarni",
+        85
+      ],
+      [
+        14,
+        "Reyansh Sharma",
+        103
+      ],
+      [
+        15,
+        "Kunal Mukherjee",
+        92
+      ],
+      [
+        16,
+        "Aditi Khan",
+        101
+      ],
+      [
+        17,
+        "Saanvi Kulkarni",
+        78
+      ],
+      [
+        18,
+        "Yash Iyer",
+        58
+      ],
+      [
+        19,
+        "Aditi Khan",
+        100
+      ],
+      [
+        20,
+        "Aditi Khan",
+        101
+      ],
+      [
+        21,
+        "Vivaan Khan",
+        100
+      ],
+      [
+        22,
+        "Kunal Mukherjee",
+        93
+      ],
+      [
+        23,
+        "Hema Das",
+        89
+      ],
+      [
+        24,
+        "Ishaan Pandey",
+        89
+      ],
+      [
+        25,
+        "Aditi Khan",
+        70
+      ],
+      [
+        26,
+        "Leela Bose",
+        82
+      ],
+      [
+        27,
+        "Navya Verma",
+        86
+      ],
+      [
+        28,
+        "Vivaan Khan",
+        100
+      ]
+    ],
+    "isPro": false
+  }
+];
+
+export function getCompanyQuestionById(id: string): CompanyQuestion | undefined {
+  return allCompanyQuestions.find(q => q.id === id);
+}

@@ -12,6 +12,12 @@ const defaultProgress: UserProgress = {
   },
   isProUnlocked: false,
   oaAttempts: [],
+  companyBankProgress: {
+    solvedQueries: {},
+    mcqAnswers: {},
+    masteredConcepts: {},
+    savedUserSql: {},
+  },
 };
 
 export function loadUserProgress(): UserProgress {
@@ -25,6 +31,10 @@ export function loadUserProgress(): UserProgress {
       streak: {
         ...defaultProgress.streak,
         ...(parsed.streak || {}),
+      },
+      companyBankProgress: {
+        ...defaultProgress.companyBankProgress,
+        ...(parsed.companyBankProgress || {}),
       },
     };
   } catch (err) {
@@ -101,10 +111,11 @@ export function verifyLicenseKey(key: string): boolean {
   const clean = key.trim().toUpperCase();
   // Valid license formats:
   // 1. SQLPRO-XXXX-XXXX
-  // 2. PRO-90D-PASS
+  // 2. PRO-90D-PASS, STUDENT199, STUDENT99, COLLEGE199, CAMPUS2026, FRESHER100
   // 3. OA-INTERVIEW-2026
   // 4. Any key matching SQLPRO-...
-  if (clean === 'PRO-90D-PASS' || clean === 'OA-INTERVIEW-2026' || clean === 'DEMO-PRO') {
+  const studentKeys = ['PRO-90D-PASS', 'OA-INTERVIEW-2026', 'DEMO-PRO', 'STUDENT199', 'STUDENT99', 'COLLEGE199', 'CAMPUS2026', 'FRESHER100'];
+  if (studentKeys.includes(clean)) {
     return true;
   }
   const regex = /^SQLPRO-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
@@ -115,6 +126,79 @@ export function verifyLicenseKey(key: string): boolean {
     return true;
   }
   return false;
+}
+
+export function recordCompanyQuerySuccess(questionId: string): UserProgress {
+  const progress = loadUserProgress();
+  if (!progress.companyBankProgress) {
+    progress.companyBankProgress = {
+      solvedQueries: {},
+      mcqAnswers: {},
+      masteredConcepts: {},
+      savedUserSql: {},
+    };
+  }
+  progress.companyBankProgress.solvedQueries[questionId] = true;
+
+  // Streak update on solve
+  const today = new Date().toISOString().split('T')[0];
+  if (progress.streak.lastSolvedDate !== today) {
+    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+    if (progress.streak.lastSolvedDate === yesterday) {
+      progress.streak.count += 1;
+    } else {
+      progress.streak.count = 1;
+    }
+    progress.streak.lastSolvedDate = today;
+  }
+
+  saveUserProgress(progress);
+  return progress;
+}
+
+export function recordMcqAnswer(questionId: string, selected: string, isCorrect: boolean): UserProgress {
+  const progress = loadUserProgress();
+  if (!progress.companyBankProgress) {
+    progress.companyBankProgress = {
+      solvedQueries: {},
+      mcqAnswers: {},
+      masteredConcepts: {},
+      savedUserSql: {},
+    };
+  }
+  progress.companyBankProgress.mcqAnswers[questionId] = { selected, isCorrect };
+  saveUserProgress(progress);
+  return progress;
+}
+
+export function toggleConceptMastered(questionId: string): UserProgress {
+  const progress = loadUserProgress();
+  if (!progress.companyBankProgress) {
+    progress.companyBankProgress = {
+      solvedQueries: {},
+      mcqAnswers: {},
+      masteredConcepts: {},
+      savedUserSql: {},
+    };
+  }
+  const current = !!progress.companyBankProgress.masteredConcepts[questionId];
+  progress.companyBankProgress.masteredConcepts[questionId] = !current;
+  saveUserProgress(progress);
+  return progress;
+}
+
+export function saveCompanyUserSql(questionId: string, sql: string): void {
+  const progress = loadUserProgress();
+  if (!progress.companyBankProgress) {
+    progress.companyBankProgress = {
+      solvedQueries: {},
+      mcqAnswers: {},
+      masteredConcepts: {},
+      savedUserSql: {},
+    };
+  }
+  progress.companyBankProgress.savedUserSql[questionId] = sql;
+  saveUserProgress(progress);
 }
 
 export function unlockProTier(key: string): { success: boolean; message: string } {
