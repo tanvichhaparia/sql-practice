@@ -114,6 +114,7 @@ export function verifyLicenseKey(key: string): boolean {
   // 2. PRO-90D-PASS, STUDENT199, STUDENT99, COLLEGE199, CAMPUS2026, FRESHER100
   // 3. OA-INTERVIEW-2026
   // 4. Any key matching SQLPRO-...
+  if (clean.startsWith('RZP') || clean.startsWith('PAY')) return true;
   const studentKeys = ['PRO-90D-PASS', 'OA-INTERVIEW-2026', 'DEMO-PRO', 'STUDENT199', 'STUDENT99', 'COLLEGE199', 'CAMPUS2026', 'FRESHER100'];
   if (studentKeys.includes(clean)) {
     return true;
@@ -199,6 +200,23 @@ export function saveCompanyUserSql(questionId: string, sql: string): void {
   }
   progress.companyBankProgress.savedUserSql[questionId] = sql;
   saveUserProgress(progress);
+}
+
+
+export function recordPaymentSuccess(paymentId: string, amount: number, orderId?: string, method: string = 'UPI'): UserProgress {
+  const progress = loadUserProgress();
+  progress.isProUnlocked = true;
+  progress.licenseKey = paymentId;
+  progress.paymentReceipt = {
+    paymentId,
+    orderId,
+    amount,
+    currency: 'INR',
+    date: new Date().toISOString(),
+    method,
+  };
+  saveUserProgress(progress);
+  return progress;
 }
 
 export function unlockProTier(key: string): { success: boolean; message: string } {

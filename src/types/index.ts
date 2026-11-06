@@ -149,6 +149,14 @@ export interface UserProgress {
   };
   isProUnlocked: boolean;
   licenseKey?: string;
+  paymentReceipt?: {
+    paymentId: string;
+    orderId?: string;
+    amount: number;
+    currency: string;
+    date: string;
+    method?: string;
+  };
   companyBankProgress?: CompanyBankProgress;
   oaAttempts: {
     oaId: string;
