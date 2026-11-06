@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Navbar } from './components/Navbar';
+import { HomeDashboardView } from './components/HomeDashboardView';
+import { RoadmapsView } from './components/RoadmapsView';
+import { CompanyQuestionBankView } from './components/CompanyQuestionBankView';
 import { PracticeBankView } from './components/PracticeBankView';
 import { ProblemWorkspace } from './components/ProblemWorkspace';
 import { TimedMockOaView } from './components/TimedMockOaView';
 import { PatternCheatSheetsView } from './components/PatternCheatSheetsView';
-import { CompanyQuestionBankView } from './components/CompanyQuestionBankView';
 import { AuthView } from './components/AuthView';
 import { LicenseUnlockModal } from './components/LicenseUnlockModal';
 import { BackupRestoreModal } from './components/BackupRestoreModal';
@@ -21,8 +23,9 @@ import { allProblems, getProblemById } from './data/problems';
 import { UserProgress } from './types';
 
 export const App: React.FC = () => {
-  const [activeMode, setActiveMode] = useState<'company-bank' | 'practice' | 'mock-oa' | 'cheat-sheets' | 'auth'>('company-bank');
+  const [activeMode, setActiveMode] = useState<'home' | 'roadmaps' | 'question-bank' | 'practice' | 'mock-oa' | 'cheat-sheets' | 'auth'>('home');
   const [activeProblemId, setActiveProblemId] = useState<string | null>(null);
+  const [selectedCompanyFilter, setSelectedCompanyFilter] = useState<string>('ALL');
   const [progress, setProgress] = useState<UserProgress>(loadUserProgress());
   const [currentUser, setCurrentUser] = useState<AuthUser | null>(getCurrentUser());
 
@@ -75,7 +78,7 @@ export const App: React.FC = () => {
   const handleAuthSuccess = (user: AuthUser) => {
     setCurrentUser(user);
     // Redirects to home page on login/signup completion
-    setActiveMode('company-bank');
+    setActiveMode('home');
   };
 
   const handleLogout = () => {
@@ -111,21 +114,40 @@ export const App: React.FC = () => {
       />
 
       <main className="flex-1 min-h-0">
-        {activeMode === 'auth' && (
-          <AuthView
-            onAuthSuccess={handleAuthSuccess}
-            onContinueAsGuest={() => setActiveMode('company-bank')}
+        {/* Home Overview Dashboard */}
+        {activeMode === 'home' && (
+          <HomeDashboardView
+            progress={progress}
+            currentUser={currentUser}
+            onNavigate={(mode) => setActiveMode(mode)}
+            onSelectCompany={(code) => {
+              setSelectedCompanyFilter(code);
+              setActiveMode('question-bank');
+            }}
+            onOpenUnlockModal={() => setIsUnlockModalOpen(true)}
           />
         )}
 
-        {activeMode === 'company-bank' && (
-          <CompanyQuestionBankView
+        {/* Structured Placement Roadmaps */}
+        {activeMode === 'roadmaps' && (
+          <RoadmapsView
             progress={progress}
             onProgressUpdate={reloadProgress}
             onOpenUnlockModal={() => setIsUnlockModalOpen(true)}
           />
         )}
 
+        {/* 500+ Company Question Bank (Clean, Filterable Catalog) */}
+        {activeMode === 'question-bank' && (
+          <CompanyQuestionBankView
+            progress={progress}
+            preselectedCompany={selectedCompanyFilter}
+            onProgressUpdate={reloadProgress}
+            onOpenUnlockModal={() => setIsUnlockModalOpen(true)}
+          />
+        )}
+
+        {/* Real OA Edge-Case Simulator */}
         {activeMode === 'practice' && (
           <>
             {currentProblem ? (
@@ -147,6 +169,7 @@ export const App: React.FC = () => {
           </>
         )}
 
+        {/* 45-Minute Timed Mock Tests */}
         {activeMode === 'mock-oa' && (
           <TimedMockOaView
             progress={progress}
@@ -157,9 +180,18 @@ export const App: React.FC = () => {
           />
         )}
 
+        {/* Pattern Cheat Sheets */}
         {activeMode === 'cheat-sheets' && (
           <PatternCheatSheetsView
             onSelectProblem={handleSelectProblem}
+          />
+        )}
+
+        {/* Login / Signup / Password Reset Page */}
+        {activeMode === 'auth' && (
+          <AuthView
+            onAuthSuccess={handleAuthSuccess}
+            onContinueAsGuest={() => setActiveMode('home')}
           />
         )}
       </main>

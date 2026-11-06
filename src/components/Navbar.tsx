@@ -12,14 +12,16 @@ import {
   Layers,
   User,
   LogOut,
-  LogIn
+  LogIn,
+  Compass,
+  Home
 } from 'lucide-react';
 import { UserProgress } from '../types';
 import { AuthUser } from '../services/auth';
 
 interface NavbarProps {
-  activeMode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets' | 'auth';
-  setActiveMode: (mode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets' | 'auth') => void;
+  activeMode: 'home' | 'roadmaps' | 'question-bank' | 'practice' | 'mock-oa' | 'cheat-sheets' | 'auth';
+  setActiveMode: (mode: 'home' | 'roadmaps' | 'question-bank' | 'practice' | 'mock-oa' | 'cheat-sheets' | 'auth') => void;
   progress: UserProgress;
   totalProblems: number;
   solvedAllCount: number;
@@ -47,10 +49,10 @@ export const Navbar: React.FC<NavbarProps> = ({
   return (
     <header className="h-14 border-b border-slate-800 bg-slate-900/90 backdrop-blur-md px-4 flex items-center justify-between sticky top-0 z-40 select-none">
       {/* Brand logo & title */}
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-4 lg:gap-6">
         <button
-          onClick={() => setActiveMode('company-bank')}
-          className="flex items-center gap-2.5 text-left group"
+          onClick={() => setActiveMode('home')}
+          className="flex items-center gap-2 text-left group"
         >
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition">
             <div className="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center">
@@ -66,78 +68,93 @@ export const Navbar: React.FC<NavbarProps> = ({
                 WASM
               </span>
             </div>
-            <p className="text-[10px] text-slate-400 hidden sm:block -mt-0.5">
-              Zero-Lag Browser SQL OA Simulator
-            </p>
           </div>
         </button>
 
-        {/* Mode Switcher Tabs */}
-        <nav className="hidden md:flex items-center gap-1 bg-slate-950/70 p-1 rounded-lg border border-slate-800">
+        {/* Structured Mode Navigation Tabs */}
+        <nav className="hidden md:flex items-center gap-1 bg-slate-950/70 p-1 rounded-xl border border-slate-800">
           <button
-            onClick={() => setActiveMode('company-bank')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition ${
-              activeMode === 'company-bank'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm'
+            onClick={() => setActiveMode('home')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+              activeMode === 'home'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+            }`}
+          >
+            <Home className="w-3.5 h-3.5" />
+            <span>Home</span>
+          </button>
+
+          <button
+            onClick={() => setActiveMode('roadmaps')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+              activeMode === 'roadmaps'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
+                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+            }`}
+          >
+            <Compass className="w-3.5 h-3.5" />
+            <span>Roadmaps</span>
+            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300">
+              5 Tracks
+            </span>
+          </button>
+
+          <button
+            onClick={() => setActiveMode('question-bank')}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+              activeMode === 'question-bank'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
             }`}
           >
             <Database className="w-3.5 h-3.5" />
-            <span>500+ Company Bank</span>
-            <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300 ml-0.5">
-              534 Qs
+            <span>Question Bank</span>
+            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-blue-500/20 text-blue-300">
+              534
             </span>
           </button>
 
           <button
             onClick={() => setActiveMode('practice')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
               activeMode === 'practice'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
-            OA Simulator
+            <span>OA Simulator</span>
           </button>
 
           <button
             onClick={() => setActiveMode('mock-oa')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
               activeMode === 'mock-oa'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
             }`}
           >
             <Clock className="w-3.5 h-3.5" />
-            Timed Mock OAs
+            <span>Mock OAs</span>
           </button>
 
           <button
             onClick={() => setActiveMode('cheat-sheets')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
               activeMode === 'cheat-sheets'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm'
+                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
                 : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
             }`}
           >
             <BookOpen className="w-3.5 h-3.5" />
-            Cheat Sheets
+            <span>Cheat Sheets</span>
           </button>
         </nav>
       </div>
 
       {/* Right Controls */}
       <div className="flex items-center gap-2 sm:gap-2.5">
-        {/* Solved Progress Pill */}
-        <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs">
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-          <span className="text-slate-300 font-medium">
-            <span className="text-emerald-400 font-bold">{solvedAllCount}</span> / {totalProblems} Solved
-          </span>
-          <span className="text-[10px] text-slate-400">(4/4 Edges)</span>
-        </div>
-
         {/* Streak Indicator */}
         <div 
           className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400"
@@ -145,10 +162,10 @@ export const Navbar: React.FC<NavbarProps> = ({
         >
           <Flame className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           <span className="font-bold">{progress.streak.count}</span>
-          <span className="text-[10px] text-amber-500 hidden sm:inline">day streak</span>
+          <span className="text-[10px] text-amber-500 hidden sm:inline">d</span>
         </div>
 
-        {/* Pro / Free Tier Badge & Demo Switcher */}
+        {/* Pro / Free Tier Badge */}
         <div className="flex items-center gap-1.5">
           <button
             onClick={onToggleDemoPro}
@@ -217,7 +234,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             }`}
           >
             <LogIn className="w-3.5 h-3.5" />
-            <span>Login / Signup</span>
+            <span className="hidden sm:inline">Login / Signup</span>
+            <span className="sm:hidden">Login</span>
           </button>
         )}
 
