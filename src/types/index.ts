@@ -132,6 +132,13 @@ export interface FullEvaluationReport {
   totalExecutionTimeMs: number;
 }
 
+export interface CompanyBankProgress {
+  solvedQueries: Record<string, boolean>;
+  mcqAnswers: Record<string, { selected: string; isCorrect: boolean }>;
+  masteredConcepts: Record<string, boolean>;
+  savedUserSql: Record<string, string>;
+}
+
 export interface UserProgress {
   problemStatus: Record<string, ProblemStatus>;
   savedCode: Record<string, string>;
@@ -142,6 +149,15 @@ export interface UserProgress {
   };
   isProUnlocked: boolean;
   licenseKey?: string;
+  paymentReceipt?: {
+    paymentId: string;
+    orderId?: string;
+    amount: number;
+    currency: string;
+    date: string;
+    method?: string;
+  };
+  companyBankProgress?: CompanyBankProgress;
   oaAttempts: {
     oaId: string;
     date: string;
