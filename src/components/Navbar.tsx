@@ -9,16 +9,23 @@ import {
   Unlock, 
   Lock, 
   Download, 
-  Layers
+  Layers,
+  User,
+  LogOut,
+  LogIn
 } from 'lucide-react';
 import { UserProgress } from '../types';
+import { AuthUser } from '../services/auth';
 
 interface NavbarProps {
-  activeMode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets';
-  setActiveMode: (mode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets') => void;
+  activeMode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets' | 'auth';
+  setActiveMode: (mode: 'practice' | 'company-bank' | 'mock-oa' | 'cheat-sheets' | 'auth') => void;
   progress: UserProgress;
   totalProblems: number;
   solvedAllCount: number;
+  currentUser: AuthUser | null;
+  onOpenAuth: () => void;
+  onLogout: () => void;
   onOpenUnlockModal: () => void;
   onOpenBackupModal: () => void;
   onToggleDemoPro: () => void;
@@ -30,6 +37,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   progress,
   totalProblems,
   solvedAllCount,
+  currentUser,
+  onOpenAuth,
+  onLogout,
   onOpenUnlockModal,
   onOpenBackupModal,
   onToggleDemoPro,
@@ -39,7 +49,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       {/* Brand logo & title */}
       <div className="flex items-center gap-6">
         <button
-          onClick={() => setActiveMode('practice')}
+          onClick={() => setActiveMode('company-bank')}
           className="flex items-center gap-2.5 text-left group"
         >
           <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition">
@@ -118,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Right Controls */}
-      <div className="flex items-center gap-2.5">
+      <div className="flex items-center gap-2 sm:gap-2.5">
         {/* Solved Progress Pill */}
         <div className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs">
           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
@@ -174,6 +184,42 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           )}
         </div>
+
+        {/* User Auth Profile Pill or Login Button */}
+        {currentUser ? (
+          <div className="flex items-center gap-1.5 pl-1.5 border-l border-slate-800">
+            <div 
+              className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800/80 border border-slate-700/80 text-xs"
+              title={`Logged in as ${currentUser.name} (${currentUser.email}) - ${currentUser.college}`}
+            >
+              <div className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 flex items-center justify-center font-bold text-[10px]">
+                {currentUser.name.charAt(0).toUpperCase()}
+              </div>
+              <span className="font-semibold text-slate-200 max-w-[80px] sm:max-w-[110px] truncate">
+                {currentUser.name.split(' ')[0]}
+              </span>
+            </div>
+            <button
+              onClick={onLogout}
+              title="Sign Out"
+              className="p-1.5 rounded-md text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition"
+            >
+              <LogOut className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        ) : (
+          <button
+            onClick={onOpenAuth}
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold transition border ${
+              activeMode === 'auth'
+                ? 'bg-emerald-500 text-slate-950 border-emerald-400'
+                : 'bg-slate-800 hover:bg-slate-750 text-slate-200 border-slate-700'
+            }`}
+          >
+            <LogIn className="w-3.5 h-3.5" />
+            <span>Login / Signup</span>
+          </button>
+        )}
 
         {/* Backup / Restore Progress */}
         <button

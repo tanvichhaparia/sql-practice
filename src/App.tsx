@@ -5,6 +5,7 @@ import { ProblemWorkspace } from './components/ProblemWorkspace';
 import { TimedMockOaView } from './components/TimedMockOaView';
 import { PatternCheatSheetsView } from './components/PatternCheatSheetsView';
 import { CompanyQuestionBankView } from './components/CompanyQuestionBankView';
+import { AuthView } from './components/AuthView';
 import { LicenseUnlockModal } from './components/LicenseUnlockModal';
 import { BackupRestoreModal } from './components/BackupRestoreModal';
 import { 
@@ -15,13 +16,15 @@ import {
   toggleDemoPro, 
   recordOaAttempt 
 } from './services/storage';
+import { getCurrentUser, logoutUser, AuthUser } from './services/auth';
 import { allProblems, getProblemById } from './data/problems';
 import { UserProgress } from './types';
 
 export const App: React.FC = () => {
-  const [activeMode, setActiveMode] = useState<'company-bank' | 'practice' | 'mock-oa' | 'cheat-sheets'>('company-bank');
+  const [activeMode, setActiveMode] = useState<'company-bank' | 'practice' | 'mock-oa' | 'cheat-sheets' | 'auth'>('company-bank');
   const [activeProblemId, setActiveProblemId] = useState<string | null>(null);
   const [progress, setProgress] = useState<UserProgress>(loadUserProgress());
+  const [currentUser, setCurrentUser] = useState<AuthUser | null>(getCurrentUser());
 
   const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
   const [isBackupModalOpen, setIsBackupModalOpen] = useState(false);
@@ -69,6 +72,17 @@ export const App: React.FC = () => {
     setProgress(updated);
   };
 
+  const handleAuthSuccess = (user: AuthUser) => {
+    setCurrentUser(user);
+    // Redirects to home page on login/signup completion
+    setActiveMode('company-bank');
+  };
+
+  const handleLogout = () => {
+    logoutUser();
+    setCurrentUser(null);
+  };
+
   const solvedAllCount = Object.values(progress.problemStatus).filter(
     (s) => s === 'passed_all_edge_cases'
   ).length;
@@ -88,12 +102,22 @@ export const App: React.FC = () => {
         progress={progress}
         totalProblems={allProblems.length}
         solvedAllCount={solvedAllCount}
+        currentUser={currentUser}
+        onOpenAuth={() => setActiveMode('auth')}
+        onLogout={handleLogout}
         onOpenUnlockModal={() => setIsUnlockModalOpen(true)}
         onOpenBackupModal={() => setIsBackupModalOpen(true)}
         onToggleDemoPro={handleToggleDemoPro}
       />
 
       <main className="flex-1 min-h-0">
+        {activeMode === 'auth' && (
+          <AuthView
+            onAuthSuccess={handleAuthSuccess}
+            onContinueAsGuest={() => setActiveMode('company-bank')}
+          />
+        )}
+
         {activeMode === 'company-bank' && (
           <CompanyQuestionBankView
             progress={progress}
