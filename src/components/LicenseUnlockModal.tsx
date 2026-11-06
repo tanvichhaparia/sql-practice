@@ -80,8 +80,8 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
 
           <div className="mt-4 flex items-baseline gap-2">
             <span className="text-3xl font-black text-emerald-400">₹199</span>
-            <span className="text-slate-400 text-xs font-medium">/ $4.99 USD (Lifetime Student Pass)</span>
-            <span className="text-[11px] text-emerald-400 font-semibold ml-2">Zero subscriptions</span>
+            <span className="text-slate-400 text-xs font-medium">(One-Time Lifetime Student Pass)</span>
+            <span className="text-[11px] text-emerald-400 font-semibold ml-2">No recurring subscription</span>
           </div>
           <p className="text-[11px] text-slate-400 mt-1.5 flex items-center gap-1.5">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
@@ -111,27 +111,20 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
             </div>
           </div>
 
-          {/* Checkout Links */}
-          <div className="grid grid-cols-2 gap-3 pt-2">
+          {/* Checkout Link (UPI / Cards / NetBanking for Indian Engineers & Students) */}
+          <div className="pt-2">
             <a
               href="https://rzp.io/l/sqledge-student-pass"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition"
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 text-xs font-bold shadow-lg shadow-emerald-500/20 transition"
             >
-              <span>Razorpay (₹199 INR)</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
+              <span>Instant Unlock via UPI / QR / NetBanking (₹199 One-Time)</span>
+              <ExternalLink className="w-3.5 h-3.5 text-slate-950" />
             </a>
-
-            <a
-              href="https://sqledge.lemonsqueezy.com/checkout"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold border border-slate-700 transition"
-            >
-              <span>LemonSqueezy ($4.99 USD)</span>
-              <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
-            </a>
+            <div className="flex items-center justify-center gap-2 mt-2 text-[10px] text-slate-500">
+              <span>Supports Google Pay • PhonePe • Paytm • BHIM UPI • RuPay • NetBanking</span>
+            </div>
           </div>
 
           {/* License Key Form */}

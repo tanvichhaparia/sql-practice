@@ -151,7 +151,7 @@ export const CompanyQuestionBankView: React.FC<CompanyQuestionBankViewProps> = (
                   className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-slate-950 font-bold text-xs shadow-lg shadow-emerald-500/20 transition flex items-center gap-2"
                 >
                   <Sparkles className="w-4 h-4 fill-slate-950" />
-                  <span>Unlock All 534 Questions (₹199 / $4.99)</span>
+                  <span>Unlock All 534 Questions (₹199 Student Pass)</span>
                 </button>
                 <span className="text-[10px] text-slate-400 mt-1">
                   Nominal One-Time Student Rate • No recurring fee
