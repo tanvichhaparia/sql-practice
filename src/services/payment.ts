@@ -16,13 +16,15 @@ export interface PaymentOptions {
 }
 
 const RZP_KEY_STORAGE = 'sqledge_custom_rzp_key';
+// Default to the provided Razorpay Test Key ID
+const DEFAULT_TEST_KEY = 'rzp_test_TwugtkfTcRGnrn';
 
 export function getRazorpayKeyId(): string {
   const custom = localStorage.getItem(RZP_KEY_STORAGE);
   if (custom && custom.trim()) return custom.trim();
   const envKey = (import.meta as any).env?.VITE_RAZORPAY_KEY_ID;
   if (envKey && envKey.trim()) return envKey.trim();
-  return '';
+  return DEFAULT_TEST_KEY;
 }
 
 export function setRazorpayKeyId(key: string): void {
@@ -41,46 +43,62 @@ export function loadRazorpayScript(): Promise<boolean> {
     }
     const existing = document.getElementById('razorpay-checkout-script');
     if (existing) {
-      resolve(true);
-      return;
+      if ((window as any).Razorpay) {
+        resolve(true);
+        return;
+      }
     }
     const script = document.createElement('script');
     script.id = 'razorpay-checkout-script';
     script.src = 'https://checkout.razorpay.com/v1/checkout.js';
     script.async = true;
-    script.onload = () => resolve(true);
-    script.onerror = () => resolve(false);
+    script.onload = () => {
+      resolve(!!(window as any).Razorpay);
+    };
+    script.onerror = () => {
+      console.warn('Failed to load Razorpay script from CDN.');
+      resolve(false);
+    };
     document.body.appendChild(script);
   });
 }
 
 export async function openRazorpayCheckout(options: PaymentOptions): Promise<void> {
+  console.log('Initiating Razorpay checkout for ₹', options.amount);
+  
   const isLoaded = await loadRazorpayScript();
   const keyId = getRazorpayKeyId();
 
-  if (!isLoaded || !keyId) {
-    // If Razorpay SDK could not load or no API key is set yet,
-    // trigger failure callback with clear diagnostic so UI can offer instant simulation or key configuration
+  if (!isLoaded || !(window as any).Razorpay) {
+    console.error('Razorpay SDK not loaded. window.Razorpay is undefined.');
     options.onFailure({
-      code: !keyId ? 'NO_KEY_CONFIGURED' : 'SDK_LOAD_FAILED',
-      description: !keyId
-        ? 'No Razorpay Key ID configured. You can configure your key or use the Test Simulator.'
-        : 'Failed to load Razorpay checkout script from Razorpay CDN.',
+      code: 'SDK_LOAD_FAILED',
+      description: 'Razorpay checkout script could not be loaded. This is often blocked by ad-blockers (like Brave Shields or uBlock). Try disabling ad-blocker or use Test Simulator.',
     });
     return;
   }
 
+  if (!keyId) {
+    console.error('No Razorpay Key ID found.');
+    options.onFailure({
+      code: 'NO_KEY_CONFIGURED',
+      description: 'No Razorpay Key ID configured. Please configure your key in Gateway Settings.',
+    });
+    return;
+  }
+
+  console.log('Opening Razorpay with Key ID:', keyId);
+
   const rzpOptions = {
     key: keyId,
-    amount: options.amount * 100, // Amount in paise (199 INR = 19900 paise)
+    amount: options.amount * 100, // paise (199 INR = 19900 paise)
     currency: 'INR',
     name: 'SQLEdge OA',
     description: `All-Company Pro Placement Pass (₹${options.amount} Lifetime Access)`,
-    image: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="%2310b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4h16v3M9 20h6M12 4v16"/></svg>',
     prefill: {
       name: options.studentName || 'Student Engineer',
       email: options.studentEmail || 'student@college.edu',
-      contact: options.contact || '',
+      contact: options.contact || '9999999999', // Standard 10-digit test number for Razorpay
     },
     notes: {
       product: 'sqledge_pro_lifetime_pass',
@@ -90,6 +108,7 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
       color: '#10b981', // Emerald 500
     },
     handler: function (response: RazorpayPaymentResponse) {
+      console.log('Razorpay payment approved:', response);
       recordPaymentSuccess(
         response.razorpay_payment_id,
         options.amount,
@@ -100,9 +119,10 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
     },
     modal: {
       ondismiss: function () {
+        console.log('Razorpay checkout window was dismissed.');
         options.onFailure({
           code: 'PAYMENT_CANCELLED',
-          description: 'Payment window was closed by user.',
+          description: 'Payment was cancelled or closed.',
         });
       },
     },
@@ -110,8 +130,18 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
 
   try {
     const rzp = new (window as any).Razorpay(rzpOptions);
+
+    rzp.on('payment.failed', function (response: any) {
+      console.error('Razorpay payment failed event:', response.error);
+      options.onFailure({
+        code: response.error?.code || 'PAYMENT_FAILED',
+        description: response.error?.description || response.error?.reason || 'Payment was declined.',
+      });
+    });
+
     rzp.open();
   } catch (err: any) {
+    console.error('Exception opening Razorpay:', err);
     options.onFailure({
       code: 'CHECKOUT_OPEN_ERROR',
       description: err.message || 'Error opening Razorpay checkout window.',

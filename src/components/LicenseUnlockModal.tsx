@@ -56,42 +56,51 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
     setTimeout(() => setKeySavedMessage(false), 2000);
   };
 
-  const handleRazorpayPay = () => {
+  const handleRazorpayPay = async () => {
     setIsProcessingPayment(true);
     setFeedback(null);
 
-    openRazorpayCheckout({
-      amount: 199,
-      studentName: currentUser?.name || 'Student Engineer',
-      studentEmail: currentUser?.email || 'student@college.edu',
-      onSuccess: (res) => {
-        setIsProcessingPayment(false);
-        setFeedback({
-          success: true,
-          message: `Payment Successful! Transaction ID: ${res.razorpay_payment_id}. Pro Pass Activated!`,
-        });
-        setTimeout(() => {
-          onUnlockSuccess();
-          onClose();
-        }, 1500);
-      },
-      onFailure: (err) => {
-        setIsProcessingPayment(false);
-        if (err.code === 'NO_KEY_CONFIGURED') {
-          // No live key configured yet; suggest test simulation or opening key config
-          setShowKeyConfig(true);
+    try {
+      await openRazorpayCheckout({
+        amount: 199,
+        studentName: currentUser?.name || 'Student Engineer',
+        studentEmail: currentUser?.email || 'student@college.edu',
+        onSuccess: (res) => {
+          setIsProcessingPayment(false);
           setFeedback({
-            success: false,
-            message: 'No Razorpay Key ID found. You can enter your "rzp_test_..." key below, or use Instant Simulated Payment for testing.',
+            success: true,
+            message: `Payment Approved! Ref: ${res.razorpay_payment_id}. Pro Pass Activated!`,
           });
-        } else if (err.code !== 'PAYMENT_CANCELLED') {
-          setFeedback({
-            success: false,
-            message: err.description || 'Payment could not be completed.',
-          });
-        }
-      },
-    });
+          setTimeout(() => {
+            onUnlockSuccess();
+            onClose();
+          }, 1400);
+        },
+        onFailure: (err) => {
+          setIsProcessingPayment(false);
+          if (err.code === 'NO_KEY_CONFIGURED') {
+            setShowKeyConfig(true);
+            setFeedback({
+              success: false,
+              message: 'No Razorpay Key ID found. You can enter your "rzp_test_..." key below, or use Instant Simulated Payment for testing.',
+            });
+          } else if (err.code !== 'PAYMENT_CANCELLED') {
+            setFeedback({
+              success: false,
+              message: err.description || 'Payment could not be completed.',
+            });
+          }
+        },
+      });
+    } catch (err: any) {
+      setIsProcessingPayment(false);
+      setFeedback({
+        success: false,
+        message: err.message || 'Error launching payment.',
+      });
+    } finally {
+      setIsProcessingPayment(false);
+    }
   };
 
   const handleSimulatedPayment = () => {
