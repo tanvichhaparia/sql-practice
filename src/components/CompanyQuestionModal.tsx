@@ -134,10 +134,10 @@ export const CompanyQuestionModal: React.FC<CompanyQuestionModalProps> = ({
   const activeSchemaInfo: SchemaInfo | undefined = SCHEMA_MAP[activeSchemaTab];
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-slate-950/80 backdrop-blur-sm animate-fade-in">
-      <div className="bg-slate-900 border border-slate-800 rounded-2xl w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden shadow-2xl relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-[#080d1a]/85 backdrop-blur-xl animate-fade-in">
+      <div className="bg-[#0b1329] border border-white/10 rounded-3xl w-full max-w-5xl h-[90vh] flex flex-col overflow-hidden shadow-2xl relative">
         {/* Header */}
-        <div className="px-5 py-4 bg-slate-900/95 border-b border-slate-800 flex items-center justify-between shrink-0">
+        <div className="px-6 py-4 bg-[#080d1a] border-b border-white/10 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs px-2.5 py-1 rounded bg-slate-800 text-slate-300 border border-slate-700 font-semibold">
               {question.id}
@@ -249,7 +249,7 @@ export const CompanyQuestionModal: React.FC<CompanyQuestionModalProps> = ({
                       <button
                         onClick={handleRunQuery}
                         disabled={isRunning}
-                        className="px-4 py-1 rounded-md bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs transition flex items-center gap-1.5 shadow-sm shadow-emerald-500/20 disabled:opacity-50"
+                        className="px-4 py-1.5 rounded-full stripe-btn-primary font-bold text-xs transition flex items-center gap-1.5 shadow-sm shadow-emerald-500/20 disabled:opacity-50"
                       >
                         <Play className="w-3.5 h-3.5 fill-current" />
                         <span>{isRunning ? 'Running...' : 'Run Query'}</span>

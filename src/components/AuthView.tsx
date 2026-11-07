@@ -154,13 +154,13 @@ export const AuthView: React.FC<AuthViewProps> = ({
   };
 
   return (
-    <div className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center p-4 bg-slate-950 text-slate-100 selection:bg-emerald-500/20 selection:text-emerald-300">
-      <div className="w-full max-w-md bg-slate-900 border border-slate-800 rounded-2xl shadow-2xl overflow-hidden animate-fade-in relative">
+    <div className="min-h-[calc(100vh-3.5rem)] flex items-center justify-center p-4 stripe-mesh-gradient text-slate-100 selection:bg-[#635bff]/30 selection:text-indigo-200">
+      <div className="w-full max-w-md bg-[#0b1329] border border-white/10 rounded-3xl shadow-2xl overflow-hidden animate-fade-in relative backdrop-blur-xl">
         {/* Header graphic */}
-        <div className="p-6 bg-gradient-to-b from-emerald-950/60 to-slate-900 border-b border-slate-800 text-center relative">
-          <div className="inline-flex w-12 h-12 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-xl shadow-emerald-500/20 mb-3">
+        <div className="p-8 bg-gradient-to-b from-[#101b38] to-[#0b1329] border-b border-white/10 text-center relative">
+          <div className="inline-flex w-12 h-12 rounded-xl bg-gradient-to-tr from-[#635bff] to-[#00d4ff] p-0.5 shadow-xl shadow-[#635bff]/30 mb-3">
             <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-              <Database className="w-6 h-6 text-emerald-400" />
+              <Database className="w-6 h-6 text-[#00d4ff]" />
             </div>
           </div>
 
@@ -181,7 +181,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
 
           {/* Mode Switcher Tabs (Only shown when not in reset mode) */}
           {mode !== 'reset' ? (
-            <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800 mt-5 text-xs font-semibold">
+            <div className="flex bg-white/[0.04] p-1 rounded-full border border-white/10 mt-5 text-xs font-semibold">
               <button
                 type="button"
                 onClick={() => {
@@ -191,7 +191,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                 }}
                 className={`flex-1 py-1.5 rounded-lg transition ${
                   mode === 'login'
-                    ? 'bg-emerald-500 text-slate-950 shadow-md font-bold'
+                    ? 'bg-white/15 text-white shadow-md font-bold rounded-full'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >
@@ -206,7 +206,7 @@ export const AuthView: React.FC<AuthViewProps> = ({
                 }}
                 className={`flex-1 py-1.5 rounded-lg transition ${
                   mode === 'signup'
-                    ? 'bg-emerald-500 text-slate-950 shadow-md font-bold'
+                    ? 'bg-white/15 text-white shadow-md font-bold rounded-full'
                     : 'text-slate-400 hover:text-slate-200'
                 }`}
               >

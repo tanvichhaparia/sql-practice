@@ -13,7 +13,8 @@ import {
   Layers, 
   ChevronRight,
   TrendingUp,
-  FileCheck2
+  FileCheck2,
+  Check
 } from 'lucide-react';
 import { MockOA, Problem, UserProgress } from '../types';
 import { mockOas } from '../data/mockOas';
@@ -62,6 +63,8 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
           return prev - 1;
         });
       }, 1000);
+    } else {
+      if (timerRef.current) clearInterval(timerRef.current);
     }
 
     return () => {
@@ -69,7 +72,18 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
     };
   }, [timerRunning, secondsRemaining]);
 
+  const formatTimer = (totalSeconds: number) => {
+    const mins = Math.floor(totalSeconds / 60);
+    const secs = totalSeconds % 60;
+    return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  };
+
   const handleStartAssessment = (oa: MockOA) => {
+    if (oa.isPro && !progress.isProUnlocked) {
+      onOpenUnlockModal();
+      return;
+    }
+
     setActiveOa(oa);
     setCurrentProblemIndex(0);
     setSecondsRemaining(oa.durationMinutes * 60);
@@ -82,108 +96,99 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
     if (!activeOa) return;
     setTimerRunning(false);
 
-    const timeSpentSeconds = activeOa.durationMinutes * 60 - secondsRemaining;
-    const problemResults: Record<string, boolean> = {};
-    let score = 0;
+    // Compute score based on edge-case problem pass state
+    const results: Record<string, boolean> = {};
+    let passedCount = 0;
 
-    activeOa.problemIds.forEach((pid) => {
-      const isPassed = progress.problemStatus[pid] === 'passed_all_edge_cases';
-      problemResults[pid] = isPassed;
-      if (isPassed) score++;
+    activeOa.problemIds.forEach((probId) => {
+      const status = progress.problemStatus[probId];
+      const isPassed = status === 'passed_all_edge_cases';
+      results[probId] = isPassed;
+      if (isPassed) passedCount++;
     });
 
-    const result = {
-      score,
+    const timeSpent = activeOa.durationMinutes * 60 - secondsRemaining;
+    const finalScorecard = {
+      score: passedCount,
       total: activeOa.problemIds.length,
-      timeSpentSeconds,
-      problemResults,
+      timeSpentSeconds: timeSpent,
+      problemResults: results,
     };
 
-    setScorecardData(result);
+    setScorecardData(finalScorecard);
     setIsCompleted(true);
 
+    // Record attempt in user progress
     onRecordOaAttempt({
       oaId: activeOa.id,
       date: new Date().toISOString(),
-      timeSpentSeconds,
-      score,
+      score: passedCount,
       total: activeOa.problemIds.length,
-      problemResults,
+      timeSpentSeconds: timeSpent,
+      problemResults: results,
     });
 
-    if (score === activeOa.problemIds.length) {
+    if (passedCount >= 2) {
       confetti({
-        particleCount: 100,
-        spread: 80,
-        origin: { y: 0.5 },
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
       });
     }
   };
 
-  const formatTimer = (totalSeconds: number) => {
-    const mins = Math.floor(totalSeconds / 60);
-    const secs = totalSeconds % 60;
-    return `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
-  };
-
-  // If inside an active assessment session
+  // If in active OA session -> Render Full-screen Assessment Environment
   if (activeOa && !isCompleted) {
-    const activeProblemId = activeOa.problemIds[currentProblemIndex];
-    const activeProblem = getProblemById(activeProblemId);
-
-    const isUrgent = secondsRemaining < 300; // Under 5 mins
+    const currentProbId = activeOa.problemIds[currentProblemIndex];
+    const activeProblem = getProblemById(currentProbId);
+    const isUrgent = secondsRemaining < 5 * 60; // under 5 mins
 
     return (
-      <div className="flex flex-col h-[calc(100vh-3.5rem)] bg-slate-950 overflow-hidden">
-        {/* Mock OA Assessment Header */}
-        <div className="h-12 border-b border-slate-800 bg-slate-900 px-4 flex items-center justify-between shrink-0 shadow-md">
-          {/* Company Title */}
+      <div className="flex flex-col h-[calc(100vh-3.5rem)] bg-[#080d1a] text-slate-100">
+        {/* Top Assessment Header */}
+        <div className="h-14 border-b border-white/10 bg-[#0b1329] px-4 sm:px-6 flex items-center justify-between shrink-0">
           <div className="flex items-center gap-3">
-            <span className="font-extrabold text-sm text-slate-100 flex items-center gap-1.5">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-              {activeOa.company} OA Simulation
+            <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-white/10 text-white">
+              {activeOa.company}
             </span>
-
-            {/* Question Tabs */}
-            <div className="flex items-center gap-1 ml-4 bg-slate-950 p-1 rounded-lg border border-slate-800">
-              {activeOa.problemIds.map((pid, idx) => {
-                const status = progress.problemStatus[pid];
-                const isCurrent = currentProblemIndex === idx;
-
-                return (
-                  <button
-                    key={pid}
-                    onClick={() => setCurrentProblemIndex(idx)}
-                    className={`flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold transition ${
-                      isCurrent
-                        ? 'bg-emerald-500 text-slate-950 shadow-sm'
-                        : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800'
-                    }`}
-                  >
-                    <span>Q{idx + 1}</span>
-                    {status === 'passed_all_edge_cases' && (
-                      <CheckCircle2
-                        className={`w-3.5 h-3.5 ${
-                          isCurrent ? 'text-slate-950' : 'text-emerald-400'
-                        }`}
-                      />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+            <span className="font-extrabold text-white text-sm hidden sm:inline">
+              {activeOa.title}
+            </span>
           </div>
 
-          {/* Timer and Submit OA */}
+          {/* Question Nav Pills */}
+          <div className="flex items-center gap-1.5">
+            {activeOa.problemIds.map((probId, idx) => {
+              const isSelected = idx === currentProblemIndex;
+              const isPassed = progress.problemStatus[probId] === 'passed_all_edge_cases';
+
+              return (
+                <button
+                  key={probId}
+                  onClick={() => setCurrentProblemIndex(idx)}
+                  className={`px-3 py-1 rounded-full text-xs font-bold transition flex items-center gap-1.5 ${
+                    isSelected
+                      ? 'bg-[#635bff] text-white shadow-md shadow-[#635bff]/30'
+                      : 'bg-white/[0.05] text-slate-400 hover:text-white hover:bg-white/[0.08]'
+                  }`}
+                >
+                  <span>Q{idx + 1}</span>
+                  {isPassed && <Check className="w-3 h-3 text-emerald-400" />}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Timer & Finish button */}
           <div className="flex items-center gap-3">
             <div
-              className={`flex items-center gap-2 px-3 py-1 rounded-md border text-xs font-mono font-bold ${
+              className={`flex items-center gap-1.5 px-3 py-1 rounded-full border text-xs font-mono font-bold ${
                 isUrgent
                   ? 'bg-rose-500/10 text-rose-400 border-rose-500/30 animate-pulse'
-                  : 'bg-slate-950 text-slate-200 border-slate-800'
+                  : 'bg-white/[0.05] text-white border-white/10'
               }`}
             >
-              <Clock className="w-3.5 h-3.5" />
+              <Clock className="w-3.5 h-3.5 text-[#00d4ff]" />
               <span>{formatTimer(secondsRemaining)} remaining</span>
             </div>
 
@@ -193,7 +198,7 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
                   handleFinishAssessment();
                 }
               }}
-              className="flex items-center gap-1 px-3 py-1 rounded-md text-xs font-bold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition shadow-sm shadow-emerald-500/20"
+              className="flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-bold stripe-btn-primary shadow-md shadow-[#635bff]/30"
             >
               <FileCheck2 className="w-3.5 h-3.5" />
               <span>Submit OA</span>
@@ -227,92 +232,98 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
     const isPassing = scorecardData.score >= 2;
 
     return (
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden shadow-2xl">
+      <div className="max-w-4xl mx-auto px-4 py-10 animate-fade-in text-slate-100">
+        <div className="bg-[#0b1329] border border-white/10 rounded-3xl overflow-hidden shadow-2xl backdrop-blur-xl">
           {/* Header Banner */}
           <div
             className={`p-8 text-center border-b ${
               isPassing
-                ? 'bg-gradient-to-b from-emerald-950/60 to-slate-900 border-emerald-500/30'
-                : 'bg-gradient-to-b from-amber-950/60 to-slate-900 border-amber-500/30'
+                ? 'bg-gradient-to-b from-emerald-950/40 to-[#0b1329] border-emerald-500/30'
+                : 'bg-gradient-to-b from-amber-950/40 to-[#0b1329] border-amber-500/30'
             }`}
           >
-            <div className="w-16 h-16 rounded-2xl mx-auto flex items-center justify-center mb-4 bg-slate-950 border border-slate-800 shadow-lg">
+            <div className="w-16 h-16 rounded-2xl mx-auto flex items-center justify-center mb-4 bg-[#080d1a] border border-white/10 shadow-lg">
               <Award
                 className={`w-8 h-8 ${
                   isPassing ? 'text-emerald-400' : 'text-amber-400'
                 }`}
               />
             </div>
-            <h2 className="text-2xl font-black text-slate-100">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               {activeOa.title} Scorecard
             </h2>
-            <p className="text-xs text-slate-400 mt-1">
+            <p className="text-xs sm:text-sm text-slate-300 mt-1">
               Assessment completed in {minsTaken}m {secsTaken}s
             </p>
 
             <div className="mt-6 flex items-center justify-center gap-6">
-              <div className="bg-slate-950 border border-slate-800 rounded-xl px-6 py-3 text-center">
+              <div className="bg-[#080d1a] border border-white/10 rounded-2xl px-8 py-4 text-center">
                 <div
-                  className={`text-3xl font-black ${
+                  className={`text-4xl font-extrabold font-mono ${
                     isPassing ? 'text-emerald-400' : 'text-amber-400'
                   }`}
                 >
                   {scorecardData.score} / {scorecardData.total}
                 </div>
-                <div className="text-[11px] font-semibold uppercase text-slate-400 tracking-wider">
-                  Problems Passed (4/4)
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mt-1">
+                  Problems Mastered
                 </div>
               </div>
 
-              <div className="bg-slate-950 border border-slate-800 rounded-xl px-6 py-3 text-center">
-                <div className="text-3xl font-black text-slate-200">
+              <div className="bg-[#080d1a] border border-white/10 rounded-2xl px-8 py-4 text-center">
+                <div className="text-4xl font-extrabold font-mono text-white">
                   {Math.round((scorecardData.score / scorecardData.total) * 100)}%
                 </div>
-                <div className="text-[11px] font-semibold uppercase text-slate-400 tracking-wider">
-                  OA Benchmark Score
+                <div className="text-[11px] font-bold uppercase tracking-wider text-slate-400 mt-1">
+                  Assessment Accuracy
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Question Breakdown List */}
-          <div className="p-6 space-y-4">
-            <h3 className="text-xs font-bold uppercase tracking-wider text-slate-400">
-              Question-by-Question Breakdown
+          {/* Problem-by-problem breakdown */}
+          <div className="p-6 sm:p-8 space-y-4">
+            <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              Diagnostic Edge-Case Breakdown
             </h3>
 
             <div className="space-y-3">
-              {activeOa.problemIds.map((pid, idx) => {
-                const prob = getProblemById(pid);
-                const passed = scorecardData.problemResults[pid];
+              {activeOa.problemIds.map((probId, idx) => {
+                const prob = getProblemById(probId);
+                const passed = scorecardData.problemResults[probId];
 
                 return (
                   <div
-                    key={pid}
-                    className="flex items-center justify-between p-4 rounded-xl bg-slate-950 border border-slate-800"
+                    key={probId}
+                    className="p-4 rounded-2xl bg-white/[0.02] border border-white/10 flex items-center justify-between gap-4"
                   >
                     <div className="flex items-center gap-3">
-                      {passed ? (
-                        <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                      ) : (
-                        <XCircle className="w-5 h-5 text-rose-400 shrink-0" />
-                      )}
+                      <div
+                        className={`w-8 h-8 rounded-xl flex items-center justify-center shrink-0 ${
+                          passed
+                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40'
+                            : 'bg-rose-500/20 text-rose-400 border border-rose-500/40'
+                        }`}
+                      >
+                        {passed ? (
+                          <Check className="w-4 h-4 text-emerald-400" />
+                        ) : (
+                          <XCircle className="w-4 h-4 text-rose-400" />
+                        )}
+                      </div>
+
                       <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs text-slate-500 font-bold">Q{idx + 1}</span>
-                          <h4 className="font-bold text-sm text-slate-200">
-                            {prob?.title}
-                          </h4>
-                        </div>
-                        <p className="text-xs text-slate-400 mt-0.5">
-                          {prob?.domain} • {prob?.patterns.join(', ')}
+                        <h4 className="text-sm font-bold text-white">
+                          Question {idx + 1}: {prob?.title}
+                        </h4>
+                        <p className="text-xs text-slate-400 mt-0.5 line-clamp-2">
+                          {prob?.businessContext}
                         </p>
                       </div>
                     </div>
 
                     <span
-                      className={`text-xs font-bold px-2.5 py-1 rounded-full ${
+                      className={`text-xs font-bold px-3 py-1 rounded-full ${
                         passed
                           ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30'
                           : 'bg-rose-500/15 text-rose-400 border border-rose-500/30'
@@ -326,12 +337,12 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
             </div>
 
             {/* Pattern-level Feedback */}
-            <div className="bg-slate-950 border border-slate-800 rounded-xl p-4 mt-6">
-              <h4 className="text-xs font-bold text-slate-300 uppercase tracking-wider mb-2 flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-emerald-400" />
+            <div className="bg-[#080d1a] border border-white/10 rounded-2xl p-5 mt-6">
+              <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-[#00d4ff]" />
                 Interviewer Feedback & Pattern Recommendations
               </h4>
-              <p className="text-xs text-slate-400 leading-relaxed">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
                 {scorecardData.score === 3
                   ? 'Outstanding performance. Your queries demonstrate thorough defense against NULL arithmetic traps, tie-breaking ordering bugs, and zero-division errors. You are ready for high-bar company rounds.'
                   : 'Good attempt. Several hidden edge cases failed on tie-breaking ordering or LEFT JOIN filtering conditions. Review the Pattern Cheat Sheets to strengthen Gaps & Islands and Window Function mechanics before retaking.'}
@@ -345,14 +356,14 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
                   setActiveOa(null);
                   setIsCompleted(false);
                 }}
-                className="text-xs font-semibold px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 transition"
+                className="text-xs font-semibold px-4 py-2.5 rounded-full bg-white/[0.05] hover:bg-white/[0.1] text-slate-200 transition"
               >
                 Back to Mock OA Catalog
               </button>
 
               <button
                 onClick={() => handleStartAssessment(activeOa)}
-                className="flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition"
+                className="flex items-center gap-1.5 text-xs font-bold px-5 py-2.5 rounded-full stripe-btn-primary shadow-md shadow-[#635bff]/30 transition"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
                 <span>Retake Assessment</span>
@@ -366,22 +377,23 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
 
   // Default: Catalog of Mock OAs
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8 animate-fade-in text-slate-100">
+      
       {/* Banner */}
-      <div className="mb-6 bg-gradient-to-r from-slate-900 via-slate-900 to-slate-950 border border-slate-800 rounded-2xl p-6 relative overflow-hidden shadow-xl">
-        <div className="relative z-10">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold">
-              45-Minute Company OA Simulator
-            </span>
-            <span className="text-slate-400 text-xs">• Real Hiring Thresholds</span>
+      <div className="p-8 rounded-3xl bg-gradient-to-r from-[#0c1328] via-[#090e1f] to-[#0c1630] border border-white/10 shadow-2xl relative overflow-hidden">
+        <div className="absolute top-0 right-1/4 w-72 h-72 bg-[#635bff]/15 rounded-full filter blur-[80px] pointer-events-none" />
+        <div className="relative z-10 space-y-3">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-xs font-semibold text-[#00d4ff]">
+            <Clock className="w-3.5 h-3.5 text-[#635bff]" />
+            <span>45-Minute Company OA Simulator</span>
+            <span className="text-slate-500">•</span>
+            <span className="text-slate-300">Real Hiring Thresholds</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-100 tracking-tight">
-            Timed Company Online Assessments (OAs)
+          <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
+            Timed Company <span className="stripe-accent-gradient">Online Assessments</span>
           </h1>
-          <p className="text-sm text-slate-400 mt-1 max-w-2xl">
-            Simulate real 45-minute company interview rounds. Solve 3 domain-specific business problems
-            under realistic countdown pressure with final benchmark scorecards.
+          <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+            Simulate real 45-minute technical interview rounds. Solve 3 domain-specific business problems under countdown pressure with instant benchmark scorecards.
           </p>
         </div>
       </div>
@@ -395,37 +407,37 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
           return (
             <div
               key={oa.id}
-              className={`rounded-2xl border flex flex-col justify-between overflow-hidden shadow-lg transition duration-200 ${
+              className={`rounded-3xl border flex flex-col justify-between overflow-hidden shadow-xl transition-all duration-200 hover:-translate-y-1 ${
                 isLocked
-                  ? 'bg-slate-900/40 border-slate-800/60 opacity-90'
-                  : 'bg-slate-900 border-slate-800 hover:border-slate-700'
+                  ? 'bg-white/[0.02] border-white/10'
+                  : 'bg-[#0b1329]/90 border-white/10 hover:border-[#635bff]/60 backdrop-blur-xl'
               }`}
             >
               <div className="p-6 space-y-4">
                 <div className="flex items-start justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold px-2.5 py-1 rounded-md bg-slate-800 text-emerald-400">
+                    <span className="text-xs font-bold px-3 py-1 rounded-full bg-white/10 text-white">
                       {oa.company}
                     </span>
                     {oa.isPro && (
-                      <span className="text-[10px] font-extrabold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
-                        <Sparkles className="w-2.5 h-2.5" />
+                      <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-[#635bff]/20 text-[#00d4ff] border border-[#635bff]/30 flex items-center gap-1">
+                        <Sparkles className="w-3 h-3 text-[#00d4ff]" />
                         PRO
                       </span>
                     )}
                   </div>
 
                   <div className="flex items-center gap-1 text-xs text-slate-400 font-mono">
-                    <Clock className="w-3.5 h-3.5 text-slate-500" />
+                    <Clock className="w-3.5 h-3.5 text-[#00d4ff]" />
                     <span>{oa.durationMinutes} mins</span>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="font-extrabold text-slate-100 text-lg leading-snug">
+                  <h3 className="font-extrabold text-white text-lg leading-snug">
                     {oa.title}
                   </h3>
-                  <p className="text-xs text-emerald-400/90 font-medium mt-0.5">
+                  <p className="text-xs text-[#00d4ff] font-semibold mt-1">
                     Target Role: {oa.role}
                   </p>
                   <p className="text-xs text-slate-400 mt-2 leading-relaxed">
@@ -434,7 +446,7 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
                 </div>
 
                 {/* Problem checklist */}
-                <div className="pt-2 border-t border-slate-800/80 space-y-2">
+                <div className="pt-3 border-t border-white/5 space-y-2">
                   <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 block">
                     Included Questions (3):
                   </span>
@@ -446,7 +458,7 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
                       <span className="truncate max-w-[200px]">
                         {idx + 1}. {p?.title}
                       </span>
-                      <span className="text-[10px] text-slate-500 font-medium">
+                      <span className="text-[10px] font-mono text-slate-500 uppercase">
                         {p?.difficulty}
                       </span>
                     </div>
@@ -455,22 +467,22 @@ export const TimedMockOaView: React.FC<TimedMockOaViewProps> = ({
               </div>
 
               {/* Start Button or Pro Lock */}
-              <div className="p-4 bg-slate-950/70 border-t border-slate-800">
+              <div className="p-4 bg-[#080d1a] border-t border-white/10">
                 {isLocked ? (
                   <button
                     onClick={onOpenUnlockModal}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-emerald-400 text-xs font-bold border border-emerald-500/20 transition"
+                    className="w-full py-2.5 rounded-full bg-amber-500/15 hover:bg-amber-500/25 border border-amber-500/30 text-amber-300 text-xs font-bold flex items-center justify-center gap-1.5 transition"
                   >
-                    <Lock className="w-4 h-4" />
-                    <span>Unlock Pro Assessment</span>
+                    <Lock className="w-3.5 h-3.5" />
+                    <span>Unlock Test (₹199 Pass)</span>
                   </button>
                 ) : (
                   <button
                     onClick={() => handleStartAssessment(oa)}
-                    className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold shadow-md shadow-emerald-500/20 transition"
+                    className="w-full py-2.5 rounded-full stripe-btn-primary font-bold text-xs flex items-center justify-center gap-2 transition shadow-md shadow-[#635bff]/25"
                   >
-                    <span>Start 45-Min Assessment</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <span>Start 45-Min Test</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 )}
               </div>
