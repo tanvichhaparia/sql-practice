@@ -317,7 +317,7 @@ export const ProblemWorkspace: React.FC<ProblemWorkspaceProps> = ({
         <div className="flex items-center gap-3">
           <div className="hidden sm:flex items-center gap-1.5 px-2 py-0.5 rounded bg-slate-950 border border-slate-800 text-[11px] text-slate-400">
             <Terminal className="w-3 h-3 text-emerald-400" />
-            <span>PostgreSQL / ANSI SQL (WASM SQLite)</span>
+            <span>PostgreSQL / ANSI SQL Standard</span>
           </div>
         </div>
       </div>
@@ -828,7 +828,7 @@ export const ProblemWorkspace: React.FC<ProblemWorkspaceProps> = ({
               {isRunning && (
                 <div className="flex items-center justify-center h-full text-slate-400 text-xs gap-2">
                   <div className="w-4 h-4 border-2 border-emerald-400 border-t-transparent rounded-full animate-spin" />
-                  <span>Executing in WASM PostgreSQL / SQLite engine...</span>
+                  <span>Executing query in browser engine...</span>
                 </div>
               )}
 

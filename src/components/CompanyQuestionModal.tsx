@@ -232,7 +232,7 @@ export const CompanyQuestionModal: React.FC<CompanyQuestionModalProps> = ({
                   <div className="px-4 py-2 bg-slate-950/80 border-b border-slate-800 flex items-center justify-between text-xs">
                     <div className="flex items-center gap-2 text-slate-400">
                       <Code className="w-4 h-4 text-emerald-400" />
-                      <span className="font-mono font-medium">SQL Editor (MySQL 8 / SQLite WASM)</span>
+                      <span className="font-mono font-medium">SQL Query Editor (Interactive Engine)</span>
                     </div>
 
                     <div className="flex items-center gap-2">

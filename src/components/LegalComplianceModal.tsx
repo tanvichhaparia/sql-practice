@@ -213,7 +213,7 @@ export const LegalComplianceModal: React.FC<LegalComplianceModalProps> = ({
 
                 <h4 className="font-bold text-slate-200">3. Service Availability</h4>
                 <p>
-                  While we strive for 99.9% uptime and local-first offline execution using in-browser SQLite WASM, periodic maintenance or updates may occur without prior notice.
+                  While we strive for 99.9% uptime and local-first offline execution using an in-browser database engine, periodic maintenance or updates may occur without prior notice.
                 </p>
 
                 <h4 className="font-bold text-slate-200">4. Governing Law & Jurisdiction</h4>

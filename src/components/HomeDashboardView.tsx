@@ -219,7 +219,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
             <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-8 text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>100% Offline SQLite WASM</span>
+                <span>100% Offline Interactive Engine</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00d4ff]" />
@@ -307,7 +307,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
                     </span>
                   </div>
                   <span className="text-[10px] font-mono text-slate-400">
-                    SQLite WASM Engine
+                    In-Browser SQL Engine
                   </span>
                 </div>
 
@@ -397,7 +397,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
             <div className="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">
               100<span className="text-[#00d4ff]">%</span>
             </div>
-            <div className="text-xs font-semibold text-slate-300">Offline WebAssembly</div>
+            <div className="text-xs font-semibold text-slate-300">Offline Interactive Engine</div>
             <p className="text-[11px] text-slate-500">Runs locally in your browser</p>
           </div>
 
