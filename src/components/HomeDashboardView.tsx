@@ -184,7 +184,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
             <p className="text-base sm:text-lg text-slate-300 max-w-xl font-normal leading-relaxed">
               {currentUser 
                 ? `Welcome back, ${currentUser.name.split(' ')[0]}! Continue cracking real SQL OA queries.`
-                : 'Master technical interview edge cases tested by Amazon, Google, Flipkart, Goldman Sachs, Swiggy, and TCS. 100% in-browser offline execution with zero server latency.'}
+                : 'Master real SQL interview questions tested by Amazon, Google, Flipkart, Goldman Sachs, and TCS. Practice edge cases, window functions, and timed OA exam simulations.'}
             </p>
 
             {/* Stripe-style CTA Button Group */}
@@ -219,7 +219,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
             <div className="pt-6 border-t border-white/10 flex flex-wrap items-center gap-8 text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>100% Offline Interactive Engine</span>
+                <span>Instant Test-Case Feedback</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#00d4ff]" />
@@ -306,8 +306,8 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
                       Query Result ({activeHeroTab.execTime})
                     </span>
                   </div>
-                  <span className="text-[10px] font-mono text-slate-400">
-                    In-Browser SQL Engine
+                  <span className="text-[10px] font-mono text-emerald-400/90 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                    Interactive SQL Sandbox
                   </span>
                 </div>
 
@@ -395,18 +395,18 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
 
           <div className="space-y-1">
             <div className="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">
-              100<span className="text-[#00d4ff]">%</span>
+              26<span className="text-[#00d4ff]">+</span>
             </div>
-            <div className="text-xs font-semibold text-slate-300">Offline Interactive Engine</div>
-            <p className="text-[11px] text-slate-500">Runs locally in your browser</p>
+            <div className="text-xs font-semibold text-slate-300">Top Tech Companies</div>
+            <p className="text-[11px] text-slate-500">Amazon, Google, Goldman & Flipkart</p>
           </div>
 
           <div className="space-y-1">
             <div className="text-3xl sm:text-4xl font-black text-white font-mono tracking-tight">
-              &lt; 1<span className="text-emerald-400">ms</span>
+              9<span className="text-emerald-400"> Tracks</span>
             </div>
-            <div className="text-xs font-semibold text-slate-300">Execution Latency</div>
-            <p className="text-[11px] text-slate-500">Instant test cases with no queuing</p>
+            <div className="text-xs font-semibold text-slate-300">Guided Roadmaps</div>
+            <p className="text-[11px] text-slate-500">From basics to window functions</p>
           </div>
 
           <div className="space-y-1">
@@ -500,7 +500,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
                 <div>
                   <div className="text-[11px] font-bold text-purple-400 uppercase tracking-wider">Hidden Edge Cases</div>
                   <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition mt-1">
-                    OA Edge-Case Engine
+                    OA Edge-Case Simulator
                   </h3>
                   <p className="text-xs text-slate-400 mt-2 leading-relaxed">
                     4-stage hidden test validator testing NULL records, tied ranks, empty tables, and boundary dates.
@@ -576,7 +576,7 @@ export const HomeDashboardView: React.FC<HomeDashboardViewProps> = ({
                 </div>
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                  <span>Permanent offline access</span>
+                  <span>Lifetime Access & Updates</span>
                 </div>
               </div>
             </div>
