@@ -10,6 +10,8 @@ import { PatternCheatSheetsView } from './components/PatternCheatSheetsView';
 import { AuthView } from './components/AuthView';
 import { LicenseUnlockModal } from './components/LicenseUnlockModal';
 import { BackupRestoreModal } from './components/BackupRestoreModal';
+import { Footer } from './components/Footer';
+import { LegalComplianceModal, PolicyTab } from './components/LegalComplianceModal';
 import { 
   loadUserProgress, 
   saveProblemDraft, 
@@ -31,6 +33,10 @@ export const App: React.FC = () => {
 
   const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
   const [isBackupModalOpen, setIsBackupModalOpen] = useState(false);
+  const [policyModal, setPolicyModal] = useState<{ isOpen: boolean; tab: PolicyTab }>({
+    isOpen: false,
+    tab: 'terms',
+  });
 
   // Sync progress changes
   const reloadProgress = () => {
@@ -195,6 +201,16 @@ export const App: React.FC = () => {
           />
         )}
       </main>
+
+      {/* Compliance & Policy Footer */}
+      <Footer onOpenPolicy={(tab) => setPolicyModal({ isOpen: true, tab })} />
+
+      {/* Legal & Policy Compliance Modal */}
+      <LegalComplianceModal
+        isOpen={policyModal.isOpen}
+        initialTab={policyModal.tab}
+        onClose={() => setPolicyModal(prev => ({ ...prev, isOpen: false }))}
+      />
 
       {/* Modals */}
       <LicenseUnlockModal
