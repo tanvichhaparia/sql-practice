@@ -47,38 +47,38 @@ export const Navbar: React.FC<NavbarProps> = ({
   onToggleDemoPro,
 }) => {
   return (
-    <header className="h-14 border-b border-slate-800 bg-slate-900/90 backdrop-blur-md px-4 flex items-center justify-between sticky top-0 z-40 select-none">
+    <header className="h-16 border-b border-white/10 bg-[#080d1a]/80 backdrop-blur-xl px-4 sm:px-6 flex items-center justify-between sticky top-0 z-40 select-none">
       {/* Brand logo & title */}
-      <div className="flex items-center gap-4 lg:gap-6">
+      <div className="flex items-center gap-4 lg:gap-8">
         <button
           onClick={() => setActiveMode('home')}
-          className="flex items-center gap-2 text-left group"
+          className="flex items-center gap-2.5 text-left group"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 group-hover:shadow-emerald-500/40 transition">
-            <div className="w-full h-full bg-slate-950 rounded-[7px] flex items-center justify-center">
-              <Database className="w-4 h-4 text-emerald-400" />
+          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#635bff] to-[#00d4ff] p-0.5 shadow-md shadow-[#635bff]/30 group-hover:shadow-[#635bff]/50 transition">
+            <div className="w-full h-full bg-[#080d1a] rounded-[10px] flex items-center justify-center">
+              <Database className="w-4 h-4 text-[#00d4ff]" />
             </div>
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-bold text-slate-100 tracking-tight text-base group-hover:text-emerald-400 transition">
-                SQLEdge<span className="text-emerald-400 font-extrabold ml-0.5">OA</span>
+              <span className="font-extrabold text-white tracking-tight text-base group-hover:text-indigo-200 transition">
+                SQLEdge<span className="stripe-accent-gradient font-black ml-0.5">OA</span>
               </span>
-              <span className="text-[10px] font-semibold tracking-wider uppercase px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span className="text-[10px] font-bold tracking-wider uppercase px-2 py-0.5 rounded-full bg-[#635bff]/15 text-[#00d4ff] border border-[#635bff]/30">
                 WASM
               </span>
             </div>
           </div>
         </button>
 
-        {/* Structured Mode Navigation Tabs */}
-        <nav className="hidden md:flex items-center gap-1 bg-slate-950/70 p-1 rounded-xl border border-slate-800">
+        {/* Structured Mode Navigation Tabs (Stripe Pill Bar) */}
+        <nav className="hidden md:flex items-center gap-1 bg-white/[0.03] p-1 rounded-full border border-white/10 backdrop-blur-md">
           <button
             onClick={() => setActiveMode('home')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
               activeMode === 'home'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                ? 'bg-white/15 text-white shadow-sm'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             <Home className="w-3.5 h-3.5" />
@@ -87,40 +87,40 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={() => setActiveMode('roadmaps')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
               activeMode === 'roadmaps'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                ? 'bg-white/15 text-white shadow-sm'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             <Compass className="w-3.5 h-3.5" />
             <span>Roadmaps</span>
-            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-300">
+            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-[#635bff]/25 text-indigo-300">
               5 Tracks
             </span>
           </button>
 
           <button
             onClick={() => setActiveMode('question-bank')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
               activeMode === 'question-bank'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                ? 'bg-white/15 text-white shadow-sm'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             <Database className="w-3.5 h-3.5" />
             <span>Question Bank</span>
-            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-blue-500/20 text-blue-300">
+            <span className="text-[9px] font-bold px-1.5 py-0.2 rounded-full bg-[#00d4ff]/20 text-[#00d4ff]">
               534
             </span>
           </button>
 
           <button
             onClick={() => setActiveMode('practice')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
               activeMode === 'practice'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                ? 'bg-white/15 text-white shadow-sm'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             <Layers className="w-3.5 h-3.5" />
@@ -129,10 +129,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={() => setActiveMode('mock-oa')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
               activeMode === 'mock-oa'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                ? 'bg-white/15 text-white shadow-sm'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             <Clock className="w-3.5 h-3.5" />
@@ -141,10 +141,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             onClick={() => setActiveMode('cheat-sheets')}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition ${
               activeMode === 'cheat-sheets'
-                ? 'bg-slate-800 text-emerald-400 shadow-sm font-bold'
-                : 'text-slate-400 hover:text-slate-200 hover:bg-slate-900/60'
+                ? 'bg-white/15 text-white shadow-sm'
+                : 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
             }`}
           >
             <BookOpen className="w-3.5 h-3.5" />
@@ -154,26 +154,26 @@ export const Navbar: React.FC<NavbarProps> = ({
       </div>
 
       {/* Right Controls */}
-      <div className="flex items-center gap-2 sm:gap-2.5">
+      <div className="flex items-center gap-2 sm:gap-3">
         {/* Streak Indicator */}
         <div 
-          className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs text-amber-400"
+          className="flex items-center gap-1 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/25 text-xs text-amber-300"
           title={`Active Streak: ${progress.streak.count} day(s)`}
         >
           <Flame className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
           <span className="font-bold">{progress.streak.count}</span>
-          <span className="text-[10px] text-amber-500 hidden sm:inline">d</span>
+          <span className="text-[10px] text-amber-400 hidden sm:inline">d</span>
         </div>
 
         {/* Pro / Free Tier Badge */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-2">
           <button
             onClick={onToggleDemoPro}
             title="Click to toggle between Free & Pro Demo view instantly"
-            className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-semibold transition border ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold transition border ${
               progress.isProUnlocked
                 ? 'bg-gradient-to-r from-emerald-500/20 to-teal-500/20 text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/30'
-                : 'bg-slate-800/70 text-slate-400 border-slate-700 hover:text-slate-200'
+                : 'bg-white/[0.05] text-slate-300 border-white/10 hover:border-white/20'
             }`}
           >
             {progress.isProUnlocked ? (
@@ -187,16 +187,16 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <span>Free Tier</span>
               </>
             )}
-            <span className="text-[9px] opacity-70 ml-0.5">(Demo Switch)</span>
+            <span className="text-[9px] opacity-70 ml-0.5">(Demo)</span>
           </button>
 
           {!progress.isProUnlocked && (
             <button
               onClick={onOpenUnlockModal}
-              className="flex items-center gap-1.5 px-3 py-1 rounded-md text-xs font-semibold bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition shadow-sm shadow-emerald-500/30 hover:shadow-emerald-500/50"
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold stripe-btn-primary transition shadow-md shadow-[#635bff]/30"
             >
               <Unlock className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Student Pass (₹199)</span>
+              <span className="hidden sm:inline">Pro Pass (₹199)</span>
               <span className="sm:hidden">Pro</span>
             </button>
           )}
@@ -204,12 +204,12 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* User Auth Profile Pill or Login Button */}
         {currentUser ? (
-          <div className="flex items-center gap-1.5 pl-1.5 border-l border-slate-800">
+          <div className="flex items-center gap-1.5 pl-2 border-l border-white/10">
             <div 
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-slate-800/80 border border-slate-700/80 text-xs"
+              className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/[0.05] border border-white/10 text-xs"
               title={`Logged in as ${currentUser.name} (${currentUser.email}) - ${currentUser.college}`}
             >
-              <div className="w-5 h-5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 flex items-center justify-center font-bold text-[10px]">
+              <div className="w-5 h-5 rounded-full bg-[#635bff]/25 border border-[#635bff]/40 text-[#00d4ff] flex items-center justify-center font-bold text-[10px]">
                 {currentUser.name.charAt(0).toUpperCase()}
               </div>
               <span className="font-semibold text-slate-200 max-w-[80px] sm:max-w-[110px] truncate">
@@ -219,7 +219,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <button
               onClick={onLogout}
               title="Sign Out"
-              className="p-1.5 rounded-md text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition"
+              className="p-1.5 rounded-full text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 transition"
             >
               <LogOut className="w-3.5 h-3.5" />
             </button>
@@ -227,14 +227,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         ) : (
           <button
             onClick={onOpenAuth}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-semibold transition border ${
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold transition border ${
               activeMode === 'auth'
-                ? 'bg-emerald-500 text-slate-950 border-emerald-400'
-                : 'bg-slate-800 hover:bg-slate-750 text-slate-200 border-slate-700'
+                ? 'bg-white text-slate-950 font-bold border-white'
+                : 'bg-white/[0.05] hover:bg-white/[0.1] text-white border-white/10'
             }`}
           >
             <LogIn className="w-3.5 h-3.5" />
-            <span className="hidden sm:inline">Login / Signup</span>
+            <span className="hidden sm:inline">Sign In</span>
             <span className="sm:hidden">Login</span>
           </button>
         )}
@@ -243,7 +243,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <button
           onClick={onOpenBackupModal}
           title="Backup or Restore Progress JSON"
-          className="p-1.5 rounded-md text-slate-400 hover:text-slate-200 hover:bg-slate-800 transition"
+          className="p-1.5 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition"
         >
           <Download className="w-4 h-4" />
         </button>

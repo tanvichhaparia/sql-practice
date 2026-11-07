@@ -99,7 +99,7 @@ export const App: React.FC = () => {
   const currentProblem = activeProblemId ? getProblemById(activeProblemId) : null;
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100 selection:bg-emerald-500/20 selection:text-emerald-300">
+    <div className="min-h-screen flex flex-col bg-[#080d1a] text-slate-100 selection:bg-[#635bff]/30 selection:text-indigo-200">
       <Navbar
         activeMode={activeMode}
         setActiveMode={(mode) => {
