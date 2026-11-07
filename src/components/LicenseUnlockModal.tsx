@@ -232,15 +232,23 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
         {/* Modal Body */}
         <div className="p-6 space-y-5 overflow-y-auto min-h-0 flex-1">
           {/* Key Mode Notice */}
-          {isTestKey && (
+          {isTestKey ? (
             <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs flex items-start gap-2.5">
               <Info className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold">Currently in Razorpay Test Mode (<code className="font-mono">rzp_test_...</code>)</p>
                 <p className="text-[11px] text-amber-200/80 mt-0.5">
-                  In Test Mode, banks and UPI apps simulate testing and do not transfer real money. To receive genuine money into your bank account, switch Razorpay to <strong>Live Mode (<code className="font-mono">rzp_live_...</code>)</strong> or use the <strong>Direct UPI QR</strong> option below.
+                  In Test Mode, banks and UPI apps simulate testing and do not transfer real money.
                 </p>
               </div>
+            </div>
+          ) : (
+            <div className="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/25 text-emerald-300 text-xs flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="font-bold">Live Razorpay Gateway Active</span>
+              </div>
+              <span className="text-[11px] text-emerald-400/80 font-mono">Instant Bank Settlement</span>
             </div>
           )}
 
