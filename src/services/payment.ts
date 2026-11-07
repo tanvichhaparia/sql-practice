@@ -16,7 +16,7 @@ export interface PaymentOptions {
 }
 
 const RZP_KEY_STORAGE = 'sqledge_custom_rzp_key';
-// Default to the provided Razorpay Test Key ID
+const UPI_VPA_STORAGE = 'sqledge_custom_upi_vpa';
 const DEFAULT_TEST_KEY = 'rzp_test_TwugtkfTcRGnrn';
 
 export function getRazorpayKeyId(): string {
@@ -32,6 +32,49 @@ export function setRazorpayKeyId(key: string): void {
     localStorage.setItem(RZP_KEY_STORAGE, key.trim());
   } else {
     localStorage.removeItem(RZP_KEY_STORAGE);
+  }
+}
+
+export function getCustomUpiVpa(): string {
+  const stored = localStorage.getItem(UPI_VPA_STORAGE);
+  if (stored && stored.trim()) return stored.trim();
+  return 'sqledge@upi';
+}
+
+export function setCustomUpiVpa(vpa: string): void {
+  if (vpa && vpa.trim()) {
+    localStorage.setItem(UPI_VPA_STORAGE, vpa.trim());
+  } else {
+    localStorage.removeItem(UPI_VPA_STORAGE);
+  }
+}
+
+export function generateUpiPayLink(vpa: string, amount: number = 199): string {
+  const cleanVpa = vpa.trim();
+  return `upi://pay?pa=${encodeURIComponent(cleanVpa)}&pn=SQLEdge%20OA&am=${amount}&cu=INR&tn=Pro%20Student%20Pass`;
+}
+
+export function generateUpiQrUrl(vpa: string, amount: number = 199): string {
+  const link = generateUpiPayLink(vpa, amount);
+  return `https://api.qrserver.com/v1/create-qr-code/?size=240x240&margin=8&data=${encodeURIComponent(link)}`;
+}
+
+export async function createRazorpayOrder(amount: number = 199): Promise<string | null> {
+  try {
+    const res = await fetch('/api/create-razorpay-order', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ amount }),
+    });
+    if (!res.ok) {
+      console.warn('Razorpay order creation returned status:', res.status);
+      return null;
+    }
+    const data = await res.json();
+    return data.order_id || null;
+  } catch (err) {
+    console.warn('Could not connect to /api/create-razorpay-order:', err);
+    return null;
   }
 }
 
@@ -73,7 +116,7 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
     console.error('Razorpay SDK not loaded. window.Razorpay is undefined.');
     options.onFailure({
       code: 'SDK_LOAD_FAILED',
-      description: 'Razorpay checkout script could not be loaded. This is often blocked by ad-blockers (like Brave Shields or uBlock). Try disabling ad-blocker or use Test Simulator.',
+      description: 'Razorpay checkout script could not be loaded. Please check internet connection or disable ad-blockers (like Brave Shields).',
     });
     return;
   }
@@ -87,9 +130,18 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
     return;
   }
 
-  console.log('Opening Razorpay with Key ID:', keyId);
+  // Attempt to create a backend Razorpay Order ID (required by Razorpay for modern UPI/QR)
+  let orderId: string | null = null;
+  try {
+    orderId = await createRazorpayOrder(options.amount);
+    if (orderId) {
+      console.log('Created Razorpay Order ID:', orderId);
+    }
+  } catch (err) {
+    console.warn('Continuing without pre-generated order_id');
+  }
 
-  const rzpOptions = {
+  const rzpOptions: any = {
     key: keyId,
     amount: options.amount * 100, // paise (199 INR = 19900 paise)
     currency: 'INR',
@@ -98,7 +150,7 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
     prefill: {
       name: options.studentName || 'Student Engineer',
       email: options.studentEmail || 'student@college.edu',
-      contact: options.contact || '9999999999', // Standard 10-digit test number for Razorpay
+      contact: options.contact || '9999999999',
     },
     notes: {
       product: 'sqledge_pro_lifetime_pass',
@@ -112,7 +164,7 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
       recordPaymentSuccess(
         response.razorpay_payment_id,
         options.amount,
-        response.razorpay_order_id,
+        response.razorpay_order_id || orderId || undefined,
         'Razorpay UPI/Cards'
       );
       options.onSuccess(response);
@@ -127,6 +179,10 @@ export async function openRazorpayCheckout(options: PaymentOptions): Promise<voi
       },
     },
   };
+
+  if (orderId) {
+    rzpOptions.order_id = orderId;
+  }
 
   try {
     const rzp = new (window as any).Razorpay(rzpOptions);
