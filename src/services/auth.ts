@@ -11,6 +11,29 @@ export interface AuthUser {
 const USERS_STORAGE_KEY = 'sqledge_users_v1';
 const CURRENT_USER_KEY = 'sqledge_current_user_v1';
 
+// Pre-seeded reviewer/demo accounts for payment gateway verification
+export const DEFAULT_PRESEEDED_USERS: AuthUser[] = [
+  {
+    id: 'user_reviewer_sqledge',
+    name: 'Razorpay Reviewer',
+    email: 'test@sqledge.app',
+    passwordHash: '8d03d6a6aee42bdd2a50ce226431d37ada580820849b6fe8102bca98415e2386', // Test@1234
+    college: 'Compliance Review Team',
+    targetRole: 'Platform Verifier',
+    createdAt: '2026-01-01T00:00:00.000Z',
+  },
+  {
+    id: 'user_reviewer_razorpay',
+    name: 'Verification Officer',
+    email: 'reviewer@razorpay.com',
+    passwordHash: '8d03d6a6aee42bdd2a50ce226431d37ada580820849b6fe8102bca98415e2386', // Test@1234
+    college: 'Razorpay Verification',
+    targetRole: 'Payment Gateway Auditor',
+    createdAt: '2026-01-01T00:00:00.000Z',
+  },
+];
+
+
 // SHA-256 password hashing with salt using browser Web Crypto API
 export async function hashPassword(password: string): Promise<string> {
   const salt = 'sqledge_salt_sec_2026';
@@ -24,10 +47,15 @@ export async function hashPassword(password: string): Promise<string> {
 function loadUsers(): AuthUser[] {
   try {
     const raw = localStorage.getItem(USERS_STORAGE_KEY);
-    if (!raw) return [];
-    return JSON.parse(raw);
+    const users: AuthUser[] = raw ? JSON.parse(raw) : [];
+    for (const pre of DEFAULT_PRESEEDED_USERS) {
+      if (!users.some((u) => u.email.toLowerCase() === pre.email.toLowerCase())) {
+        users.push(pre);
+      }
+    }
+    return users;
   } catch {
-    return [];
+    return [...DEFAULT_PRESEEDED_USERS];
   }
 }
 
