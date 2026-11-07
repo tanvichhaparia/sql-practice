@@ -18,6 +18,8 @@ export interface PaymentOptions {
 const RZP_KEY_STORAGE = 'sqledge_custom_rzp_key';
 const UPI_VPA_STORAGE = 'sqledge_custom_upi_vpa';
 const DEFAULT_TEST_KEY = 'rzp_test_TwugtkfTcRGnrn';
+export const OFFICIAL_RAZORPAY_ME_URL = 'https://razorpay.me/@tanvichhapariaedutech';
+export const OFFICIAL_MERCHANT_NAME = 'TANVI CHHAPARIA EDUTECH';
 
 export function getRazorpayKeyId(): string {
   const custom = localStorage.getItem(RZP_KEY_STORAGE);

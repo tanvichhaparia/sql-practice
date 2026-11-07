@@ -26,7 +26,9 @@ import {
   getCustomUpiVpa,
   setCustomUpiVpa,
   generateUpiPayLink,
-  generateUpiQrUrl
+  generateUpiQrUrl,
+  OFFICIAL_RAZORPAY_ME_URL,
+  OFFICIAL_MERCHANT_NAME
 } from '../services/payment';
 import { getCurrentUser } from '../services/auth';
 
@@ -330,9 +332,29 @@ export const LicenseUnlockModal: React.FC<LicenseUnlockModalProps> = ({
               >
                 <QrCode className="w-4 h-4" />
                 <span>
-                  {isProcessingPayment ? 'Generating Razorpay Order...' : 'Pay ₹199 via Razorpay Checkout'}
+                  {isProcessingPayment ? 'Generating Razorpay Order...' : 'Pay ₹199 via Razorpay Popup'}
                 </span>
               </button>
+
+              {/* Official Direct Razorpay.me Link */}
+              <div className="p-3 rounded-xl bg-slate-900 border border-slate-800 space-y-2">
+                <div className="flex items-center justify-between text-xs">
+                  <span className="font-semibold text-slate-300">Direct Verified Link:</span>
+                  <span className="text-[10px] text-emerald-400 font-bold">{OFFICIAL_MERCHANT_NAME}</span>
+                </div>
+                <a
+                  href={OFFICIAL_RAZORPAY_ME_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-3 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs transition flex items-center justify-center gap-1.5 shadow"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Pay ₹199 on razorpay.me/@tanvichhapariaedutech</span>
+                </a>
+                <p className="text-[10px] text-slate-400 text-center">
+                  Official verified Razorpay portal. Accepts Google Pay, PhonePe, Paytm, RuPay, Visa, NetBanking.
+                </p>
+              </div>
 
               {/* Test Simulator */}
               <button
